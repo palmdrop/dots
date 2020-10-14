@@ -1,0 +1,3 @@
+#!/bin/bash
+$HOME/.config/2bwm-polybar/launch.sh
+

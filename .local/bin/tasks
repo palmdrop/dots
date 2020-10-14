@@ -1,0 +1,9 @@
+#!/bin/bash
+
+d=$(date --date='tomorrow' +'%Y-%m-%d')
+d="$dT00:00:59"
+
+today=$(task due.after:yesterday and due.before:$d and status:pending count)
+total=$(task status:pending count)
+
+echo "$today ($total)"

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+vol="$(vol print)%"
+
+if [ "$(pamixer --get-mute)" = "true" ]
+then
+    vol="(Muted) $vol"
+fi
+
+if (( $(bat) < 90 ))
+then
+    bat="$(bat)%"
+else
+    bat=""
+fi
+
+killall herbe & 
+herbe \
+      "$(date +'%d %h, %H:%M')" \
+      " " "$vol      $bat"  \
+      " " "$(tasks)"
+      #" " "$(batbar)"  \
+      #"Bri $(bri)%" " "  \
+

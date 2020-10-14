@@ -1,0 +1,199 @@
+# 3 config file (v4)
+
+set $mod Mod1
+#set $terminal alacritty
+#set $browser brave
+
+# Font
+font pango:monospace 6
+
+# App shortcuts
+#bindsym $mod+w      exec rofi-wifi 
+bindsym $mod+w      exec networkmanager_dmenu
+#bindsym $mod+Return exec $terminal
+#bindsym $mod+e      exec $terminal -e ranger
+bindsym $mod+Return exec "$TERMINAL"
+bindsym $mod+b      exec "$BROWSER"
+
+bindsym Print        exec flameshot full -p ~/Pictures/screenshots/
+bindsym $mod+Shift+c exec flameshot gui
+
+#bindsym $mod+d exec rofi -show run
+#bindsym $mod+s exec rofi -show window
+bindsym $mod+d exec dmenu_run
+
+
+# Audio control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% 
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@ toggle 
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+
+# Brightness control
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 10
+
+# Spotify keybinds
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+# Floating modifier
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# change split orientation
+bindsym $mod+Shift+v split h 
+bindsym $mod+v       split v
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# reload Xresources and look-and-feel related resources
+bindsym $mod+x exec xup
+
+# resize window 
+mode "resize" {
+        bindsym h resize shrink width  10 px or 10 ppt
+        bindsym j resize grow   height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow   width  10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Exit mode
+mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
+  bindsym l exec i3-msg exit
+  bindsym r exec systemctl reboot
+  bindsym s exec systemctl poweroff
+
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
+bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+
+# Focus mode
+bindsym $mod+Shift+f exec ~/.config/polybar/polybar-msg-number.sh 1 cmd toggle; exec ~/.config/polybar/scripts/info-mode/info.sh hide; gaps inner all toggle $gaps-amount
+
+# Info mode
+bindsym $mod+i exec ~/.config/polybar/scripts/info-mode/info.sh toggle
+
+# Look and Feel
+#                 variable              resource   fallback
+set_from_resource $bg-color             background #0a0a0a
+set_from_resource $focus-color          color15    #0000ff
+set_from_resource $unfocus-color        background #0a0a0a
+set_from_resource $text-color           foreground #ffffff
+set_from_resource $inactive-text-color  color7     #353510
+set_from_resource $urgent-color         color1     #00ff00
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $focus-color        $focus-color       $text-color          $focus-color
+client.unfocused        $unfocus-color      $unfocus-color     $inactive-text-color $unfocus-color
+client.focused_inactive $unfocus-color      $unfocus-color     $inactive-text-color $unfocus-color
+client.urgent           $urgent-color       $urgent-color      $text-color          $urgent-color
+client.background       $bg-color 
+
+# Wallpaper
+exec_always --no-startup-id xwallpaper --stretch ~/.config/wall/wall.png
+
+# Bar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# Lock 
+bindsym $mod+Shift+x exec i3lock -u -i ~/.config/wall/blurred.png
+
+# Gaps
+set $gaps-amount 20
+
+for_window [class="^.*"] border pixel 1
+hide_edge_borders smart_no_gaps
+
+gaps inner $gaps-amount
+gaps outer 0
+
+bindsym $mod+Shift+p gaps inner current plus 5
+bindsym $mod+Shift+m gaps inner current minus 5 
+bindsym $mod+Shift+n gaps inner current toggle $gaps-amount
+
+# Startup 
+#exec_always --no-startup-id rc 
+
+#exec --no-startup-id unclutter --timeout 1
+#exec --no-startup-id redshift
+#exec --no-startup-id dropbox
+
+exec spotify
+exec $browser
+exec syncthing
+
+# Startup management
+for_window [class="Spotify"] move to workspace $ws10 
+for_window [instance="Godot_Engine" title="[.]*(DEBUG)"] floating enable

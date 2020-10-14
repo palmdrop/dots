@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo -e "\u$1" | xclip -selection clipboard

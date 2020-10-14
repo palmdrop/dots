@@ -1,0 +1,14 @@
+#!/bin/bash
+[[ "$#" != "2" ]] && echo "Exactly two arguments required" && exit
+
+[[ ! -d "$2" ]] && echo "Directory does not exist." && exit
+
+aa "$1" "cd $2"
+
+
+
+
+
+
+
+

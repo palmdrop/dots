@@ -1,0 +1,19 @@
+#!/bin/bash
+
+config_path=$XDG_CONFIG_HOME/wall/path
+
+if [ $# -eq 1 ]; 
+then
+    echo "$1" > "$config_path"
+fi
+
+if [ ! -f "$config_path" ];
+then
+    echo "No background is set."
+    exit 1
+fi
+
+wp_path="$(cat $config_path)"
+
+xwallpaper --zoom "$wp_path"
+

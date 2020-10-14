@@ -1,0 +1,23 @@
+ #!/bin/bash
+
+case $1 in
+    up)   pactl set-sink-volume 0 +10% ;;
+    down) pactl set-sink-volume 0 -10% ;;
+    set)  pactl set-sink-volume 0 "$2"% ;;
+    mute) pactl set-sink-mute 0 toggle ;;
+    print) echo "$(pamixer --get-volume)"; exit 1 ;;
+esac
+
+v=$(pamixer --get-volume)
+msg="$v%"
+
+if [ "$(pamixer --get-mute)" = "true" ];
+then
+    msg="(muted) ($v%)"
+fi
+
+notify-send "$msg"
+
+
+  
+

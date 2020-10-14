@@ -1,0 +1,2 @@
+#!/bin/bash
+dmenu_run -i -F > ~/.local/log/dmenu_out.log 2>&1

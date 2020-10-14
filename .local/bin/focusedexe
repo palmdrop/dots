@@ -1,0 +1,2 @@
+#!/bin/bash
+cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm

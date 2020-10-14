@@ -1,0 +1,5 @@
+#!/bin/bash
+[[ "$#" != "2" ]] && echo "Exactly two arguments required" && exit
+
+echo "alias $1=\"$2\"" >> ~/.bashrc
+

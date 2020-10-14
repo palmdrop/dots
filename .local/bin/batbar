@@ -1,0 +1,35 @@
+#!/bin/bash
+
+v=$(bat)
+s=":"
+
+if ((v >= 0 && v < 10))
+then
+    echo "[$s         ]"
+elif ((v >= 10 && v < 20))
+then
+    echo "[$s$s        ]"
+elif ((v >= 20 && v < 30))
+then
+    echo "[$s$s$s       ]"
+elif ((v >= 30 && v < 40))
+then
+    echo "[$s$s$s$s      ]"
+elif ((v >= 40 && v < 50))
+then
+    echo "[$s$s$s$s$s     ]"
+elif ((v >= 50 && v < 60))
+then
+    echo "[$s$s$s$s$s$s    ]"
+elif ((v >= 60 && v < 70))
+then
+    echo "[$s$s$s$s$s$s$s   ]"
+elif ((v >= 70 && v < 80))
+then
+    echo "[$s$s$s$s$s$s$s$s  ]"
+elif ((v >= 80 && v < 90))
+then
+    echo "[$s$s$s$s$s$s$s$s$s ]"
+else 
+    echo "[$s$s$s$s$s$s$s$s$s$s]"
+fi

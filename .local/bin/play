@@ -1,0 +1,25 @@
+#!/bin/bash
+display_current() {
+    song="$(python ~/.local/scripts/spotify_status.py -f '{song}' -t 60)"
+    artist="$(python ~/.local/scripts/spotify_status.py -f '{artist}' -t 30)"
+
+    if [ -z "$song" ] && [ -z "$artist" ]; then
+        herbe "(not playing)"
+    else
+        herbe "$song" " " "$artist"
+    fi
+}
+
+case $1 in
+    pause) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+    ;;
+    stop) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
+    ;;
+    prev) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+    ;;
+    next) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+    ;;
+    *) display_current
+esac
+
+

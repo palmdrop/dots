@@ -1,0 +1,166 @@
+#
+# ~/.bashrc
+#
+
+HISTSIZE= HISTFILESIZE=1000
+
+# Java fix for dwm
+export _JAVA_AWT_WM_NONREPARENTING=1 
+#export AWT_TOOLKIT=MToolkit 
+#wmname LG3D 
+
+# Path 
+if [ -d "$HOME/.local/bin" ] ; 
+then 
+	PATH="$HOME/.local/bin:$PATH"
+fi
+
+# SHOPT
+shopt -s autocd # change to named directory
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+
+#ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
+
+# ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# ALIASES
+alias startx="startx $XDG_CONFIG_HOME/X/xinitrc"
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../.."
+
+alias r="ranger"
+
+#alias ls='ls -1 --color=auto --group-directories-first'
+#alias ll='ls -alh'
+#alias l='ls -CF'
+
+alias ls='exa -1 --group-directories-first'
+alias la='exa -1a --group-directories-first'
+alias ll='exa -alhg --group-directories-first'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Files and dirs
+alias mkdir="mkdir -pv"
+alias df='df -h'                          # human-readable sizes
+alias free='free -h'                      # show sizes in human-readable format
+
+# Editing
+alias v="nvim"
+alias sv="sudoedit"
+
+# Term
+alias u="(urxvt &)"
+alias s="(st &)"
+
+# Updates
+alias update="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
+alias mirror="sudo reflector --verbose --latest 30 --sort rate --save /etc/pacman.d/mirrorlist"
+alias orpclean="sudo pacman -Rns $(pacman -Qtdq)"
+alias depclean="yay -Yc"
+alias cacheclean="yay -Sc"
+
+# System information
+alias nvidia="nvidia-settings --config=/home/xan/.config/nvidia/settings"
+alias services='systemctl list-units  --type=service  --state=running'
+
+# System
+alias shutdown="sudo shutdown now"
+alias reboot="sudo reboot"
+
+# Make
+alias install="sudo make clean install"
+
+# Misc
+alias sxiv="sxiv -a"
+alias tty-clock="tty-clock -cD"
+
+# Config management
+alias cgit='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots --work-tree=$HOME'
+
+# Settings
+set -o vi
+stty erase '^H'
+
+# Completion 
+for file in /etc/bash_completion.d/* ; do
+    source "$file"
+done
+
+# PROMPT
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT_DIRTRIM=1
+PS1="\[\e[30m\]\w\[\e[00m\] \[\e[91m\]\$(parse_git_branch)\[\e[00m\] "
+
+# Look
+#bonsai.sh -T 
+
+# SHORTCUTS
+alias notes="cd /home/xan/Documents/Dropbox/notes/"
+alias writing="cd /home/xan/Documents/Dropbox/writing/"
+alias bdwm="cd /home/xan/Builds/dwm"
+alias bst="cd /home/xan/Builds/st/"
+alias paste="xclip -selection clipboard -o"
+alias copycolor="grabc 2> /dev/null | copy"
+alias downloads="cd /home/xan/Misc/Downloads/"
+alias bin="cd /home/xan/.local/bin/"
+alias z="zathura"
+alias bdmenu="cd /home/xan/Builds/dmenu/"
+alias logs="cd /home/xan/.local/log/personal/"
+alias config="cd /home/xan/.config/"
+alias png-compress="pngquant --force --quality=40-100 --strip --skip-if-larger --verbose"
+alias move="cd /home/xan/Documents/personal/paviljongvägen-40/"
+alias oo="cd /home/xan/Studies/objektorienterat-programmeringsprojekt-DIT212/pointy-dit212/"
+alias ka="killall"
+alias x="sxiv -a"
+alias push="git push"
+alias branches="git branch -a"
+alias delbranch="git branch -d"
+alias makebranch="git checkout -b"
+alias stat="git status"
+alias agil="/home/xan/Studies/agil-projektledning-DIT257/obtuse-dit257/"
+alias quote="nvim /home/xan/Documents/Dropbox/notes/quotes.txt"
+alias cleancache="yay -Sc"
+alias scripts="cd /home/xan/.local/bin/"
+alias bin="cd /home/xan/.local/bin/"
+alias pull="git pull"

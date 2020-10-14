@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$(pgrep polybar)" ] 
+then
+    startbar2bwm
+else
+    killbar
+fi

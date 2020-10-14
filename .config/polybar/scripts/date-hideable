@@ -1,0 +1,12 @@
+#!/bin/bash
+
+HIDE_FILE=~/.config/polybar/scripts/info-mode/.hidden
+
+if [ -f "$HIDE_FILE" ] ; then
+    #echo $(date +"%b %d | %H:%M")
+    echo $(date +"$1")
+else
+    echo ""
+fi
+
+

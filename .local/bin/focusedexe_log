@@ -1,0 +1,4 @@
+#!/bin/bash
+focusedexe > ~/.local/log/focusedexe.log
+
+

@@ -1,0 +1,43 @@
+#
+# ~/.bash_profile
+#
+
+# DEFAULT PROGRAMS
+export TERMINAL=st
+export PAGER=less
+export EDITOR=nvim
+export VISUAL=nvim
+export BROWSER=brave
+export SUDO_EDITOR=nvim
+export READER=zathura
+
+# Environment variables
+export LESSHISTFILE="-"
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_CONFIG_DIRS=/etc/xdg
+
+export HISTFILE=$XDG_CONFIG_HOME/bash/history
+export TASKRC=$XDG_CONFIG_HOME/task/config
+
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export XAUTHORITY=$XDG_DATA_HOME/X/Xauthority
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
+
+# Personal exports
+export NOTES_DIR=$HOME/Documents/Dropbox/notes
+
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
+#[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f $XDG_CONFIG_HOME/bash/bashrc ]] && . $XDG_CONFIG_HOME/bash/bashrc
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#if [ "$(tty)" = /dev/tty1 ]; then
+#    exec startx
+#fi
