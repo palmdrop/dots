@@ -29,9 +29,6 @@ Plug 'plasticboy/vim-markdown'
 " Nerdtree
 Plug 'preservim/nerdtree'
 
-" Startify
-Plug 'mhinz/vim-startify'
-
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
