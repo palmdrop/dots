@@ -53,11 +53,12 @@ redshift -l 57.7089:11.9746 &
 dropbox &
 
 setwp &
+
 spotify &
 $BROWSER &
 
-# Autolock after 5 minutes
-xidlehook --not-when-fullscreen --not-when-audio --timer 240 'slock -q' '' &
+# Autolock after a few minutes
+autolock &
 
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
