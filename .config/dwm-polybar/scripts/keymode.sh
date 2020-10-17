@@ -1,18 +1,17 @@
 #!/bin/bash
 
-FILE="/tmp/dwm.keymode"
+FILE=$(xrdbvar dwm.keymodepath)
 
 if [ ! -f "$FILE" ]; 
 then
-    #echo "1" >> "$FILE"
     echo ""
 fi
 
-v=$(cat /tmp/dwm.keymode)
+v=$(cat $FILE)
 
 if [ $v -eq 1 ];
 then
-    echo "COMMAND"
+    echo "$1"
 else
-    echo ""
+    echo "$2"
 fi

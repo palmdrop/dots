@@ -155,6 +155,8 @@ dwm.gaps: GAPS
 
 dwm.y_inset: BARY
 
+dwm.keymodepath: /tmp/dwm.keymode
+
 !! herbe
 herbe.background_color: PRIMARY
 herbe.border_color: BACKGROUND
