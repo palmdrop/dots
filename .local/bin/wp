@@ -1,0 +1,2 @@
+#!/bin/bash
+xwallpaper --zoom "$1"
