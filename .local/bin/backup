@@ -10,5 +10,5 @@ dir=$backup_location$backup_name
 [ -d $dir ] && echo "Already backed up today." && exit
 
 sudo mkdir $dir
-sudo cp -rv ~/Builds/ ~/.newsboat/ ~/.config/ ~/Dev/ ~/Documents/ ~/.local/share/dwm/ ~/.local/bin/ ~/Pictures/ ~/Misc/Games/ ~/.bash_profile ~/.bashrc ~/.xinitrc ~/.Xresources $dir
+sudo cp -rv ~/Builds/ ~/.config/ ~/Dev/ ~/Documents/ ~/.local/share/dwm/ ~/.local/bin/ ~/Pictures/ ~/Misc/Games/ $dir
 
