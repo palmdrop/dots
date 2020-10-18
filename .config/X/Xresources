@@ -34,7 +34,9 @@
 #define BORDERPX 0
 #define FLOATBORDERPX 4
 #define BARBORDERPX 0
-#define GAPS 28
+
+#define GAPS 23
+#define OUTERGAPS 33
 
 !! Colors
 ! special
@@ -151,7 +153,9 @@ dwm.resizehints: 0
 
 dwm.smartborders: 1
 dwm.selonlyborders: 0
+
 dwm.gaps: GAPS
+dwm.outergaps: OUTERGAPS
 
 dwm.y_inset: BARY
 
