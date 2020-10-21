@@ -43,6 +43,8 @@ primary = ${xrdb:bar.primary:#ffb52a}
 secondary = ${xrdb:bar.secondary:#ffffff}
 alert = ${xrdb:bar.alert:#bd2c40}
 
+border = ${xrdb:bar.border-color:#FF0000}
+
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = ${xrdb:bar.width:100%}
@@ -65,7 +67,7 @@ overline-size = ${xrdb:bar.line-size:0}
 underline-size = ${xrdb:bar.line-size:0}
 
 border-size = ${xrdb:bar.border:0}
-border-color = ${xrdb:bar.border-color:#FFF}
+border-color = ${colors.border}
 
 padding-left = 0
 padding-right = 0
@@ -75,8 +77,9 @@ module-margin-right = 0
 
 font-0 = "wuncon siji:size=15;2"
 font-1 = ${xrdb:bar.font:monospace:size=10;1}
+;font-1 = "Fantasque Sans Mono:pixelsize=9;2"
 
-modules-left = line pulseaudio line
+modules-left = line tasks line keymode
 modules-center = line dwm line
 modules-right = line time line
 
@@ -89,12 +92,49 @@ override-redirect = false
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/line2]
+type = custom/text
+content = " "
+content-padding = 0
+content-foreground = ${colors.border}
+content-background = ${colors.border}
+
 [module/line]
 type = custom/text
-content = "."
+content = " "
 content-padding = 0
 content-foreground = ${colors.line}
 content-background = ${colors.line}
+
+[module/keymode]
+type = custom/script
+
+exec = $HOME/.config/dwm-polybar/scripts/keymode.sh "COMMAND" ""
+tail = true
+interval = 0.1
+
+format = <label>
+format-foreground = ${colors.secondary}
+format-background = ${colors.ramp-3}
+;format-overline = ${colors.line}
+;format-underline = ${colors.line}
+
+label = "  %output%  "
+
+[module/tasks]
+type = custom/script
+
+exec = tasks
+tail = true
+interval = 5
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-module}
+format-overline = ${colors.line}
+format-underline = ${colors.line}
+
+label = "  %output%  "
 
 [module/xwindow]
 type = internal/xwindow
@@ -203,7 +243,7 @@ type = custom/script
 
 exec = date +"  %H:%M  "
 tail = true
-interval = 60
+interval = 5
 
 format = <label>
 format-foreground = ${colors.foreground-alt}
@@ -215,7 +255,7 @@ label = %output%
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 60
 
 date =  "%d %h"
 date-alt = " %Y-%m-%d"
@@ -234,80 +274,80 @@ format-underline = ${colors.line}
 
 background = ${colors.background-module}
 
-ramp-volume-0 = "  ┆      "
-ramp-volume-0-foreground = ${colors.ramp-0}
+ramp-volume-0 = "  ┊      "
+ramp-volume-0-foreground = ${colors.primary}
 ramp-volume-0-background = ${self.background}
 ramp-volume-0-overline = ${colors.line}
 ramp-volume-0-underline = ${colors.line}
 
 ramp-volume-1 = "  |      "
-ramp-volume-1-foreground = ${colors.ramp-0}
+ramp-volume-1-foreground = ${colors.primary}
 ramp-volume-1-background = ${self.background}
 ramp-volume-1-overline = ${colors.line}
 ramp-volume-1-underline = ${colors.line}
 
 ramp-volume-2 = "  │      "
-ramp-volume-2-foreground = ${colors.ramp-0}
+ramp-volume-2-foreground = ${colors.primary}
 ramp-volume-2-background = ${self.background}
 ramp-volume-2-overline = ${colors.line}
 ramp-volume-2-underline = ${colors.line}
 
 ramp-volume-3 = "  │|     "
-ramp-volume-3-foreground = ${colors.ramp-1}
+ramp-volume-3-foreground = ${colors.primary}
 ramp-volume-3-background = ${self.background}
 ramp-volume-3-overline = ${colors.line}
 ramp-volume-3-underline = ${colors.line}
 
 ramp-volume-4 = "  ││     "
-ramp-volume-4-foreground = ${colors.ramp-1}
+ramp-volume-4-foreground = ${colors.primary}
 ramp-volume-4-background = ${self.background}
 ramp-volume-4-overline = ${colors.line}
 ramp-volume-4-underline = ${colors.line}
 
 ramp-volume-5 = "  ││|    "
-ramp-volume-5-foreground = ${colors.ramp-1}
+ramp-volume-5-foreground = ${colors.primary}
 ramp-volume-5-background = ${self.background}
 ramp-volume-5-overline = ${colors.line}
 ramp-volume-5-underline = ${colors.line}
 
 ramp-volume-6 = "  │││    "
-ramp-volume-6-foreground = ${colors.ramp-2}
+ramp-volume-6-foreground = ${colors.primary}
 ramp-volume-6-background = ${self.background}
 ramp-volume-6-overline = ${colors.line}
 ramp-volume-6-underline = ${colors.line}
 
 ramp-volume-7 = "  │││|   "
-ramp-volume-7-foreground = ${colors.ramp-2}
+ramp-volume-7-foreground = ${colors.primary}
 ramp-volume-7-background = ${self.background}
 ramp-volume-7-overline = ${colors.line}
 ramp-volume-7-underline = ${colors.line}
 
 ramp-volume-8 = "  ││││   "
-ramp-volume-8-foreground = ${colors.ramp-2}
+ramp-volume-8-foreground = ${colors.primary}
 ramp-volume-8-background = ${self.background}
 ramp-volume-8-overline = ${colors.line}
 ramp-volume-8-underline = ${colors.line}
 
 ramp-volume-9 = "  ││││|  "
-ramp-volume-9-foreground = ${colors.ramp-3}
+ramp-volume-9-foreground = ${colors.primary}
 ramp-volume-9-background = ${self.background}
 ramp-volume-9-overline = ${colors.line}
 ramp-volume-9-underline = ${colors.line}
 
 ramp-volume-10 = "  │││││  "
-ramp-volume-10-foreground = ${colors.ramp-3}
+ramp-volume-10-foreground = ${colors.primary}
 ramp-volume-10-background = ${self.background}
 ramp-volume-10-overline = ${colors.line}
 ramp-volume-10-underline = ${colors.line}
 
 ramp-volume-11 = "  ┃┃┃┃┃  "
-ramp-volume-11-foreground = ${colors.ramp-3}
+ramp-volume-11-foreground = ${colors.primary}
 ramp-volume-11-background = ${self.background}
 ramp-volume-11-overline = ${colors.line}
 ramp-volume-11-underline = ${colors.line}
 
-label-muted = "  ░     "
-label-muted-foreground = ${colors.ramp-2}
+label-muted = "  ░      "
+label-muted-foreground = ${colors.primary}
 label-muted-background = ${self.background}
 label-muted-overline = ${colors.line}
 label-muted-underline = ${colors.line}
