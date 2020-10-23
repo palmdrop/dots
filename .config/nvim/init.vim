@@ -1,12 +1,6 @@
 " PLUGINS
 call plug#begin('~/.local/share/nvim/site/plugged')
 
-" Status bar configuration 
-"Plug 'itchyny/lightline.vim'
-
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
 " Colorizer for color hexcodes (activate with ":ColorToggle")
 Plug 'chrisbra/Colorizer' 
 " Makes text more readable when writing prose (activate with ":goyo" or space and g"
@@ -17,6 +11,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'gilgigilgil/anderson.vim'
 Plug 'branwright1/salvation-vim'
 Plug 'fehawen/cs.vim'
+Plug 'andreypopp/vim-colors-plain'
 
 " Highlighting for i3 config file
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -59,6 +54,9 @@ set smartcase
 
 " INTERFACE
 set laststatus=2
+set noruler
+set noshowcmd
+
 set number
 set relativenumber
 set noerrorbells
@@ -77,9 +75,8 @@ set termguicolors
 "colorscheme tender
 "colorscheme zenburn
 "colorscheme gruvbox
-"colorscheme simple-dark
 colorscheme alduin
-"colorscheme breve
+"colorscheme plain
 "colorscheme twilight
 "colorscheme salvation
 "colorscheme mountaineer-grey

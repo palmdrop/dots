@@ -3,7 +3,7 @@
 today=$(tasks today)
 
 case $today in
-    0) ramp="0" ;;
+    0) ramp="1" ;;
     1) ramp="1" ;;
     2) ramp="1" ;;
     3) ramp="2" ;;
@@ -14,14 +14,14 @@ case $today in
     *) ramp="4" ;;
 esac
 
-if (( $today == 0 )) ;
-then
-    msg=""
-else
+#if (( $today == 0 )) ;
+#then
+#    msg=""
+#else
     var="bar.ramp-$ramp"
     color=$(xrdbvar $var)
 
     msg="%{B$color}   $today   %{B-}"
-fi
+#fi
 
 echo "$msg"

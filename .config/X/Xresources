@@ -29,14 +29,14 @@
 #define RAMP_3 #794a4a
 #define RAMP_4 #696969
 
-#define BARFONT Lerminus:size=12;2
+#define BARFONT Lerminus:size=14;2
 #define MENUFONT Lerminus:size=8
 #define BORDERPX 0
-#define FLOATBORDERPX 4
-#define BARBORDERPX 0
+#define FLOATBORDERPX 0
+#define BARBORDERPX 7
 
 #define GAPS 23
-#define OUTERGAPS 33
+#define OUTERGAPS 30
 
 !! Colors
 ! special
@@ -77,18 +77,18 @@
 *.color15:      WHITE2
 
 !! bar
-#define BARX 690
-#define BARY 5
-#define BARWIDTH 540
-#define BARHEIGHT 26
+#define BARX 0
+#define BARY 0
+#define BARWIDTH 1920
+#define BARHEIGHT 15
 
 !bar.background: BACKGROUND
-bar.background: BLACK2
-bar.background-alt: PRIMARY
+bar.background: TRANSPARENT
+bar.background-alt: TRANSPARENT
 bar.foreground: FOREGROUND
-bar.foreground-alt: RAMP_4
+bar.foreground-alt: CURSORCOLOR
 
-bar.background-module: PRIMARY
+bar.background-module: TRANSPARENT
 
 bar.ramp-0: RAMP_0
 bar.ramp-1: RAMP_1
@@ -96,13 +96,16 @@ bar.ramp-2: RAMP_2
 bar.ramp-3: RAMP_3
 bar.ramp-4: RAMP_4
 
-bar.tag-focused: PRIMARY
-bar.tag-occupied: SECONDARY
-bar.tag-unoccupied: BLACK2
+!bar.tag-focused: BLACK2
+!bar.tag-occupied: SECONDARY
+!bar.tag-unoccupied: PRIMARY
+bar.tag-focused: BLACK1
+bar.tag-occupied: BLACK1
+bar.tag-unoccupied: TRANSPARENT
 
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 2
+bar.line-size: 0
 bar.line-color: PRIMARY
 
 bar.alert: MAGENTA1
@@ -111,7 +114,7 @@ bar.primary: PRIMARY
 bar.secondary: SECONDARY
 
 bar.border: BARBORDERPX
-bar.border-color: PRIMARY
+bar.border-color: TRANSPARENT
 
 bar.x: BARX
 bar.y: BARY
@@ -157,7 +160,7 @@ dwm.selonlyborders: 0
 dwm.gaps: GAPS
 dwm.outergaps: OUTERGAPS
 
-dwm.y_inset: BARY
+dwm.y_inset: 0
 
 dwm.keymodepath: /tmp/dwm.keymode
 
@@ -170,7 +173,7 @@ herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
 herbe.border_size: 0
-herbe.pos_x: 100
+herbe.pos_x: 20
 herbe.pos_y: 10
 herbe.corner: 1
 herbe.duration: 3 
