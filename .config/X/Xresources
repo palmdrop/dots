@@ -99,9 +99,9 @@ bar.ramp-4: RAMP_4
 !bar.tag-focused: BLACK2
 !bar.tag-occupied: SECONDARY
 !bar.tag-unoccupied: PRIMARY
-bar.tag-focused: BLACK1
-bar.tag-occupied: BLACK1
-bar.tag-unoccupied: TRANSPARENT
+bar.tag-focused: RAMP_1
+bar.tag-occupied: PRIMARY
+bar.tag-unoccupied: BLACK2
 
 bar.layout-symbol: PRIMARY
 
