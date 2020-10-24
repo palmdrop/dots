@@ -20,7 +20,7 @@
 #define WHITE2      #8f8f8f
 
 #define TRANSPARENT #00000000
-#define PRIMARY #2d2c2c
+#define PRIMARY #2e2c2c
 #define SECONDARY #242424
 
 #define RAMP_0 #222121
