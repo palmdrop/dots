@@ -17,8 +17,8 @@ fi
 killall herbe & 
 herbe \
       "$(date +'%d %h, %H:%M')" \
+      " " "Tasks: $(tasks)" \
       " " "$vol      $bat"  \
-      #" " "$(tasks)" \
       #" " "$(batbar)"  \
       #"Bri $(bri)%" " "  \
 
