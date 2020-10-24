@@ -14,14 +14,11 @@ case $today in
     *) ramp="4" ;;
 esac
 
-#if (( $today == 0 )) ;
-#then
-#    msg=""
-#else
-    var="bar.ramp-$ramp"
-    color=$(xrdbvar $var)
+var="bar.ramp-$ramp"
+color=$(xrdbvar $var)
 
-    msg="%{B$color}   $today   %{B-}"
-#fi
+time=$(date +"%H:%M")
+
+msg="%{B$color}  $time  %{B-}"
 
 echo "$msg"
