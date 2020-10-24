@@ -1,5 +1,5 @@
 !Defines
-#define FOREGROUND  #bfbfbf
+#define FOREGROUND  #8f8f8f
 #define BACKGROUND  #1c1c1c
 #define CURSORCOLOR #888888
 #define BLACK1      #555555
@@ -17,7 +17,7 @@
 #define CYAN1       #586e6e
 #define CYAN2       #586e6e
 #define WHITE1      #dfdfcf
-#define WHITE2      #bfbfbf
+#define WHITE2      #8f8f8f
 
 #define TRANSPARENT #00000000
 #define PRIMARY #2d2c2c
@@ -33,7 +33,7 @@
 #define MENUFONT Lerminus:size=8
 #define BORDERPX 0
 #define FLOATBORDERPX 0
-#define BARBORDERPX 7
+#define BARBORDERPX 6
 
 #define GAPS 23
 #define OUTERGAPS 30
@@ -82,7 +82,6 @@
 #define BARWIDTH 1920
 #define BARHEIGHT 15
 
-!bar.background: BACKGROUND
 bar.background: TRANSPARENT
 bar.background-alt: TRANSPARENT
 bar.foreground: FOREGROUND
@@ -96,17 +95,14 @@ bar.ramp-2: RAMP_2
 bar.ramp-3: RAMP_3
 bar.ramp-4: RAMP_4
 
-!bar.tag-focused: BLACK2
-!bar.tag-occupied: SECONDARY
-!bar.tag-unoccupied: PRIMARY
 bar.tag-focused: RAMP_1
 bar.tag-occupied: PRIMARY
 bar.tag-unoccupied: BLACK2
 
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 0
-bar.line-color: PRIMARY
+bar.line-size: 2
+bar.line-color: SECONDARY
 
 bar.alert: MAGENTA1
 
