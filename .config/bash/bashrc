@@ -132,6 +132,8 @@ parse_git_branch() {
 PROMPT_DIRTRIM=1
 PS1="\[\e[30m\]\w\[\e[00m\] \[\e[91m\]\$(parse_git_branch)\[\e[00m\] "
 
+trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
+
 # Look
 #bonsai.sh -T 
 
