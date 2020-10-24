@@ -1,5 +1,5 @@
 !Defines
-#define FOREGROUND  #8f8f8f
+#define FOREGROUND  #9f9f9f
 #define BACKGROUND  #1c1c1c
 #define CURSORCOLOR #888888
 #define BLACK1      #555555

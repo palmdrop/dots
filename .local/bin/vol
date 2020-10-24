@@ -13,7 +13,7 @@ msg="$v%"
 
 if [ "$(pamixer --get-mute)" = "true" ];
 then
-    msg="(muted) ($v%)"
+    msg="$v% (muted)"
 fi
 
 notify-send "$msg"
