@@ -2,44 +2,45 @@
 
 v=$(vol print)
 
-s="/"
-S="#"
-start="["
-end="]"
+e="  "
+s=" |"
+S=" #"
+start=" ["
+end=" ]"
 
 if [ "$(pamixer --get-mute)" = "true" ]
 then
-    s="-"
-    S="-"
+    s=" - "
+    S=" - "
 fi
 
 if ((v >= 0 && v < 10))
 then
-    echo "$start$s         $end"
+    echo "$start$s$e$e$e$e$e$e$e$e$e$end"
 elif ((v >= 10 && v < 20))
 then
-    echo "$start$s$s        $end"
+    echo "$start$s$s$e$e$e$e$e$e$e$e$end"
 elif ((v >= 20 && v < 30))
 then
-    echo "$start$s$s$s       $end"
+    echo "$start$s$s$s$e$e$e$e$e$e$e$end"
 elif ((v >= 30 && v < 40))
 then
-    echo "$start$s$s$s$s      $end"
+    echo "$start$s$s$s$s$e$e$e$e$e$e$end"
 elif ((v >= 40 && v < 50))
 then
-    echo "$start$s$s$s$s$s     $end"
+    echo "$start$s$s$s$s$s$e$e$e$e$e$end"
 elif ((v >= 50 && v < 60))
 then
-    echo "$start$s$s$s$s$s$s    $end"
+    echo "$start$s$s$s$s$s$s$e$e$e$e$end"
 elif ((v >= 60 && v < 70))
 then
-    echo "$start$s$s$s$s$s$s$s   $end"
+    echo "$start$s$s$s$s$s$s$s$e$e$e$end"
 elif ((v >= 70 && v < 80))
 then
-    echo "$start$s$s$s$s$s$s$s$s  $end"
+    echo "$start$s$s$s$s$s$s$s$s$e$e$end"
 elif ((v >= 80 && v < 90))
 then
-    echo "$start$s$s$s$s$s$s$s$s$s $end"
+    echo "$start$s$s$s$s$s$s$s$s$s$e$end"
 elif ((v >= 90 && v < 100))
 then
     echo "$start$s$s$s$s$s$s$s$s$s$s$end"

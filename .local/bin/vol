@@ -8,15 +8,17 @@ case $1 in
     print) echo "$(pamixer --get-volume)"; exit 1 ;;
 esac
 
-v=$(pamixer --get-volume)
-msg="$v%"
+#v=$(pamixer --get-volume)
+#msg="$v%"
 
-if [ "$(pamixer --get-mute)" = "true" ];
-then
-    msg="$v% (muted)"
-fi
+#if [ "$(pamixer --get-mute)" = "true" ];
+#then
+#    msg="$v% (muted)"
+#fi
 
-notify-send "$msg"
+#notify-send "$msg"
+
+notify-send "$(volbar)"
 
 
   
