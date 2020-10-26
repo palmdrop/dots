@@ -10,8 +10,8 @@ end=" ]"
 
 if [ "$(pamixer --get-mute)" = "true" ]
 then
-    s=" - "
-    S=" - "
+    s=" -"
+    S=" -"
 fi
 
 if ((v >= 0 && v < 10))

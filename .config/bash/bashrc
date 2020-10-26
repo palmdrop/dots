@@ -139,7 +139,7 @@ trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
 
 # SHORTCUTS
 alias notes="cd /home/xan/Documents/Dropbox/notes/"
-alias writing="cd /home/xan/Documents/Dropbox/writing/"
+alias writing="cd /home/xan/Documents/Dropbox/writing/Pågående"
 alias bdwm="cd /home/xan/Builds/dwm"
 alias bst="cd /home/xan/Builds/st/"
 alias paste="xclip -selection clipboard -o"
