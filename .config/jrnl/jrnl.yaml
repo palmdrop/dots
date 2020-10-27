@@ -10,7 +10,7 @@ encrypt: false
 highlight: true
 indent_character: '|'
 journals:
-  default: /home/xan/Documents/Dropbox/notes/journal/journal.txt
+  default: /home/xan/usr/notes/journal/journal.txt
 linewrap: 79
 tagsymbols: '@'
 template: false
