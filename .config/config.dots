@@ -1,0 +1,8 @@
+$XDG_CONFIG_HOME/X/Xresources           xresources
+$XDG_CONFIG_HOME/X/xinitrc              xinitrc
+$XDG_CONFIG_HOME/bash/bashrc            bashrc
+$XDG_CONFIG_HOME/bash/profile           profile
+$XDG_CONFIG_HOME/dwm-polybar/config.ini polybar
+$XDG_CONFIG_HOME/nvim/init.vim          vimrc
+$XDG_CONFIG_HOME/picom.conf             picom
+$XDG_CONFIG_HOME/config.dots            config.dots
