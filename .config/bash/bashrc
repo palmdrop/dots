@@ -111,7 +111,7 @@ alias sxiv="sxiv -a"
 alias tty-clock="tty-clock -cD"
 
 # Config management
-alias cgit='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots --work-tree=$HOME'
+alias cgit='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots.git.d --work-tree=$HOME'
 
 # Settings
 set -o vi
