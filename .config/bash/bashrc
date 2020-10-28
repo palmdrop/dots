@@ -4,9 +4,6 @@
 
 HISTSIZE= HISTFILESIZE=1000
 
-# Java fix for dwm
-export _JAVA_AWT_WM_NONREPARENTING=1 
-
 # Path 
 if [ -d "$HOME/.local/bin" ] ; 
 then 

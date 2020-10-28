@@ -13,16 +13,13 @@ export READER=zathura
 
 # Environment variables
 export LESSHISTFILE="-"
-
 export HISTFILE=$XDG_CONFIG_HOME/bash/history
-export TASKRC=$XDG_CONFIG_HOME/task/config
-
-export GNUPGHOME=$XDG_DATA_HOME/gnupg
-export XAUTHORITY=$XDG_DATA_HOME/X/Xauthority
-export CARGO_HOME=$XDG_CACHE_HOME/cargo
 
 export NOTES_DIR=$HOME/usr/notes
+export TASKRC=$XDG_CONFIG_HOME/task/config
 
+# Java fix for dwm
+export _JAVA_AWT_WM_NONREPARENTING=1 
 #export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
