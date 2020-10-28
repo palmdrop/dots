@@ -1,0 +1,9 @@
+XDG_DESKTOP_DIR="/home/xan/"
+XDG_DOWNLOAD_DIR="/home/xan/usr/downloads/"
+XDG_TEMPLATES_DIR="/home/xan/"
+XDG_PUBLICSHARE_DIR="/home/xan/"
+XDG_DOCUMENTS_DIR="/home/xan/usr/documents/"
+XDG_MUSIC_DIR="/home/xan/usr/documents/media/music/"
+XDG_PICTURES_DIR="/home/xan/usr/pictures/"
+XDG_VIDEOS_DIR="/home/xan/usr/misc/videos/"
+
