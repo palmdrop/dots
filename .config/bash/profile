@@ -23,6 +23,8 @@ export CARGO_HOME=$XDG_CACHE_HOME/cargo
 
 export NOTES_DIR=$HOME/usr/notes
 
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f $XDG_CONFIG_HOME/bash/bashrc ]] && . $XDG_CONFIG_HOME/bash/bashrc
 
