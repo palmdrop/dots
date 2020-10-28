@@ -28,5 +28,8 @@ done < "$path"
 # Read user choice using dmenu
 choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F)
 
+# Exit if no choice
+[ -z "$choice" ] && exit 1
+
 # Open chosen file in vim
 eval "$TERMINAL -e nvim ${paths[$choice]}"
