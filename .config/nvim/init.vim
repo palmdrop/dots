@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 
 " Colorizer for color hexcodes (activate with ":ColorToggle")
 Plug 'chrisbra/Colorizer' 
+
 " Makes text more readable when writing prose (activate with ":goyo" or space and g"
 Plug 'junegunn/goyo.vim'
 
@@ -19,7 +20,6 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 " Markdown support
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " Nerdtree
 Plug 'preservim/nerdtree'
@@ -116,13 +116,6 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " Search function for notes directory
 command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.txt
 
-" Open NERDTree if no file is specified
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " Open NERDTree if opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" Close NERDTree if no file is open
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
