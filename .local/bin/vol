@@ -16,10 +16,4 @@ esac
 #    msg="$v% (muted)"
 #fi
 
-#notify-send "$msg"
-
 notify-send "$(volbar)"
-
-
-  
-
