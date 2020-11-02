@@ -1,1 +1,25 @@
 #!/bin/bash
+
+# Config path
+CONFIG=$XDG_CONFIG_HOME/config.backup
+
+# Store the directory of the user
+USR_DIR=$(pwd)
+
+# Get date for naming backup
+DATE=$(date +%Y-%m-%d-%H%M%S)
+
+# Backup file
+BACKUP="$BACKUP_DIR/$DATE.tar.gz"
+
+# Do everything relative to ~
+cd $HOME
+
+# Save backup using tar
+tar -cvzpf $BACKUP  `#Backup location` \
+    --exclude-vcs   `#Exclude version control files, like .git` \
+    --exclude='^#'  `#Ignore comments in file` \
+     -T $CONFIG     `#Read paths from config file`
+
+# Return to user directory
+cd $USR_DIR
