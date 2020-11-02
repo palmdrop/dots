@@ -6,4 +6,5 @@ $XDG_CONFIG_HOME/dwm-polybar/config.ini polybar
 $XDG_CONFIG_HOME/nvim/init.vim          vimrc
 $XDG_CONFIG_HOME/picom.conf             picom
 $XDG_CONFIG_HOME/config.dots            config.dots
+$XDG_CONFIG_HOME/config.backup          config.backup
 /etc/profile                            etc/profile
