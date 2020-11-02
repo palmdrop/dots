@@ -21,5 +21,8 @@ tar -cvzpf $BACKUP  `#Backup location` \
     --exclude='^#'  `#Ignore comments in file` \
      -T $CONFIG     `#Read paths from config file`
 
+# Notification
+notify-send "Backup done"
+
 # Return to user directory
 cd $USR_DIR
