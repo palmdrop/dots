@@ -1,5 +1,5 @@
 #!/bin/bash
 [[ "$#" != "2" ]] && echo "Exactly two arguments required" && exit
 
-echo "alias $1=\"$2\"" >> ~/.bashrc
+echo "alias $1=\"$2\"" >> $XDG_CONFIG_HOME/bash/bashrc
 
