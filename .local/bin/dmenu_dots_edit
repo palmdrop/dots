@@ -9,9 +9,6 @@
 # Path to dotfile file
 path="$XDG_CONFIG_HOME/config.dots"
 
-# All lines from file
-lines=$(cat $path)
-
 # Declare associative array
 declare -A paths
 
