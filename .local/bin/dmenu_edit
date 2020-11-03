@@ -54,7 +54,15 @@ case $1 in
         fi
 
         # Get user choice
-        dir=$(cat $2 | dmenu)
+        directory=$(cat $2 | dmenu)
+        
+        # Expand potential use of ~
+        eval directory=$directory
+        echo $directory
+
+        # Call for editing files in that directory
+        dmenu_edit dir $directory &
+        exit 1
     ;;
     *)
         echo "Invalid option."
