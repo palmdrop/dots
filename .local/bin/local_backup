@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Config path
-CONFIG=$XDG_CONFIG_HOME/config.backup
+CONFIG=$XDG_CONFIG_HOME/backup.config
 
 # Store the directory of the user
 USR_DIR=$(pwd)

@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Input file should be formatted like this:
+#   path1 name1
+#   path2 name2
+#   ...
+
+# Declare associative array
+declare -A paths
+
+case $1 in
+    file) 
+        # Check if file exists
+        if [ ! -f "$2" ]; then
+            echo "File does not exist."
+            exit 0
+        fi
+
+        # Iterate over every line in file
+        while IFS= read -r line
+        do
+            # Split into words
+            words=($line)
+
+            # Add association between words
+            paths+=([${words[1]}]=${words[0]})
+        done < "$2"
+    ;;
+    dir)
+        # Check if file exists
+        if [ ! -d "$2" ]; then
+            echo "Directory does not exist."
+            exit 0
+        fi
+
+        # Get all files in directory, ignore directories
+        files=$(ls -ap $2 | grep -v '/$')
+        dir=$2 
+
+        if [[ "$dir" != "*/" ]];
+        then
+            dir="$dir/"
+        fi
+
+        while IFS= read -r line; do
+            paths+=([$line]=$dir$line)
+        done <<< "$files"
+    ;;
+    dirs)
+        # Check if file exists
+        if [ ! -f "$2" ]; then
+            echo "File does not exist."
+            exit 0
+        fi
+
+        # Get user choice
+        dir=$(cat $2 | dmenu)
+    ;;
+    *)
+        echo "Invalid option."
+        exit 0
+    ;;
+esac
+
+# Read user choice using dmenu
+choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F)
+
+# Exit if no choice
+[ -z "$choice" ] && exit 1
+
+# Open chosen file in vim
+eval "$TERMINAL -e nvim ${paths[$choice]}"
