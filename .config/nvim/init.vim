@@ -13,6 +13,7 @@ Plug 'gilgigilgil/anderson.vim'
 Plug 'branwright1/salvation-vim'
 Plug 'fehawen/cs.vim'
 Plug 'andreypopp/vim-colors-plain'
+Plug 'ryuta69/elly.vim'
 
 " Highlighting for i3 config file
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -76,6 +77,7 @@ set termguicolors
 "colorscheme zenburn
 "colorscheme gruvbox
 colorscheme alduin
+"colorscheme elly
 "colorscheme plain
 "colorscheme twilight
 "colorscheme salvation
