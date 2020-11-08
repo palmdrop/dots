@@ -36,7 +36,7 @@
 #define BARBORDERPX 6
 
 #define GAPS 23
-#define OUTERGAPS 30
+#define OUTERGAPS 40
 
 !! Colors
 ! special
