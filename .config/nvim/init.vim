@@ -33,14 +33,12 @@ let g:NERDTreeDirArrowCollapsible = ''
 
 " BASIC
 set directory^=$HOME/.cache/vim//
-
 set autoindent
 set expandtab
 set shiftround
 set shiftwidth=4
 set smarttab
 set tabstop=4
-
 set wildmode=longest,list,full
 
 " SHORCUTS

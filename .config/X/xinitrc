@@ -48,7 +48,6 @@ nvidia-settings -l &
 picom &
 unclutter --timeout 1 &
 redshift -l 57.7089:11.9746 &
-# dropbox &
 
 setwp &
 
@@ -60,5 +59,3 @@ autolock &
 
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
-#startbar2bwm &
-#exec 2bwm

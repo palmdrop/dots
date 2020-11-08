@@ -129,9 +129,6 @@ PS1="\[\e[30m\]\w\[\e[00m\] \[\e[34m\]\$(parse_git_branch)\[\e[00m\] "
 
 trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
 
-# Look
-#bonsai.sh -T 
-
 # SHORTCUTS
 alias notes="cd /home/xan/usr/notes/"
 alias writing="cd /home/xan/usr/writing/current"
@@ -159,4 +156,3 @@ alias bin="cd /home/xan/.local/bin/"
 alias pull="git pull"
 alias graphics="cd /home/xan/studies/computer-graphics-DIT224/"
 alias software="cd /home/xan/studies/software-development-methodologies-DIT347/"
-
