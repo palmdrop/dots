@@ -75,6 +75,7 @@ set termguicolors
 "colorscheme zenburn
 "colorscheme gruvbox
 colorscheme alduin
+"colorscheme mountain
 "colorscheme elly
 "colorscheme plain
 "colorscheme twilight
