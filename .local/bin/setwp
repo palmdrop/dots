@@ -4,7 +4,8 @@ config_path=$XDG_CONFIG_HOME/wall/wall.config
 
 if [ $# -eq 1 ]; 
 then
-    echo "$1" > "$config_path"
+    path=$(abspath $1)
+    echo "$path" > "$config_path"
 fi
 
 if [ ! -f "$config_path" ];
