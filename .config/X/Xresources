@@ -2,8 +2,8 @@
 #define FOREGROUND  #b0a5b0
 #define BACKGROUND  #110E11
 #define CURSORCOLOR #888888
-#define BLACK1      #332C2F
-#define BLACK2      #454545
+#define BLACK1      #3A3436
+#define BLACK2      #444045
 #define RED1        #856771
 #define RED2        #856771
 #define GREEN1      #75798e

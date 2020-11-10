@@ -88,7 +88,7 @@ set splitbelow splitright
 "colorscheme bliss
 "colorscheme gunmetal
 "colorscheme gunmetal-grey
-colorscheme cs 
+colorscheme cs-edit
 "TODO try cs to sync terminal and vim colors!
 
 "let g:lightline = {
