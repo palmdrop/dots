@@ -74,14 +74,14 @@ set termguicolors
 "colorscheme tender
 "colorscheme zenburn
 "colorscheme gruvbox
-colorscheme alduin
+"colorscheme alduin
 "colorscheme mountain
 "colorscheme elly
 "colorscheme plain
 "colorscheme twilight
 "colorscheme salvation
 "colorscheme mountaineer-grey
-"colorscheme mountaineer
+colorscheme mountaineer
 "colorscheme bliss
 "colorscheme gunmetal
 "colorscheme gunmetal-grey
