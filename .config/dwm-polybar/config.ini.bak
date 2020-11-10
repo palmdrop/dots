@@ -49,6 +49,9 @@ border = ${xrdb:bar.border-color:#FF0000}
 ;monitor = ${env:MONITOR:HDMI-1}
 width = ${xrdb:bar.width:100%}
 height = ${xrdb:bar.height:30}
+
+bottom = true
+
 offset-x = ${xrdb:bar.x:0}
 offset-y = ${xrdb:bar.y:0}
 radius = ${xrdb:bar.radius:0}
@@ -69,25 +72,25 @@ underline-size = ${xrdb:bar.line-size:0}
 border-size = ${xrdb:bar.border:0}
 border-color = ${colors.border}
 
-padding-left = 0
-padding-right = 0
+padding-left = 3
+padding-right = 3
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = "wuncon siji:size=15;2"
-font-1 = ${xrdb:bar.font:monospace:size=10;1}
-;font-1 = "Fantasque Sans Mono:pixelsize=9;2"
+;font-1 = ${xrdb:bar.font:monospace:size=10;1}
+font-1 = "Fantasque Sans Mono:pixelsize=11;2"
 
-modules-left = line tasks line keymode
-modules-center = line dwm line
-modules-right = line time line
+modules-left = tasks keymode 
+modules-center = line dwm line 
+modules-right = keymode time
 
 tray-position = none
 tray-padding = 2
 ;tray-background = #0063ff
 
-override-redirect = false
+override-redirect = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -109,32 +112,33 @@ content-background = ${colors.line}
 [module/keymode]
 type = custom/script
 
-exec = $HOME/.config/dwm-polybar/scripts/keymode.sh "COMMAND" ""
+exec = $HOME/.config/dwm-polybar/scripts/keymode.sh "                  " ""
 tail = true
 interval = 0.1
 
 format = <label>
 format-foreground = ${colors.secondary}
-format-background = ${colors.ramp-3}
+format-background = ${colors.primary}
 ;format-overline = ${colors.line}
 ;format-underline = ${colors.line}
 
-label = "  %output%  "
+label = "%output%"
 
 [module/tasks]
 type = custom/script
 
-;exec = tasks
-exec = $HOME/.config/dwm-polybar/scripts/tasks.sh
+exec = tasks
+;exec = $HOME/.config/dwm-polybar/scripts/tasks.sh
 tail = true
 interval = 5
 
 format = <label>
-;format-foreground = ${colors.foreground-alt}
-format-foreground = ${colors.background-module}
-;format-background = ${colors.background-module}
-format-overline = ${colors.line}
-format-underline = ${colors.line}
+;format-foreground = ${colors.primary}
+format-foreground = ${colors.foreground}
+;format-foreground = ${colors.background-module}
+format-background = ${colors.background-module}
+;format-overline = ${colors.line}
+;format-underline = ${colors.line}
 
 label = "%output%"
 
@@ -144,7 +148,8 @@ label = %title:0:30:...%
 
 [module/dwm]
 type = internal/dwm
-format = <label-tags><label-layout> 
+;format = <label-tags><label-layout> 
+format = <label-tags>
 ;<label-floating> 
 ;<label-title>
 ; Path to dwm socket (default: /tmp/dwm.sock)
@@ -193,19 +198,21 @@ tag-unoccupied = 
 label-focused = ${self.tag-focused}
 label-focused-foreground = ${colors.tag-focused}
 label-focused-background = ${colors.tag-focused}
-label-focused-padding = 0 
+;label-focused-background = ${colors.background}
+label-focused-padding = 0
 label-focused-overline = ${colors.line}
 label-focused-underline = ${colors.line}
 
 ; unfocused = Unselected tag on unselected monitor
 label-unfocused = ${self.tag-unoccupied}
-label-unfocused-padding = 0 
+label-unfocused-padding = ${self.label-focused-padding}
 label-unfocused-overline = ${colors.line}
 label-unfocused-underline = ${colors.line}
 
 ; visible = Unselected tag, but occupied tag on any monitor
 label-visible = ${self.tag-occupied}
 label-visible-foreground = ${colors.tag-occupied}
+;label-visible-background = ${colors.background}
 label-visible-background = ${colors.tag-occupied}
 label-visible-padding = ${self.label-focused-padding}
 label-visible-overline = ${colors.line}
@@ -213,9 +220,10 @@ label-visible-underline = ${colors.line}
 
 ; urgent = Unselected tag with window that has urgency hint set
 label-urgent = ${self.tag-occupied}
-label-urgent-background = ${colors.alert}
 label-urgent-foreground = ${colors.alert}
-label-urgent-padding = 0
+label-urgent-background = ${colors.alert}
+;label-urgent-background = ${colors.background}
+label-urgent-padding = ${self.label-focused-padding}
 label-urgent-overline = ${colors.line}
 label-urgent-underline = ${colors.line}
 
@@ -223,8 +231,9 @@ label-urgent-underline = ${colors.line}
 ; This can be set to an empty string to hide empty tags
 label-empty = ${self.tag-unoccupied}
 label-empty-foreground = ${colors.tag-unoccupied}
+;label-empty-background = ${colors.background}
 label-empty-background = ${colors.tag-unoccupied}
-label-empty-padding = 0
+label-empty-padding = ${self.label-focused-padding}
 label-empty-overline = ${colors.line}
 label-empty-underline = ${colors.line}
 
@@ -243,17 +252,17 @@ format = <label>
 [module/time]
 type = custom/script
 
-exec = date +"  %H:%M  "
+exec = date +"%H:%M"
 tail = true
 interval = 5
 
 format = <label>
-format-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
 format-background = ${colors.background-module}
-format-overline = ${colors.line}
-format-underline = ${colors.line}
+;format-overline = ${colors.line}
+;format-underline = ${colors.line}
 
-label = %output%
+label = "%output%"
 
 [module/date]
 type = internal/date

@@ -58,7 +58,6 @@ case $1 in
         
         # Expand potential use of ~
         eval directory=$directory
-        echo $directory
 
         # Call for editing files in that directory
         dmenu_edit dir $directory &
