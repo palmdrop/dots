@@ -2,8 +2,8 @@
 #define FOREGROUND  #b0a5b0
 #define BACKGROUND  #110E11
 #define CURSORCOLOR #888888
-#define BLACK1      #3A3436
-#define BLACK2      #444045
+#define BLACK1      #433E42
+#define BLACK2      #37313A
 #define RED1        #856771
 #define RED2        #856771
 #define GREEN1      #75798e
@@ -77,17 +77,17 @@
 *.color15:      WHITE2
 
 !! bar
-#define BARX 550
+#define BARX 600
 #define BARY 5
-#define BARWIDTH 820
+#define BARWIDTH 720
 #define BARHEIGHT 23
 
 bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
-bar.foreground: FOREGROUND
-bar.foreground-alt: CURSORCOLOR
+bar.foreground: SECONDARY
+bar.foreground-alt: BLACK1
 
-bar.background-module: BACKGROUND
+bar.background-module: WHITE2
 
 bar.ramp-0: RAMP_0
 bar.ramp-1: RAMP_1
@@ -96,7 +96,7 @@ bar.ramp-3: RAMP_3
 bar.ramp-4: RAMP_4
 
 bar.tag-focused: PRIMARY
-bar.tag-occupied: BLACK1
+bar.tag-occupied: BLACK2
 bar.tag-unoccupied: BACKGROUND
 
 bar.layout-symbol: PRIMARY
