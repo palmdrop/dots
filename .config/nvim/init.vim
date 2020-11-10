@@ -65,7 +65,7 @@ set mouse=a
 set splitbelow splitright
 
 " COLOR
-set termguicolors
+"set termguicolors
 
 "colorscheme distinguished
 "colorscheme jellybeans_dark
@@ -81,11 +81,11 @@ set termguicolors
 "colorscheme twilight
 "colorscheme salvation
 "colorscheme mountaineer-grey
-colorscheme mountaineer
+"colorscheme mountaineer
 "colorscheme bliss
 "colorscheme gunmetal
 "colorscheme gunmetal-grey
-"colorscheme cs 
+colorscheme cs 
 "TODO try cs to sync terminal and vim colors!
 
 "let g:lightline = {
