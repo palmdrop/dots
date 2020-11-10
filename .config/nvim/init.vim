@@ -15,8 +15,11 @@ Plug 'fehawen/cs.vim'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'ryuta69/elly.vim'
 
+" Statusline
+"Plug 'fehawen/sl.vim'
+
 " Highlighting for i3 config file
-Plug 'PotatoesMaster/i3-vim-syntax'
+" Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Markdown support
 Plug 'godlygeek/tabular'

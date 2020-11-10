@@ -1,6 +1,6 @@
 !Defines
 #define FOREGROUND  #b0a5b0
-#define BACKGROUND  #0b090b
+#define BACKGROUND  #110E11
 #define CURSORCOLOR #888888
 #define BLACK1      #332C2F
 #define BLACK2      #454545
@@ -8,12 +8,12 @@
 #define RED2        #856771
 #define GREEN1      #75798e
 #define GREEN2      #75798e
-#define YELLOW1     #9C8B6C
-#define YELLOW2     #9C8B6C
+#define YELLOW1     #9C8E73
+#define YELLOW2     #9C8E73
 #define BLUE1       #83a19d
 #define BLUE2       #83a19d
-#define MAGENTA1    #7480a3
-#define MAGENTA2    #7480a3
+#define MAGENTA1    #9383A3
+#define MAGENTA2    #9383A3
 #define CYAN1       #927676
 #define CYAN2       #927676
 #define WHITE1      #9d9497
@@ -77,10 +77,10 @@
 *.color15:      WHITE2
 
 !! bar
-#define BARX 450
+#define BARX 550
 #define BARY 5
-#define BARWIDTH 1020
-#define BARHEIGHT 15
+#define BARWIDTH 820
+#define BARHEIGHT 23
 
 bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
@@ -101,8 +101,8 @@ bar.tag-unoccupied: BACKGROUND
 
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 2
-bar.line-color: PRIMARY
+bar.line-size: 5
+bar.line-color: BACKGROUND
 
 bar.alert: MAGENTA1
 bar.primary: PRIMARY
