@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Subscribe to layout change events
+dwm-msg --ignore-reply subscribe layout_change_event | 
+# Parse result to get current layout symbol
+jq --unbuffered -r '.layout_change_event.new_symbol' | 
+# Continuously process new events
+while IFS=$'\n' read -r layout; do
+    # Send event
+    killall herbe
+    herbe "Layout: $layout" &
+done 
+
+ 
