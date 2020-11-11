@@ -58,5 +58,8 @@ $BROWSER &
 # Autolock after a few minutes
 autolock &
 
+# Notifications for dwm
+dwm-notify &
+
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
