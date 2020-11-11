@@ -2,8 +2,8 @@
 #define FOREGROUND  #b0a5b0
 #define BACKGROUND  #110E11
 #define CURSORCOLOR #888888
-#define BLACK1      #433E42
-#define BLACK2      #37313A
+#define BLACK1      #575256
+#define BLACK2      #4c474f
 #define RED1        #856771
 #define RED2        #856771
 #define GREEN1      #75798e
@@ -96,7 +96,7 @@ bar.ramp-3: RAMP_3
 bar.ramp-4: RAMP_4
 
 bar.tag-focused: PRIMARY
-bar.tag-occupied: BLACK2
+bar.tag-occupied: RAMP_0
 bar.tag-unoccupied: BACKGROUND
 
 bar.layout-symbol: PRIMARY
