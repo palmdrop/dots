@@ -35,7 +35,7 @@ case $1 in
 
         # Get all files in directory, ignore directories
         #files=$(ls -ap $2 | grep -v '/$')
-        files=$(ls -paA $2)
+        files=$(ls -pa $2)
         dir=$2 
 
         if [[ "$dir" != "*/" ]];
