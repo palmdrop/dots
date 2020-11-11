@@ -7,8 +7,7 @@ jq --unbuffered -r '.layout_change_event.new_symbol' |
 # Continuously process new events
 while IFS=$'\n' read -r layout; do
     # Send event
-    killall herbe
-    herbe "Layout: $layout" &
+    notify-send "Layout $layout" 
 done 
 
  

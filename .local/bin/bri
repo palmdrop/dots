@@ -7,5 +7,4 @@ case $1 in
     print) echo "$(light -G)"; exit 1;;
 esac
 
-#notify-send "$(light -G)%"
 notify-send "$(bribar)"
