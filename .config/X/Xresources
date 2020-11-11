@@ -2,8 +2,8 @@
 #define FOREGROUND  #b0a5b0
 #define BACKGROUND  #110E11
 #define CURSORCOLOR #888888
-#define BLACK1      #575256
-#define BLACK2      #4c474f
+#define BLACK1      #4a4348
+#define BLACK2      #403c42
 #define RED1        #856771
 #define RED2        #856771
 #define GREEN1      #75798e
@@ -20,23 +20,15 @@
 #define WHITE2      #d5cbcd
 
 #define TRANSPARENT #00000000
-#define PRIMARY #856771
-#define SECONDARY #454545
+#define PRIMARY #d5cbcd
+#define SECONDARY #89868f
+#define ACCENT #5a4d66
 
 #define RAMP_0 #232323
 #define RAMP_1 #454545
 #define RAMP_2 #75798e
 #define RAMP_3 #9d9497
 #define RAMP_4 #d5cbcd
-
-#define BARFONT Lerminus:size=14;2
-#define MENUFONT Lerminus:size=8
-#define BORDERPX 0
-#define FLOATBORDERPX 0
-#define BARBORDERPX 2
-
-#define GAPS 23
-#define OUTERGAPS 40
 
 !! Colors
 ! special
@@ -76,18 +68,29 @@
 *.color7:       WHITE1
 *.color15:      WHITE2
 
+!! General settings
+#define BARFONT Lerminus:size=14;2
+#define MENUFONT Lerminus:size=8
+
+#define BORDERPX 0
+#define FLOATBORDERPX 0
+#define BARBORDERPX 2
+
+#define GAPS 23
+#define OUTERGAPS 40
+
 !! bar
 #define BARX 600
 #define BARY 5
 #define BARWIDTH 720
-#define BARHEIGHT 23
+#define BARHEIGHT 21
 
-bar.background: BACKGROUND
+bar.background: SECONDARY
 bar.background-alt: BACKGROUND
-bar.foreground: SECONDARY
-bar.foreground-alt: BLACK1
+bar.foreground: BLACK1
+bar.foreground-alt: #666666
 
-bar.background-module: WHITE2
+bar.background-module: SECPONDARY
 
 bar.ramp-0: RAMP_0
 bar.ramp-1: RAMP_1
@@ -95,7 +98,7 @@ bar.ramp-2: RAMP_2
 bar.ramp-3: RAMP_3
 bar.ramp-4: RAMP_4
 
-bar.tag-focused: PRIMARY
+bar.tag-focused: RED1
 bar.tag-occupied: RAMP_0
 bar.tag-unoccupied: BACKGROUND
 
@@ -104,13 +107,13 @@ bar.layout-symbol: PRIMARY
 bar.line-size: 5
 bar.line-color: BACKGROUND
 
-bar.alert: MAGENTA1
+bar.alert: ACCENT
 bar.primary: PRIMARY
 bar.secondary: SECONDARY
 
 bar.radius: 0
 bar.border: BARBORDERPX
-bar.border-color: PRIMARY
+bar.border-color: SECONDARY
 
 bar.x: BARX
 bar.y: BARY
@@ -159,7 +162,7 @@ dwm.y_inset: 0
 dwm.keymodepath: /tmp/dwm.keymode
 
 !! herbe
-herbe.background_color: WHITE2
+herbe.background_color: PRIMARY
 herbe.border_color: BACKGROUND
 herbe.font_color: CURSORCOLOR
 herbe.line_spacing: 5
@@ -183,27 +186,15 @@ dmenu.borderpx: 50
 dmenu.lines: 10
 
 dmenu.normfgcolor: CURSORCOLOR
-dmenu.normbgcolor: WHITE2
+dmenu.normbgcolor: PRIMARY
 dmenu.selfgcolor:  CURSORCOLOR
-dmenu.selbgcolor:  WHITE2
+dmenu.selbgcolor:  PRIMARY
 
-dmenu.normhighlightfgcolor: PRIMARY
-dmenu.normhighlightbgcolor: WHITE2
-dmenu.selhighlightfgcolor:  PRIMARY
-dmenu.selhighlightbgcolor:  WHITE2
+dmenu.normhighlightfgcolor: RED1
+dmenu.normhighlightbgcolor: PRIMARY
+dmenu.selhighlightfgcolor:  RED1
+dmenu.selhighlightbgcolor:  PRIMARY
 
 !! st
 st.alpha: 1.0 
 st.background: BACKGROUND
-
-!! 2bwm
-twobwm.border_width: 10
-twobwm.outer_border: 8
-twobwm.focus_color: PRIMARY
-twobwm.unfocus_color: SECONDARY
-twobwm.fixed_color: YELLOW1
-twobwm.unkill_color: MAGENTA1
-twobwm.outer_border_color: BACKGROUND
-twobwm.fixed_unkill_color: RED1
-twobwm.inverted_colors: false
-twobwm.enable_compton: true

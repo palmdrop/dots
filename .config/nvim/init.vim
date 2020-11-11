@@ -69,39 +69,7 @@ set splitbelow splitright
 
 " COLOR
 "set termguicolors
-
-"colorscheme distinguished
-"colorscheme jellybeans_dark
-"colorscheme badwolf
-"colorscheme default
-"colorscheme tender
-"colorscheme zenburn
-"colorscheme gruvbox
-"colorscheme alduin
-"colorscheme mountain
-"colorscheme elly
-"colorscheme plain
-"colorscheme twilight
-"colorscheme salvation
-"colorscheme mountaineer-grey
-"colorscheme mountaineer
-"colorscheme bliss
-"colorscheme gunmetal
-"colorscheme gunmetal-grey
 colorscheme cs
-"TODO try cs to sync terminal and vim colors!
-
-"let g:lightline = {
-"      \ 'colorscheme': 'mountaineer_grey',
-"      \ }
-"let g:lightline = {
-"      \ 'colorscheme': 'mountaineer',
-"      \ }
-"
-
-"let g:airline_theme='alduin'
-
-"highlight Normal guibg=none guifg=none
 
 " RENDERING
 set encoding=utf-8
