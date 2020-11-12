@@ -10,9 +10,6 @@ while IFS=$'\n' read -r layout; do
     notify-send "Layout: $layout" > /dev/null 2>&1
 done &
 
-
-# TODO: only send notification if urgency has changed! not every time urgency is set!
-
 # Subscribe to tag change events
 dwm-msg --ignore-reply subscribe tag_change_event | 
 # Parse result to get urgent status
