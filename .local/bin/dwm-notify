@@ -6,8 +6,43 @@ dwm-msg --ignore-reply subscribe layout_change_event |
 jq --unbuffered -r '.layout_change_event.new_symbol' | 
 # Continuously process new events
 while IFS=$'\n' read -r layout; do
-    # Send event
-    notify-send "Layout $layout" 
-done 
+    # Send notification
+    notify-send "Layout: $layout" > /dev/null 2>&1
+done &
 
- 
+
+# TODO: only send notification if urgency has changed! not every time urgency is set!
+
+# Subscribe to tag change events
+dwm-msg --ignore-reply subscribe tag_change_event | 
+# Parse result to get urgent status
+jq --unbuffered -c '.tag_change_event' | 
+# Continuously process new events
+while IFS=$'\n' read -r event; do
+
+    # Get urgency status
+    urgent=$(echo ${event} | jq --unbuffered -r '.new_state.urgent')
+
+    # Get previous urgency status
+    prev_urgent=$(echo "$event" | jq --unbuffered -r '.old_state.urgent')
+
+    # Check if urgent flag is non-zero (and has changed)
+    # This ensures an event is only sent once the urgency changes, not every time
+    # there's a tag change event.
+    if (( $urgent != 0 )) && (( $urgent != $prev_urgent )); then 
+        # Find value of first set bit
+        for t in {0..8}
+        do
+            # If bit is set...
+            if (( ($urgent & (1 << $t)) != 0)); then
+                # Increment to get tag number
+                tag=$(($t + 1))
+                # Send notification
+                notify-send "Urgent window" "Tag: $tag" > /dev/null 2>&1
+
+                # Break loop
+                break
+            fi
+        done
+    fi
+done 
