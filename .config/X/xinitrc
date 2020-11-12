@@ -58,8 +58,8 @@ $BROWSER &
 # Autolock after a few minutes
 autolock &
 
-# Notifications for dwm
-dwm-notify &
+# Hacky way of starting my dwm-notify script
+(sleep 4s; dwm-notify) &
 
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
