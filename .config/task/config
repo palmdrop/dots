@@ -29,4 +29,5 @@ include /usr/share/doc/task/rc/dark-16.theme
 #include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
-
+#
+color.vit.selection=green on black
