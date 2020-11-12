@@ -21,7 +21,7 @@
 
 #define TRANSPARENT #00000000
 #define PRIMARY #d5cbcd
-#define SECONDARY #998a92
+#define SECONDARY #a89ea3
 #define ACCENT #5a4d66
 
 #define RAMP_0 #232323
