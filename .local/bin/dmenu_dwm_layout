@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fetch layouts and make sure each entry is on a new line 
-layout_data=$(dwm-msg get_layouts | jq -c '.[]')
+layout_data=$(dwm-msg --ignore-reply get_layouts | jq --unbuffered -c '.[]')
 
 # Create an associative array layout-address pairs
 declare -A layouts
@@ -9,8 +9,8 @@ declare -A layouts
 # Iterate over all layouts 
 for row in ${layout_data}; do
     # Fetch relevant data
-    symbol=$(echo ${row} | jq -r '.symbol')
-    address=$(echo ${row} | jq -r '.address')
+    symbol=$(echo $row | jq --unbuffered -r '.symbol')
+    address=$(echo $row | jq --unbuffered -r '.address')
 
     # Associate symbol with address
     layouts+=([$symbol]=$address)
