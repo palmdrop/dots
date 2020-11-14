@@ -3,14 +3,16 @@
 d=$(date --date='tomorrow' +'%Y-%m-%d')
 d="$dT00:00:59"
 
-#today=$(task due.after:yesterday and due.before:$d and status:pending count)
-today=$(task due.before:$d and status:pending count)
+overdue=$(task due.before:today and status:pending count)
+today=$(task due.after:yesterday and due.before:$d and status:pending count)
+#today=$(task due.before:$d and status:pending count)
 total=$(task status:pending count)
 
 case $1 in
-    today) msg="$today" ;;
-    total) msg="$total" ;;
-    *)     msg="$today ($total)" ;;
+    today)   msg="$today" ;;
+    total)   msg="$total" ;;
+    overdue) msg="$overdue" ;;
+    *)       msg="$overdue! $today ($total)" ;;
 esac
 
 echo "$msg"
