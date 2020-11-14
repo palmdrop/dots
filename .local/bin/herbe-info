@@ -7,18 +7,12 @@ then
     vol="(Muted) $vol"
 fi
 
-if (( $(bat) < 90 ))
-then
-    bat="$(bat)%"
-else
-    bat=""
-fi
+bat="$(bat)%"
 
 killall herbe & 
 herbe \
-      "$(date +'%d %h, %H:%M')" \
-      " " "Tasks: $(tasks)" \
-      " " "$vol      $bat"  \
-      #" " "$(batbar)"  \
-      #"Bri $(bri)%" " "  \
+      "$(date +'%A, %d %h, %H:%M')" \
+      "_______________________" " " \
+      "Volume: $vol" " "  \
+      "Charge: $bat"  \
 
