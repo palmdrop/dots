@@ -12,7 +12,14 @@ case $1 in
     today)   msg="$today" ;;
     total)   msg="$total" ;;
     overdue) msg="$overdue" ;;
-    *)       msg="$overdue! $today ($total)" ;;
+    *)       
+        if (( $overdue == 0 )); then 
+            o=""
+        else
+            o="$overdue! "
+        fi
+        msg="$o$today ($total)" 
+    ;;
 esac
 
 echo "$msg"
