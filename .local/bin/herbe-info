@@ -12,7 +12,7 @@ bat="$(bat)%"
 killall herbe & 
 herbe \
       "$(date +'%A, %d %h, %H:%M')" \
-      "_______________________" " " \
+      "......................" " " \
       "Volume: $vol" " "  \
       "Charge: $bat"  \
 

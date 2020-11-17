@@ -10,5 +10,4 @@ dir=$backup_location$backup_name
 [ -d $dir ] && echo "Already backed up today." && exit
 
 sudo mkdir $dir
-sudo cp -rv ~/src/ ~/.config/  ~/usr/ ~/.local/share/dwm/ ~/.local/bin/ $dir
-
+sudo cp -rv ~/src/ ~/.config/  ~/usr/ ~/.local/share/dwm/ ~/.local/bin/ $dir && echo "Backup done."
