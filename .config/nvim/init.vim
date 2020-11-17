@@ -48,6 +48,7 @@ set wildmode=longest,list,full
 map <C-g> :Goyo<CR> 
 map <C-c> :ColorToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <C-w> :WP<CR>
 
 " SEARCH
 set hlsearch
@@ -91,3 +92,21 @@ command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.txt
 " Open NERDTree if opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" Prose editing function
+func! WordProcessor()
+  " movement changes
+  map j gj
+  map k gk
+  " formatting text
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal wrap
+  setlocal linebreak
+  " spelling and thesaurus
+  setlocal spell spelllang=sv
+  " set thesaurus+=/home/test/.vim/thesaurus/mthesaur.txt
+  " complete+=s makes autocompletion search the thesaurus
+  set complete+=s
+endfu
+com! WP call WordProcessor()
