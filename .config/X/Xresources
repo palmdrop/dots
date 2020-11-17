@@ -1,34 +1,30 @@
 !Defines
-#define FOREGROUND  #b0a5b0
-#define BACKGROUND  #110E11
-#define CURSORCOLOR #888888
-#define BLACK1      #4a4348
-#define BLACK2      #403c42
-#define RED1        #856771
-#define RED2        #856771
-#define GREEN1      #75798e
-#define GREEN2      #75798e
-#define YELLOW1     #9C8673
-#define YELLOW2     #9C8673
-#define BLUE1       #83a19d
-#define BLUE2       #83a19d
-#define MAGENTA1    #9383A3
-#define MAGENTA2    #9383A3
-#define CYAN1       #927676
-#define CYAN2       #927676
-#define WHITE1      #9d9497
-#define WHITE2      #d5cbcd
+#define FOREGROUND      #b0a5b0
+#define FOREGROUND_ALT  #666666
+#define BACKGROUND      #110E11
+#define CURSORCOLOR     #888888
+#define BLACK1          #4a4348
+#define BLACK2          #403c42
+#define BLACK_ALT       #232323
+#define RED1            #856771
+#define RED2            #856771
+#define GREEN1          #75798e
+#define GREEN2          #75798e
+#define YELLOW1         #9C8673
+#define YELLOW2         #9C8673
+#define BLUE1           #83a19d
+#define BLUE2           #83a19d
+#define MAGENTA1        #9383A3
+#define MAGENTA2        #9383A3
+#define CYAN1           #927676
+#define CYAN2           #927676
+#define WHITE1          #9d9497
+#define WHITE2          #d5cbcd
 
-#define TRANSPARENT #00000000
-#define PRIMARY #d5cbcd
-#define SECONDARY #a89ea3
-#define ACCENT #5a4d66
-
-#define RAMP_0 #232323
-#define RAMP_1 #454545
-#define RAMP_2 #75798e
-#define RAMP_3 #9d9497
-#define RAMP_4 #d5cbcd
+#define TRANSPARENT     #00000000
+#define PRIMARY         #d5cbcd
+#define SECONDARY       #a89ea3
+#define ACCENT          #5a4d66
 
 !! Colors
 ! special
@@ -69,9 +65,6 @@
 *.color15:      WHITE2
 
 !! General settings
-#define BARFONT Lerminus:size=14;2
-#define MENUFONT Lerminus:size=8
-
 #define BORDERPX 0
 #define FLOATBORDERPX 0
 #define BARBORDERPX 2
@@ -88,18 +81,12 @@
 bar.background: SECONDARY
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK1
-bar.foreground-alt: #666666
+bar.foreground-alt: FOREGROUND_ALT
 
 bar.background-module: SECPONDARY
 
-bar.ramp-0: RAMP_0
-bar.ramp-1: RAMP_1
-bar.ramp-2: RAMP_2
-bar.ramp-3: RAMP_3
-bar.ramp-4: RAMP_4
-
 bar.tag-focused: RED1
-bar.tag-occupied: RAMP_0
+bar.tag-occupied: BLACK_ALT
 bar.tag-unoccupied: BACKGROUND
 
 bar.layout-symbol: PRIMARY
@@ -120,18 +107,15 @@ bar.y: BARY
 bar.width: BARWIDTH
 bar.height: BARHEIGHT
 
-bar.font: BARFONT
-
 !! slock
 slock.init-color: BACKGROUND
-slock.input-color: RAMP_2
-slock.failed-color: YELLOW1
+slock.input-color: BLACK1
+slock.failed-color: RED1
 slock.caps-color: CYAN1
 
 !! dwm
 dwm.selbordercolor: WHITE2
 dwm.normbordercolor: BACKGROUND
-
 dwm.selfloatbordercolor: RED1
 dwm.normfloatbordercolor: SECONDARY
 
@@ -156,7 +140,6 @@ dwm.selonlyborders: 0
 
 dwm.gaps: GAPS
 dwm.outergaps: OUTERGAPS
-
 dwm.y_inset: 0
 
 dwm.keymodepath: /tmp/dwm.keymode
