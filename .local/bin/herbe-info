@@ -9,10 +9,12 @@ fi
 
 bat="$(bat)%"
 
+space="$(space print)"
+
 killall herbe & 
 herbe \
       "$(date +'%A, %d %h, %H:%M')" \
       "......................" " " \
       "Volume: $vol" " "  \
-      "Charge: $bat"  \
-
+      "Charge: $bat" " " \
+      "Disk:   $space" 

@@ -11,5 +11,5 @@ case $1 in
     used)  echo $used  ;;
     avail) echo $avail ;;
     use)   echo $use   ;;
-    *) echo "$avail ($use used)"
+    *) echo "$avail ($use used)" ;;
 esac
