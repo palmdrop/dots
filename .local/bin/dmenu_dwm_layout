@@ -9,8 +9,10 @@ declare -A layouts
 # Iterate over all layouts 
 for row in ${layout_data}; do
     # Fetch relevant data
-    symbol=$(echo $row | jq --unbuffered -r '.symbol')
-    address=$(echo $row | jq --unbuffered -r '.address')
+    #symbol=$(echo $row | jq --unbuffered -r '.symbol')
+    #address=$(echo $row | jq --unbuffered -r '.address')
+    symbol=$(grep -oP '"symbol":"\K.*?(?=",)' <<< "$row")
+    address=$(grep -oP '"address":\K.*?(?=})' <<< "$row")
 
     # Associate symbol with address
     layouts+=([$symbol]=$address)
