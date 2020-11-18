@@ -24,7 +24,8 @@
 #define TRANSPARENT     #00000000
 #define PRIMARY         #d5cbcd
 #define SECONDARY       #a89ea3
-#define ACCENT          #5a4d66
+#define ACCENT          #6a5d66
+##define ACCENT          #c9c0b0
 
 !! Colors
 ! special
