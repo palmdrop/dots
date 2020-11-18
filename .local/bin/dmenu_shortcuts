@@ -31,5 +31,5 @@ cmd=${paths[$choice]}
 
 eval $cmd
 
-
+dwm-msg --ignore-reply run_command focusurgent
 
