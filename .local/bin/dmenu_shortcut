@@ -1,0 +1,5 @@
+#!/bin/bash
+
+file=$XDG_CONFIG_HOME/shortcuts.config
+
+
