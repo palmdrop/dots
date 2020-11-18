@@ -130,16 +130,10 @@ PS1="\[\e[30m\]\w\[\e[00m\] \[\e[32m\]\$(parse_git_branch)\[\e[00m\] "
 trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
 
 # SHORTCUTS
-alias notes="cd /home/xan/usr/notes/"
-alias writing="cd /home/xan/usr/writing/current"
-alias bdwm="cd /home/xan/src/builds/dwm"
-alias bst="cd /home/xan/src/builds/st/"
 alias paste="xclip -selection clipboard -o"
 alias copycolor="grabc 2> /dev/null | copy"
 alias bin="cd /home/xan/.local/bin/"
 alias z="zathura"
-alias bdmenu="cd /home/xan/src/builds/dmenu/"
-alias logs="cd /home/xan/.local/log/personal/"
 alias config="cd $XDG_CONFIG_HOME"
 alias png-compress="pngquant --force --quality=40-100 --strip --skip-if-larger --verbose"
 alias ka="killall"
