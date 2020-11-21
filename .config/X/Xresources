@@ -1,23 +1,23 @@
 !Defines
 #define FOREGROUND      #b0a5b0
 #define FOREGROUND_ALT  #666666
-#define BACKGROUND      #110E11
+#define BACKGROUND      #120e12
 #define CURSORCOLOR     #888888
 #define BLACK1          #4a4348
 #define BLACK2          #403c42
 #define BLACK_ALT       #232323
-#define RED1            #856771
-#define RED2            #856771
-#define GREEN1          #75798e
-#define GREEN2          #75798e
-#define YELLOW1         #9C8673
-#define YELLOW2         #9C8673
-#define BLUE1           #83a19d
-#define BLUE2           #83a19d
-#define MAGENTA1        #9383A3
-#define MAGENTA2        #9383A3
-#define CYAN1           #927676
-#define CYAN2           #927676
+#define RED1            #82656e
+#define RED2            #82656e
+#define GREEN1          #767c9c
+#define GREEN2          #767c9c
+#define YELLOW1         #a79671
+#define YELLOW2         #a79671
+#define BLUE1           #87adac
+#define BLUE2           #87adac
+#define MAGENTA1        #8a778b
+#define MAGENTA2        #8a778b
+#define CYAN1           #997676
+#define CYAN2           #997676
 #define WHITE1          #9d9497
 #define WHITE2          #d5cbcd
 
