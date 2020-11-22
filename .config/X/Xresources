@@ -6,18 +6,18 @@
 #define BLACK1          #4a4348
 #define BLACK2          #403c42
 #define BLACK_ALT       #232323
-#define RED1            #82656e
-#define RED2            #82656e
+#define RED1            #825e6a
+#define RED2            #825e6a
 #define GREEN1          #767c9c
 #define GREEN2          #767c9c
-#define YELLOW1         #a79671
-#define YELLOW2         #a79671
-#define BLUE1           #87adac
-#define BLUE2           #87adac
-#define MAGENTA1        #8a778b
-#define MAGENTA2        #8a778b
-#define CYAN1           #997676
-#define CYAN2           #997676
+#define YELLOW1         #a68c6a
+#define YELLOW2         #a68c6a
+#define BLUE1           #709999
+#define BLUE2           #709999
+#define MAGENTA1        #827d99
+#define MAGENTA2        #827d99
+#define CYAN1           #997680
+#define CYAN2           #997680
 #define WHITE1          #9d9497
 #define WHITE2          #d5cbcd
 
@@ -25,6 +25,10 @@
 #define PRIMARY         #d5cbcd
 #define SECONDARY       #a89ea3
 #define ACCENT          #857067
+
+! white
+*.color7:       #9d9497
+*.color15:      #d5cbcd
 
 !! Colors
 ! special
@@ -161,7 +165,7 @@ herbe.duration: 3
 dmenu.topbar: 1
 
 dmenu.x: 660
-dmenu.y: 300
+dmenu.y: 325
 dmenu.w: 500
 dmenu.h: 30
 dmenu.borderpx: 50
