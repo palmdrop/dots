@@ -12,10 +12,10 @@
 #define GREEN2          #767c9c
 #define YELLOW1         #a68c6a
 #define YELLOW2         #a68c6a
-#define BLUE1           #709999
-#define BLUE2           #709999
-#define MAGENTA1        #827d99
-#define MAGENTA2        #827d99
+#define BLUE1           #81a3a3
+#define BLUE2           #81a3a3
+#define MAGENTA1        #877D99
+#define MAGENTA2        #877D99
 #define CYAN1           #997680
 #define CYAN2           #997680
 #define WHITE1          #9d9497
