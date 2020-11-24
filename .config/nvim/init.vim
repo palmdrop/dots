@@ -18,9 +18,6 @@ Plug 'ryuta69/elly.vim'
 " Statusline
 "Plug 'fehawen/sl.vim'
 
-" Highlighting for i3 config file
-" Plug 'PotatoesMaster/i3-vim-syntax'
-
 " Markdown support
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
