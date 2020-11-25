@@ -3,11 +3,9 @@ dmenu_run_log
 
 while pgrep -u $UID -x dmenu >/dev/null; do sleep 0.1; done 
 
-msg="$(cat /home/xan/.local/log/dmenu_out.log)"
+msg="$(cat $HOME/.local/log/dmenu_out.log)"
 
 if [ ! -z "$msg" ]
 then
     notify-send "$msg"
 fi
-
-

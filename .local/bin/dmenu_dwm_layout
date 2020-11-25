@@ -9,8 +9,6 @@ declare -A layouts
 # Iterate over all layouts 
 for row in ${layout_data}; do
     # Fetch relevant data
-    #symbol=$(echo $row | jq --unbuffered -r '.symbol')
-    #address=$(echo $row | jq --unbuffered -r '.address')
     symbol=$(grep -oP '"symbol":"\K.*?(?=",)' <<< "$row")
     address=$(grep -oP '"address":\K.*?(?=})' <<< "$row")
 
@@ -19,12 +17,13 @@ for row in ${layout_data}; do
 done
 
 # Get user choice
-choice=$(printf "%s\n" "${!layouts[@]}" | dmenu -i -F)
+choice=$(printf "%s\n" "${!layouts[@]}" | dmenu -i -F -p "layouts")
 
 # Exit if no choice
 [ -z "$choice" ] && exit 1
 
+# Get address of layout function
 address=${layouts[$choice]}
 
-# Set dwm layout
+# Set layout safely using dwm-msg
 dwm-msg run_command setlayoutsafe $address

@@ -55,7 +55,7 @@ case $1 in
         fi
 
         # Get user choice
-        directory=$(cat $2 | dmenu)
+        directory=$(cat $2 | dmenu -i -F -p "directory")
         
         # Expand potential use of ~
         eval directory=$directory
@@ -71,7 +71,7 @@ case $1 in
 esac
 
 # Read user choice using dmenu
-choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F)
+choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F -p "edit")
 
 # Exit if no choice
 [ -z "$choice" ] && exit 1

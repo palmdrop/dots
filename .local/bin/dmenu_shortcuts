@@ -22,14 +22,16 @@ do
 done < "$path"
 
 # Read user choice using dmenu
-choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F)
+choice=$(printf "%s\n" "${!paths[@]}" | dmenu -i -F -p "shortcuts")
 
 # Exit if no choice
 [ -z "$choice" ] && exit 1
 
+# Fetch assoicated command
 cmd=${paths[$choice]}
 
+# Execute command
 eval $cmd
 
+# Focus urgent windows, if there are any
 dwm-msg --ignore-reply run_command focusurgent
-
