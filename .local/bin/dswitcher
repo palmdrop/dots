@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Date format, for use as the prompt.
-#prompt=$(date +"%a %d. %b %R")
-prompt=""
+prompt="clients"
 
 # dmenu cannot display more than 30 lines, to avoid screen clutter. Only relevant if you have more than 30 windows open.
 height=$(wmctrl -l | wc -l)
