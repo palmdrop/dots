@@ -18,6 +18,7 @@ export HISTFILE=$XDG_CONFIG_HOME/bash/history
 export NOTES_DIR=$HOME/usr/notes
 export TASKRC=$XDG_CONFIG_HOME/task/config
 export BACKUP_DIR=$HOME/.local/backup
+export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 
 # Java fix for dwm
 export _JAVA_AWT_WM_NONREPARENTING=1 
