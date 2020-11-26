@@ -56,10 +56,10 @@ spotify &
 $BROWSER &
 
 # Autolock after a few minutes
-autolock &
+#autolock &
 
-# Hacky way of starting my dwm-notify script
-(sleep 4s; dwm-notify) &
+# dwm-related notifications
+dwm-notify &
 
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
