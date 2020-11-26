@@ -1,53 +1,61 @@
 #!/bin/bash
 
-# Subscribe to layout change events
-dwm-msg --ignore-reply subscribe layout_change_event | 
-# Parse result to get current layout symbol
-jq --unbuffered -r '.layout_change_event.new_symbol' | 
-# Continuously process new events
-while IFS=$'\n' read -r layout; do
-    # Send notification
-    notify-send "Layout: $layout" > /dev/null 2>&1
-done &
+# Infinite while loop, used to retry in case of socket connection lost.
+# Socket connection might be lost on dwm restart.
+while true; do 
 
-# Subscribe to tag change events
-dwm-msg --ignore-reply subscribe tag_change_event | 
-# Parse result to get urgent status
-jq --unbuffered -c '.tag_change_event' | 
-# Continuously process new events
-while IFS=$'\n' read -r event; do
+    # Subscribe to layout change events
+    dwm-msg --ignore-reply subscribe layout_change_event | 
+    # Parse result to get current layout symbol
+    jq --unbuffered -r '.layout_change_event.new_symbol' | 
+    # Continuously process new events
+    while IFS=$'\n' read -r layout; do
+        # Send notification
+        notify-send "Layout: $layout" > /dev/null 2>&1
+    done &
 
-    # Get urgency status
-    urgent=$(echo ${event} | jq --unbuffered -r '.new_state.urgent')
+    # Subscribe to tag change events
+    dwm-msg --ignore-reply subscribe tag_change_event | 
+    # Parse result to get urgent status
+    jq --unbuffered -c '.tag_change_event' | 
+    # Continuously process new events
+    while IFS=$'\n' read -r event; do
 
-    # Get previous urgency status
-    prev_urgent=$(echo "$event" | jq --unbuffered -r '.old_state.urgent')
+        # Get urgency status
+        urgent=$(echo ${event} | jq --unbuffered -r '.new_state.urgent')
 
-    # Get currently selected status
-    selected=$(echo "$event" | jq --unbuffered -r '.new_state.selected')
+        # Get previous urgency status
+        prev_urgent=$(echo "$event" | jq --unbuffered -r '.old_state.urgent')
 
-    # Check if urgent flag is non-zero (and has changed)
-    # This ensures an event is only sent once the urgency changes, not every time
-    # there's a tag change event.
-    if (( $urgent != 0 )) && (( $urgent != $prev_urgent )); then 
-        # Find value of first set bit
-        for t in {0..8}
-        do
-            # If bit is set...
-            if (( ($urgent & (1 << $t)) != 0)); then
-                # Check to see if tag is focused. If yes, send no event.
-                if (( ($selected & (1 << $t)) != 0)); then
-                    continue
+        # Get currently selected status
+        selected=$(echo "$event" | jq --unbuffered -r '.new_state.selected')
+
+        # Check if urgent flag is non-zero (and has changed)
+        # This ensures an event is only sent once the urgency changes, not every time
+        # there's a tag change event.
+        if (( $urgent != 0 )) && (( $urgent != $prev_urgent )); then 
+            # Find value of first set bit
+            for t in {0..8}
+            do
+                # If bit is set...
+                if (( ($urgent & (1 << $t)) != 0)); then
+                    # Check to see if tag is focused. If yes, send no event.
+                    if (( ($selected & (1 << $t)) != 0)); then
+                        continue
+                    fi
+
+                    # Increment to get tag number
+                    tag=$(($t + 1))
+                    # Send notification
+                    notify-send "Urgent window" "Tag: $tag" > /dev/null 2>&1
+
+                    # Break loop
+                    break
                 fi
+            done
+        fi
+    done 
 
-                # Increment to get tag number
-                tag=$(($t + 1))
-                # Send notification
-                notify-send "Urgent window" "Tag: $tag" > /dev/null 2>&1
-
-                # Break loop
-                break
-            fi
-        done
-    fi
-done 
+    # Wait 0.1 seconds before trying to subscribe to events again
+    sleep 0.1s
+done
