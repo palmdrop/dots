@@ -1,20 +1,32 @@
 #!/bin/bash
 
+# Get volume as 0-100 percentage
 vol="$(vol print)%"
 
+# Prepend (Muted) if the sound is indeed muted
 if [ "$(pamixer --get-mute)" = "true" ]
 then
     vol="(Muted) $vol"
 fi
 
+# Get battery charge as 0-100 percentage
 bat="$(bat)%"
 
+# Get free disk space
 space="$(space print)"
 
-killall herbe & 
-herbe \
-      "$(date +'%A, %d %h, %H:%M')" \
-      "......................" " " \
+# Get current date
+date="$(date +'%A, %d %h, %H:%M')"
+
+# Create a separator string of periods of the same length as 
+# the date string.
+l=${#date}
+separator=$(printf "%${l}s" | sed 's/ /./g')
+
+# Send notification
+notify-send \
+      "$date"\
+      "$separator" " "\
       "Volume: $vol" " "  \
       "Charge: $bat" " " \
       "Disk:   $space" 
