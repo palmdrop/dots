@@ -1,0 +1,10 @@
+# Testing
+alt + shift + w 
+	brave 
+
+
+
+# Reload sxhkd
+alt + shift + Escape
+	pkill -USR1 -x sxhkd
+	
