@@ -22,6 +22,9 @@ Plug 'ryuta69/elly.vim'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+" sxhkd highlighting
+Plug 'kovetskiy/sxhkd-vim'
+
 " Nerdtree
 Plug 'preservim/nerdtree'
 
