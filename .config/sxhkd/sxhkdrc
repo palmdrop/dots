@@ -1,8 +1,138 @@
-# Testing
-alt + shift + w 
-	brave 
+#########################
+# Application shortcuts #
+#########################
+
+# Dmenu
+alt + d
+	dmenu_run_notify
+
+# Terminal
+alt + Return 
+	$TERMINAL -g 100x28
+
+# Browsnig
+alt + b
+	$BROWSER
+
+# Ranger and newsboat
+alt + {e,r}
+	$TERMINAL -g 100x28 {ranger, newsboat}
+
+# Mpv for watching youtube videos
+alt + y
+	mpvplay
+
+# Taskwarrior
+alt + t
+	$TERMINAL -t floating -g 100x28 -e sh -c vit
+
+# Photo editing
+alt + g
+	gimp
+
+# Coding
+alt + c
+	idea
+
+# Notifications
+alt + o
+	herbe-info
+
+alt + p
+	play
+
+#########
+# MENUS #
+#########
+
+# Edit dotfiles
+alt + shift + d       
+	dmenu_dots_edit
+
+# Edit directories
+alt + shift + e       
+	dmenu_dirs_edit
+
+# Access shortcuts
+alt + shift + c       
+	dmenu_shortcuts
+
+# Change dwm layout
+alt + z
+	dmenu_dwm_layout
+
+# Switch window
+alt + f
+	dswitcher
+
+# Access passwords
+alt + shift + p       
+	passmenu
+
+# Shutdown menu
+alt + control + e
+	shutdownmenu
+
+##########################
+# MEDIA/SETTINGS CONTROL #
+##########################
+
+# Audio control
+XF86Audio{Raise,Lower}Volume
+	vol {up, down}
+
+XF86Audio{Play,Mute,Stop}
+	play {pause, mute, stop}
+
+XF86Audio{Prev,Next}
+	play {prev, next}
+
+# Brightness control
+XF86MonBrightness{Up,Down}
+	bri {up, down}
+
+# Printscreen control
+Print
+	flameshot full -p /home/xan/usr/pictures/screenshots/
+
+alt + Print
+	flameshot gui
+
+# Mount control
+alt + {_, shift +} m
+	$TERMINAL -t floating -g 50x10 -e sh -c sudo {dmount, dumount}
+
+# Wifi control
+alt + w 
+	networkmanager_dmenu -i -F
+	
 
 
+#########################
+# WINDOW AND WM CONTROL #
+#########################
+
+# Bar control
+alt + shift + b
+	togglebar
+
+# Flash focused window
+alt + q
+	flash_window
+
+
+# Lock computer
+alt + x
+	slock
+
+# Xkill
+alt + shift + x
+	xkill
+
+
+########
+# META # 
+########
 
 # Reload sxhkd
 alt + shift + Escape
