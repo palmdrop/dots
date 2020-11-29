@@ -61,5 +61,7 @@ $BROWSER &
 # dwm-related notifications
 dwm-notify &
 
+#sxhkd &
+
 # Start window manager
 while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
