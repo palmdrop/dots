@@ -35,43 +35,42 @@ alt + e; c
 	idea
 
 # Notifications
-alt + o
+alt + i; o
 	herbe-info
 
-alt + p
+alt + i; p
 	play
 
 #########
 # MENUS #
 #########
-
 # Edit dotfiles
-alt + shift + d       
+alt + m; d 
 	dmenu_dots_edit
 
 # Edit directories
-alt + shift + e       
+alt + m; f
 	dmenu_dirs_edit
 
 # Access shortcuts
-alt + shift + c       
+alt + m; e
 	dmenu_shortcuts
 
-# Change dwm layout
-alt + z
-	dmenu_dwm_layout
-
-# Switch window
-alt + f
-	dswitcher
-
 # Access passwords
-alt + shift + p       
+alt + m; p
 	passmenu
 
-# Shutdown menu
-alt + control + e
-	shutdownmenu
+# Switch window
+alt + m; s
+	dswitcher
+
+# Access network menu
+alt + m; w
+	networkmanager_dmenu -i -F 
+
+# Mount control
+alt + m; {_, shift +} m
+	$TERMINAL -t floating -g 50x10 -e sh -c sudo {dmount, dumount}
 
 ##########################
 # MEDIA/SETTINGS CONTROL #
@@ -98,35 +97,29 @@ Print
 alt + Print
 	flameshot gui
 
-# Mount control
-alt + {_, shift +} m
-	$TERMINAL -t floating -g 50x10 -e sh -c sudo {dmount, dumount}
-
-# Wifi control
-alt + w 
-	networkmanager_dmenu -i -F
-
-
 #########################
 # WINDOW AND WM CONTROL #
 #########################
 
 # Bar control
-alt + shift + b
-	togglebar
+#alt + shift + b
+#	togglebar
 
 # Flash focused window
 alt + q
 	flash_window
 
-
 # Lock computer
-alt + x
-	slock
+alt + s; x
+	lock
 
 # Xkill
-alt + shift + x
+alt + s; k
 	xkill
+
+# Shutdown menu
+alt + s; e
+	shutdownmenu
 
 
 ########
@@ -135,5 +128,5 @@ alt + shift + x
 
 # Reload sxhkd
 alt + shift + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send "sxhkd reloaded"
 	
