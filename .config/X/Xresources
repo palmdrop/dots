@@ -26,10 +26,6 @@
 #define SECONDARY       #a89ea3
 #define ACCENT          #857067
 
-! white
-*.color7:       #9d9497
-*.color15:      #d5cbcd
-
 !! Colors
 ! special
 *.foreground:   FOREGROUND
@@ -185,3 +181,13 @@ dmenu.selhighlightbgcolor:  PRIMARY
 !! st
 st.alpha: 1.0 
 st.background: BACKGROUND
+
+!! urxvt
+!!Xft.dpi:        110
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+URxvt.font:xft:Fantasque Sans Mono:pixelsize=14
+URxvt.internalBorder: 20

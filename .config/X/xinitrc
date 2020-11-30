@@ -59,9 +59,11 @@ $BROWSER &
 #autolock &
 
 # dwm-related notifications
-dwm-notify &
+#dwm-notify &
 
-#sxhkd &
+sxhkd &
+
+exec openbox-session
 
 # Start window manager
-while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
+#while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 
