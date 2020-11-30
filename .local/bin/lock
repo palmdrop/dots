@@ -1,0 +1,39 @@
+#!/bin/sh
+
+i3lock --nofork                 \
+    --ignore-empty-password	\
+    --linecolor=00000000        \
+    --keyhlcolor=ebcb8b00       \
+    --bshlcolor=d8dee900	\
+    --separatorcolor=00000000   \
+    --radius=1			\
+    --indpos="1000:700"		\
+    \
+    --insidevercolor=00000000	\
+    --insidewrongcolor=00000000 \
+    --insidecolor=00000000	\
+    \
+    --ringcolor=e59d1700        \
+    --ringvercolor=a3be8c00     \
+    --ringwrongcolor=bf616a00   \
+    \
+    --clock			\
+    --timecolor=$(xrdbvar .color0)	\
+    --timestr="%I:%M %p"	\
+    --time-font="Fantasque Sans Mono"	\
+    --timesize=30		\
+    --timepos="1200:740"		\
+    \
+    --datecolor=$(xrdbvar .color0)	\
+    --datestr="%A, %d %B"	\
+    --date-font="Fantasque Sans Mono"	\
+    --datesize=35		\
+    --datepos="tx:700"	\
+    \
+    --veriftext=""		\
+    --wrongtext=""		\
+    \
+    --indicator			\
+    \
+    --centered \
+    --image=$WALLPAPERS/lock.png
