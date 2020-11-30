@@ -11,27 +11,27 @@ alt + Return
 	$TERMINAL -g 100x28
 
 # Browsnig
-alt + b
+alt + e; b
 	$BROWSER
 
 # Ranger and newsboat
-alt + {e,r}
+alt + e; {e,r}
 	$TERMINAL -g 100x28 {ranger, newsboat}
 
 # Mpv for watching youtube videos
-alt + y
+alt + e; y
 	mpvplay
 
 # Taskwarrior
-alt + t
+alt + e; t
 	$TERMINAL -t floating -g 100x28 -e sh -c vit
 
 # Photo editing
-alt + g
+alt + e; g
 	gimp
 
 # Coding
-alt + c
+alt + e; c
 	idea
 
 # Notifications
@@ -105,7 +105,6 @@ alt + {_, shift +} m
 # Wifi control
 alt + w 
 	networkmanager_dmenu -i -F
-	
 
 
 #########################
