@@ -191,3 +191,8 @@ Xft.hintstyle:  hintfull
 
 URxvt.font:xft:Fantasque Sans Mono:pixelsize=14
 URxvt.internalBorder: 20
+
+!!
+bspwm.presel_color: RED1
+bspwm.gaps:         GAPS
+bspwm.outergaps:    OUTERGAPS

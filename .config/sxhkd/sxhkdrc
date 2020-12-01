@@ -35,42 +35,39 @@ alt + e; c
 	idea
 
 # Notifications
-alt + i; o
-	herbe-info
-
-alt + i; p
-	play
+alt + control + {o,p}
+	{herbe-info &, play &}
 
 #########
 # MENUS #
 #########
 # Edit dotfiles
-alt + m; d 
+alt + shift + d; d 
 	dmenu_dots_edit
 
 # Edit directories
-alt + m; f
+alt + shift + d; f
 	dmenu_dirs_edit
 
 # Access shortcuts
-alt + m; e
+alt + shift + d; c
 	dmenu_shortcuts
 
 # Access passwords
-alt + m; p
+alt + shift + d; p
 	passmenu
 
 # Switch window
-alt + m; s
+alt + shift + d; s
 	dswitcher
 
 # Access network menu
-alt + m; w
+alt + shift + d; w
 	networkmanager_dmenu -i -F 
 
 # Mount control
-alt + m; {_, shift +} m
-	$TERMINAL -t floating -g 50x10 -e sh -c sudo {dmount, dumount}
+alt + shift + d; {_, shift +} m
+	$TERMINAL -t floating -g 50x10 sudo {dmount, dumount}
 
 ##########################
 # MEDIA/SETTINGS CONTROL #
@@ -102,8 +99,8 @@ alt + Print
 #########################
 
 # Bar control
-#alt + shift + b
-#	togglebar
+alt + shift + b
+	togglebarbspwm
 
 # Flash focused window
 alt + q
