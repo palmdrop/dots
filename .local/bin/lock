@@ -22,7 +22,7 @@ i3lock --nofork                 \
     --timestr="%I:%M %p"	\
     --time-font="Fantasque Sans Mono"	\
     --timesize=60		\
-    --timepos="1200:750"		\
+    --timepos="1100:750"		\
     \
     --datecolor=$(xrdbvar .color8)	\
     --datestr="%A, %d %B"	\

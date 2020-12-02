@@ -1,129 +1,145 @@
-#########################
-# Application shortcuts #
-#########################
+###################
+# SESSION CONTROL #
+###################
 
-# Dmenu
-alt + d
-	dmenu_run_notify
+# quit/restart bspwm
+alt + control + {q,r}
+	bspc {quit,wm -r}; notify-send "bspwm reloaded"
 
-# Terminal
-alt + Return 
-	$TERMINAL -g 100x28
+################
+# NODE CONTROL #
+################
 
-# Browsnig
-alt + e; b
-	$BROWSER
+# close and kill
+alt + shift + q
+	bspc node -c
 
-# Ranger and newsboat
-alt + e; {e,r}
-	$TERMINAL -g 100x28 {ranger, newsboat}
+##################
+# LAYOUT CONTROL #
+##################
 
-# Mpv for watching youtube videos
-alt + e; y
-	mpvplay
+# alternate between the tiled and monocle layout
+#alt + control + m
+#	bspc desktop -l next
 
-# Taskwarrior
-alt + e; t
-	$TERMINAL -t floating -g 100x28 -e sh -c vit
+# send the newest marked node to the newest preselected node
+alt + y
+	bspc node newest.marked.local -n newest.!automatic.local
 
-# Photo editing
-alt + e; g
-	gimp
+# swap the current node and the biggest window
+alt + shift + Return
+	bspc node -s biggest.local
 
-# Coding
-alt + e; c
-	idea
+#
+# state/flags
+#
 
-# Notifications
-alt + control + {o,p}
-	{herbe-info &, play &}
+# set the window state
+alt + {t,shift + t,space,f}
+	bspc node -t \~{tiled,pseudo_tiled,floating,fullscreen}
 
-#########
-# MENUS #
-#########
-# Edit dotfiles
-alt + shift + d; d 
-	dmenu_dots_edit
+# set the node flags
+alt + control + m ; {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
 
-# Edit directories
-alt + shift + d; f
-	dmenu_dirs_edit
+# Increase or decrease the window gaps
+alt + {comma,period}
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2))
 
-# Access shortcuts
-alt + shift + d; c
-	dmenu_shortcuts
+########################
+# WORKSPACE MANAGEMENT #
+########################
 
-# Access passwords
-alt + shift + d; p
-	passmenu
+# focus the next/previous window in the current desktop
+alt + {_, shift +} {j,k}
+	bspc node -{f,s} {next,prev}.local.!hidden.window
 
-# Switch window
-alt + shift + d; s
-	dswitcher
+# focus the next/previous desktop or send a node to the next/previous desktop
+alt + {_, shift +} {h,l}
+	bspc {desktop -f, node -d} {prev,next}.local
 
-# Access network menu
-alt + shift + d; w
-	networkmanager_dmenu -i -F 
+# send a node to the next/previous desktop and follow
+alt + ctrl + {h,l}
+	bspc node -d {prev,next} --follow
 
-# Mount control
-alt + shift + d; {_, shift +} m
-	$TERMINAL -t floating -g 50x10 sudo {dmount, dumount}
+# focus the last node/desktop
+alt + Tab
+	bspc desktop -f last
 
-##########################
-# MEDIA/SETTINGS CONTROL #
-##########################
+# focus or send to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
-# Audio control
-XF86Audio{Raise,Lower}Volume
-	vol {up, down}
+# send node to workspace and follow
+alt + ctrl + {1-9}
+	bspc node -d '^{1-9,10}' --follow
 
-XF86Audio{Play,Mute,Stop}
-	play {pause, mute, stop}
+# focus first unoccupied workspace
+alt + a
+    bspc desktop -f 'next.!occupied'
 
-XF86Audio{Prev,Next}
-	play {prev, next}
+# send node to first empty workspace
+alt + shift + a
+    bspc node -d 'next.!occupied'
 
-# Brightness control
-XF86MonBrightness{Up,Down}
-	bri {up, down}
-
-# Printscreen control
-Print
-	flameshot full -p /home/xan/usr/pictures/screenshots/
-
-alt + Print
-	flameshot gui
-
-#########################
-# WINDOW AND WM CONTROL #
-#########################
-
-# Bar control
-alt + shift + b
-	togglebarbspwm
-
-# Flash focused window
-alt + q
-	flash_window
-
-# Lock computer
-alt + s; x
-	lock
-
-# Xkill
-alt + s; k
-	xkill
-
-# Shutdown menu
-alt + s; e
-	shutdownmenu
+# send node to first empty workspace and follow
+alt + control + a
+    bspc node -d 'next.!occupied' --follow
 
 
-########
-# META # 
-########
+# focus the node in the given direction
+#alt + {_,shift + }{h,j,k,l}
+#	bspc node -{f,s} {west,south,north,east}
 
-# Reload sxhkd
-alt + shift + Escape
-	pkill -USR1 -x sxhkd; notify-send "sxhkd reloaded"
-	
+# focus the node for the given path jump
+#alt + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
+
+
+# focus the older or newer node in the focus history
+#alt + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#bspc wm -h on
+
+################
+# PRESELECTION #
+################
+
+# preselect the direction
+alt + shift + control + {h,j,k,l}
+	bspc-presel {west,south,north,east} 0.1
+
+# cancel the preselection for all nodes on the desktp
+alt + Escape 
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Move current window to pre-selected space
+alt + shift + m
+    bspc node -n last.!automatic
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+#super + {h,j,k,l}
+#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+alt + r : {h,j,k,l}
+    export STEP=20; export SELECTION={1,2,3,4}; \
+    bspc-resize
+
+# contract a window by moving one of its side 
+#super + shift + {h,j,k,l}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+alt + r : control + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##############
+# SCRATCHPAD #
+##############
+
+alt + minus 
+	bspc-toggle-visibility todo "$TERMINAL -c todo -e vit" 
