@@ -1,19 +1,19 @@
 #!/bin/bash
-case $SELECTION in
-    1)
-        bspc node -z left    $STEP 0
-        bspc node -z right  -$STEP 0
+case $1 in
+    h)
+        bspc node -z left    $2 0
+        bspc node -z right  -$2 0
     ;;
-    2)
-        bspc node -z top     0  $STEP
-        bspc node -z bottom  0 -$STEP
+    j)
+        bspc node -z top     0  $2
+        bspc node -z bottom  0 -$2
     ;;
-    3)
-        bspc node -z top     0 -$STEP
-        bspc node -z bottom  0  $STEP
+    k)
+        bspc node -z top     0 -$2
+        bspc node -z bottom  0  $2
     ;;
-    4)
-        bspc node -z left   -$STEP 0
-        bspc node -z right   $STEP 0 
+    l)
+        bspc node -z left   -$2 0
+        bspc node -z right   $2 0 
     ;;
 esac
