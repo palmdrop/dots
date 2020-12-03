@@ -1,19 +1,35 @@
 #!/bin/bash
-case $1 in
-    h)
-        bspc node -z left    $2 0
-        bspc node -z right  -$2 0
-    ;;
-    j)
-        bspc node -z top     0  $2
-        bspc node -z bottom  0 -$2
-    ;;
-    k)
-        bspc node -z top     0 -$2
-        bspc node -z bottom  0  $2
-    ;;
-    l)
-        bspc node -z left   -$2 0
-        bspc node -z right   $2 0 
-    ;;
-esac
+
+# Partly stolen from unknow source on reddit....
+direction="$1"
+sense="$2"
+amount="$3"
+
+if [ "$sense" = "+" ]; then
+    countersense="-"
+else
+    countersense="+"
+fi
+
+# If floating, resize around center
+if [ $(bspc query -T -n | jq -r '.client.state') = "floating" ]; then
+    amount=$(( $amount / 2 ))
+    case $direction in
+        x)
+            bspc node -z left   $countersense$amount 0
+            bspc node -z right  $sense$amount        0
+        ;;
+        y)
+            bspc node -z top     0 $countersense$amount
+            bspc node -z bottom  0 $sense$amount
+    esac
+else
+    # Otherwise, do it the tiled way
+    if [ "$direction" = "x" ]; then
+        bspc node --resize "right"  "${sense}$amount"        "0" ||
+        bspc node --resize "left"   "${countersense}$amount" "0"
+    else
+        bspc node --resize "bottom" "0" "${sense}$amount"        ||
+        bspc node --resize "top"    "0" "${countersense}$amount"
+    fi
+fi
