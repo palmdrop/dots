@@ -1,4 +1,6 @@
-!Defines
+!!!!!!!!!!!!!
+!! Defines !!
+!!!!!!!!!!!!!
 #define FOREGROUND      #b0a5b0
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #120e12
@@ -26,7 +28,9 @@
 #define SECONDARY       #a89ea3
 #define ACCENT          #857067
 
-!! Colors
+!!!!!!!!!!!!
+!! Colors !!
+!!!!!!!!!!!!
 ! special
 *.foreground:   FOREGROUND
 *.background:   BACKGROUND
@@ -64,7 +68,9 @@
 *.color7:       WHITE1
 *.color15:      WHITE2
 
-!! General settings
+!!!!!!!!!!!!!!!!!!!!!!
+!! General settings !!
+!!!!!!!!!!!!!!!!!!!!!!
 #define BORDERPX 0
 #define FLOATBORDERPX 0
 #define BARBORDERPX 2
@@ -72,7 +78,9 @@
 #define GAPS 23
 #define OUTERGAPS 40
 
-!! bar
+!!!!!!!!!
+!! bar !!
+!!!!!!!!!
 #define BARX 600
 #define BARY 5
 #define BARWIDTH 720
@@ -107,13 +115,17 @@ bar.y: BARY
 bar.width: BARWIDTH
 bar.height: BARHEIGHT
 
-!! slock
+!!!!!!!!!!!
+!! slock !!
+!!!!!!!!!!!
 slock.init-color: BACKGROUND
 slock.input-color: BLACK1
 slock.failed-color: RED1
 slock.caps-color: CYAN1
 
-!! dwm
+!!!!!!!!!
+!! dwm !!
+!!!!!!!!!
 dwm.selbordercolor: WHITE2
 dwm.normbordercolor: BACKGROUND
 dwm.selfloatbordercolor: RED1
@@ -144,20 +156,24 @@ dwm.y_inset: 0
 
 dwm.keymodepath: /tmp/dwm.keymode
 
-!! herbe
+!!!!!!!!!!!
+!! herbe !!
+!!!!!!!!!!!
 herbe.background_color: PRIMARY
 herbe.border_color: SECONDARY
 herbe.font_color: CURSORCOLOR
 herbe.line_spacing: 5
 herbe.padding: 30
-herbe.width: 250
+herbe.width: 270
 herbe.border_size: 3
 herbe.pos_x: 20
 herbe.pos_y: 10
 herbe.corner: 1
 herbe.duration: 3 
 
-!! dmenu
+!!!!!!!!!!!
+!! dmenu !!
+!!!!!!!!!!!
 dmenu.topbar: 1
 
 dmenu.x: 660
@@ -178,11 +194,17 @@ dmenu.normhighlightbgcolor: PRIMARY
 dmenu.selhighlightfgcolor:  RED1
 dmenu.selhighlightbgcolor:  PRIMARY
 
-!! st
+dmenu.font: scientifica:size=10
+
+!!!!!!!!
+!! st !!
+!!!!!!!!
 st.alpha: 1.0 
 st.background: BACKGROUND
 
-!! urxvt
+!!!!!!!!!!!
+!! urxvt !!
+!!!!!!!!!!!
 !!Xft.dpi:        110
 Xft.antialias:  true
 Xft.rgba:       rgb
@@ -193,8 +215,21 @@ URxvt.font:xft:scientifica:pixelsize=16
 URxvt.internalBorder: 30
 URxvt.scrollBar: false
 URxvt.letterSpace: -8
+URxvt.iso14755 : false
 
-!!
+! Change copy-paste keybindds
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
+! Create keybind for scrolling up and down using j and k
+URxvt.keysym.Shift-Control-K: command:\033]720;1\007
+URxvt.keysym.Shift-Control-J: command:\033]721;1\007
+
+!!!!!!!!!!!
+!! bspwm !!
+!!!!!!!!!!!
 bspwm.presel_color: RED1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS

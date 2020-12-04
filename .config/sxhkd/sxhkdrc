@@ -173,5 +173,4 @@ alt + r : {t,shift + t,space,f}
 ##############
 
 alt + minus 
-	bspc rule -a todo state=floating & \
-	bspc-toggle-visibility todo "$TERMINAL -g 100x30 -c todo -e vit"
+	bspc-toggle-visibility scratch "$TERMINAL -g 100x30 -title scratch -name scratch -e vit"

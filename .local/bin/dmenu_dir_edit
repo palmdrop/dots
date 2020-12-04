@@ -1,2 +1,0 @@
-#!/bin/bash
-dmenu_edit dir $1

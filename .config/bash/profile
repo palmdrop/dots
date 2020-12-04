@@ -3,7 +3,7 @@
 #
 
 # DEFAULT PROGRAMS
-export TERMINAL=st
+export TERMINAL=urxvt
 export PAGER=less
 export EDITOR=nvim
 export VISUAL=nvim

@@ -109,6 +109,7 @@ alias tty-clock="tty-clock -cD"
 
 # Config management
 alias cgit='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots.git.d --work-tree=$HOME'
+alias cacommit="cgit add -u; cgit commit -m"
 
 # Settings
 set -o vi
@@ -130,6 +131,8 @@ PS1="\[\e[30m\]\w\[\e[00m\] \[\e[32m\]\$(parse_git_branch)\[\e[00m\] "
 trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
 
 # SHORTCUTS
+alias rc="killall picom; sleep 0.1; picom -b"
+alias copy="xclip -r -selection clipboard"
 alias paste="xclip -selection clipboard -o"
 alias copycolor="grabc 2> /dev/null | copy"
 alias bin="cd /home/xan/.local/bin/"
@@ -143,6 +146,7 @@ alias branches="git branch -a"
 alias delbranch="git branch -d"
 alias makebranch="git checkout -b"
 alias stat="git status"
+alias acommit="git add .; git commit -m"
 alias quote="nvim /home/xan/usr/notes/quotes.txt"
 alias cleancache="yay -Sc"
 alias scripts="cd /home/xan/.local/bin/"
