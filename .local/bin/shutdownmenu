@@ -1,6 +1,6 @@
 #!/bin/bash
 
-option=$(echo -e "Reboot\nShutdown\nSuspend\nLogout" | dmenu -i -n -p "Option:")
+option=$(echo -e "Reboot\nShutdown\nSuspend\nLogout\nLock" | dmenu -i -n -p "Option:")
 
 case "$option" in
     "Reboot")
@@ -13,11 +13,12 @@ case "$option" in
         systemctl suspend
         ;;
     "Logout")
-        pkill dwm
+        pkill bspwm
+        ;;
+    "Lock")
+        lock
         ;;
     *)
         echo "Invalid option."
         ;;
 esac
-
-

@@ -63,6 +63,3 @@ else
     # Set ratio
     bspc node -o $ratio
 fi
-
-
-

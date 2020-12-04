@@ -33,9 +33,22 @@ maxh=$(($sh - $padding*2))
 
 # Function for moving a window
 move() {
-    x=$(limit $1 $padding $maxw)
-    y=$(limit $2 $padding $maxh)
+    # If the limit flag is passed, the move will be restricted such that
+    # none of the window is outside the screen (taking padding into account)
+    if [ "$3" = "--limit" ]; then
+        mx=$(( $sw - $padding - $4 ))   
+        my=$(( $sh - $padding - $5 ))   
+    else
+        mx=$maxw
+        my=$maxh
+    fi
 
+    # Limit input values to screen space, to make sure entire
+    # window never is outside the scren
+    x=$(limit $1 $padding $mx)
+    y=$(limit $2 $padding $my)
+
+    # Move the window
     xdotool getactivewindow windowmove "$x" "$y"
 }
 
@@ -47,66 +60,85 @@ resize() {
 
 # Perform action
 case $2 in
+    # Move the window to the center of the screen
     center)   
         nx=$(( $sw/2 - $w/2 ))
         ny=$(( $sh/2 - $h/2 ))
         move "$nx" "$ny"
     ;;
+    # Move the window to the left screen edge
     left)
         nx=$padding
         ny=$y
         move "$nx" "$ny"
     ;;
+    # Move the window to the right screen edge
     right)
         nx=$(( $sw - $w - $padding ))
         ny=$y
         move "$nx" "$ny"
     ;;
+    # Move the window to the top screen edge
     top)
         nx=$x
         ny=$padding
         move "$nx" "$ny"
     ;;
+    # Move the window to the bottom screen edge
     bottom)
         nx=$x
         ny=$(( $sh - $h - $padding ))
         move "$nx" "$ny"
     ;;
+    # Move the window to the top left corner of the screen
     topleft)
         nx=$padding
         ny=$padding
         move "$nx" "$ny"
     ;;
+    # Move the window to the top right corner of the screen
     topright)
         nx=$(( $sw - $w - $padding ))
         ny=$padding
         move "$nx" "$ny"
     ;;
+    # Move the window to the bottom left corner of the screen
     bottomleft)
         nx=$padding
         ny=$(( $sh - $h - $padding ))
         move "$nx" "$ny"
     ;;
+    # Move the window to the bottom right corner of the screen
     bottomright)
         nx=$(( $sw - $w - $padding ))
         ny=$(( $sh - $h - $padding ))
         move "$nx" "$ny"
     ;;
+    # Multiply the width of the window by some weight
     multwidth)
+        # Calculate the desired widht of the window
         desiredw=$(printf "%.0f" $(echo "$w * $3" | bc))
 
+        # Limit the width to make sure it's never wider than the screen 
+        # (taking padding into account)
         nw=$(limit $desiredw $padding $maxw)
         nh=$h
 
+        # Resize the window
         resize "$nw" "$nh"
+
+        # If the center flag is passed, then keep the center of the window
+        # in the same position
         if [ "$4" == "center" ]; then
             nx=$(echo "$x - ($w * $3 - $w) / 2" | bc)
             ny=$y
 
-            move "$nx" "$ny"
+            # Move the window and limit it to not exceed screen dimensions
+            move "$nx" "$ny" --limit "$nw" "$nh"
         fi
 
     ;;
+    # Multiply the height of the window by some weight
     multheight)
         desiredh=$(printf "%.0f" $(echo "$h * $3" | bc))
 
@@ -118,8 +150,16 @@ case $2 in
             nx=$x
             ny=$(echo "$y - ($h * $3 - $h) / 2" | bc)
 
-            move "$nx" "$ny"
+            move "$nx" "$ny" --limit "$nw" "$nh"
         fi
+    ;;
+    # Move the window 
+    move)
+        nx=$(echo "$x + 0 $3" | bc)
+        ny=$(echo "$y + 0 $4" | bc)
+
+        # Move the window, and limit it to make sure it doesn't exit the screen
+        move "$nx" "$ny" --limit "$w" "$h"
     ;;
     *)
         echo "$1 is not an option."

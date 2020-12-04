@@ -83,7 +83,7 @@ bar.background-alt: BACKGROUND
 bar.foreground: BLACK1
 bar.foreground-alt: FOREGROUND_ALT
 
-bar.background-module: SECPONDARY
+bar.background-module: SECONDARY
 
 bar.tag-focused: RED1
 bar.tag-occupied: BLACK_ALT
@@ -189,10 +189,18 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-URxvt.font:xft:Fantasque Sans Mono:pixelsize=14
-URxvt.internalBorder: 20
+URxvt.font:xft:scientifica:pixelsize=16
+URxvt.internalBorder: 30
+URxvt.scrollBar: false
+URxvt.letterSpace: -8
 
 !!
 bspwm.presel_color: RED1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
+bspwm.borderpx:     0
+
+bspwm.outerborderfocused: BACKGROUND
+bspwm.outerbordernormal:  BACKGROUND
+bspwm.innerborderfocused: RED1
+bspwm.innerbordernormal:  BACKGROUND

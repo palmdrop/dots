@@ -9,5 +9,8 @@ dir=$backup_location$backup_name
 
 [ -d $dir ] && echo "Already backed up today." && exit
 
+# Create list of packages
+pacman -Q > /tmp/list.pkgs
+
 sudo mkdir $dir
-sudo cp -rv ~/src/ ~/.config/ ~/usr/ ~/.local/share/dwm/ ~/.local/bin/ ~/.local/log ~/.local/scripts $dir && echo "Backup done."
+sudo cp -rv /tmp/list.pkgs ~/src/ ~/.config/ ~/usr/ ~/.local/bin/ ~/.local/log ~/.local/scripts $dir && echo "Backup done."
