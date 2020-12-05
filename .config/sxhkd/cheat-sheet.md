@@ -186,8 +186,14 @@ m ; {h,j,k,l}
 m ; b
     balance all nodes
 
-{h,j,k,l}
-    move a tiled or floating node
+{j,k}
+    change focus
+
+{h,l}
+    change workspace
+
+shift + {h,j,k,l}
+    move a tiled or floating node (up/down the tree or to another workspace)
 
 control + {h,j,k,l}
     resize a tiled or floating node
@@ -198,9 +204,14 @@ d ; {h,j,k,l}
 control + shift + {h,j,k,l}
     make preselection
 
+shift + space
+    move focused node into preselection
+
 space
     toggle floating
 
 enter
     swap biggest and focused node
 
+Escape
+    enter normal mode

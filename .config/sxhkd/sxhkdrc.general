@@ -50,8 +50,6 @@ alt + shift + p
 	passmenu
  
 # Switch window
-#alt + shift + d; s
-#	dswitcher
 alt + Tab 
     dswitcher
 
@@ -112,7 +110,6 @@ alt + s; x
 # Xkill
 alt + s; k
 	xkill
-
 
 # Shutdown menu
 alt + s; e
