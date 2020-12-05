@@ -58,7 +58,7 @@ alt + shift + {comma,period}
 	bspc-padding {+,-}2
 
 # Reset padding to defaults
-alt + shift + control + {comma,period}
+alt + shift + ctrl + {comma,period}
 	bspc-padding reset
 
 ########################
@@ -78,7 +78,7 @@ alt + ctrl + {h,l}
 	bspc node -d {prev,next} --follow
 
 # focus the last node/desktop
-alt + Tab
+alt + shift + Tab
 	bspc desktop -f last
 
 # focus or send to the given desktop
@@ -98,8 +98,13 @@ alt + shift + a
     bspc node -d 'next.!occupied'
 
 # send node to first empty workspace and follow
-alt + control + a
+alt + ctrl + a
     bspc node -d 'next.!occupied' --follow
+
+# swap focused workspace with another workspace
+# TODO do not actually use system keymode
+alt + s ; {1-9,10} ; {1-9,10} 
+	bspc-desktop-swap {1-9,10} {1-9,10} 
 
 
 # focus the node in the given direction
@@ -117,8 +122,13 @@ alt + control + a
 #	bspc node {older,newer} -f; \
 #bspc wm -h on
 
-alt + b
+# Balance parent node
+alt + m : m
 	bspc node @parent -B
+
+# Balance all windows in vertical or horizontal direction
+alt + m : {h,j,k,l}
+	bspc-balance {west, south, north, east}
 
 ################
 # PRESELECTION #
@@ -173,4 +183,4 @@ alt + r : {t,shift + t,space,f}
 ##############
 
 alt + minus 
-	bspc-toggle-visibility scratch "$TERMINAL -g 100x30 -title scratch -name scratch -e vit"
+	bspc-toggle-visibility scratch "$TERMINAL -g 100x30 -name scratch -e vit"

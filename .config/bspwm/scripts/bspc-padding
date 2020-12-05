@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# If reset, return padding to standard values
+if [ "$1" = "reset" ]; then
+    gaps=$(xrdbvar bspwm.gaps)
+    outergaps=$(xrdbvar bspwm.outergaps)
+    padding=$(( $outergaps - $gaps ))
+else
+    # Else, increase or decrease padding
+    padding=$(( `bspc config left_padding` $1))
+    padding=$(( padding > 0 ? padding : 0 )) 
+fi
+
+# Set padding
+#for p in top bottom left right; do 
+    bspc config "left_padding" "$padding" 
+    bspc config "right_padding" "$padding" 
+    bspc config "top_padding" "$padding" 
+    bspc config "bottom_padding" "$padding" 
+#done
+

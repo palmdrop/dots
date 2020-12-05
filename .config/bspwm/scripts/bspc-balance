@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for wid in $(bspc query -N -d -n .window); do
+	bspc node "${wid}#@$1" -B
+done
