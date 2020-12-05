@@ -59,7 +59,7 @@ $BROWSER &
 #autolock &
 
 # dwm-related notifications
-dwm-notify &
+#dwm-notify &
 
 #sxhkd &
 
