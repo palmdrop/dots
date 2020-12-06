@@ -69,24 +69,24 @@ case $2 in
     # Move the window to the left screen edge
     left)
         nx=$padding
-        ny=$y
+        ny=$(( $sh/2 - $h/2 ))
         move "$nx" "$ny"
     ;;
     # Move the window to the right screen edge
     right)
         nx=$(( $sw - $w - $padding ))
-        ny=$y
+        ny=$(( $sh/2 - $h/2 ))
         move "$nx" "$ny"
     ;;
     # Move the window to the top screen edge
     top)
-        nx=$x
+        nx=$(( $sw/2 - $w/2 ))
         ny=$padding
         move "$nx" "$ny"
     ;;
     # Move the window to the bottom screen edge
     bottom)
-        nx=$x
+        nx=$(( $sw/2 - $w/2 ))
         ny=$(( $sh - $h - $padding ))
         move "$nx" "$ny"
     ;;

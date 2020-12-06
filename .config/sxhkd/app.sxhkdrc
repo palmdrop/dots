@@ -22,10 +22,6 @@ g
 c ; {i,c}
 	{idea,clion}
 
-# Notifications
-{o,p}
-	{herbe-info &, play &}
-
 # xkill
 shift + q 
     xkill

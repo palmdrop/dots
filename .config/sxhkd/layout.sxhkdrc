@@ -11,8 +11,8 @@ Return
 	bspc-main-toggle
 
 # bar toggle
-shift + b
-    togglebarbspwm
+#shift + b
+#    togglebarbspwm
 
 ################
 # NODE CONTROL #
@@ -23,8 +23,15 @@ shift + b
 	bspc node -t \~{tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-shift + {m,l,s,p}
+ctrl + f ; {m,l,s,p}
 	bspc node -g {marked,locked,sticky,private}
+
+# close and kill
+#alt + shift + q
+#	bspc node -c
+
+q
+    flash_window
 
 ##############
 # AESTHETICS #
@@ -37,7 +44,7 @@ shift + {m,l,s,p}
     bspc config -d focused window_gap $gaps
 
 # Reset gaps to default
-control + {comma,period}
+ctrl + {comma,period}
 	bspc config window_gap $(xrdbvar bspwm.gaps)
 
 # Increase or decrease padding
@@ -53,12 +60,12 @@ shift + ctrl + {comma,period}
 ########################
 
 # focus the next/previous window in the current desktop
-{_, shift +} {j,k}
-	bspc node -{f,s} {next,prev}.local.!hidden.window
+#alt + {_,shift +} {j,k}
+#	bspc node -{f,s} {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop or send a node to the next/previous desktop
-{_, shift +} {h,l}
-	bspc {desktop -f, node -d} {prev,next}.local
+#alt + {_,shift +} {h,l}
+#	bspc {desktop -f, node -d} {prev,next}.local
 
 # send a node to the next/previous desktop and follow
 m ; {h,l}
@@ -109,14 +116,17 @@ b ; {h,j,k,l}
 ################
 
 # preselect the direction
-p ; {h,j,k,l}
+p : {h,j,k,l}
 	bspc-presel {west,south,north,east} 0.1
 
 # cancel the preselection for all nodes on the desktop
 ctrl + p
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-p ; p
+p : p
+    . $XDG_CONFIG_HOME/sxhkd/app.mode
+
+p : Return
     $TERMINAL
 
 # Move current window to pre-selected space
@@ -128,10 +138,7 @@ shift + space
 # FLOAT CONTROL #
 #################
 
-control + shift + {h,j,k,l}
-    bspc-resize {x -, y -, y +, x +} 20
-
-r : {h,j,k,l}
+{h,j,k,l}
     bspc-resize {x -, y -, y +, x +} 20
 
 #alt + r : {h,j,k,l}
@@ -146,17 +153,17 @@ control + {h,j,k,l}
 	AMOUNT=20; \
 	window-ctrl $PADDING move {-$AMOUNT +0, +0 +$AMOUNT, +0 -$AMOUNT, +$AMOUNT +0}
 
-shift + d : {h,j,k,l}
+ctrl + shift + {h,j,k,l}
 	PADDING=$(xrdbvar bspwm.outergaps); \
 	window-ctrl $PADDING {multwidth 0.5, multheight 0.5, multheight 2.0, multwidth 2.0} center
 
 # teleport windows
 {q,w,e,a,s,d,z,x,c}
 	PADDING=$(xrdbvar bspwm.outergaps); \
-	window-ctrl $PADDING {topleft,top,topright,left,center,right,bottomleft,bottom,botomright} 
+	window-ctrl $PADDING {topleft,top,topright,left,center,right,bottomleft,bottom,bottomright} 
 
 ########
 # MODE #
 ########
-alt + Escape
+{alt +,_} Escape
     . $XDG_CONFIG_HOME/sxhkd/normal.mode

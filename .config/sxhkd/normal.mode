@@ -3,4 +3,5 @@ killall -e sxhkd
 polybar-msg hook window-mode 1
 sxhkd -c $XDG_CONFIG_HOME/sxhkd/constants.sxhkdrc \
          $XDG_CONFIG_HOME/sxhkd/common.sxhkdrc \
+         $XDG_CONFIG_HOME/sxhkd/navigation.sxhkdrc \
          $XDG_CONFIG_HOME/sxhkd/normal.sxhkdrc &
