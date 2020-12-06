@@ -39,7 +39,9 @@ R libreoffice       desktop='^3' follow=on
 R Zathura           state=tiled
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
-R '*:scratch'       state=floating sticky=on
+R '*:scratch1'      state=floating sticky=on
+R '*:scratch2'      state=floating sticky=on
+R '*:scratch3'      state=floating sticky=on
 
 #bspc config external_rules_command $XDG_CONFIG_HOME/bspwm/scripts/external_rules.pauto
 

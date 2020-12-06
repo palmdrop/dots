@@ -10,10 +10,6 @@ shift + f
 Return
 	bspc-main-toggle
 
-# bar toggle
-#shift + b
-#    togglebarbspwm
-
 ################
 # NODE CONTROL #
 ################
@@ -25,13 +21,6 @@ Return
 # set the node flags
 ctrl + f ; {m,l,s,p}
 	bspc node -g {marked,locked,sticky,private}
-
-# close and kill
-#alt + shift + q
-#	bspc node -c
-
-q
-    flash_window
 
 ##############
 # AESTHETICS #

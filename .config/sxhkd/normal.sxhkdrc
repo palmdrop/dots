@@ -1,9 +1,12 @@
 ##############
 # SCRATCHPAD #
 ##############
-
+#
 alt + minus 
-	bspc-toggle-visibility scratch "$TERMINAL -g 100x30 -name scratch -e vit"
+	bspc-toggle-visibility scratch1 "$TERMINAL -g 100x30 -name scratch1 -e vit"
+
+alt + period 
+	bspc-toggle-visibility scratch2 "$TERMINAL -g 80x50 -name scratch2 -e newsboat"
 
 #########
 # MODES #
