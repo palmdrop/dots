@@ -5,7 +5,8 @@ _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
-pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc.general ~/.config/sxhkd/sxhkdrc &
+#pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc.general ~/.config/sxhkd/sxhkdrc &
+. $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

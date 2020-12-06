@@ -51,6 +51,9 @@ alt + space
 alt + f
     enter fullscreen
 
+alt + shift + f
+    toggle between tile and monocle
+
 ## Presel control
 alt + shift + ctrl + {h,j,k,l}
     preselection in given direction
@@ -128,13 +131,10 @@ k
 shift + b
     toggle bar
 
-
-
 Escape
     enter normal mode
 
 (TODO: combine with basic navigation?)
-
 
 # SYSTEM MODE (alt + s)
 alt + x
@@ -162,17 +162,14 @@ Escape
     enter normal mode
 
 # LAYOUT MODE (alt + m) (with basic control)
-shift + m
-    mark node
+shift + f
+    toggle between monocle and tile layout
 
-shift + l
-    lock node
+shift + {m,l,s,p}
+    set node flag to marked, locked, sticky or private
 
-shift + s
-    set sticky
-
-shift + p
-    set private
+{t, shift + t, space, f}
+    set window state to tiled, pseudo_tiled, floating or fullscreen
 
 {comma,period} (+ control)
     increase/decrease window gap (or reset)
@@ -192,7 +189,7 @@ m ; b
 {h,l}
     change workspace
 
-shift + {h,j,k,l}
+control + {h,j,k,l}
     move a tiled or floating node (up/down the tree or to another workspace)
 
 control + {h,j,k,l}
@@ -207,11 +204,8 @@ control + shift + {h,j,k,l}
 shift + space
     move focused node into preselection
 
-space
-    toggle floating
-
 enter
     swap biggest and focused node
 
-Escape
+alt + Escape
     enter normal mode

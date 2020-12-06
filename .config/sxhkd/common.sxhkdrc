@@ -1,0 +1,35 @@
+# Dmenu
+alt + d
+	dmenu_run_notify
+
+# Terminal
+alt + Return 
+	$TERMINAL -g 100x28
+
+# Flash focused window
+alt + q
+	flash_window
+
+# Notifications
+alt + {o,p}
+	{herbe-info &, play &}
+
+# Edit dotfiles
+alt + shift + d
+	dmenu_dots_edit
+
+# Access shortcuts
+alt + c 
+	dmenu_shortcuts
+
+# Access passwords
+alt + shift + p
+	passmenu
+ 
+# Switch window
+alt + Tab 
+    dswitcher
+
+# Access network menu
+alt + w
+	networkmanager_dmenu -i -F 

@@ -1,0 +1,115 @@
+###################
+# SESSION CONTROL #
+###################
+
+# quit/restart bspwm
+alt + control + {q,r}
+	bspc {quit,wm -r}; notify-send "bspwm reloaded"
+
+################
+# NODE CONTROL #
+################
+
+# close and kill
+alt + shift + q
+	bspc node -c
+
+# set the node state
+alt + {t,shift + t,space,f}
+	bspc node -t \~{tiled,pseudo_tiled,floating,fullscreen}
+
+##################
+# LAYOUT CONTROL #
+##################
+
+# alternate between the tiled and monocle layout
+alt + shift + f
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+#alt + y
+#	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+alt + shift + Return
+	bspc-main-toggle
+
+# toggle bar
+alt + shift + b
+    togglebarbspwm
+
+########################
+# WORKSPACE MANAGEMENT #
+########################
+
+# focus the next/previous window in the current desktop
+alt + {_, shift +} {j,k}
+	bspc node -{f,s} {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop or send a node to the next/previous desktop
+alt + {_, shift +} {h,l}
+	bspc {desktop -f, node -d} {prev,next}.local
+
+# send a node to the next/previous desktop and follow
+alt + ctrl + {h,l}
+	bspc node -d {prev,next} --follow
+
+# focus the last node/desktop
+alt + shift + Tab
+	bspc desktop -f last
+
+# focus or send to the given desktop
+alt + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# send node to workspace and follow
+alt + ctrl + {1-9}
+	bspc node -d '^{1-9,10}' --follow
+
+# focus first unoccupied workspace
+alt + n
+    bspc desktop -f 'next.!occupied'
+
+# send node to first empty workspace
+alt + shift + n
+    bspc node -d 'next.!occupied'
+
+# send node to first empty workspace and follow
+alt + ctrl + n
+    bspc node -d 'next.!occupied' --follow
+
+################
+# PRESELECTION #
+################
+
+# preselect the direction
+alt + shift + control + {h,j,k,l}
+	bspc-presel {west,south,north,east} 0.1
+
+# cancel the preselection for all nodes on the desktop
+alt + Escape 
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Move current window to pre-selected space
+alt + shift + space
+	bspc node -t tiled & \
+    bspc node -n last.!automatic
+
+##############
+# SCRATCHPAD #
+##############
+
+alt + minus 
+	bspc-toggle-visibility scratch "$TERMINAL -g 100x30 -name scratch -e vit"
+
+#########
+# MODES #
+#########
+alt + m
+    . $XDG_CONFIG_HOME/sxhkd/layout.mode
+
+alt + e
+    . $XDG_CONFIG_HOME/sxhkd/app.mode
+
+alt + s
+    . $XDG_CONFIG_HOME/sxhkd/system.mode

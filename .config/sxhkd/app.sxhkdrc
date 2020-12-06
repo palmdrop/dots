@@ -1,0 +1,46 @@
+# Terminal
+Return 
+	$TERMINAL -g 100x28
+
+# Browsnig
+b
+	$BROWSER
+
+# Ranger and newsboat
+{e,r}
+	$TERMINAL -g 100x28 -e {ranger, newsboat}
+
+# Mpv for watching youtube videos
+y
+	mpvplay
+
+# Photo editing
+g
+	gimp
+
+# Coding
+c ; {i,c}
+	{idea,clion}
+
+# Notifications
+{o,p}
+	{herbe-info &, play &}
+
+# xkill
+shift + q 
+    xkill
+
+# Toggle bar
+shift + b
+    togglebarbspwm
+
+# Lock
+x
+    lock
+
+# Enter normal mode
+@Escape
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+alt + Escape
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode

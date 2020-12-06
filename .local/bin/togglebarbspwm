@@ -4,5 +4,5 @@ if [ -z "$(pgrep polybar)" ]
 then
     startbarbspwm
 else
-    killbar
+    killall polybar
 fi

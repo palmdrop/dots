@@ -1,0 +1,30 @@
+# Audio control
+XF86Audio{Raise,Lower}Volume
+	vol {up, down}
+
+XF86AudioMute
+    vol mute
+
+XF86Audio{Play,Stop}
+	play {pause, stop}
+
+XF86Audio{Prev,Next}
+	play {prev, next}
+
+# Brightness control
+XF86MonBrightness{Up,Down}
+	bri {up, down}
+
+# Printscreen control
+Print
+	flameshot full -p /home/xan/usr/pictures/screenshots/ & \
+    sleep 0.3 & \
+    notify-send "Screenshot taken"
+
+alt + Print
+	flameshot gui
+
+# Reload sxhkd
+alt + shift + Escape
+	pkill -USR1 -x sxhkd; notify-send "sxhkd reloaded"
+

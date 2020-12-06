@@ -1,0 +1,25 @@
+# quit/restart bspwm
+alt + control + {q,r}
+	bspc {quit,wm -r}; notify-send "bspwm reloaded"
+
+# Mount control
+alt + {_, shift +} m
+	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount}
+
+# Lock computer
+alt + x
+	lock
+
+# Xkill
+alt + shift + x
+	xkill
+
+# Shutdown menu
+alt + e
+	shutdownmenu
+
+@Escape
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
+alt + Escape
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
