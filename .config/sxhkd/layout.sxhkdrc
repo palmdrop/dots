@@ -111,6 +111,9 @@ b ; m
 b ; {h,j,k,l}
 	bspc-balance {west, south, north, east}
 
+shift + {h,j,k,l}
+	bspc-balance {west, south, north, east}
+
 ################
 # PRESELECTION #
 ################
