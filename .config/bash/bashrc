@@ -86,7 +86,7 @@ alias u="(urxvt &)"
 alias s="(st &)"
 
 # Updates
-alias update="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
+alias update="yay -Syu --noconfirm && notify-send 'Update complete'"              # update standard pkgs and AUR pkgs
 alias mirror="sudo reflector --verbose --latest 30 --sort rate --save /etc/pacman.d/mirrorlist"
 alias orpclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias depclean="yay -Yc"

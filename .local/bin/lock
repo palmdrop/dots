@@ -19,7 +19,7 @@ i3lock --nofork                 \
     \
     --clock			\
     --timecolor=$(xrdbvar .color8)	\
-    --timestr="%I:%M %p"	\
+    --timestr="%H:%M"	\
     --time-font="Fantasque Sans Mono"	\
     --timesize=60		\
     --timepos="1100:750"		\

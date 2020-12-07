@@ -1,12 +1,19 @@
 ##############
 # SCRATCHPAD #
 ##############
-#
-alt + minus 
-	bspc-toggle-visibility scratch1 "$TERMINAL -g 100x30 -name scratch1 -e vit"
 
+# "Drop down" terminal
+alt + comma 
+	bspc-toggle-visibility scratch1 "$TERMINAL -g 100x30 -name scratch1" 
+
+# RSS reader
 alt + period 
 	bspc-toggle-visibility scratch2 "$TERMINAL -g 80x50 -name scratch2 -e newsboat"
+
+# Task manager
+alt + minus 
+	bspc-toggle-visibility scratch3 "$TERMINAL -g 100x30 -name scratch3 -e vit"
+
 
 #########
 # MODES #

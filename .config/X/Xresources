@@ -211,7 +211,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-URxvt.font:xft:scientifica:pixelsize=16
+URxvt.font:xft:scientifica:pixelsize=17
 URxvt.internalBorder: 30
 URxvt.scrollBar: false
 URxvt.letterSpace: -8

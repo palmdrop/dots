@@ -14,6 +14,12 @@ num=$(wmctrl -l | sed 's/  / /' | cut -d " " -f 4- | nl -w 3 -n rn | sed -r 's/^
 [[ -z "$num" ]] && exit
 
 id=$(wmctrl -l | sed -n "$num p" | cut -c -10)
+
+if [ -z $id ]; then
+    $num &
+    exit 0
+fi
+
 # Unhide hidden bspc nodes
 bspc node $id -g hidden=off
 wmctrl -i -a $id
