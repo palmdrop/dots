@@ -8,6 +8,9 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 #pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc.general ~/.config/sxhkd/sxhkdrc &
 . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
+# Start window swallowing script
+pgrep bspswallow || bspswallow &
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 gaps=$(xrdbvar bspwm.gaps)
