@@ -227,6 +227,9 @@ URxvt.keysym.Control-Meta-v: builtin-string:
 URxvt.keysym.Shift-Control-K: command:\033]720;1\007
 URxvt.keysym.Shift-Control-J: command:\033]721;1\007
 
+URxvt.perl-ext-common: default,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+
 !!!!!!!!!!!
 !! bspwm !!
 !!!!!!!!!!!
