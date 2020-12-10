@@ -12,10 +12,7 @@ else
 fi
 
 # Set padding
-#for p in top bottom left right; do 
-    bspc config "left_padding" "$padding" 
-    bspc config "right_padding" "$padding" 
-    bspc config "top_padding" "$padding" 
-    bspc config "bottom_padding" "$padding" 
-#done
+for p in top bottom left right; do 
+    bspc config "${p}_padding" "$padding" 
+done
 
