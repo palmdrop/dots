@@ -21,7 +21,7 @@ alt + {t,shift + t,f}
 # toggle floating
 alt + space
 	bspc node -t \~floating; \
-    [ $(bspc query -N -n focused.floating) ] && . $XDG_CONFIG_HOME/sxhkd/layout.mode
+    #[ $(bspc query -N -n focused.floating) ] && . $XDG_CONFIG_HOME/sxhkd/layout.mode
 
 ##################
 # LAYOUT CONTROL #
