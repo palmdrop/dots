@@ -68,7 +68,7 @@ alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # send node to workspace and follow
-alt + ctrl + {1-9}
+alt + ctrl + {1-9,0}
 	bspc node -d '^{1-9,10}' --follow
 
 # focus first unoccupied workspace
