@@ -21,6 +21,7 @@ export BACKUP_DIR=$HOME/.local/backup
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
 
 export WALLPAPERS=$XDG_CONFIG_HOME/wall
+export BOOKMARKS_DIR=$HOME/usr/bookmarks
 
 # Java fix 
 export _JAVA_AWT_WM_NONREPARENTING=1 
