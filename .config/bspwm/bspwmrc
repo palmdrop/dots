@@ -5,14 +5,17 @@ _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
+
+# Start window swallowing script
+export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
+export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
+export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
+pgrep -fl 'pidswallow -gl' || pidswallow -gl &
+
 #pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc.general ~/.config/sxhkd/sxhkdrc &
 . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
-# Start window swallowing script
-pgrep bspswallow || bspswallow &
-
-bspc monitor -d I II III IV V VI VII VIII IX X
-
+bspc monitor -d I II III IV V VI VII VIII IX X 
 gaps=$(xrdbvar bspwm.gaps)
 outergaps=$(xrdbvar bspwm.outergaps)
 padding=$(( $outergaps - $gaps ))

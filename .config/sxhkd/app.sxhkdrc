@@ -1,26 +1,32 @@
 # Terminal
 Return 
-	noswallow_open $TERMINAL -g 100x28
+	$TERMINAL -g 100x28
+	#noswallow_open $TERMINAL -g 100x28
 
 # Browsnig
 b
-	noswallow_open $BROWSER
+	$BROWSER
+	#noswallow_open $BROWSER
 
 # Ranger and newsboat
 {e,r}
-	noswallow_open $TERMINAL -g 100x28 -e {ranger, newsboat}
+	$TERMINAL -g 100x28 -e {ranger, newsboat}
+	#noswallow_open $TERMINAL -g 100x28 -e {ranger, newsboat}
 
 # Mpv for watching youtube videos
 y
-	noswallow_open mpvplay
+	mpvplay
+	#noswallow_open mpvplay
 
 # Photo editing
 g
-	noswallow_open gimp
+	gimp
+	#noswallow_open gimp
 
 # Coding
 c ; {i,c}
-	noswallow_open {idea & notify-send "Launching Intellij Idea",clion & notify-send "Launching clion"}
+	{idea & notify-send "Launching Intellij Idea",clion & notify-send "Launching clion"}
+	#noswallow_open {idea & notify-send "Launching Intellij Idea",clion & notify-send "Launching clion"}
 
 # xkill
 shift + q 

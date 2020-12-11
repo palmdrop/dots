@@ -34,4 +34,4 @@ cmd=${paths[$choice]}
 eval $cmd
 
 # Focus urgent windows, if there are any
-dwm-msg --ignore-reply run_command focusurgent
+#dwm-msg --ignore-reply run_command focusurgent

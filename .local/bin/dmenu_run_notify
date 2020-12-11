@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fix for bspswallow to avoid unintended window swallowing
-killall bspswallow
+#killall bspswallow
 
 dmenu_run_log 
 
@@ -20,5 +20,5 @@ fi
 #    bspswallow & exit
 #done &
 
-sleep 0.1
-bspswallow & exit
+#sleep 0.1
+#bspswallow & exit

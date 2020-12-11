@@ -130,6 +130,10 @@ PS1="\[\e[30m\]\w\[\e[00m\] \[\e[32m\]\$(parse_git_branch)\[\e[00m\] "
 
 trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
 
+# Pidswallow stuff
+[ -n "$DISPLAY" ]  && command -v xdo >/dev/null 2>&1 && xdo id > /tmp/term-wid-"$$"
+trap "( rm -f /tmp/term-wid-"$$" )" EXIT HUP
+
 # SHORTCUTS
 alias rc="killall picom; sleep 0.1; picom -b"
 alias copy="xclip -r -selection clipboard"
