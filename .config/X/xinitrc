@@ -58,13 +58,9 @@ $BROWSER &
 # Autolock after a few minutes
 #autolock &
 
-# dwm-related notifications
-#dwm-notify &
-
-#sxhkd &
-
+# Start window manager
 #exec openbox-session
 exec bspwm
 
-# Start window manager
+#dwm-notify &
 #while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 

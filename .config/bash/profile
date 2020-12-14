@@ -7,7 +7,7 @@ export TERMINAL=urxvt
 export PAGER=less
 export EDITOR=nvim
 export VISUAL=nvim
-export BROWSER=brave
+export BROWSER=firefox
 export SUDO_EDITOR=nvim
 export READER=zathura
 

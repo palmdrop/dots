@@ -1,6 +1,4 @@
 #! /bin/sh
-#export PATH=$XDG_CONFIG_HOME/bspwm/scripts:$PATH
-
 _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
@@ -16,6 +14,7 @@ pgrep -fl 'pidswallow -gl' || pidswallow -gl &
 . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 bspc monitor -d I II III IV V VI VII VIII IX X 
+
 gaps=$(xrdbvar bspwm.gaps)
 outergaps=$(xrdbvar bspwm.outergaps)
 padding=$(( $outergaps - $gaps ))
@@ -36,12 +35,12 @@ _ active_border_color   "$(xrdbvar bspwm.innerbordernormal)"
 _ focused_border_color  "$(xrdbvar bspwm.innerbordernormal)"
 _ presel_feedback_color "$(xrdbvar bspwm.presel_color)"
 
-R Gimp              desktop='^4' follow=on
-R Spotify           desktop='^9' pseudo_tiled=on
-R Darktable         desktop='^3' follow=on
-R discord           desktop='^4' follow=on
-R jetbrains-idea-ce desktop='^2' follow=on
-R libreoffice       desktop='^3' follow=on
+#R Gimp              desktop='^4' follow=on
+#R Spotify           desktop='^9' pseudo_tiled=on
+#R Darktable         desktop='^3' follow=on
+#R discord           desktop='^4' follow=on
+#R jetbrains-idea-ce desktop='^2' follow=on
+#R libreoffice       desktop='^3' follow=on
 R Zathura           state=tiled
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
@@ -52,4 +51,5 @@ R '*:scratch3'      state=floating sticky=on
 #bspc config external_rules_command $XDG_CONFIG_HOME/bspwm/scripts/external_rules.pauto
 
 # Autostart
-startbarbspwm
+startbarbspwm &
+spotify &
