@@ -1,32 +1,32 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #b0a5b0
+#define FOREGROUND      #d1c5c5
 #define FOREGROUND_ALT  #666666
-#define BACKGROUND      #120e12
-#define CURSORCOLOR     #888888
-#define BLACK1          #4a4348
-#define BLACK2          #403c42
+#define BACKGROUND      #121010
+#define CURSORCOLOR     #6e7070
+#define BLACK1          #383434
+#define BLACK2          #4a4146
 #define BLACK_ALT       #232323
-#define RED1            #825e6a
-#define RED2            #825e6a
-#define GREEN1          #747ba3
-#define GREEN2          #747ba3
-#define YELLOW1         #a68c6a
-#define YELLOW2         #a68c6a
-#define BLUE1           #81a3a3
-#define BLUE2           #81a3a3
-#define MAGENTA1        #8679a3
-#define MAGENTA2        #8679a3
-#define CYAN1           #966673
-#define CYAN2           #966673
-#define WHITE1          #9d9497
-#define WHITE2          #d5cbcd
+#define RED1            #698a82
+#define RED2            #698a82
+#define GREEN1          #825757
+#define GREEN2          #825757
+#define YELLOW1         #af9070
+#define YELLOW2         #af9070
+#define BLUE1           #7e7a8e
+#define BLUE2           #7e7a8e
+#define MAGENTA1        #81a18f
+#define MAGENTA2        #81a18f
+#define CYAN1           #845c71
+#define CYAN2           #82576d
+#define WHITE1          #b0aea9
+#define WHITE2          #a39e99
 
 #define TRANSPARENT     #00000000
-#define PRIMARY         #d5cbcd
-#define SECONDARY       #a89ea3
-#define ACCENT          #857067
+#define PRIMARY         #a39e99
+#define SECONDARY       #d1c5c5
+#define ACCENT          #845c71
 
 !!!!!!!!!!!!
 !! Colors !!
@@ -93,7 +93,7 @@ bar.foreground-alt: FOREGROUND_ALT
 
 bar.background-module: SECONDARY
 
-bar.tag-focused: RED1
+bar.tag-focused: CYAN1
 bar.tag-occupied: BLACK_ALT
 bar.tag-unoccupied: BACKGROUND
 
@@ -159,7 +159,7 @@ dwm.keymodepath: /tmp/dwm.keymode
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: PRIMARY
+herbe.background_color: FOREGROUND
 herbe.border_color: SECONDARY
 herbe.font_color: CURSORCOLOR
 herbe.line_spacing: 5
@@ -185,14 +185,14 @@ dmenu.borderpx: 50
 dmenu.lines: 10
 
 dmenu.normfgcolor: CURSORCOLOR
-dmenu.normbgcolor: PRIMARY
+dmenu.normbgcolor: FOREGROUND
 dmenu.selfgcolor:  CURSORCOLOR
-dmenu.selbgcolor:  PRIMARY
+dmenu.selbgcolor:  FOREGROUND
 
-dmenu.normhighlightfgcolor: RED1
-dmenu.normhighlightbgcolor: PRIMARY
-dmenu.selhighlightfgcolor:  RED1
-dmenu.selhighlightbgcolor:  PRIMARY
+dmenu.normhighlightfgcolor: GREEN1
+dmenu.normhighlightbgcolor: FOREGROUND
+dmenu.selhighlightfgcolor:  GREEN1
+dmenu.selhighlightbgcolor:  FOREGROUND
 
 dmenu.font: scientifica:size=10
 
@@ -233,7 +233,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 !!!!!!!!!!!
 !! bspwm !!
 !!!!!!!!!!!
-bspwm.presel_color: RED1
+bspwm.presel_color: BLUE1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
 bspwm.borderpx:     0

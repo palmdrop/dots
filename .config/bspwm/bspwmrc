@@ -52,4 +52,3 @@ R '*:scratch3'      state=floating sticky=on
 
 # Autostart
 startbarbspwm &
-spotify &

@@ -83,7 +83,6 @@ alias sv="sudoedit"
 
 # Term
 alias u="(urxvt &)"
-alias s="(st &)"
 
 # Updates
 alias update="yay -Syu --noconfirm && notify-send 'Update complete'"              # update standard pkgs and AUR pkgs
