@@ -107,6 +107,6 @@ func! WordProcessor()
   setlocal spell spelllang=sv
   " set thesaurus+=/home/test/.vim/thesaurus/mthesaur.txt
   " complete+=s makes autocompletion search the thesaurus
-  set complete+=s
+  set complete+=sterrain
 endfu
 com! WP call WordProcessor()

@@ -73,7 +73,7 @@
 !!!!!!!!!!!!!!!!!!!!!!
 #define BORDERPX 0
 #define FLOATBORDERPX 0
-#define BARBORDERPX 2
+#define BARBORDERPX 0
 
 #define GAPS 23
 #define OUTERGAPS 40
@@ -81,25 +81,25 @@
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
-#define BARX 600
-#define BARY 5
-#define BARWIDTH 720
-#define BARHEIGHT 21
+#define BARX 635
+#define BARY 3
+#define BARWIDTH 650
+#define BARHEIGHT 27
 
-bar.background: SECONDARY
+bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
-bar.foreground: BLACK1
-bar.foreground-alt: FOREGROUND_ALT
+bar.foreground: FOREGROUND_ALT
+bar.foreground-alt: BLACK1
 
-bar.background-module: SECONDARY
+!bar.background-module: SECONDARY
 
-bar.tag-focused: CYAN1
-bar.tag-occupied: BLACK_ALT
-bar.tag-unoccupied: BACKGROUND
+bar.ws-focused: GREEN1
+bar.ws-occupied: BLACK1
+bar.ws-unoccupied: BLACK1
 
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 5
+bar.line-size: 7
 bar.line-color: BACKGROUND
 
 bar.alert: ACCENT
@@ -108,7 +108,7 @@ bar.secondary: SECONDARY
 
 bar.radius: 0
 bar.border: BARBORDERPX
-bar.border-color: SECONDARY
+bar.border-color: BLACK_ALT
 
 bar.x: BARX
 bar.y: BARY
