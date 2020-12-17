@@ -136,6 +136,8 @@ trap "( rm -f /tmp/term-wid-"$$" )" EXIT HUP
 # FUNCTIONS
 bak() { cp -r "$1" "$1.bak"; }
 copycode() { echo -e "\u$1" | xclip -selection clipboard; }
+ftext () { grep -iIHrn --color=always "$1" . | less -R -r; }
+generateqr () { printf "$@" | curl -F-=\<- qrenco.de; }
 
 # SHORTCUTS
 alias wp="xwallpaper --zoom"
