@@ -1,0 +1,82 @@
+#!/bin/bash
+
+shopt -s nullglob globstar
+
+input() {
+  echo -n | dmenu -p "$1"
+}
+
+
+case $1 in
+    -o)
+        option="Open"
+        ;;
+    -a)
+        option="Add"
+        ;;
+    -e)
+        option="Edit"
+        ;;
+    -d)
+        option="Delete"
+        ;;
+     *) 
+        option=$(echo -e "Open\nAdd\nEdit\nDelete" | dmenu -i -F -p "Bookmark option")
+        ;;
+esac
+
+[ -z "$option" ] && exit 1
+
+
+dir=${BOOKMARKS_DIR-~/.bookmarks}
+bookmark_files=( "$dir"/**/*.md )
+
+declare -A paths
+
+for bm in "${bookmark_files[@]}"
+do
+    name="${bm#$dir/}"
+    name="${name%.md}"
+    paths+=([$name]=$bm)
+done
+
+
+if [ "$option" != "Add" ]; then
+    choice=$(printf '%s\n' "${!paths[@]}" | dmenu -i -F -p "bookmarks")
+
+    # Exit if no choice
+    [ -z "$choice" ] && exit 1
+
+    path=${paths[$choice]}
+fi
+
+if [ "$option" = "Add" ]; then
+    existing_dirs=( "${bookmark_files[@]#"$dir"/}" )
+    existing_dirs=( "$(dirname ${existing_dirs[@]})" )
+    existing_dirs=( $(printf '%s\n' "${existing_dirs[@]}" | sort -u) )
+
+    new=$(printf '%s\n' "${existing_dirs[@]}" | dmenu -p "Bookmark name: ")
+
+    [ -z "$new" ] && exit 1
+
+    new="$dir/$new.md"
+
+    mkdir -p $(dirname $new)
+
+    #url=$(input "Enter url: ")
+    #echo "$url" > $new
+    $TERMINAL -e $EDITOR $new
+
+    exit 0
+elif [ "$option" = "Delete" ]; then
+    confirmation=$(echo -e "Yes\nNo" | dmenu -i -F -p "delete \"$choice\"?")
+    rm $path
+    exit 0
+elif [ "$option" = "Edit" ]; then
+    $TERMINAL -e $EDITOR $path
+    exit 0
+fi
+
+read -r url < $path
+echo $url
+$BROWSER $url
