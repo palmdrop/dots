@@ -1,7 +1,7 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #d1c5c5
+#define FOREGROUND      #b0aea9
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #121010
 #define CURSORCOLOR     #6e7070
@@ -25,7 +25,7 @@
 
 #define TRANSPARENT     #00000000
 #define PRIMARY         #a39e99
-#define SECONDARY       #d1c5c5
+#define SECONDARY       #7e7a8e
 #define ACCENT          #845c71
 
 !!!!!!!!!!!!
@@ -159,9 +159,9 @@ dwm.keymodepath: /tmp/dwm.keymode
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: FOREGROUND
+herbe.background_color: SECONDARY
 herbe.border_color: SECONDARY
-herbe.font_color: CURSORCOLOR
+herbe.font_color: BLACK1
 herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
@@ -184,15 +184,15 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: CURSORCOLOR
-dmenu.normbgcolor: FOREGROUND
-dmenu.selfgcolor:  CURSORCOLOR
-dmenu.selbgcolor:  FOREGROUND
+dmenu.normfgcolor: BLACK1
+dmenu.normbgcolor: SECONDARY
+dmenu.selfgcolor:  BLACK1
+dmenu.selbgcolor:  SECONDARY
 
 dmenu.normhighlightfgcolor: GREEN1
-dmenu.normhighlightbgcolor: FOREGROUND
+dmenu.normhighlightbgcolor: SECONDARY
 dmenu.selhighlightfgcolor:  GREEN1
-dmenu.selhighlightbgcolor:  FOREGROUND
+dmenu.selhighlightbgcolor:  SECONDARY
 
 dmenu.font: scientifica:size=10
 
@@ -233,7 +233,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 !!!!!!!!!!!
 !! bspwm !!
 !!!!!!!!!!!
-bspwm.presel_color: BLUE1
+bspwm.presel_color: CYAN1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
 bspwm.borderpx:     0

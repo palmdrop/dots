@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 disk="/dev/nvme0n1p3"
 size=$(df -Ph | grep $disk | awk {'print $2'})

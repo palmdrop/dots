@@ -1,2 +1,0 @@
-#!/bin/bash
-cp -r "$1" "$1.bak"
