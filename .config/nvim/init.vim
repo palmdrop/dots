@@ -1,5 +1,5 @@
 " PLUGINS
-call plug#begin('~/.local/share/nvim/site/plugged')
+call plug#begin('$XDG_DATA_HOME/nvim/site/plugged')
 
 " Colorizer for color hexcodes (activate with ":ColorToggle")
 Plug 'chrisbra/Colorizer' 
@@ -35,7 +35,7 @@ let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 
 " BASIC
-set directory^=$HOME/.cache/vim//
+set directory^=$XDG_CACHE_HOME/vim//
 set autoindent
 set expandtab
 set shiftround
