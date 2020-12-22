@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# taken from here: http://thedarnedestthing.com/bspwm%20gym
+# but updated to match modern bspc syntax, among other things
+
+linear() {
+    echo "($X + $@) - ($W - 1) * $@" | bc
+}
+ 
+binary() {
+    if (( $W == 1 )); then 
+        echo "$X"
+    else
+        echo "($X * 2) / (2*($W - 1))" | bc
+    fi
+}
+ 
+pitch() {
+  echo "$X * 0.25 / 0.282" | bc
+}
+ 
+resolution() {
+    sw=$(xwininfo -root|sed '/Width/!d;s/.* //')
+    sh=$(xwininfo -root|sed '/Height/!d;s/.* //')
+    echo "$X * $sh / $sw" | bc
+}
+
+#bspc control --subscribe | while read line; do
+bspc subscribe desktop_focus node_add node_remove | while read line; do
+  X=40
+  #[[ $(bspc query –monitors –desktop focused) = DVI-1 ]] || X=$(pitch) # alternatively X=$(resolution)
+  #X=$(pitch)
+
+  W=$(bspc query -N -d focused -n .window.\!hidden | wc -l)
+
+  G=$(binary)
+  #$(binary) # alternatively G=$(linear 10)
+
+  [[ $G -lt 1 ]] && G=1
+  #bspc config –desktop focused window_gap $G
+  bspc config window_gap $G
+  #conky-padding
+done

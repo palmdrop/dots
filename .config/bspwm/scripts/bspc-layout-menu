@@ -1,0 +1,25 @@
+#!/bin/bash
+
+case "$1" in
+    --remove)
+        bsp-layout remove
+        exit 0
+    ;;
+    --remove-all)
+        for desktop in $(bspc query -D --names);
+        do
+            bsp-layout remove $desktop
+        done
+        exit 0
+    ;;
+    *) ;;
+esac
+
+choice=$(bsp-layout layouts | dmenu -i -F -p "layouts")
+
+if [ "$1" = "--once" ]; 
+then
+    bsp-layout once $choice 
+else
+    bsp-layout set $choice 
+fi
