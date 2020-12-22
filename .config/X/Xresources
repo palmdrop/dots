@@ -159,9 +159,9 @@ dwm.keymodepath: /tmp/dwm.keymode
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: SECONDARY
+herbe.background_color: GREEN1
 herbe.border_color: SECONDARY
-herbe.font_color: BACKGROUND
+herbe.font_color: WHITE1
 herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
@@ -184,15 +184,15 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: BACKGROUND
-dmenu.normbgcolor: SECONDARY
-dmenu.selfgcolor:  BACKGROUND
-dmenu.selbgcolor:  SECONDARY
+dmenu.normfgcolor: WHITE1
+dmenu.normbgcolor: GREEN1
+dmenu.selfgcolor:  WHITE1
+dmenu.selbgcolor:  GREEN1
 
-dmenu.normhighlightfgcolor: GREEN1
-dmenu.normhighlightbgcolor: SECONDARY
-dmenu.selhighlightfgcolor:  GREEN1
-dmenu.selhighlightbgcolor:  SECONDARY
+dmenu.normhighlightfgcolor: BLUE1
+dmenu.normhighlightbgcolor: GREEN1
+dmenu.selhighlightfgcolor:  BLUE1
+dmenu.selhighlightbgcolor:  GREEN1
 
 dmenu.font: scientifica:size=10
 
@@ -215,7 +215,8 @@ URxvt.font:xft:scientifica:pixelsize=17
 URxvt.internalBorder: 30
 URxvt.scrollBar: false
 URxvt.letterSpace: -8
-URxvt.iso14755 : false
+URxvt.iso14755: false
+URxvt.geometry: 85x40
 
 ! Change copy-paste keybindds
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard

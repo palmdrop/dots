@@ -3,16 +3,14 @@ _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
-
-# Start window swallowing script
-export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
-export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
-export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
-pgrep -fl 'pidswallow -gl' || pidswallow -gl &
-
-#pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/sxhkd/sxhkdrc.general ~/.config/sxhkd/sxhkdrc &
+#########
+# SXHKD #
+#########
 . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
+####################
+# General settings #
+####################
 bspc monitor -d I II III IV V VI VII VIII IX X 
 
 gaps=$(xrdbvar bspwm.gaps)
@@ -35,20 +33,34 @@ _ active_border_color   "$(xrdbvar bspwm.innerbordernormal)"
 _ focused_border_color  "$(xrdbvar bspwm.innerbordernormal)"
 _ presel_feedback_color "$(xrdbvar bspwm.presel_color)"
 
+###################
+# Window settings #
+###################
+
 #R Gimp              desktop='^4' follow=on
 #R Spotify           desktop='^9' pseudo_tiled=on
 #R Darktable         desktop='^3' follow=on
 #R discord           desktop='^4' follow=on
 #R jetbrains-idea-ce desktop='^2' follow=on
 #R libreoffice       desktop='^3' follow=on
-R Zathura           state=tiled
+
+R "*:$TERMINAL"     state=pseudo_tiled
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
 R '*:scratch1'      state=floating sticky=on
 R '*:scratch2'      state=floating sticky=on
 R '*:scratch3'      state=floating sticky=on
+R Zathura           state=tiled
 
-#bspc config external_rules_command $XDG_CONFIG_HOME/bspwm/scripts/external_rules.pauto
-
-# Autostart
+#############
+# Autostart #
+#############
+# Start bar
 startbarbspwm &
+
+# Start window swallowing script
+export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
+export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
+export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
+pgrep -fl 'pidswallow -gl' || pidswallow -gl &
+

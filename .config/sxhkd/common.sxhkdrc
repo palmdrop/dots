@@ -4,7 +4,7 @@ alt + d
 
 # Terminal
 alt + Return 
-	$TERMINAL -g 100x28
+	$TERMINAL 
 
 # Flash focused window
 alt + q
