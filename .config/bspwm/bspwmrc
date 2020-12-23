@@ -44,7 +44,7 @@ _ presel_feedback_color "$(xrdbvar bspwm.presel_color)"
 #R jetbrains-idea-ce desktop='^2' follow=on
 #R libreoffice       desktop='^3' follow=on
 
-R "*:$TERMINAL"     state=pseudo_tiled
+#R "*:$TERMINAL"     state=pseudo_tiled
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
 R '*:scratch1'      state=floating sticky=on
