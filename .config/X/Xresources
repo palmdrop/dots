@@ -99,8 +99,8 @@ bar.ws-unoccupied: BLACK1
 
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 7
-bar.line-color: BACKGROUND
+bar.line-size: 0
+bar.line-color: BLUE1
 
 bar.alert: ACCENT
 bar.primary: PRIMARY
@@ -108,7 +108,7 @@ bar.secondary: SECONDARY
 
 bar.radius: 0
 bar.border: BARBORDERPX
-bar.border-color: BLACK_ALT
+bar.border-color: BACKGROUND
 
 bar.x: BARX
 bar.y: BARY
