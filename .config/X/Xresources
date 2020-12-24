@@ -159,9 +159,9 @@ dwm.keymodepath: /tmp/dwm.keymode
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: GREEN1
+herbe.background_color: WHITE1
 herbe.border_color: SECONDARY
-herbe.font_color: WHITE1
+herbe.font_color: BLACK1
 herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
@@ -184,15 +184,15 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: WHITE1
-dmenu.normbgcolor: GREEN1
-dmenu.selfgcolor:  WHITE1
-dmenu.selbgcolor:  GREEN1
+dmenu.normfgcolor: BLUE1
+dmenu.normbgcolor: WHITE1
+dmenu.selfgcolor:  BLUE1
+dmenu.selbgcolor:  WHITE1
 
-dmenu.normhighlightfgcolor: BLUE1
-dmenu.normhighlightbgcolor: GREEN1
-dmenu.selhighlightfgcolor:  BLUE1
-dmenu.selhighlightbgcolor:  GREEN1
+dmenu.normhighlightfgcolor: BLACK1
+dmenu.normhighlightbgcolor: WHITE1
+dmenu.selhighlightfgcolor:  BLACK1
+dmenu.selhighlightbgcolor:  WHITE1
 
 dmenu.font: scientifica:size=10
 
