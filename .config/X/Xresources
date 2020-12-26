@@ -1,15 +1,15 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #b0aea9
+#define FOREGROUND      #b8b3c7
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #121010
-#define CURSORCOLOR     #6e7070
+#define CURSORCOLOR     #5f5869
 #define BLACK1          #383434
 #define BLACK2          #4a4146
 #define BLACK_ALT       #232323
-#define RED1            #698a82
-#define RED2            #698a82
+#define RED1            #698a78
+#define RED2            #698a78
 #define GREEN1          #825757
 #define GREEN2          #825757
 #define YELLOW1         #af9070
@@ -20,11 +20,11 @@
 #define MAGENTA2        #81a18f
 #define CYAN1           #845c71
 #define CYAN2           #82576d
-#define WHITE1          #b0aea9
-#define WHITE2          #a39e99
+#define WHITE1          #b8b3c7
+#define WHITE2          #a299a3
 
 #define TRANSPARENT     #00000000
-#define PRIMARY         #a39e99
+#define PRIMARY         #a299a3
 #define SECONDARY       #7e7a8e
 #define ACCENT          #845c71
 
@@ -73,8 +73,6 @@
 !!!!!!!!!!!!!!!!!!!!!!
 #define BORDERPX 0
 #define FLOATBORDERPX 0
-#define BARBORDERPX 0
-
 #define GAPS 23
 #define OUTERGAPS 40
 
@@ -85,6 +83,7 @@
 #define BARY 3
 #define BARWIDTH 650
 #define BARHEIGHT 27
+#define BARBORDERPX 0
 
 bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
@@ -114,47 +113,6 @@ bar.x: BARX
 bar.y: BARY
 bar.width: BARWIDTH
 bar.height: BARHEIGHT
-
-!!!!!!!!!!!
-!! slock !!
-!!!!!!!!!!!
-slock.init-color: BACKGROUND
-slock.input-color: BLACK1
-slock.failed-color: RED1
-slock.caps-color: CYAN1
-
-!!!!!!!!!
-!! dwm !!
-!!!!!!!!!
-dwm.selbordercolor: WHITE2
-dwm.normbordercolor: BACKGROUND
-dwm.selfloatbordercolor: RED1
-dwm.normfloatbordercolor: SECONDARY
-
-dwm.normbgcolor: BACKGROUND
-dwm.normfgcolor: FOREGROUND
-dwm.inactivefgcolor: WHITE1
-
-dwm.selbgcolor: BACKGROUND
-dwm.selfgcolor: FOREGROUND
-
-dwm.borderpx: BORDERPX
-dwm.floatborderpx: FLOATBORDERPX
-dwm.snap: 0
-dwm.showbar: 1
-
-dwm.mfact: 0.6
-dwm.nmaster: 1
-dwm.resizehints: 0
-
-dwm.smartborders: 1
-dwm.selonlyborders: 0
-
-dwm.gaps: GAPS
-dwm.outergaps: OUTERGAPS
-dwm.y_inset: 0
-
-dwm.keymodepath: /tmp/dwm.keymode
 
 !!!!!!!!!!!
 !! herbe !!
@@ -196,16 +154,10 @@ dmenu.selhighlightbgcolor:  WHITE1
 
 dmenu.font: scientifica:size=10
 
-!!!!!!!!
-!! st !!
-!!!!!!!!
-st.alpha: 1.0 
-st.background: BACKGROUND
+!!!!!!!!!!!
+!! URxvt !!
+!!!!!!!!!!!
 
-!!!!!!!!!!!
-!! urxvt !!
-!!!!!!!!!!!
-!!Xft.dpi:        110
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
