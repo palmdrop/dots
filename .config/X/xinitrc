@@ -43,6 +43,9 @@ xset b 0 0 0 &
 # Swap caps and escape 
 setxkbmap -option caps:swapescape &
 
+# Make sure cursor is not an X when hovering over root window
+xsetroot -cursor_name left_ptr &
+
 # Startup
 nvidia-settings -l &
 picom &
