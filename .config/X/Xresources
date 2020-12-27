@@ -14,8 +14,8 @@
 #define GREEN2          #825757
 #define YELLOW1         #af9070
 #define YELLOW2         #af9070
-#define BLUE1           #7e7a8e
-#define BLUE2           #7e7a8e
+#define BLUE1           #8b84a3
+#define BLUE2           #8b84a3
 #define MAGENTA1        #81a18f
 #define MAGENTA2        #81a18f
 #define CYAN1           #845c71
@@ -24,8 +24,8 @@
 #define WHITE2          #a299a3
 
 #define TRANSPARENT     #00000000
-#define PRIMARY         #a299a3
-#define SECONDARY       #7e7a8e
+#define PRIMARY         #b8b3c7
+#define SECONDARY       #8b84a3
 #define ACCENT          #845c71
 
 !!!!!!!!!!!!
@@ -74,21 +74,21 @@
 #define BORDERPX 0
 #define FLOATBORDERPX 0
 #define GAPS 23
-#define OUTERGAPS 40
+#define OUTERGAPS 43
 
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
-#define BARX 635
-#define BARY 3
-#define BARWIDTH 650
-#define BARHEIGHT 27
-#define BARBORDERPX 0
+#define BARX 585
+#define BARY 5
+#define BARWIDTH 750
+#define BARHEIGHT 23
+#define BARBORDERPX 2
 
-bar.background: BACKGROUND
+bar.background: SECONDARY
 bar.background-alt: BACKGROUND
-bar.foreground: FOREGROUND_ALT
-bar.foreground-alt: BLACK1
+bar.foreground: BLACK2
+bar.foreground-alt: FOREGROUND_ALT
 
 !bar.background-module: SECONDARY
 
@@ -99,7 +99,7 @@ bar.ws-unoccupied: BLACK1
 bar.layout-symbol: PRIMARY
 
 bar.line-size: 0
-bar.line-color: BLUE1
+bar.line-color: SECONDARY
 
 bar.alert: ACCENT
 bar.primary: PRIMARY
@@ -107,7 +107,7 @@ bar.secondary: SECONDARY
 
 bar.radius: 0
 bar.border: BARBORDERPX
-bar.border-color: BACKGROUND
+bar.border-color: SECONDARY
 
 bar.x: BARX
 bar.y: BARY
@@ -157,7 +157,6 @@ dmenu.font: scientifica:size=10
 !!!!!!!!!!!
 !! URxvt !!
 !!!!!!!!!!!
-
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
