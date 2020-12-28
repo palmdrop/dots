@@ -1,6 +1,6 @@
 #!/bin/bash
 killall -e sxhkd 
-polybar-msg hook window-mode 3
+polybar-msg hook sxhkd-mode 3
 sxhkd -c $XDG_CONFIG_HOME/sxhkd/constants.sxhkdrc \
          $XDG_CONFIG_HOME/sxhkd/normal.sxhkdrc \
          $XDG_CONFIG_HOME/sxhkd/app.sxhkdrc

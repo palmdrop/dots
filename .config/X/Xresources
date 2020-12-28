@@ -7,7 +7,6 @@
 #define CURSORCOLOR     #5f5869
 #define BLACK1          #383434
 #define BLACK2          #4a4146
-#define BLACK_ALT       #232323
 #define RED1            #698a78
 #define RED2            #698a78
 #define GREEN1          #825757
@@ -27,6 +26,13 @@
 #define PRIMARY         #b8b3c7
 #define SECONDARY       #8b84a3
 #define ACCENT          #845c71
+
+#define RAMP1           #362f4f
+#define RAMP2           #6c638a
+#define RAMP3           #8b84a3
+#define RAMP4           #a399c2
+#define RAMP5           #c5bae8
+
 
 !!!!!!!!!!!!
 !! Colors !!
@@ -79,12 +85,6 @@
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
-#define BARX 585
-#define BARY 5
-#define BARWIDTH 750
-#define BARHEIGHT 23
-#define BARBORDERPX 2
-
 bar.background: SECONDARY
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
@@ -96,9 +96,15 @@ bar.ws-focused: GREEN1
 bar.ws-occupied: BLACK1
 bar.ws-unoccupied: BLACK1
 
+bar.ramp1: RAMP1
+bar.ramp2: RAMP2
+bar.ramp3: RAMP3
+bar.ramp4: RAMP4
+bar.ramp5: RAMP5
+
 bar.layout-symbol: PRIMARY
 
-bar.line-size: 0
+bar.line-size: 2
 bar.line-color: SECONDARY
 
 bar.alert: ACCENT
@@ -106,13 +112,16 @@ bar.primary: PRIMARY
 bar.secondary: SECONDARY
 
 bar.radius: 0
-bar.border: BARBORDERPX
+bar.border: 2
 bar.border-color: SECONDARY
 
-bar.x: BARX
-bar.y: BARY
-bar.width: BARWIDTH
-bar.height: BARHEIGHT
+bar.x: 22%
+bar.y: 5
+bar.width: 24%
+bar.height: 23
+
+bar.x2: 47%
+bar.width2: 31%
 
 !!!!!!!!!!!
 !! herbe !!

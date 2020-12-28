@@ -5,15 +5,8 @@ case $1 in
     down) pactl set-sink-volume 0 -10% ;;
     set)  pactl set-sink-volume 0 "$2"% ;;
     mute) pactl set-sink-mute 0 toggle ;;
+    muted) pamixer --get-mute; exit 1 ;;
     print) echo "$(pamixer --get-volume)"; exit 1 ;;
 esac
 
-#v=$(pamixer --get-volume)
-#msg="$v%"
-
-#if [ "$(pamixer --get-mute)" = "true" ];
-#then
-#    msg="$v% (muted)"
-#fi
-
-notify-send "$(volbar)"
+#notify-send "$(volbar)"

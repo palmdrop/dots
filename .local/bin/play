@@ -1,12 +1,24 @@
 #!/bin/bash
-display_current() {
-    song="$(python ~/.local/scripts/spotify_status.py -f '{song}' -t 60)"
-    artist="$(python ~/.local/scripts/spotify_status.py -f '{artist}' -t 30)"
+song="$(python ~/.local/scripts/spotify_status.py -f '{song}' -t 60)"
+artist="$(python ~/.local/scripts/spotify_status.py -f '{artist}' -t 30)"
 
+display_current() {
     if [ -z "$song" ] && [ -z "$artist" ]; then
         notify-send "(not playing)"
     else
         notify-send "$song" " " "$artist"
+    fi
+}
+
+print() {
+    if [ -z "$song" ] && [ -z "$artist" ]; then
+        echo "(not playing)"
+    else
+        case $1 in
+            artist) echo $artist ;;
+            song)   echo $song   ;;
+            *)      echo "$song by $artist"
+        esac
     fi
 }
 
@@ -18,6 +30,8 @@ case $1 in
     prev) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
     ;;
     next) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+    ;;
+    print) print $2
     ;;
     *) display_current
 esac

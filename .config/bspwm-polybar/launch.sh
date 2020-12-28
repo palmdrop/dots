@@ -7,5 +7,6 @@ rm /tmp/polybar.pids
 
 polybar -c ~/.config/bspwm-polybar/config.ini main &
 echo "$!" >> /tmp/polybar.pids
-
+polybar -c ~/.config/bspwm-polybar/config.ini secondary &
+echo "$!" >> /tmp/polybar.pids
 
