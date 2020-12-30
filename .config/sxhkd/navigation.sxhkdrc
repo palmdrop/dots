@@ -18,21 +18,21 @@ alt + shift + q
 alt + {t,shift + t,f}
 	bspc node -t \~{tiled,pseudo_tiled,fullscreen}
 
-# toggle floating
+# set next window to float
 alt + space
-	bspc node -t \~floating; \
-    #[ $(bspc query -N -n focused.floating) ] && . $XDG_CONFIG_HOME/sxhkd/layout.mode
+    bspc rule -a '*' --one-shot state=floating
+
+# toggle floating
+alt + ctrl + space
+	bspc node -t \~floating
 
 ##################
 # LAYOUT CONTROL #
 ##################
 
 # alternate between the tiled and monocle layout
-alt + z
-    bspc-layout-menu
-
-alt + shift + z
-    bspc-layout-menu --once
+alt + {_,+ shift + } z
+    bspc-layout-menu {_,--once}
 
 alt + ctrl + z
     notify-send "Cleared layout"; \

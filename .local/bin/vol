@@ -9,4 +9,4 @@ case $1 in
     print) echo "$(pamixer --get-volume)"; exit 1 ;;
 esac
 
-#notify-send "$(volbar)"
+notify-send "$(volbar)"

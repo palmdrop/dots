@@ -5,7 +5,6 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
-
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
@@ -62,8 +61,4 @@ $BROWSER &
 #autolock &
 
 # Start window manager
-#exec openbox-session
 exec bspwm
-
-#dwm-notify &
-#while type dwm > ~/.local/log/dwm.log ; do dwm && continue || break ; done 

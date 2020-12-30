@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [ -z "$(pgrep polybar)" ] 
-then
-    startbardwm
-else
-    killall polybar
-fi

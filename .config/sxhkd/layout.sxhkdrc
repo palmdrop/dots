@@ -2,10 +2,6 @@
 # LAYOUT CONTROL #
 ##################
 
-# alternate between the tiled and monocle layout
-shift + f 
-	bspc desktop -l next
-
 # swap the current node and the biggest window
 Return
 	bspc-main-toggle
@@ -48,17 +44,19 @@ shift + ctrl + {comma,period}
 # WORKSPACE MANAGEMENT #
 ########################
 
-# focus the next/previous window in the current desktop
-#alt + {_,shift +} {j,k}
-#	bspc node -{f,s} {next,prev}.local.!hidden.window
+# send all nodes on current desktop to next/previous desktop (and follow)
+m ; {h,l} {_,+ ctrl}
+    bspc node 'any.local' -d  {prev,next} {_,--follow}
 
-# focus the next/previous desktop or send a node to the next/previous desktop
-#alt + {_,shift +} {h,l}
-#	bspc {desktop -f, node -d} {prev,next}.local
+m ; m ; {h,l}
+    bspc node 'any.local' -d  {prev,next} --follow
 
-# send a node to the next/previous desktop and follow
-m ; {h,l}
-	bspc node -d {prev,next} --follow
+# send all nodes to specified desktop (and follow)
+m ; {1-9,0} {_, + ctrl}
+    bspc node 'any.local' -d  '^{1-9,10}' {_,--follow}
+
+m ; m ; {1-9,0} 
+    bspc node 'any.local' -d  '^{1-9,10}' --follow
 
 # focus the last node/desktop
 shift + Tab

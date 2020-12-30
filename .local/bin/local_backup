@@ -22,7 +22,7 @@ tar -cvzpf $BACKUP  `#Backup location` \
      -T $CONFIG     `#Read paths from config file`
 
 # Notification
-notify-send "Backup done"
+notify-send "Local backup done"
 
 # Return to user directory
 cd $USR_DIR

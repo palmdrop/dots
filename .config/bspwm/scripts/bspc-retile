@@ -1,0 +1,21 @@
+#!/bin/bash
+
+D=$(bspc query -D -d focused --names)
+
+#bspc desktop --rename $D\' 
+bspc monitor --add-desktops temp 
+
+#for i in $(bspc query -N -n .window -d $D); do
+#    bspc node -d temp
+#done
+bspc node 'any.local' -d temp
+
+for i in $(bspc query -N -n .window -d temp); do
+    bspc node -d $D
+done
+
+sleep 0.5
+
+#bspc desktop -f $D
+bspc desktop temp --remove
+

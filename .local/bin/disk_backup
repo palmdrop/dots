@@ -13,4 +13,4 @@ dir=$backup_location$backup_name
 pacman -Q > /tmp/list.pkgs
 
 sudo mkdir $dir
-sudo cp -rv /tmp/list.pkgs /etc/profile ~/src/ ~/.config/ ~/usr/ ~/.local/bin/ ~/.local/log ~/.local/scripts $dir && echo "Backup done."
+sudo cp -rv /tmp/list.pkgs /etc/profile ~/src/ ~/.config/ ~/usr/ ~/.local/bin/ ~/.local/log ~/.local/scripts $dir && notify-send "Disk backup done."
