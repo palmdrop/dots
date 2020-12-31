@@ -1,7 +1,7 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #b8b3c7
+#define FOREGROUND      #c4c0b9
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #121010
 #define CURSORCOLOR     #5f5869
@@ -19,7 +19,7 @@
 #define MAGENTA2        #81a18f
 #define CYAN1           #845c71
 #define CYAN2           #82576d
-#define WHITE1          #b8b3c7
+#define WHITE1          #c4c0b9
 #define WHITE2          #a299a3
 
 #define TRANSPARENT     #00000000
@@ -102,14 +102,13 @@ bar.ramp3: RAMP3
 bar.ramp4: RAMP4
 bar.ramp5: RAMP5
 
-bar.layout-symbol: PRIMARY
-
 bar.line-size: 2
 bar.line-color: SECONDARY
 
 bar.alert: ACCENT
 bar.primary: PRIMARY
 bar.secondary: SECONDARY
+bar.extra: BLUE1
 
 bar.radius: 0
 bar.border: 2
@@ -126,9 +125,9 @@ bar.width2: 33%
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: WHITE1
+herbe.background_color: RAMP1
 herbe.border_color: SECONDARY
-herbe.font_color: BLACK1
+herbe.font_color: RAMP4
 herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
@@ -151,15 +150,15 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: BLUE1
-dmenu.normbgcolor: WHITE1
-dmenu.selfgcolor:  BLUE1
-dmenu.selbgcolor:  WHITE1
+dmenu.normfgcolor: RAMP5
+dmenu.normbgcolor: RAMP1
+dmenu.selfgcolor:  RAMP5
+dmenu.selbgcolor:  RAMP1
 
-dmenu.normhighlightfgcolor: BLACK1
-dmenu.normhighlightbgcolor: WHITE1
-dmenu.selhighlightfgcolor:  BLACK1
-dmenu.selhighlightbgcolor:  WHITE1
+dmenu.normhighlightfgcolor: BLUE1
+dmenu.normhighlightbgcolor: RAMP1
+dmenu.selhighlightfgcolor:  BLUE1
+dmenu.selhighlightbgcolor:  RAMP1
 
 dmenu.font: scientifica:size=10
 

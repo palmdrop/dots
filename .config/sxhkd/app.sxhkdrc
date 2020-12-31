@@ -22,6 +22,10 @@ y
 g
 	nf gimp
 
+# Text editing
+o
+    nf libreoffice
+
 # Coding
 c ; {i,c}
 	nf {idea,clion}
