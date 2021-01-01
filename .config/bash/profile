@@ -29,6 +29,8 @@ export AWT_TOOLKIT=MToolkit
 
 [[ -d $XDG_CONFIG_HOME/bspwm/scripts ]] && export PATH=$XDG_CONFIG_HOME/bspwm/scripts:$PATH
 
+[[ -d $XDG_CONFIG_HOME/sxhkd/scripts ]] && export PATH=$XDG_CONFIG_HOME/sxhkd/scripts:$PATH
+
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
 [[ -f $XDG_CONFIG_HOME/bash/bashrc ]] && . $XDG_CONFIG_HOME/bash/bashrc
 

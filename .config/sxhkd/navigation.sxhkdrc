@@ -26,6 +26,10 @@ alt + space
 alt + ctrl + space
 	bspc node -t \~floating
 
+# set node flags
+alt + x
+    bspc-flag-menu
+
 ##################
 # LAYOUT CONTROL #
 ##################

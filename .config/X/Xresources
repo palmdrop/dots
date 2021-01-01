@@ -150,14 +150,14 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: RAMP5
+dmenu.normfgcolor: BLUE1
 dmenu.normbgcolor: RAMP1
-dmenu.selfgcolor:  RAMP5
+dmenu.selfgcolor:  BLUE1
 dmenu.selbgcolor:  RAMP1
 
-dmenu.normhighlightfgcolor: BLUE1
+dmenu.normhighlightfgcolor: RAMP5
 dmenu.normhighlightbgcolor: RAMP1
-dmenu.selhighlightfgcolor:  BLUE1
+dmenu.selhighlightfgcolor:  RAMP5
 dmenu.selhighlightbgcolor:  RAMP1
 
 dmenu.font: scientifica:size=10
