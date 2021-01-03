@@ -13,7 +13,7 @@ mute=$(xrdbvar bar.foreground)
 # Color if volume is above 100%
 high=$(xrdbvar bar.alert)
 # Volume step color
-step=$(xrdbvar bar.ramp4)
+step=$(xrdbvar bar.primary)
 
 # If muted, replace step with mute color
 if (( $v > 100 )); then

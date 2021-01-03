@@ -90,7 +90,7 @@ bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
 bar.foreground-alt: FOREGROUND_ALT
 
-!bar.background-module: SECONDARY
+bar.background-module: RAMP3
 
 bar.ws-focused: GREEN1
 bar.ws-occupied: BLACK1
@@ -108,7 +108,7 @@ bar.line-color: SECONDARY
 bar.alert: ACCENT
 bar.primary: PRIMARY
 bar.secondary: SECONDARY
-bar.extra: BLUE1
+bar.extra: YELLOW1
 
 bar.radius: 0
 bar.border: 2

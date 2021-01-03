@@ -5,8 +5,18 @@ if [ "$1" = "reset" ]; then
     gaps=$(xrdbvar bspwm.gaps)
     outergaps=$(xrdbvar bspwm.outergaps)
     padding=$(( $outergaps - $gaps ))
+# If set, set padding (subtract gaps, to make more intuitive)
+elif [ "$1" = "set" ]; then
+    gaps=$(bspc config window_gap)
+    padding=$(( $2 - $gaps ))
+# If print, output current padding
+elif [ "$1" = "print" ]; then
+    gaps=$(bspc config window_gap)
+    padding=$(bspc config left_padding)
+    echo "$(( $padding + $gaps ))"
+    exit 1
+# Else, increase or decrease padding
 else
-    # Else, increase or decrease padding
     padding=$(( `bspc config left_padding` $1))
     padding=$(( padding > 0 ? padding : 0 )) 
 fi

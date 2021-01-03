@@ -15,7 +15,6 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 gaps=$(xrdbvar bspwm.gaps)
 outergaps=$(xrdbvar bspwm.outergaps)
-#padding=$(( $outergaps - $gaps ))
 
 _ border_width          $(xrdbvar bspwm.borderpx)
 _ window_gap            $gaps

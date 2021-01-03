@@ -35,7 +35,7 @@ case $layout in
 esac
 
 if [ "$layout" = "-" ] || [ "$layout" = "tiled" ]; then
-    cl=$(xrdbvar bar.ramp2)
+    cl=$(xrdbvar bar.background-module)
 else 
     cl=$(xrdbvar bar.alert)
 fi
