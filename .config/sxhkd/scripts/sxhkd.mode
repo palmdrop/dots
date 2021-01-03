@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Kill current sxhkd instance
+killall -e -q sxhkd 
+
+# Wait for sxhkd to terminate
+while pgrep -u $UID -x sxhkd >/dev/null; do sleep 0.1; done
+
+# Send hook to polybar sxhkd-mode module
+polybar-msg hook sxhkd-mode $1
+
+# Shift arguments
+shift
+
+# Start new sxhkd instance with specified config file(s)
+sxhkd -c $@ &
