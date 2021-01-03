@@ -25,7 +25,7 @@
 #define TRANSPARENT     #00000000
 #define PRIMARY         #b8b3c7
 #define SECONDARY       #8b84a3
-#define ACCENT          #845c71
+#define ACCENT          #af9070
 
 #define RAMP1           #4b455c
 #define RAMP2           #6c638a
@@ -125,9 +125,9 @@ bar.width2: 33%
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: RAMP1
+herbe.background_color: SECONDARY
 herbe.border_color: SECONDARY
-herbe.font_color: RAMP4
+herbe.font_color: RAMP1
 herbe.line_spacing: 5
 herbe.padding: 35
 herbe.width: 250
@@ -150,15 +150,15 @@ dmenu.borderpx: 50
 
 dmenu.lines: 10
 
-dmenu.normfgcolor: BLUE1
-dmenu.normbgcolor: RAMP1
-dmenu.selfgcolor:  BLUE1
-dmenu.selbgcolor:  RAMP1
+dmenu.normfgcolor: RAMP1
+dmenu.normbgcolor: SECONDARY
+dmenu.selfgcolor:  RAMP1
+dmenu.selbgcolor:  SECONDARY
 
 dmenu.normhighlightfgcolor: RAMP5
-dmenu.normhighlightbgcolor: RAMP1
+dmenu.normhighlightbgcolor: SECONDARY
 dmenu.selhighlightfgcolor:  RAMP5
-dmenu.selhighlightbgcolor:  RAMP1
+dmenu.selhighlightbgcolor:  SECONDARY
 
 dmenu.font: scientifica:size=10
 

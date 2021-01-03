@@ -35,9 +35,9 @@ case $layout in
 esac
 
 if [ "$layout" = "-" ] || [ "$layout" = "tiled" ]; then
-    cl=$(xrdbvar bar.background-module)
+    cl=$(xrdbvar bar.ramp4)
 else 
-    cl=$(xrdbvar bar.alert)
+    cl=$(xrdbvar bar.ws-focused)
 fi
 
 echo "%{B$cl} $symbol %{B-}"
