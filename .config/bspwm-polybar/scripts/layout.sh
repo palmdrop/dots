@@ -35,7 +35,7 @@ case $layout in
 esac
 
 if [ "$layout" = "-" ] || [ "$layout" = "tiled" ]; then
-    cl=$(xrdbvar bar.ramp4)
+    cl=$(xrdbvar bar.ramp2)
 else 
     cl=$(xrdbvar bar.ws-focused)
 fi
