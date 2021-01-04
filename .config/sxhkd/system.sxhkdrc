@@ -4,7 +4,7 @@ control + {q,r}
 
 # Mount control
 {m,u}
-	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount} ||\
+	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount} &\
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 # Lock computer
@@ -15,12 +15,14 @@ x
 shift + x
 	xkill
 
+# System information menu
+i
+    sysinfo-menu
+
 # Shutdown menu
 e
 	shutdownmenu
 
-@Escape
-    . $XDG_CONFIG_HOME/sxhkd/normal.mode
-
-alt + Escape
+# Modes 
+{alt + Escape,@Escape}
     . $XDG_CONFIG_HOME/sxhkd/normal.mode

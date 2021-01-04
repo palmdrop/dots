@@ -1,12 +1,4 @@
 #!/bin/bash
-#killall -e sxhkd 
-#polybar-msg hook sxhkd-mode 3
-
-#sleep 0.05
-#sxhkd -c $XDG_CONFIG_HOME/sxhkd/constants.sxhkdrc \
-#         $XDG_CONFIG_HOME/sxhkd/normal.sxhkdrc \
-#         $XDG_CONFIG_HOME/sxhkd/app.sxhkdrc
-
 sxhkd.mode 3 \
     $XDG_CONFIG_HOME/sxhkd/constants.sxhkdrc \
     $XDG_CONFIG_HOME/sxhkd/normal.sxhkdrc \

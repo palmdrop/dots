@@ -1,17 +1,17 @@
 #!/bin/bash
 
 current=$(bsp-layout get $(bspc query -D -d --names))
-#[[ $current = "-" ]] && current="tiled"
+[[ $current = "-" ]] && current="tiled"
 
 case "$1" in
     --remove)
-        bsp-layout remove
+        bsp-layout set tiled
         exit 0
     ;;
     --remove-all)
-        for desktop in $(bspc query -D --names);
-        do
-            bsp-layout remove $desktop
+        for desktop in $(bspc query -D --names); do
+            #bsp-layout remove $desktop
+            bsp-layout set tiled
         done
         exit 0
     ;;
@@ -19,6 +19,8 @@ case "$1" in
 esac
 
 choice=$(bsp-layout layouts | dmenu -i -F -p "Layout ($current)")
+
+[[ -z $choice ]] && exit 0
 
 if [ "$1" = "--once" ]; 
 then
