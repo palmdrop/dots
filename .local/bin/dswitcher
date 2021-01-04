@@ -22,7 +22,15 @@ fi
 
 # Unhide hidden bspc nodes
 bspc node $id -g hidden=off
-wmctrl -i -a $id
+
+if [ "$1" = "-R" ]; then
+    # Bring the window to current desktop
+    bspc node $id -d focused
+    #wmctrl -R $id
+else
+    # Switch to specified desktop
+    wmctrl -i -a $id
+fi
 
 #wmctrl -l | sed -n "$num p" | cut -c -10 | xargs wmctrl -i -a
 
