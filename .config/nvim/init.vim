@@ -38,34 +38,35 @@ let g:NERDTreeDirArrowCollapsible = ''
 set directory^=$XDG_CACHE_HOME/vim//
 set autoindent
 set expandtab
-set shiftround
-set shiftwidth=4
 set smarttab
 set tabstop=4
+set shiftround
+set shiftwidth=4
 set wildmode=longest,list,full
+set hlsearch
+set ignorecase
+set smartcase
 
 " SHORCUTS
+let mapleader=" "
+
 map <C-g> :Goyo<CR> 
 map <C-c> :ColorToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-w> :WP<CR>
+map <C-r> :%s//gI<Left><Left><Left>
 
-" SEARCH
-set hlsearch
-set ignorecase
-set smartcase
+" BASIC AUTOCMD
+autocmd BufRead,BufNewFile ~/usr/notes set filetype=markdown
 
 " INTERFACE
 set laststatus=2
 set noruler
 set noshowcmd
-
-set number
-set relativenumber
+set number relativenumber
 set noerrorbells
 set visualbell
 set mouse=a
-
 set splitbelow splitright
 
 " COLOR
