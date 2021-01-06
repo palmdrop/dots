@@ -11,15 +11,15 @@ blank=$(xrdbvar bar.ramp2)
 # Mute color
 mute=$(xrdbvar bar.foreground)
 # Color if volume is above 100%
-high=$(xrdbvar bar.alert)
+high=$(xrdbvar bar.ws-focused)
 # Volume step color
 step=$(xrdbvar bar.primary)
 
 # If muted, replace step with mute color
-if (( $v > 100 )); then
-    step=$high
-elif [ "$(vol muted)" = "true" ]; then
+if [ "$(vol muted)" = "true" ]; then
     step=$mute
+elif (( $v > 100 )); then
+    step=$high
 fi
 
 # Define variables
