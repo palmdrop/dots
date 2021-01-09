@@ -90,9 +90,9 @@ shift + s ; {1-9,0} ; {1-9,0}
 #alt + {p,b,comma,period}
 #	bspc node -f @{parent,brother,first,second}
 
-# Balance parent node
-b ; m
-	bspc node @parent -B
+# Balance or equalize parent node
+b ; {_,shift+} p
+	bspc node @parent -{B,E}
 
 # Balance all windows in vertical or horizontal direction
 b ; {h,j,k,l}

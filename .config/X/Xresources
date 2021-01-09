@@ -11,8 +11,8 @@
 #define RED2            #698a78
 #define GREEN1          #825757
 #define GREEN2          #825757
-#define YELLOW1         #af9070
-#define YELLOW2         #af9070
+#define YELLOW1         #968b74
+#define YELLOW2         #968b74
 #define BLUE1           #8b84a3
 #define BLUE2           #8b84a3
 #define MAGENTA1        #81a18f
