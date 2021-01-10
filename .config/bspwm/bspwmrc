@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
@@ -39,20 +39,13 @@ _ presel_feedback_color "$(xrdbvar bspwm.presel_color)"
 ###################
 # Window settings #
 ###################
-
-#R Gimp              desktop='^4' follow=on
-#R Spotify           desktop='^9' pseudo_tiled=on
-#R Darktable         desktop='^3' follow=on
-#R discord           desktop='^4' follow=on
-#R jetbrains-idea-ce desktop='^2' follow=on
-#R libreoffice       desktop='^3' follow=on
-
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
 R '*:scratch1'      state=floating #sticky=on
 R '*:scratch2'      state=floating #sticky=on
 R '*:scratch3'      state=floating #sticky=on
 R Zathura           state=tiled
+R Spotify           desktop='^9' 
 
 #############
 # Autostart #
@@ -65,4 +58,3 @@ export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
 export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
 export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
 pgrep -fl 'pidswallow -gl' || pidswallow -gl &
-

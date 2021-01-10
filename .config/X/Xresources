@@ -11,8 +11,8 @@
 #define RED2            #698a78
 #define GREEN1          #825757
 #define GREEN2          #825757
-#define YELLOW1         #968b74
-#define YELLOW2         #968b74
+#define YELLOW1         #a89874
+#define YELLOW2         #a89874
 #define BLUE1           #8b84a3
 #define BLUE2           #8b84a3
 #define MAGENTA1        #81a18f
@@ -25,7 +25,7 @@
 #define TRANSPARENT     #00000000
 #define PRIMARY         #b8b3c7
 #define SECONDARY       #8b84a3
-#define ACCENT          #af9070
+#define ACCENT          #a89874
 
 #define RAMP1           #4b455c
 #define RAMP2           #6c638a
