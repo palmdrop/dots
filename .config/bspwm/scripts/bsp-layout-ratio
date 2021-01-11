@@ -10,6 +10,12 @@ max=0.9
 
 value=$(echo "$value $1" | bc)
 
+if [[ -z $value ]]; then 
+    echo "Invalid argument"
+    exit 1
+fi
+
+
 if (( $(echo "$value < $min" | bc -l) )); then
     value=$min
 elif (( $(echo "$value > $max" | bc -l) )); then
@@ -18,3 +24,17 @@ fi
 
 echo "TALL_RATIO=$value;" > $FILE
 echo "WIDE_RATIO=$value;" >> $FILE
+
+#desktop=$(bspc query -D -d --names)
+#current=$(bsp-layout get $desktop)
+#if [[ "( tall wide rtall rwide )" =~ "$current" ]]; then
+    #notify-send "Test $current"
+    #bsp-layout remove $desktop &&
+    #bsp-layout set $current
+    #exit 0
+#fi
+
+#bsp-layout reload
+
+#exit 1
+
