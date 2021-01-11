@@ -54,7 +54,7 @@ map <C-g> :Goyo<CR>
 map <C-c> :ColorToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-w> :WP<CR>
-map <C-r> :%s//gI<Left><Left><Left>
+map <C-x> :%s//gI<Left><Left><Left>
 
 " BASIC AUTOCMD
 autocmd BufRead,BufNewFile ~/usr/notes set filetype=markdown
