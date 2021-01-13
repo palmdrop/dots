@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"scientifica 10";
+	font:							"scientifica 12";
     show-icons:                     false;
 	icon-theme: 					"Papirus";
     display-drun: 					"Run:";

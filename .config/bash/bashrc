@@ -115,9 +115,11 @@ set -o vi
 stty erase '^H'
 
 # Completion 
-for file in /etc/bash_completion.d/* ; do
-    source "$file"
-done
+if [ -d /etc/bash_completion ]; then
+    for file in /etc/bash_completion.d/* ; do
+        source "$file"
+    done
+fi
 
 # PROMPT
 parse_git_branch() {
