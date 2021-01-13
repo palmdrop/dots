@@ -18,13 +18,8 @@ XF86MonBrightness{Up,Down}
 # Printscreen control
 Print
 	flameshot full -p /home/xan/usr/pictures/screenshots/ & \
-    sleep 0.3 & \
+    sleep 0.7 & \
     notify-send "Screenshot taken"
 
 alt + Print
 	flameshot gui
-
-# Reload sxhkd
-alt + shift + Escape
-	pkill -USR1 -x sxhkd; notify-send "sxhkd reloaded"
-

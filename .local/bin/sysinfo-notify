@@ -18,15 +18,19 @@ space="$(space print)"
 # Get current date
 date="$(date +'%A, %d %h, %H:%M')"
 
+# Get 
+
 # Create a separator string of periods of the same length as 
 # the date string.
 l=${#date}
 separator=$(printf "%${l}s" | sed 's/ /./g')
 
 # Send notification
-notify-send \
-      "$date"\
-      "$separator" " "\
-      "Volume: $vol" " "  \
+notify-send              \
+      "$date"            \
+      "$separator" " "   \
+      "Volume: $vol" " " \
       "Charge: $bat" " " \
-      "Disk:   $space" 
+      "Disk:   $space"   \
+      "$separator" " "   \
+      "$(play print)"

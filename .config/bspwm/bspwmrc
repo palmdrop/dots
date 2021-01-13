@@ -27,13 +27,14 @@ _ pointer_action1       move
 _ pointer_action2       resize_side
 
 _ split_ratio           0.55
-_ borderless_monocle    false
+_ single_monocle        true
+_ borderless_monocle    true
 _ gapless_monocle       false
 _ automatic_scheme      alternate
 
 _ normal_border_color   "$(xrdbvar bspwm.innerbordernormal)"
 _ active_border_color   "$(xrdbvar bspwm.innerbordernormal)"
-_ focused_border_color  "$(xrdbvar bspwm.innerbordernormal)"
+_ focused_border_color  "$(xrdbvar bspwm.innerborderfocused)"
 _ presel_feedback_color "$(xrdbvar bspwm.presel_color)"
 
 ###################

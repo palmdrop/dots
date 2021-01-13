@@ -77,7 +77,7 @@
 !!!!!!!!!!!!!!!!!!!!!!
 !! General settings !!
 !!!!!!!!!!!!!!!!!!!!!!
-#define BORDERPX 0
+#define BORDERPX 2
 #define FLOATBORDERPX 0
 #define GAPS 23
 #define OUTERGAPS 43
@@ -162,6 +162,16 @@ dmenu.selhighlightbgcolor:  SECONDARY
 
 dmenu.font: scientifica:size=10
 
+
+!!!!!!!!!!
+!! Rofi !!
+!!!!!!!!!!
+rofi.background: BACKGROUND
+rofi.foreground: SECONDARY
+rofi.select: RAMP1
+rofi.accent: PRIMARY
+
+
 !!!!!!!!!!!
 !! URxvt !!
 !!!!!!!!!!!
@@ -196,9 +206,9 @@ URxvt.url-launcher: /usr/bin/xdg-open
 bspwm.presel_color: CYAN1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
-bspwm.borderpx:     0
+bspwm.borderpx:     2
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: RED1
+bspwm.innerborderfocused: PRIMARY
 bspwm.innerbordernormal:  BACKGROUND

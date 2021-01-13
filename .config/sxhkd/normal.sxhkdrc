@@ -26,3 +26,9 @@ alt + e
 
 alt + s
     . $XDG_CONFIG_HOME/sxhkd/system.mode
+
+
+# Reload
+alt + shift + Escape
+    notify-send "sxhkd reloaded"; \
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode

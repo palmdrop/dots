@@ -1,6 +1,6 @@
-# Dmenu
+# Application launcher (rofi)
 alt + d
-	dmenu_run_notify
+	launcher
 
 # Terminal
 alt + Return 
@@ -11,8 +11,8 @@ alt + q
 	flash_window
 
 # Notifications
-alt + {o,p}
-	{herbe-info &, play &}
+alt + o
+	sysinfo-notify
 
 # Edit dotfiles
 alt + shift + d
