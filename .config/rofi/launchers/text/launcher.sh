@@ -13,17 +13,24 @@
 theme="style_2"
 
 dir="$HOME/.config/rofi/launchers/text"
-styles=($(/usr/bin/ls -p --hide="colors.rasi" $dir/styles))
-color="${styles[$(( $RANDOM % 10 ))]}"
 
-# comment this line to disable random colors
-#sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
+cat > $dir/colors.rasi <<- EOF
+    /* colors */
 
-# comment these lines to disable random style
-#themes=($(/usr/bin/ls -p --hide="launcher.sh" --hide="styles" $dir))
-#theme="${themes[$(( $RANDOM % 7 ))]}"
-
-#echo $theme
+    * {
+        al:      #00000000;
+        bg:      $(xrdbvar rofi.background);
+        se:      $(xrdbvar rofi.select);
+        fg:      $(xrdbvar rofi.foreground);
+        ac:      $(xrdbvar rofi.accent);
+        red:     $(xrdbvar color1);
+        green:   $(xrdbvar color2);
+        yellow:  $(xrdbvar color3);
+        blue:    $(xrdbvar color4);
+        purple:  $(xrdbvar color5);
+        cyan:    $(xrdbvar color6);
+    }
+EOF
 
 rofi -no-lazy-grab -show drun \
 -modi run,drun,window \

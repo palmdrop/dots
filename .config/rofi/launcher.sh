@@ -1,44 +1,46 @@
 #!/usr/bin/env bash
 
-## NOTE: launch script has been heavily modified by @palmdrop
-
 ## Author  : Aditya Shakya
 ## Mail    : adi1090x@gmail.com
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-theme="style_8"
-dir="$HOME/.config/rofi/"
+# Available Styles
+# >> Created and tested on : rofi 1.6.0-1
+#
+# style_1     style_2     style_3     style_4     style_5     style_6     style_7
 
-ALPHA="#00000000"
-BG="$(xrdbvar rofi.background)ff"
-FG="$(xrdbvar rofi.foreground)ff"
-SELECT="$(xrdbvar rofi.select)ff"
-ACCENT="$(xrdbvar rofi.accent)ff"
+theme="style_2"
 
-# light
-#ALPHA="#00000000"
-#BG="#FFFFFFff"
-#FG="#000000ff"
-#SELECT="#f3f3f3ff"
+dir="$HOME/.config/rofi"
 
-# accent colors
-#COLORS=('#EC7875' '#61C766' '#FDD835' '#42A5F5' '#BA68C8' '#4DD0E1' '#00B19F' \
-#		'#FBC02D' '#E57C46' '#AC8476' '#6D8895' '#EC407A' '#B9C244' '#6C77BB')
-#ACCENT="${COLORS[$(( $RANDOM % 14 ))]}ff"
+colors="$dir/colors.rasi"
 
-# overwrite colors file
+[[ -f $colors ]] || {
 cat > $dir/colors.rasi <<- EOF
-	/* colors */
+    /* colors */
 
-	* {
-	  al:  $ALPHA;
-	  bg:  $BG;
-	  se:  $SELECT;
-	  fg:  $FG;
-	  ac:  $ACCENT;
-	}
+    * {
+        al:      #00000000;
+        bg:      $(xrdbvar rofi.background);
+        se:      $(xrdbvar rofi.select);
+        fg:      $(xrdbvar rofi.foreground);
+        ac:      $(xrdbvar rofi.accent);
+        red:     $(xrdbvar color1);
+        green:   $(xrdbvar color2);
+        yellow:  $(xrdbvar color3);
+        blue:    $(xrdbvar color4);
+        purple:  $(xrdbvar color5);
+        cyan:    $(xrdbvar color6);
+    }
 EOF
 
-#rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme" $@
-rofi -no-lazy-grab -matching fuzzy -theme $dir/"$theme" $@
+echo "up"
+}
+
+echo "$dir/$theme"
+
+rofi -no-lazy-grab \
+-modi run,drun,window \
+-theme $dir/"$theme" $@
+

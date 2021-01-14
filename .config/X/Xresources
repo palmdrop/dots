@@ -167,9 +167,9 @@ dmenu.font: scientifica:size=10
 !! Rofi !!
 !!!!!!!!!!
 rofi.background: BACKGROUND
-rofi.foreground: SECONDARY
+rofi.foreground: PRIMARY
 rofi.select: RAMP1
-rofi.accent: PRIMARY
+rofi.accent: CYAN1
 
 
 !!!!!!!!!!!
