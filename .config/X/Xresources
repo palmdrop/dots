@@ -125,9 +125,9 @@ bar.width2: 33%
 !!!!!!!!!!!
 !! herbe !!
 !!!!!!!!!!!
-herbe.background_color: SECONDARY
-herbe.border_color: PRIMARY
-herbe.font_color: RAMP1
+herbe.background_color: BACKGROUND
+herbe.border_color: CYAN1
+herbe.font_color: FOREGROUND
 herbe.line_spacing: 5
 herbe.padding: 30
 herbe.width: 250
@@ -203,7 +203,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 !!!!!!!!!!!
 !! bspwm !!
 !!!!!!!!!!!
-bspwm.presel_color: CYAN1
+bspwm.presel_color: BLUE1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
 bspwm.borderpx:     2

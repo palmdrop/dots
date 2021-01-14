@@ -25,7 +25,7 @@ esac
 options=$(bsp-layout layouts)
 
 # Get user choice (and display current layout in prompt)
-choice=$(echo "${options[@]}" | dmenu -i -F -p "Layout ($current)")
+choice=$(echo "${options[@]}" | dmenu -i -F -p "Layout_($current)")
 
 # If no choice, exit
 [[ -z $choice ]] && exit 0

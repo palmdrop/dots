@@ -1,23 +1,19 @@
 #!/usr/bin/env bash
 
+
 ## Author  : Aditya Shakya
 ## Mail    : adi1090x@gmail.com
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-# Available Styles
-# >> Created and tested on : rofi 1.6.0-1
-#
-# style_1     style_2     style_3     style_4     style_5     style_6     style_7
+## NOTE: HEAVILY MODIFIED BY ME, PALMDROP
 
-theme="style_2"
-
+theme="style"
 dir="$HOME/.config/rofi"
-
 colors="$dir/colors.rasi"
 
 [[ -f $colors ]] || {
-cat > $dir/colors.rasi <<- EOF
+cat > $colors <<- EOF
     /* colors */
 
     * {
@@ -38,9 +34,8 @@ EOF
 echo "up"
 }
 
-echo "$dir/$theme"
-
 rofi -no-lazy-grab \
--modi run,drun,window \
+-modi drun,run \
+-matching fuzzy \
 -theme $dir/"$theme" $@
 

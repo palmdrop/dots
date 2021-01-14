@@ -21,9 +21,9 @@ do
 done
 
 # Create prompt
-prompt="Toggle flags"
+prompt="Toggle_flags"
 
-[[ -z $set_flags ]] || prompt="$prompt ($set_flags)"
+[[ -z $set_flags ]] || prompt="${prompt}_($set_flags)"
 
 # Get user choice
 choice=$(printf "%s\n" "${flags[@]}" | dmenu -i -F -p "$prompt")
