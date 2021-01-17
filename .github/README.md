@@ -1,7 +1,7 @@
 # [bspwm] Wires
 ![wires](https://github.com/palmdrop/dots/blob/master/.github/bspwm2.png)
 
-Repository for personal config files, scripts, and wallpapers. Configs can be found under `.config`, scripts under `.local/bin` and wallpapers under `.cofing/wall`. Additional scripts might be found under `.local/scripts`. The `.github` directory is simply there to prevent this readme and any pictures from cluttering my `~`.
+Repository for personal config files, scripts, and wallpapers. Configs can be found under `.config`, scripts under `.local/bin` and wallpapers under `.config/wall`. Additional scripts might be found under `.local/scripts`. The `.github` directory is simply there to prevent this readme and any pictures from cluttering my `~`.
 
 Important software:
 * [bspwm](https://github.com/baskerville/bspwm) (window manager)
