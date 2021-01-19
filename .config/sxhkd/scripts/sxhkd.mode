@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#kill $(cat /tmp/sxhkd.pid) 
-killall -e -q sxhkd
-
-#rm /tmp/sxhkd.pid
-
 # Kill current sxhkd instance
 killall -e -q sxhkd 
 
@@ -19,4 +14,3 @@ shift
 
 # Start new sxhkd instance with specified config file(s)
 sxhkd -t 2 -c $@ &
-#echo "$!" >> /tmp/sxhkd.pid
