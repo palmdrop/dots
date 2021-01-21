@@ -87,6 +87,8 @@ set history=10000
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; rm $XDG_CONFIG_HOME/rofi/colors.rasi
 
+autocmd BufWritePost *dunstrc !killall dunst
+
 " Search function for notes directory
 command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.txt
 

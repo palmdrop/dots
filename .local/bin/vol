@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 case $1 in
     up)   pactl set-sink-volume 0 +10% ;;
     down) pactl set-sink-volume 0 -10% ;;
@@ -9,4 +10,6 @@ case $1 in
     print) echo "$(pamixer --get-volume)"; exit 1 ;;
 esac
 
-notify-send "$(volbar)"
+id=212121
+dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" "Volume: $(volbar)"
+#notify-send --urgency=low "$(volbar)"

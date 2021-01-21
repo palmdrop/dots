@@ -26,8 +26,8 @@ l=${#date}
 separator=$(printf "%${l}s" | sed 's/ /./g')
 
 # Send notification
-notify-send              \
-      "$date"            \
+#notify-send              \
+herbe "$date"            \
       "$separator" " "   \
       "Volume: $vol" " " \
       "Charge: $bat" " " \

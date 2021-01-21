@@ -4,12 +4,6 @@
 
 HISTSIZE= HISTFILESIZE=1000
 
-# Path 
-if [ -d "$HOME/.local/bin" ] ; 
-then 
-	PATH="$HOME/.local/bin:$PATH"
-fi
-
 # SHOPT
 shopt -s autocd # change to named directory
 shopt -s cdspell # autocorrects cd misspellings
