@@ -34,6 +34,20 @@ alt + shift + x
 alt + x
     bspc-config-menu
 
+# hide the focused window
+alt + m
+    bspc node --flag hidden=on
+
+# unhide the most recently hidden window
+alt + shift + m
+    id=$(bspc query -N -n .hidden.local.window | tail -1); \
+    bspc node $id --flag hidden=off; \
+    bspc node -f $id;
+
+# unhide menu
+alt + ctrl + m
+    bspc-unhide-menu
+
 ##################
 # LAYOUT CONTROL #
 ##################
