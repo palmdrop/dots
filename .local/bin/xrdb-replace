@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Target file
+target_file="$1"
+
+# Prefix used in Xresources (e.g, Urxvt, dunst, *, etc)
+prefix="$2"
+
+# Abort script
+abort() {
+    [ -f "$target_file.tmp" ] && rm $target_file.tmp
+    echo "$1"
+    exit 1
+}
+
+# Abort if there's no template file
+[ -f "$target_file.in" ] || abort "No template file."
+
+# Create temporary file
+cp $target_file.in $target_file.tmp
+
+# Get variables 
+vars=( $(grep -oh "\w*%$prefix.*%\w*" $target_file.tmp) )
+# Remove duplicates
+vars=( $(printf "%s\n" "${vars[@]}" | sort -u) )
+
+# Iterate over all variables
+for v in ${vars[@]}
+do
+    # Remove "%" at beginning and end
+    arg=${v:1:-1}
+
+    # Abort if argument is empty for whatever reason
+    [ -z $arg ] && abort "Invalid template."
+
+    # Fetch value using xrdb
+    value=$(xrdbvar "$arg")
+
+    # If value is empty, try replacing the prefix with "*"
+    [ -z $value ] && {
+        arg="*${arg#dunst}"
+        value=$(xrdbvar "$arg")
+    }
+
+    # If value is still empty, abort
+    [ -z $value ] && abort "No color matching \"$arg\""
+
+    # Replace the placeholder with the acquired value
+    if [ "$3" = "--quote" ]; then
+        eval "sed -i 's/$v/\"${value}\"/g' $target_file.tmp";
+    else
+        eval "sed -i 's/$v/${value}/g' $target_file.tmp";
+    fi
+done
+
+# Finally, replace target file with our updated one
+[ -f $target_file ] && rm $target_file
+mv $target_file.tmp $target_file

@@ -138,6 +138,21 @@ herbe.corner: 1
 herbe.duration: 3 
 
 !!!!!!!!!!!
+!! dunst !!
+!!!!!!!!!!!
+dunst.border-color: CYAN1
+
+dunst.background-low: BACKGROUND
+dunst.foreground-low: RAMP2
+
+dunst.background-normal: BACKGROUND
+dunst.foreground-normal: FOREGROUND
+
+dunst.background-critical: RAMP4
+dunst.foreground-critical: BACKGROUND
+dunst.border-color-critical: PRIMARY
+
+!!!!!!!!!!!
 !! dmenu !!
 !!!!!!!!!!!
 dmenu.topbar: 1

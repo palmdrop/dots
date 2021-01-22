@@ -85,7 +85,7 @@ set history=10000
 " CUSTOM FUNCTIONS
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; rm $XDG_CONFIG_HOME/rofi/colors.rasi
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; rm $XDG_CONFIG_HOME/rofi/colors.rasi; $XDG_CONFIG_HOME/dunst/launch.sh
 
 autocmd BufWritePost *dunstrc !killall dunst
 
