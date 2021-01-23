@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Based on this comment: https://www.reddit.com/r/unixporn/comments/8giij5/guide_defining_program_colors_through_xresources/e1acuo0?utm_source=share&utm_medium=web2x&context=3
+
 # Target file
 target_file="$1"
 

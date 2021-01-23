@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 state() {
     # Split acpi output on commas
     local IFS=,
@@ -13,22 +12,31 @@ state() {
     # Get remaining time, trim spaces
     remain=$(echo ${WORD_LIST[2]}                              | xargs)
 
+    # Set state message
     state="$status: $charge \n$remain"
 }
 
 while true; do
+    # Only check state once every minute
     sleep 60s
 
+    # Check state
     state
 
-    # NOTE TODO DETECT IF BATTERY IS DISCHARGING!
+    # If not discharging, continue
+    [ "$status" = "Discharging" ] || continue
+
+    # Check battery charge level, send appropriate notification
     case $charge in
+        # Low urgency
         "50%")
             notify-send -u low "$(echo -e $state)"
         ;;
+        # Normal urgency
         "25%"|"20%"|"15%")
             notify-send -u normal "$(echo -e $state)"
         ;;
+        # Critical urgency
         "10%"|"5%"|"3%"|"1%")
             notify-send -u critical "$WARNING: $(echo -e $state)"
         ;;
