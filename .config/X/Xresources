@@ -140,17 +140,21 @@ herbe.duration: 3
 !!!!!!!!!!!
 !! dunst !!
 !!!!!!!!!!!
+dunst.borderpx: 2
+
 dunst.border-color: CYAN1
 
 dunst.background-low: BACKGROUND
-dunst.foreground-low: RAMP2
+dunst.foreground-low: BLACK2
+dunst.border-color-low: BACKGROUND
 
 dunst.background-normal: BACKGROUND
-dunst.foreground-normal: FOREGROUND
+dunst.foreground-normal: BLACK2
+dunst.border-color-normal: CYAN1
 
-dunst.background-critical: RAMP4
-dunst.foreground-critical: BACKGROUND
-dunst.border-color-critical: PRIMARY
+dunst.background-critical: CYAN1
+dunst.foreground-critical: FOREGROUND
+dunst.border-color-critical: CYAN1
 
 !!!!!!!!!!!
 !! dmenu !!

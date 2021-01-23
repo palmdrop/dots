@@ -57,8 +57,7 @@ setwp &
 spotify &
 $BROWSER &
 
-# Autolock after a few minutes
-#autolock &
+battery-notify &
 
 # Start window manager
 exec bspwm

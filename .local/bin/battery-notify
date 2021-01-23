@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+state() {
+    # Split acpi output on commas
+    local IFS=,
+    local WORD_LIST=($(acpi))
+
+    # Get charge/discharging/full status, trim spaces
+    status=$(echo $(echo "${WORD_LIST[0]}" | awk '{print $3}') | xargs)
+    # Get charge percentage, trim spaces
+    charge=$(echo ${WORD_LIST[1]}                              | xargs)
+    # Get remaining time, trim spaces
+    remain=$(echo ${WORD_LIST[2]}                              | xargs)
+
+    state="$status: $charge \n$remain"
+}
+
+while true; do
+    sleep 60s
+
+    state
+
+    # NOTE TODO DETECT IF BATTERY IS DISCHARGING!
+    case $charge in
+        "50%")
+            notify-send -u low "$(echo -e $state)"
+        ;;
+        "25%"|"20%"|"15%")
+            notify-send -u normal "$(echo -e $state)"
+        ;;
+        "10%"|"5%"|"3%"|"1%")
+            notify-send -u critical "$WARNING: $(echo -e $state)"
+        ;;
+    esac
+done
+

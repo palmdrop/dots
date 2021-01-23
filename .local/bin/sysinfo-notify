@@ -26,11 +26,10 @@ l=${#date}
 separator=$(printf "%${l}s" | sed 's/ /./g')
 
 # Send notification
-#notify-send              \
-herbe "$date"            \
-      "$separator" " "   \
-      "Volume: $vol" " " \
-      "Charge: $bat" " " \
-      "Disk:   $space"   \
-      "$separator" " "   \
-      "$(play print)"
+notify-send -u normal "$date" \
+"$separator\n\
+Volume: $vol\n\
+Charge: $bat\n\
+Disk:   $space\n\
+$separator\n\
+$(play print)\n"
