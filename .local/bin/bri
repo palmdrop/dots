@@ -7,4 +7,7 @@ case $1 in
     print) echo "$(light -G)"; exit 1;;
 esac
 
+id=121212
+
+dunstify -a "changeBrightness" -u low -i brightness-change -r "$id" "Bri: $(bribar)"
 #notify-send --urgency=low "$(bribar)"
