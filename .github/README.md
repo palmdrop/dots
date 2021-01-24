@@ -9,6 +9,7 @@ Important software:
 * [polybar](https://github.com/polybar/polybar) (status bar)
 * [nvim](https://github.com/neovim/neovim) (text editor)
 * [rofi](https://github.com/davatorium/rofi) (application launcher, menu, window switcher)
+* [dunst](https://github.com/dunst-project/dunst) (notification daemon)
 * urxvt (terminal emulator)
 
 Since many scripts, mine and others, use dmenu, I've made a small script called `dmenu` which simply calls rofi in dmenu mode and passes along all arguments. 
