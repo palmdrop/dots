@@ -190,7 +190,6 @@ rofi.foreground: PRIMARY
 rofi.select: RAMP1
 rofi.accent: CYAN1
 
-
 !!!!!!!!!!!
 !! URxvt !!
 !!!!!!!!!!!

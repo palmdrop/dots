@@ -85,9 +85,9 @@ set history=10000
 " CUSTOM FUNCTIONS
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
-autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; $XDG_CONFIG_HOME/rofi/reload.sh; $XDG_CONFIG_HOME/dunst/reload.sh
-
-autocmd BufWritePost *dunstrc !killall dunst
+" Also run replace command for changing config files which cannot use
+" Xresources directly
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; xrdb-replace -c
 
 " Search function for notes directory
 command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.txt
