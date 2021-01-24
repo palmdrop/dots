@@ -1,0 +1,15 @@
+/* colors */
+
+* {
+    al:      #00000000;
+    bg:      %rofi.background%;
+    se:      %rofi.select%;
+    fg:      %rofi.foreground%;
+    ac:      %rofi.accent%;
+    red:     %rofi.color1%;
+    green:   %rofi.color2%;
+    yellow:  %rofi.color3%;
+    blue:    %rofi.color4%;
+    purple:  %rofi.color5%;
+    cyan:    %rofi.color6%;
+}

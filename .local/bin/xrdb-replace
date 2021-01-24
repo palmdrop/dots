@@ -2,6 +2,44 @@
 
 # Based on this comment: https://www.reddit.com/r/unixporn/comments/8giij5/guide_defining_program_colors_through_xresources/e1acuo0?utm_source=share&utm_medium=web2x&context=3
 
+# Use config file containing a list of files and xrdb prefixes to use
+if [ "$1" = "-c" ]; then
+    config_path=$2
+
+    # If passed config path is empty, try default location
+    [ -z "$config_path" ] && config_path="$XDG_CONFIG_HOME/xrdb-reload.config"
+
+    # If no valid config file path is passed, exit
+    [ -f "$config_path" ] || {
+        # But first try default location
+        echo "Config file $2 does not exist."
+        exit 1
+    }
+
+    # Iterate over all lines in the config file
+    while IFS= read -r line
+    do
+        # Extract path to file and prefix to use
+        read path file prefix <<< "$line"
+
+        # Expand possible variables used
+        path=$(eval "echo $path")
+
+        # Replace...
+        xrdb-replace $path/$file $prefix
+
+        # Check if a reload script exist! Many applications
+        # require restart to use new config file. If script exists,
+        # run it.
+        reload_path="$path/reload.sh"
+        if [ -f "$reload_path" ]; then
+            . $reload_path
+        fi
+    done < "$config_path"
+
+    exit 0
+fi
+
 # Target file
 target_file="$1"
 
@@ -40,7 +78,7 @@ do
 
     # If value is empty, try replacing the prefix with "*"
     [ -z $value ] && {
-        arg="*${arg#dunst}"
+        arg="*${arg#$prefix}"
         value=$(xrdbvar "$arg")
     }
 
