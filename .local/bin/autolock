@@ -1,6 +1,0 @@
-#!/bin/bash
-
-case $1 in
-    stop) killall xidlehook ;;
-    *) xidlehook --not-when-fullscreen --not-when-audio --timer 240 'slock -q' '' & ;;
-esac 

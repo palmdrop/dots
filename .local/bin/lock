@@ -18,13 +18,13 @@ i3lock --nofork                 \
     --ringwrongcolor=bf616a00   \
     \
     --clock			\
-    --timecolor=$(xrdbvar .color8)	\
+    --timecolor=$(xrdbvar .color4)	\
     --timestr="%H:%M"	\
     --time-font="Fantasque Sans Mono"	\
     --timesize=60		\
     --timepos="1100:750"		\
     \
-    --datecolor=$(xrdbvar .color8)	\
+    --datecolor=$(xrdbvar .color4)	\
     --datestr="%A, %d %B"	\
     --date-font="Fantasque Sans Mono"	\
     --datesize=40		\
