@@ -60,4 +60,5 @@ startbarbspwm &
 export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
 export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
 export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
+export PIDSWALLOW_BLACKLIST="$PIDSWALLOW_BLACKLIST gimp"
 pgrep -fl 'pidswallow -gl' || pidswallow -gl &

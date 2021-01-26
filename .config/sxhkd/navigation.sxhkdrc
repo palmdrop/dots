@@ -40,13 +40,14 @@ alt + m
 
 # unhide the most recently hidden window
 alt + shift + m
-    id=$(bspc query -N -n .hidden.local.window | tail -1); \
+    id=$(bspc query -N -n next.hidden.local.window); \
     bspc node $id --flag hidden=off; \
     bspc node -f $id;
+#id=$(bspc query -N -n .hidden.local.window | tail -1); \
 
 # unhide menu
-alt + ctrl + m
-    bspc-unhide-menu
+alt + ctrl {_,+ shift} + m
+    bspc-unhide-menu {_, --all}
 
 ##################
 # LAYOUT CONTROL #
