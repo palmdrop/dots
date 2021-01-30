@@ -17,9 +17,7 @@ XF86MonBrightness{Up,Down}
 
 # Printscreen control
 Print
-	flameshot full -p /home/xan/usr/pictures/screenshots/ & \
-    sleep 1.0 & \
-    notify-send "Screenshot taken"
+	flameshot full -p /home/xan/usr/pictures/screenshots/
 
 alt + Print
 	flameshot gui

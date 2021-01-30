@@ -7,8 +7,8 @@ alt + Return
 	$TERMINAL 
 
 # Flash focused window
-alt + q
-	flash_window
+#alt + q
+#	flash_window
 
 # Notifications
 alt + o
@@ -16,11 +16,11 @@ alt + o
 
 # Edit dotfiles
 alt + shift + d
-	dmenu_dots_edit
+	dots-edit-menu
 
 # Access shortcuts
 alt + c 
-	dmenu_shortcuts
+	shortcut-menu
 
 # Access passwords
 alt + shift + p
