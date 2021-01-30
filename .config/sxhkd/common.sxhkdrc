@@ -29,6 +29,10 @@ alt + shift + p
 # Access bookmarks
 alt + {_,ctrl +} b
     bookmark {-o,_}
+
+# Toggle focus mode
+alt + ctrl + f
+    focus-mode --toggle
  
 # Switch window (or bring window to current desktop)
 alt + {_,ctrl +} Tab 

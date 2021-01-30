@@ -1,0 +1,55 @@
+#!/bin/sh
+FILE="/tmp/focus-mode.enabled"
+
+# Get user input
+case "$1" in
+    "--enable")
+        enable="true"
+        ;;
+    "--disable")
+        enable="false"
+        ;;
+    "--toggle")
+        # Check if temporary file exists
+        if [ -f "$FILE" ]; then
+            # If file exists, check value and set "enable" to opposite value
+            [ "$(cat $FILE)" = "true" ] && enable="false" || enable="true"
+        else
+            # If no file exists, default to true (most likely, focus mode was not previously enabled)
+            enable="true"
+        fi
+        ;;
+    *)
+        echo "Invalid argument."; 
+        exit 1 
+        ;;
+esac
+
+# Write current state to temporary file
+echo "$enable" > $FILE
+
+# Enable focus mode (i.e, disable notifications and hide bar)
+if [ "$enable" = "true" ]; then
+    notify-send "Enabled focus mode"
+
+    # Hide bar
+    polybar-msg cmd hide
+
+    # Sleep 2 seconds to give the user time to see the notification
+    sleep 2.0
+
+    # Close all notifications and disable dunst
+    dunstctl close-all
+    notify-send "DUNST_COMMAND_PAUSE"
+
+# Enable focus mode (i.e, enable notifications and show bar)
+else
+    # Enable dunst
+    notify-send "DUNST_COMMAND_RESUME"
+
+    # Display notification
+    notify-send "Disabled focus mode"
+
+    # Show bar
+    polybar-msg cmd show
+fi

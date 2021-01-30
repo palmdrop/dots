@@ -30,6 +30,10 @@ o
 c ; {i,c}
 	nf {idea,clion}
 
+# Unity
+u
+    nf UnityHub
+
 # xkill
 shift + q 
     nf xkill
