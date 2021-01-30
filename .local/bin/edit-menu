@@ -19,6 +19,9 @@ case $1 in
         # Iterate over every line in file
         while IFS= read -r line
         do
+            # Ignore empty lines
+            [ -z "$line" ] && continue
+
             # Split into words
             words=($line)
 
@@ -61,7 +64,7 @@ case $1 in
         eval directory=$directory
 
         # Call for editing files in that directory
-        dmenu_edit dir $directory &
+        edit-menu dir $directory &
         exit 1
     ;;
     *)
@@ -80,7 +83,7 @@ path=${paths[$choice]}
 
 # If choice is a directory, open recursively
 if [ -d "${path}" ] ; then
-    dmenu_edit dir $path
+    edit-menu dir $path
 else
     # Open chosen file in vim
     eval "$TERMINAL -e nvim $path"

@@ -1,2 +1,0 @@
-#!/bin/bash
-dmenu_edit file $XDG_CONFIG_HOME/dots.config
