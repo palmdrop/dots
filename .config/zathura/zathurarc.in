@@ -1,0 +1,45 @@
+set selection-clipboard clipboard
+
+set recolor "true"
+
+set completion-bg "%zathura.background%"
+set completion-fg "%zathura.foreground%"
+
+set completion-group-bg "%zathura.background%"
+set completion-group-fg "%zathura.accent%"
+
+set completion-highlight-bg "%zathura.foreground%"
+set completion-highlight-fg "%zathura.background%"
+
+set recolor-lightcolor "%zathura.background%"
+set recolor-darkcolor "%zathura.foreground%"
+
+set default-bg "%zathura.background%"
+
+set inputbar-bg "%zathura.background%"
+set inputbar-fg "%zathura.accent%"
+
+set notification-bg "%zathura.background%"
+set notification-fg "%zathura.foreground%"
+
+set notification-error-bg "%zathura.alert%"
+set notification-error-fg "%zathura.foreground%"
+
+set notification-warning-bg "%zathura.alert%"
+set notification-warning-fg "%zathura.foreground%"
+
+set statusbar-bg "%zathura.background%"
+set statusbar-fg "%zathura.foreground-alt%"
+
+set index-bg "%zathura.background%"
+set index-fg "%zathura.foreground%"
+
+set index-active-bg "%zathura.foreground%"
+set index-active-fg "%zathura.background%"
+
+set render-loading-bg "%zathura.background%"
+set render-loading-fg "%zathura.foreground%"
+
+set window-title-home-tilde true
+set statusbar-basename true
+set selection-clipboard clipboard

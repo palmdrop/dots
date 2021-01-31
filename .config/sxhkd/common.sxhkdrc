@@ -33,6 +33,11 @@ alt + {_,ctrl +} b
 # Toggle focus mode
 alt + ctrl + f
     focus-mode --toggle
+
+# Use remember script
+alt + {_,shift +,ctrl +} r
+    remember {append, open, menu} --dmenu
+
  
 # Switch window (or bring window to current desktop)
 alt + {_,ctrl +} Tab 

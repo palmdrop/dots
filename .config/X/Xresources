@@ -230,3 +230,12 @@ bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
 bspwm.innerborderfocused: PRIMARY
 bspwm.innerbordernormal:  BACKGROUND
+
+!!!!!!!!!!!!!
+!! zathura !!
+!!!!!!!!!!!!!
+zathura.background: BACKGROUND
+zathura.foreground: FOREGROUND
+zathura.foreground-alt: BLACK2
+zathura.accent: BLUE1
+zathura.alert: CYAN1

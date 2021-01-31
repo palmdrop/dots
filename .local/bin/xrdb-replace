@@ -64,6 +64,8 @@ vars=( $(grep -oh "\w*%$prefix.*%\w*" $target_file.tmp) )
 # Remove duplicates
 vars=( $(printf "%s\n" "${vars[@]}" | sort -u) )
 
+[ ${#vars[@]} -eq 0 ] && abort "No matching variables."
+
 # Iterate over all variables
 for v in ${vars[@]}
 do

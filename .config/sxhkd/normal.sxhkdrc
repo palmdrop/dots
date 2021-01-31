@@ -18,7 +18,7 @@ alt + minus
 #########
 # MODES #
 #########
-alt + {r, Escape}
+alt + Escape
     . $XDG_CONFIG_HOME/sxhkd/layout.mode
 
 alt + e
