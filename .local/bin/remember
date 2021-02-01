@@ -1,0 +1,209 @@
+#!/bin/sh
+DIR="$XDG_DATA_HOME/remember"
+FILE="$DIR/content"
+
+# Create directory and file if none exists
+[ ! -d "$DIR" ]  && mkdir $DIR 
+[ ! -f "$FILE" ] && touch $FILE
+
+# Pick an entry using dmenu
+pick() {
+    cat $FILE | dmenu -i -p "$1"
+}
+
+# Handle an entry pick
+handle() {
+    # Get number
+    number=$1
+    # Get content of entry
+    shift
+    content=$@
+
+    # Get user action 
+    actions=(remove copy edit)
+    choice=$(printf "%s\n" "${actions[@]}" | dmenu -i -p "Action")
+
+    case $choice in
+        # Remove entry
+        remove)
+            remember remove $number
+            ;;
+        # Copy entry to clipboard
+        copy)
+            notify-send "Copied to clipboard..." "\"$content\""
+            echo "$content" | xclip -r -selection clipboard
+            ;;
+        edit)
+            # Define temporary file
+            TEMP="/tmp/remember-entry.tmp"
+
+            # Write content to temporary file
+            echo "$content" > "$TEMP"
+
+            # Open file in editor
+            $TERMINAL -e ${EDITOR:-vim} "$TEMP"
+
+            # Read new content 
+            new_content=$(cat "$TEMP")
+
+            # If all content is deleted, remove entry
+            if [ -z "$new_content" ]; then
+                remember remove $number
+            # If content is changed, replace entry
+            elif [ "$new_content" != "$content" ]; then
+                remember replace $number $new_content
+            fi
+            # Otherwise, do nothing (content unchanged)
+            ;;
+        *)
+            notify-send "No such option."
+            exit 0
+            ;;
+    esac
+}
+
+# Available menu options
+options=(open open-backup clear append remove replace)
+
+case $1 in
+    open)
+        if [ "$2" = "--dmenu" ]; then
+            [ -z "$(cat $FILE)" ] && {
+                notify-send "Nothing to remember."
+                exit 0
+            }
+
+            choice=$(pick "Pick_entry")
+            [ -z "$choice" ] && exit 0
+            handle $choice
+        else
+            ${EDITOR:-vim} "$FILE"
+        fi
+        ;;
+    open-backup)
+        # If launched in dmenu mode, open in a new terminal window
+        if [ "$2" = "--dmenu" ]; then
+            $TERMINAL -e ${EDITOR:-vim} "$FILE.bak"
+        else
+            # Otherwise, open in this terminal
+            ${EDITOR:-vim} "$FILE.bak"
+        fi
+        ;;
+    clear)
+        mv "$FILE" "$FILE.bak"
+        notify-send "Cleared remember file (backup exists)."
+        ;;
+    append)
+        # Get number of last entry
+        number=$(awk '{w=$1} END{print w}' $FILE)
+        number=$(( number + 1 ))
+        shift
+
+        # If started in dmenu mode, use dmenu to get input
+        if [ "$1" = "--dmenu" ]; then
+            input=$(dmenu -p "Input_your_thoughts: ")
+        else
+            # Otherwise read input from arguments
+            input="$@"
+        fi
+
+        # If no input, exit
+        [ -z "$input" ] && exit 0
+
+        # Append a new line to the file
+        echo "$number   $input" >> $FILE
+
+        # And send notifications
+        notify-send "Remember to..." "\"$input\""
+        ;;
+    remove)
+        # Entry to delete
+        if [ "$2" = "--dmenu" ]; then
+            toRemove=$(pick "Pick entry to remove" | awk '{print $1}')
+        else 
+            toRemove=$2
+        fi
+
+        # Clear file
+        mv "$FILE" "$FILE.bak"
+        touch $FILE
+
+        # Counter to keep track of new line numbers
+        counter=1
+
+        # Iterate over each line of the file (backed up version)
+        while IFS= read -r line
+        do 
+            # Split the file into the line number and the content
+            read number content <<< "$line"
+
+            # If matching number is found, skip
+            [ "$number" = "$toRemove" ] && {
+                # And send notification
+                notify-send "Done remembering..." "\"$content\""
+                continue
+            }
+
+            # Append line
+            echo "$counter   $content" >> $FILE
+
+            # Increment counter
+            counter=$((counter + 1))
+        done < "$FILE.bak"
+        ;;
+    replace)
+        # Entry to replace
+        if [ "$2" = "--dmenu" ]; then
+            toReplace=$(pick "Pick entry to replace" | awk '{print $1}')
+        else 
+            toReplace=$2
+        fi
+
+        # Clear file
+        mv "$FILE" "$FILE.bak"
+        touch $FILE
+
+        # Iterate over each line of the file (backed up version)
+        while IFS= read -r line
+        do 
+            # Split the file into the line number and the content
+            read number content <<< "$line"
+
+            # If matching number is found, replace content
+            [ "$number" = "$toReplace" ] && {
+                # Read using dmenu if in dmenu mode
+                if [ "$2" = "--dmenu" ]; then
+                    input=$(dmenu -p "Input_your_thoughts: ")
+                else
+                    # Otherwise read input from arguments
+                    shift 
+                    shift
+                    input="$@"
+                fi
+
+                # And send notification
+                notify-send "Replaced \"$content\" with" "\"$input\""
+
+                # Replace content
+                content=$input
+            }
+
+            # Append line
+            echo "$number   $content" >> $FILE
+        done < "$FILE.bak"
+        ;;
+    menu)
+        # Get user choice 
+        choice=$(printf "%s\n" "${options[@]}" | dmenu -i -p "Remember")
+
+        # If no chocie, exit
+        [ -z "$choice" ] && exit 0
+
+        # Launch remember using the user choice, in dmenu mode
+        remember $choice --dmenu
+        ;;
+    *)
+        echo "Invalid argument."
+        exit 1
+        ;;
+esac
