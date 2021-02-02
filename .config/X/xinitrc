@@ -56,8 +56,11 @@ setwp &
 spotify &
 $BROWSER &
 
+# Send notifications regarding battery usage
 battery-notify &
-remember remind 1800s &
+
+# Remind me about things I want to be reminded of
+remember remind 3600s &
 
 # Start window manager
 exec bspwm
