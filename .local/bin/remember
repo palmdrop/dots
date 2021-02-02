@@ -11,6 +11,26 @@ pick() {
     cat $FILE | dmenu -i -p "$1"
 }
 
+# Get user input using dmenu
+input() {
+    dmenu -p "Input_your_thoughts: "
+}
+
+# Backup file and create a new empty file
+clear_file() {
+    mv "$FILE" "$FILE.bak"
+    touch $FILE
+}
+
+# Number of entries
+count() {
+    if [ -z $(cat $FILE) ]; then 
+        echo "0"
+    else
+        awk '{w=$1} END{print w}' $FILE
+    fi
+}
+
 # Handle an entry pick
 handle() {
     # Get number
@@ -54,6 +74,9 @@ handle() {
                 remember replace $number $new_content
             fi
             # Otherwise, do nothing (content unchanged)
+
+            # Finally, remove temporary file
+            rm "$TEMP"
             ;;
         *)
             notify-send "No such option."
@@ -65,6 +88,7 @@ handle() {
 # Available menu options
 options=(open open-backup clear append remove replace)
 
+# Determine action based on first argument
 case $1 in
     open)
         if [ "$2" = "--dmenu" ]; then
@@ -90,18 +114,19 @@ case $1 in
         fi
         ;;
     clear)
-        mv "$FILE" "$FILE.bak"
+        clear_file
         notify-send "Cleared remember file (backup exists)."
         ;;
     append)
         # Get number of last entry
-        number=$(awk '{w=$1} END{print w}' $FILE)
+        number=$(count)
         number=$(( number + 1 ))
         shift
 
         # If started in dmenu mode, use dmenu to get input
         if [ "$1" = "--dmenu" ]; then
-            input=$(dmenu -p "Input_your_thoughts: ")
+            #input=$(dmenu -p "Input_your_thoughts: ")
+            input=$(input)
         else
             # Otherwise read input from arguments
             input="$@"
@@ -125,8 +150,7 @@ case $1 in
         fi
 
         # Clear file
-        mv "$FILE" "$FILE.bak"
-        touch $FILE
+        clear_file
 
         # Counter to keep track of new line numbers
         counter=1
@@ -160,8 +184,7 @@ case $1 in
         fi
 
         # Clear file
-        mv "$FILE" "$FILE.bak"
-        touch $FILE
+        clear_file
 
         # Iterate over each line of the file (backed up version)
         while IFS= read -r line
@@ -173,7 +196,7 @@ case $1 in
             [ "$number" = "$toReplace" ] && {
                 # Read using dmenu if in dmenu mode
                 if [ "$2" = "--dmenu" ]; then
-                    input=$(dmenu -p "Input_your_thoughts: ")
+                    input=$(input)
                 else
                     # Otherwise read input from arguments
                     shift 
@@ -201,6 +224,25 @@ case $1 in
 
         # Launch remember using the user choice, in dmenu mode
         remember $choice --dmenu
+        ;;
+    remind)
+        # Loop runs until user kills the script
+        while true; do 
+            # Checks if content file is empty or not
+            [ ! -z "$(cat $FILE)" ] && {
+                # Get the number of entries
+                number=$(count)
+                # If one, return "thing", otherwise "things"
+                [ "$number" = "1" ] && things="thing" || things="things"
+                # Notify the user about how many things they have to remember
+                notify-send -u normal "You have $number $things to remember..."
+            }
+
+            sleep $2
+        done
+        ;;
+    count)
+        echo "$(count)"
         ;;
     *)
         echo "Invalid argument."

@@ -1,2 +1,2 @@
 #!/bin/sh
-. $XDG_CONFIG_HOME/rofi/launcher.sh 
+. /home/xan/.config/rofi/launcher.sh 

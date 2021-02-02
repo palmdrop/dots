@@ -4,7 +4,7 @@ control + {q,r}
 
 # Mount control
 {m,u}
-	$TERMINAL -name floating -g 50x10 -e {dmount, dumount} &\
+	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount} &\
     . $XDG_CONFIG_HOME/sxhkd/normal.mode
 
 # Lock computer

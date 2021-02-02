@@ -18,12 +18,20 @@ space="$(space print)"
 # Get current date
 date="$(date +'%A, %d %h, %H:%M')"
 
-# Get 
+# Get tasks and things to remember
+todo="$(tasks)"
 
-# Create a separator string of periods of the same length as 
-# the date string.
-l=${#date}
-separator=$(printf "%${l}s" | sed 's/ /./g')
+remember=$(remember count)
+[ "$remember" -gt "0" ] && {
+    todo="$todo\nRemember: $remember thing(s)"
+}
+
+
+
+# Create separator 
+#l=${#date}
+#separator=$(printf "%${l}s" | sed 's/ /./g')
+separator=".............................."
 
 # Send notification
 notify-send -u normal "$date" \
@@ -31,5 +39,7 @@ notify-send -u normal "$date" \
 Volume: $vol\n\
 Charge: $bat\n\
 Disk:   $space\n\
+$separator\n\
+Tasks:  $todo\n\
 $separator\n\
 $(play print)\n"

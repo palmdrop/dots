@@ -51,13 +51,13 @@ picom &
 unclutter --timeout 1 &
 redshift -l 57.7089:11.9746 &
 #flashfocus &
-
 setwp &
 
 spotify &
 $BROWSER &
 
 battery-notify &
+remember remind 1800s &
 
 # Start window manager
 exec bspwm
