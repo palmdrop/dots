@@ -32,8 +32,8 @@ echo "$enable" > $FILE
 if [ "$enable" = "true" ]; then
     notify-send "Enabled focus mode"
 
-    # Hide bar
-    polybar-msg cmd hide
+    # Launch minimal bar
+    . $XDG_CONFIG_HOME/bspwm-polybar/launch-minimal.sh
 
     # Sleep 2 seconds to give the user time to see the notification
     sleep 2.0
@@ -50,6 +50,6 @@ else
     # Display notification
     notify-send "Disabled focus mode"
 
-    # Show bar
-    polybar-msg cmd show
+    # Launch regular bar
+    . $XDG_CONFIG_HOME/bspwm-polybar/launch.sh
 fi
