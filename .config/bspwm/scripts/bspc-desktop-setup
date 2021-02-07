@@ -1,0 +1,103 @@
+#!/bin/sh
+FILE=$1
+
+[ ! -f "$FILE" ] && {
+    echo "No such file."
+    exit 1
+}
+
+desktop=""
+desktop_name=""
+layout="tiled"
+focus="false"
+commands=()
+i=0
+
+scan_line() {
+    case $1 in
+        desktop)
+            desktop="$2"
+            ;;
+        layout)
+            layout="$2"
+            ;;
+        run)
+            shift
+            commands[$i]="$@"
+            i=$((i + 1))
+            ;;
+        focus)
+            focus=$2
+            ;;
+        *)
+            echo "\"$1\" is an invalid setup option."
+            ;;
+    esac
+}
+
+scan() {
+    while read -r line 
+    do
+        scan_line $line
+    done < "$FILE"
+
+}
+
+validate() {
+    [ -z "$desktop" ] && abort "No desktop specified." || {
+        desktop_name=$(bspc query -D -d "^$desktop" --names)
+    }
+    [[ "( $(bsp-layout layouts) )" =~ "$layout" ]] || abort "$layout is not a valid layout"
+    [[ "( true false )" =~ "$focus" ]] || abort "$focus is not a valid focus option"
+}
+
+abort() {
+    echo "$1"
+    exit 1
+}
+
+previous=""
+
+run() {
+    ratio=0.0
+    dir=""
+    case $1 in
+        --)
+            shift
+            [ ! -z "$previous" ] && {
+                waitfor 5 "$previous" > /dev/null 2>&1
+            } 
+            ;;
+        --west|--east|--north|--south)
+            dir=${1#--}
+            amount=$2
+
+            shift; shift 
+
+            [ ! -z "$previous" ] && {
+                waitfor 5 --presel $dir "$previous" > /dev/null 2>&1
+                
+            } 
+            ;;
+        *)
+            abort "$1 is an invalid presel direction"
+            ;;
+    esac
+
+    echo "$@"
+    eval $(echo "$@")
+}
+
+setup() {
+    [ "$focus" = "true" ] && bspc desktop -f "^$desktop"
+    bsp-layout set $layout $desktop_name > /dev/null 2>&1
+
+    for cmd in "${commands[@]}"
+    do
+        run $cmd
+    done
+}
+
+scan 
+validate
+setup
