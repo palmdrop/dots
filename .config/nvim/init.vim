@@ -55,6 +55,7 @@ map <C-c> :ColorToggle<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-w> :WP<CR>
 map <C-x> :%s//gI<Left><Left><Left>
+map <C-s> :setlocal spell spelllang=en_us<CR>
 
 " BASIC AUTOCMD
 autocmd BufRead,BufNewFile ~/usr/notes set filetype=markdown
