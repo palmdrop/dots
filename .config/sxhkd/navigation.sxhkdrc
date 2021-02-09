@@ -36,7 +36,8 @@ alt + x
 
 # hide the focused window
 alt + m
-    bspc node --flag hidden=on
+    bspc node --flag hidden=on; \
+    notify-send -u low "Window hidden"
 
 # unhide the most recently hidden window
 alt + shift + m
