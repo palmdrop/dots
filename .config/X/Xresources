@@ -7,10 +7,10 @@
 #define CURSORCOLOR     #5f5869
 #define BLACK1          #383434
 #define BLACK2          #4a4146
-#define RED1            #698a78
-#define RED2            #698a78
-#define GREEN1          #825757
-#define GREEN2          #825757
+#define RED1            #825757
+#define RED2            #825757
+#define GREEN1          #698a78
+#define GREEN2          #698a78
 #define YELLOW1         #a89874
 #define YELLOW2         #a89874
 #define BLUE1           #8b84a3
