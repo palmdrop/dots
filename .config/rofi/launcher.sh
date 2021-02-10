@@ -11,7 +11,7 @@
 #dir="$HOME/.config/rofi"
 
 rofi -no-lazy-grab \
--modi drun,run \
--matching fuzzy $@
+-modi drun,run $@
+#-matching fuzzy $@
 #-theme $dir/"$theme" $@
 
