@@ -92,7 +92,7 @@ bar.foreground-alt: FOREGROUND_ALT
 
 bar.background-module: RAMP3
 
-bar.ws-focused: GREEN1
+bar.ws-focused: RED1
 bar.ws-occupied: BLACK1
 bar.ws-unoccupied: BLACK1
 
