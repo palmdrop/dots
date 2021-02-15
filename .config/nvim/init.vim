@@ -88,7 +88,7 @@ set history=10000
 " Run xrdb whenever Xdefaults or Xresources are updated.
 " Also run replace command for changing config files which cannot use
 " Xresources directly
-autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; xrdb-replace -c
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %; xrdb-replace -F -g 
 
 " Search function for notes directory
 command! -nargs=1 Ngrep vimgrep "<args>" $NOTES_DIR/**/*.txt

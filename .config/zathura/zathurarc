@@ -1,7 +1,5 @@
 set selection-clipboard clipboard
 
-set recolor "true"
-
 set completion-bg "#121010"
 set completion-fg "#c4c0b9"
 

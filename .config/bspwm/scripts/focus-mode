@@ -36,7 +36,7 @@ if [ "$enable" = "true" ]; then
     . $XDG_CONFIG_HOME/bspwm-polybar/launch-minimal.sh
 
     # Sleep 2 seconds to give the user time to see the notification
-    sleep 2.0
+    sleep 1.0
 
     # Close all notifications and disable dunst
     dunstctl close-all

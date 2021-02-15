@@ -1,7 +1,5 @@
 set selection-clipboard clipboard
 
-set recolor "true"
-
 set completion-bg "%zathura.background%"
 set completion-fg "%zathura.foreground%"
 
