@@ -1,3 +1,3 @@
-$XDG_CONFIG_HOME/dunst/dunstrc     dunst
-$XDG_CONFIG_HOME/rofi/colors.rasi  rofi
-$XDG_CONFIG_HOME/zathura/zathurarc zathura
+$XDG_CONFIG_HOME/dunst/dunstrc     dunst   -R
+$XDG_CONFIG_HOME/rofi/colors.rasi  rofi    
+$XDG_CONFIG_HOME/zathura/zathurarc zathura 
