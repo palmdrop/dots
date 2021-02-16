@@ -1,4 +1,4 @@
-# Terminal
+#  Terminal
 Return 
 	$TERMINAL
 
@@ -45,6 +45,10 @@ shift + b
 # Lock
 x
     lock
+
+# Duplicate focused window
+p; p
+    duplicate
 
 # Enter normal mode
 @Escape
