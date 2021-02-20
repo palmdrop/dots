@@ -424,6 +424,13 @@
 #    summary = "*script*"
 #    script = dunst_test.sh
 
+[remindme]
+    category = reminder
+    background = "%dunst.background-reminder%"
+    foreground = "%dunst.foreground-reminder%"
+    frame_color = "%dunst.border-color-reminder%"
+    timeout = 0
+
 [ignore]
     # This notification will not be displayed
     appname = Spotify

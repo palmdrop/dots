@@ -1,5 +1,0 @@
-desktop 6
-layout tiled
-focus true
-run -- $BROWSER
-run --west 0.7 $TERMINAL

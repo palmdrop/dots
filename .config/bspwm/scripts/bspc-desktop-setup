@@ -1,6 +1,16 @@
 #!/bin/sh
 FILE=$1
 
+DIR=$XDG_CONFIG_HOME/bspwm/desktop-setups
+
+if [ "$1" = "--menu" ]; then
+    choice=$(/usr/bin/ls $DIR | dmenu -i -F -p "Desktops")
+    bspc-desktop-setup "$DIR/$choice"
+    exit 0
+fi
+
+
+
 [ ! -f "$FILE" ] && {
     echo "No such file."
     exit 1
@@ -9,7 +19,7 @@ FILE=$1
 desktop=""
 desktop_name=""
 layout="tiled"
-focus="false"
+clear_occupied=false
 commands=()
 i=0
 
@@ -21,13 +31,13 @@ scan_line() {
         layout)
             layout="$2"
             ;;
+        clear)
+            clear_occupied="$2"
+            ;;
         run)
             shift
             commands[$i]="$@"
             i=$((i + 1))
-            ;;
-        focus)
-            focus=$2
             ;;
         *)
             echo "\"$1\" is an invalid setup option."
@@ -48,7 +58,8 @@ validate() {
         desktop_name=$(bspc query -D -d "^$desktop" --names)
     }
     [[ "( $(bsp-layout layouts) )" =~ "$layout" ]] || abort "$layout is not a valid layout"
-    [[ "( true false )" =~ "$focus" ]] || abort "$focus is not a valid focus option"
+    [[ "( true false )" =~ "$focus" ]]             || abort "$focus is not a valid focus option"
+    [[ "( true false )" =~ "$clear_occupied" ]]    || abort "$clear_occupied is not a valid clear option"
 }
 
 abort() {
@@ -59,38 +70,43 @@ abort() {
 previous=""
 
 run() {
-    ratio=0.0
-    dir=""
-    case $1 in
-        --)
-            shift
-            [ ! -z "$previous" ] && {
-                waitfor 5 "$previous" > /dev/null 2>&1
-            } 
-            ;;
-        --west|--east|--north|--south)
-            dir=${1#--}
-            amount=$2
-
-            shift; shift 
-
-            [ ! -z "$previous" ] && {
-                waitfor 5 --presel $dir "$previous" > /dev/null 2>&1
-                
-            } 
-            ;;
-        *)
-            abort "$1 is an invalid presel direction"
-            ;;
-    esac
-
-    echo "$@"
-    eval $(echo "$@")
+    #ratio=0.0
+    #dir=""
+    #case $1 in
+    #    --)
+    #        shift
+    #        [ ! -z "$previous" ] && {
+    #            waitfor 5 "$previous" > /dev/null 2>&1
+    #        } 
+    #        ;;
+    #    --west|--east|--north|--south)
+    #        dir=${1#--}
+    #        amount=$2
+    #
+    #        shift; shift 
+    #
+    #        [ ! -z "$previous" ] && {
+    #            waitfor 5 --presel $dir "$previous" > /dev/null 2>&1
+    #                
+    #        } 
+    #        ;;
+    #    *)
+    #        abort "$1 is an invalid presel direction"
+    #        ;;
+    #esac
+    eval $(echo "$@") &
 }
 
 setup() {
-    [ "$focus" = "true" ] && bspc desktop -f "^$desktop"
+    bspc desktop -f "^$desktop"
     bsp-layout set $layout $desktop_name > /dev/null 2>&1
+
+    if [ "$clear_occupied" = "true" ]; then
+        next_unoccupied="$(bspc query -D -d 'next.!occupied' --names)"
+        [ $(bspc query -N -d "$desktop_name" | wc -l) -ne 0 ] && notify-send "Sending nodes on desktop $desktop_name to $next_unoccupied"
+
+        bspc node 'any.local' -d "$next_unoccupied"
+    fi
 
     for cmd in "${commands[@]}"
     do

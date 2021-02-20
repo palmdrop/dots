@@ -50,6 +50,11 @@ x
 p; p
     duplicate
 
+# Open desktop setup menu
+shift + d
+    bspc-desktop-setup --menu &\
+    . $XDG_CONFIG_HOME/sxhkd/normal.mode
+
 # Enter normal mode
 @Escape
     . $XDG_CONFIG_HOME/sxhkd/normal.mode

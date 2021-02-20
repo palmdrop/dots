@@ -38,6 +38,10 @@ alt + ctrl + f
 alt + {_,shift +,ctrl +} r
     remember {append, open, menu} --dmenu
 
+# use reminder script
+alt + shift + e
+    remindme --menu
+
  
 # Switch window (or bring window to current desktop)
 alt + {_,ctrl +} Tab 

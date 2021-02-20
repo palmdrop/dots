@@ -156,6 +156,10 @@ dunst.background-critical: CYAN1
 dunst.foreground-critical: FOREGROUND
 dunst.border-color-critical: CYAN1
 
+dunst.background-reminder: BACKGROUND
+dunst.foreground-reminder: FOREGROUND
+dunst.border-color-reminder: GREEN1
+
 !!!!!!!!!!!
 !! dmenu !!
 !!!!!!!!!!!

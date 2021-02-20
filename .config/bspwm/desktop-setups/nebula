@@ -1,0 +1,5 @@
+desktop 2
+layout tiled
+clear true
+run idea
+run $TERMINAL -e ranger ~/nebula

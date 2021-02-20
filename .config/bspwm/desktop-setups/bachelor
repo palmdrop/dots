@@ -1,0 +1,5 @@
+desktop 4
+layout tiled
+clear true
+run UnityHub
+run $TERMINAL -e ranger ~/studies/bachelor-thesis-DIT561/BattleBoids
