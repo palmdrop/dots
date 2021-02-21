@@ -7,6 +7,9 @@ Plug 'chrisbra/Colorizer'
 " Makes text more readable when writing prose (activate with ":goyo" or space and g"
 Plug 'junegunn/goyo.vim'
 
+" Language pack
+Plug 'sheerun/vim-polyglot'
+
 " Vim themes
 Plug 'jacoborus/tender.vim'
 Plug 'gilgigilgil/anderson.vim'
@@ -14,6 +17,8 @@ Plug 'branwright1/salvation-vim'
 Plug 'fehawen/cs.vim'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'ryuta69/elly.vim'
+
+Plug 'sainnhe/forest-night'
 
 " Statusline
 "Plug 'fehawen/sl.vim'
@@ -71,8 +76,9 @@ set mouse=a
 set splitbelow splitright
 
 " COLOR
-"set termguicolors
-colorscheme cs
+set termguicolors
+"colorscheme cs
+colorscheme forest-night
 
 " RENDERING
 set encoding=utf-8
