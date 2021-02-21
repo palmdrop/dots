@@ -3,8 +3,8 @@
 ###################
 
 # quit/restart bspwm
-alt + control + {q,r}
-	bspc {quit,wm -r}; notify-send "bspwm reloaded"
+#alt + control + {q,r}
+#	bspc {quit,wm -r}; notify-send "bspwm reloaded"
 
 ################
 # NODE CONTROL #
