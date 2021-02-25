@@ -44,6 +44,12 @@ do
 
 done <<< $(bspc query -N -n $win_cmd)
 
+# Exit if array is empty
+[ -z "${windows[@]}" ] && {
+    notify-send -u low "No hidden windows"
+    exit 0
+}
+
 # Get user choice
 choice=$(printf "%s\n" "${!windows[@]}" | dmenu -i -F -p "Unhide")
 
