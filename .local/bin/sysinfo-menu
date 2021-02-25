@@ -18,7 +18,7 @@ case $choice in
         else
             msg="Volume: $vol%"
         fi
-        notify-send "$msg" " " "Playing: $(play print)"
+        notify-send "$msg" "Playing: $(play print)"
         ;;
     disk)
         notify-send "$(space print)"
