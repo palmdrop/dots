@@ -1,37 +1,37 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #c4c0b9
+#define FOREGROUND      #678d92
 #define FOREGROUND_ALT  #666666
-#define BACKGROUND      #121010
-#define CURSORCOLOR     #5f5869
-#define BLACK1          #383434
-#define BLACK2          #4a4146
-#define RED1            #825757
-#define RED2            #825757
-#define GREEN1          #698a78
-#define GREEN2          #698a78
-#define YELLOW1         #a89874
-#define YELLOW2         #a89874
-#define BLUE1           #8b84a3
-#define BLUE2           #8b84a3
-#define MAGENTA1        #81a18f
-#define MAGENTA2        #81a18f
-#define CYAN1           #82576d
-#define CYAN2           #82576d
-#define WHITE1          #c4c0b9
-#define WHITE2          #a299a3
+#define BACKGROUND      #131d28
+#define CURSORCOLOR     #678d92
+#define BLACK1          #233347
+#define BLACK2          #3c4a5c
+#define RED1            #c35254
+#define RED2            #c35254
+#define GREEN1          #0e5c5d
+#define GREEN2          #0e5c5d
+#define YELLOW1         #3e487b
+#define YELLOW2         #3e487b
+#define BLUE1           #2f556e
+#define BLUE2           #2f566e
+#define MAGENTA1        #5a3e6c
+#define MAGENTA2        #5a3e6c
+#define CYAN1           #176f7d
+#define CYAN2           #176f7d
+#define WHITE1          #6a7f82
+#define WHITE2          #8abbc1
 
 #define TRANSPARENT     #00000000
-#define PRIMARY         #b8b3c7
-#define SECONDARY       #8b84a3
-#define ACCENT          #a89874
+#define PRIMARY         #2f556e
+#define SECONDARY       #8abbc1
+#define ACCENT          #c35254
 
-#define RAMP1           #4b455c
-#define RAMP2           #6c638a
-#define RAMP3           #8b84a3
-#define RAMP4           #a399c2
-#define RAMP5           #c5bae8
+#define RAMP1           #151f2a
+#define RAMP2           #678d92
+#define RAMP3           #8abbc1
+#define RAMP4           #9febf1
+#define RAMP5           #bffbff
 
 
 !!!!!!!!!!!!
@@ -90,7 +90,7 @@ bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
 bar.foreground-alt: FOREGROUND_ALT
 
-bar.background-module: RAMP3
+bar.background-module: SECONDARY
 
 bar.ws-focused: RED1
 bar.ws-occupied: BLACK1
@@ -152,9 +152,9 @@ dunst.background-normal: BACKGROUND
 dunst.foreground-normal: BLACK2
 dunst.border-color-normal: CYAN1
 
-dunst.background-critical: CYAN1
-dunst.foreground-critical: FOREGROUND
-dunst.border-color-critical: CYAN1
+dunst.background-critical: RED1
+dunst.foreground-critical: BACKGROUND
+dunst.border-color-critical: RED1
 
 dunst.background-reminder: BACKGROUND
 dunst.foreground-reminder: FOREGROUND
@@ -232,7 +232,7 @@ bspwm.borderpx:     2
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: PRIMARY
+bspwm.innerborderfocused: SECONDARY
 bspwm.innerbordernormal:  BACKGROUND
 
 !!!!!!!!!!!!!

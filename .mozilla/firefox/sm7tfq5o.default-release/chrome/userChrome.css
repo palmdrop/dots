@@ -1,26 +1,26 @@
  :root {
 
    /* Minimal Functional Fox variables*/
-  --mff-bg: #121010;
-  --mff-icon-color: #c4c0b9;
+  --mff-bg: #131d28;
+  --mff-icon-color: #678d92;
   --mff-nav-toolbar-padding: 2px;
   --mff-sidebar-bg: var(--mff-bg);
-  --mff-sidebar-color: #c4c0b9;
+  --mff-sidebar-color: #678d92;
   --mff-tab-border-radius: 0px;
-  --mff-tab-color: #c4c0b9;
+  --mff-tab-color: #678d92;
   --mff-tab-font-family: "Cantarell", sans;
   --mff-tab-font-size: 11pt;
   --mff-tab-font-weight: 400;
   --mff-tab-height: 25px;
-  --mff-tab-pinned-bg: #81a18f;
-  --mff-tab-selected-bg: #8b84a3;
-  --mff-tab-soundplaying-bg: #825757;
-  --mff-urlbar-color: #c4c0b9;
-  --mff-urlbar-focused-color: #c4c0b9;
+  --mff-tab-pinned-bg: #5a3e6c;
+  --mff-tab-selected-bg: #2f556e;
+  --mff-tab-soundplaying-bg: #c35254;
+  --mff-urlbar-color: #6a7f82;
+  --mff-urlbar-focused-color: #678d92;
   --mff-urlbar-font-family: "Cantarell", serif;
   --mff-urlbar-font-size: 11pt;
   --mff-urlbar-font-weight: 700;
-  --mff-urlbar-results-color: #c4c0b9;
+  --mff-urlbar-results-color: #6a7f82;
   --mff-urlbar-results-font-family: "mononoki Nerd Font", serif;
   --mff-urlbar-results-font-size: 11pt;
   --mff-urlbar-results-font-weight: 700;
