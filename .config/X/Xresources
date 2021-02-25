@@ -225,7 +225,7 @@ URxvt.url-launcher: /usr/bin/xdg-open
 !!!!!!!!!!!
 !! bspwm !!
 !!!!!!!!!!!
-bspwm.presel_color: BLUE1
+bspwm.presel_color: YELLOW1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
 bspwm.borderpx:     2
