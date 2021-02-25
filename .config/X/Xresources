@@ -190,9 +190,9 @@ dmenu.font: scientifica:size=10
 !! Rofi !!
 !!!!!!!!!!
 rofi.background: BACKGROUND
-rofi.foreground: PRIMARY
+rofi.foreground: FOREGROUND
 rofi.select: RAMP1
-rofi.accent: CYAN1
+rofi.accent: BLUE1
 
 !!!!!!!!!!!
 !! URxvt !!
