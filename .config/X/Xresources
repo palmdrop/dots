@@ -4,7 +4,7 @@
 #define FOREGROUND      #678d92
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #131d28
-#define CURSORCOLOR     #678d92
+#define CURSORCOLOR     #8f7b75
 #define BLACK1          #233347
 #define BLACK2          #3c4a5c
 #define RED1            #c35254
@@ -15,8 +15,8 @@
 #define YELLOW2         #3e487b
 #define BLUE1           #2f556e
 #define BLUE2           #2f566e
-#define MAGENTA1        #5a3e6c
-#define MAGENTA2        #5a3e6c
+#define MAGENTA1        #604c6e
+#define MAGENTA2        #604c6e
 #define CYAN1           #176f7d
 #define CYAN2           #176f7d
 #define WHITE1          #6a7f82
@@ -24,7 +24,7 @@
 
 #define TRANSPARENT     #00000000
 #define PRIMARY         #2f556e
-#define SECONDARY       #8abbc1
+#define SECONDARY       #678d92
 #define ACCENT          #c35254
 
 #define RAMP1           #151f2a

@@ -7,13 +7,13 @@ v=$(vol print)
 bg=$(xrdbvar bar.background)
 
 # Color for empty step
-blank=$(xrdbvar bar.ramp2)
+blank=$(xrdbvar bar.color7)
 # Mute color
 mute=$(xrdbvar bar.foreground)
 # Color if volume is above 100%
 high=$(xrdbvar bar.ws-focused)
 # Volume step color
-step=$(xrdbvar bar.ramp4)
+step=$(xrdbvar bar.ramp3)
 
 # If muted, replace step with mute color
 if [ "$(vol muted)" = "true" ]; then
