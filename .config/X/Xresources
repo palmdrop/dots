@@ -4,7 +4,7 @@
 #define FOREGROUND      #678d92
 #define FOREGROUND_ALT  #666666
 #define BACKGROUND      #131d28
-#define CURSORCOLOR     #8f7b75
+#define CURSORCOLOR     #798e91
 #define BLACK1          #233347
 #define BLACK2          #3c4a5c
 #define RED1            #c35254
