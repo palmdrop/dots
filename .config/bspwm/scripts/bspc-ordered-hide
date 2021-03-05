@@ -32,6 +32,12 @@ hide() {
     FILE=$DIR/$desktop
     [ ! -f $FILE ] && touch $FILE
 
+    # Check if window is already hidden
+    if bspc query -N -n "$node.hidden" > /dev/null; then
+        # Exit, do not try to hide window again
+        exit 0
+    fi
+
     # Prepend (push) to file
     echo -e "$node\n$(cat $FILE)" > $FILE
 
@@ -60,12 +66,19 @@ unhide() {
         exit 0
     }
 
-    # Unhide window and pop line from file
-    bspc node $node --flag hidden=off
-    bspc node -f $node
-
     # Pop the first line of the file
     echo "$(tail -n +2 $FILE)" > $FILE
+
+    # Check if window actually is hidden
+    if bspc query -N -n "$node.hidden" > /dev/null; then
+        # If yes, unhide window
+        bspc node $node --flag hidden=off
+        bspc node -f $node
+    else
+        # If not, the window has been unhidden in some other way. 
+        # Then try to unhide the next window
+        unhide $@
+    fi
 }
 
 count() {

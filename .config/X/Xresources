@@ -117,7 +117,7 @@ bar.border-color: SECONDARY
 bar.x: 22%
 bar.y: 5
 bar.width: 23%
-bar.height: 23
+bar.height: 25
 
 bar.x2: 46%
 bar.width2: 33%

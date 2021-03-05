@@ -63,9 +63,9 @@ if [ "$option" = "Add" ]; then
 
     mkdir -p $(dirname $new)
 
-    #url=$(input "Enter url: ")
-    #echo "$url" > $new
-    $TERMINAL -e $EDITOR $new
+    url=$(input "Enter url: ")
+    echo "$url" > $new
+    #$TERMINAL -e $EDITOR $new
 
     exit 0
 elif [ "$option" = "Delete" ]; then

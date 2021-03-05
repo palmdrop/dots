@@ -36,16 +36,13 @@ alt + x
 
 # hide the focused window
 alt + m
-    bspc node --flag hidden=on; \
+    bspc-ordered-hide hide; \
     notify-send -u low "Window hidden"
 
 # unhide the most recently hidden window
 alt + shift + m
-    id=$(bspc query -N -n next.hidden.local.window || \
-         bspc query -N -n .hidden.local.window -d focused | head -1); \
-    bspc node $id --flag hidden=off; \
-    bspc node -f $id;
-#id=$(bspc query -N -n .hidden.local.window | tail -1); \
+    bspc-ordered-hide unhide
+    
 
 # unhide menu
 alt + ctrl {_,+ shift} + m
