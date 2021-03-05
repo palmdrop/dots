@@ -12,7 +12,6 @@ fi
 declare -A windows
 
 # Iterate over all matching window id's
-# TODO fix problem with windows having identical info
 while read -r id 
 do
     # Get window information

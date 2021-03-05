@@ -1,0 +1,104 @@
+#!/bin/sh
+DIR="/tmp/hidden"
+
+# Sends the user a message (terminal or notification)
+msg() {
+    echo "$1"
+}
+
+# Returns the focused desktop or the desktop of a particular node
+dsk() {
+    [ -z "$1" ] && {
+        bspc query -D -d --names
+    } || {
+        bspc query -D -n $1 --names
+    }
+}
+
+hide() {
+    # Create temporary directory if it does not exist
+    [ ! -d $DIR ] && mkdir $DIR
+
+    # Get window and desktop of window to hide
+    [ -z "$2" ] && {
+        node=$(bspc query -N -n)
+    } || {
+        node=$2
+    }
+
+    desktop=$(dsk $node)
+
+    # Create file for desktop if it does not exist
+    FILE=$DIR/$desktop
+    [ ! -f $FILE ] && touch $FILE
+
+    # Prepend (push) to file
+    echo -e "$node\n$(cat $FILE)" > $FILE
+
+    # Hide file
+    bspc node $node --flag hidden=on
+}
+
+unhide() {
+    # Get desktop
+    desktop=$(dsk $1)
+
+    # Check if corresponding file exists 
+    FILE="$DIR/$desktop"
+
+    [ ! -f $FILE ] && {
+        msg "No window hidden on desktop $desktop"
+        exit 0
+    }
+
+    # Read first entry from file, i.e the most recently 
+    # hidden node.
+    node=$(head -n 1 $FILE)
+
+    [ -z $node ] && {
+        msg "No window hidden on desktop $desktop"
+        exit 0
+    }
+
+    # Unhide window and pop line from file
+    bspc node $node --flag hidden=off
+    bspc node -f $node
+
+    # Pop the first line of the file
+    echo "$(tail -n +2 $FILE)" > $FILE
+}
+
+count() {
+    # Get file path based on focused desktop or user input
+    [ -z "$1" ] && {
+        FILE="$DIR/$(dsk)"
+    } || {
+        FILE="$DIR/$2"
+    }
+
+    # Check if file exists for that directory    
+    [ ! -f $FILE ] && {
+        echo 0 # If not, return 0
+    } || {
+        grep -vc ^$ $FILE # If yes, count non-empty lines of file
+    }
+}
+
+case $1 in 
+    hide)
+        shift
+        hide $@
+    ;;
+    unhide)
+        shift
+        unhide $@
+    ;;
+    count)
+        shift
+        count $@
+    ;;
+    *)
+        msg "Unrecognized option"
+        exit 0
+    ;;
+esac
