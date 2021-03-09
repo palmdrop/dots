@@ -14,6 +14,7 @@ Plug 'branwright1/salvation-vim'
 Plug 'fehawen/cs.vim'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'ryuta69/elly.vim'
+Plug 'adigitoleo/vim-mellow', { 'tag': '*' }
 
 " Statusline
 "Plug 'fehawen/sl.vim'
@@ -73,6 +74,8 @@ set splitbelow splitright
 " COLOR
 "set termguicolors
 colorscheme cs
+"set bg=light
+"colorscheme mellow
 
 " RENDERING
 set encoding=utf-8
