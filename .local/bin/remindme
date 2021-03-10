@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" = "--menu" ]; then
+    time=$(echo "" | dmenu -i -F -p "Time")
+    [ -z "$time" ] && exit 0
+
+    text=$(echo "" | dmenu -i -F -p "Reminder")
+    [ -z "$text" ] && exit 0
+else
+    time="$1"
+    text="$2"
+fi
+
+[ -z "$time" -o -z "$text" ] && exit 0
+
+notify-send -u normal "In $time: $text"
+
+echo "notify-send --category reminder 'Reminder' '$text'" | at now + "$time"

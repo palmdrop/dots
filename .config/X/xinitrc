@@ -52,6 +52,7 @@ unclutter --timeout 1 &
 redshift -l 57.7089:11.9746 &
 #flashfocus &
 setwp &
+dropbox-wrapper start &
 
 spotify &
 $BROWSER &

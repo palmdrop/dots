@@ -1,0 +1,21 @@
+#!/bin/sh
+HOME=/home/xan/usr/.dropbox
+
+case $1 in
+    start)
+        dropbox
+        ;;
+    stop)
+        killall dropbox
+        ;;
+    link)
+        source=$(realpath $2)
+        dest="$HOME/Dropbox/$(basename $source)"
+        mv $source $dest
+        ln -s $dest $source
+        ;;
+    *)
+        echo "No such option"
+        ;;
+esac
+
