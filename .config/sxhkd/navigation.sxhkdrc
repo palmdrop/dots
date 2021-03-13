@@ -41,7 +41,7 @@ alt + m
 
 # unhide the most recently hidden window
 alt + shift + m
-    bspc-ordered-hide unhide
+    bspc-ordered-hide unhide --focus
     
 
 # unhide menu

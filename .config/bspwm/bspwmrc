@@ -53,7 +53,7 @@ R Zathura           state=tiled
 # Autostart #
 #############
 
-# Start bar
+bspc-auto-unhide &
 startbarbspwm &
 
 # Start window swallowing script
