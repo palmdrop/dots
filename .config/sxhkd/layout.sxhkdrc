@@ -83,8 +83,8 @@ m ; n
     bspc node -d 'next.!occupied' --follow
 
 # swap focused workspace with another workspace
-shift + s ; {1-9,0} ; {1-9,0} 
-	bspc-desktop-swap {1-9,10} {1-9,10} 
+#shift + s ; {1-9,0} ; {1-9,0} 
+#	bspc-desktop-swap {1-9,10} {1-9,10} 
 
 # focus the node for the given path jump
 #alt + {p,b,comma,period}
