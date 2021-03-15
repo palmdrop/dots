@@ -108,7 +108,7 @@ bar.line-color: SECONDARY
 bar.alert: ACCENT
 bar.primary: PRIMARY
 bar.secondary: SECONDARY
-bar.extra: YELLOW1
+bar.extra: BLUE1
 
 bar.radius: 0
 bar.border: 2
