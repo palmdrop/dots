@@ -11,7 +11,7 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 ####################
 # General settings #
 ####################
-bspc monitor -d I II III IV V VI VII VIII IX X 
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 gaps=$(xrdbvar bspwm.gaps)
 outergaps=$(xrdbvar bspwm.outergaps)
@@ -44,9 +44,9 @@ _ external_rules_command $XDG_CONFIG_HOME/bspwm/external_rules.sh
 ###################
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
-R '*:scratch1'      state=floating #sticky=on
-R '*:scratch2'      state=floating #sticky=on
-R '*:scratch3'      state=floating #sticky=on
+R '*:scratch1'      state=floating sticky=on
+R '*:scratch2'      state=floating sticky=on
+R '*:scratch3'      state=floating sticky=on
 R Zathura           state=tiled
 
 #############
