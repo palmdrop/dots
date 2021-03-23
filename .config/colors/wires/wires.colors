@@ -1,0 +1,31 @@
+FOREGROUND      #c4c0b9
+FOREGROUND_ALT  #666666
+BACKGROUND      #121010
+CURSORCOLOR     #5f5869
+BLACK1          #383434
+BLACK2          #4a4146
+RED1            #825757
+RED2            #825757
+GREEN1          #698a78
+GREEN2          #698a78
+YELLOW1         #a89874
+YELLOW2         #a89874
+BLUE1           #8b84a3
+BLUE2           #8b84a3
+MAGENTA1        #81a18f
+MAGENTA2        #81a18f
+CYAN1           #82576d
+CYAN2           #82576d
+WHITE1          #c4c0b9
+WHITE2          #a299a3
+
+TRANSPARENT     #00000000
+PRIMARY         #b8b3c7
+SECONDARY       #8b84a3
+ACCENT          #a89874
+
+RAMP1           #4b455c
+RAMP2           #6c638a
+RAMP3           #8b84a3
+RAMP4           #a399c2
+RAMP5           #c5bae8
