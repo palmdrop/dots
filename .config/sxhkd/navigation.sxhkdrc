@@ -36,13 +36,11 @@ alt + x
 
 # hide the focused window
 alt + m
-    bspc-ordered-hide hide; \
-    notify-send -u low "Window hidden"
+    bspc-ordered-hide hide
 
 # unhide the most recently hidden window
 alt + shift + m
     bspc-ordered-hide unhide --focus
-    
 
 # unhide menu
 alt + ctrl {_,+ shift} + m
