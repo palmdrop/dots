@@ -74,8 +74,6 @@ set splitbelow splitright
 " COLOR
 "set termguicolors
 colorscheme cs
-"set bg=light
-"colorscheme mellow
 
 " RENDERING
 set encoding=utf-8

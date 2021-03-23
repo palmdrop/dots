@@ -105,7 +105,7 @@ bar.ramp5: RAMP5
 bar.line-size: 2
 bar.line-color: SECONDARY
 
-bar.alert: ACCENT
+bar.alert: MAGENTA1
 bar.primary: PRIMARY
 bar.secondary: SECONDARY
 bar.extra: BLUE1

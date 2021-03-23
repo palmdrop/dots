@@ -7,9 +7,9 @@ v=$(vol print)
 bg=$(xrdbvar bar.background)
 
 # Color for empty step
-blank=$(xrdbvar bar.color7)
+blank=$(xrdbvar bar.extra)
 # Mute color
-mute=$(xrdbvar bar.foreground)
+mute=$(xrdbvar bar.background-alt)
 # Color if volume is above 100%
 high=$(xrdbvar bar.ws-focused)
 # Volume step color
