@@ -42,6 +42,7 @@ _ external_rules_command $XDG_CONFIG_HOME/bspwm/external_rules.sh
 ###################
 # Window settings #
 ###################
+R '*:eterm8'        state=floating
 R '*:floating'      state=floating
 R 'floating:*'      state=floating
 R '*:scratch1'      state=floating sticky=on
@@ -60,5 +61,5 @@ startbarbspwm &
 export PIDSWALLOW_SWALLOW_COMMAND='bspc node $pwid --flag hidden=on'
 export PIDSWALLOW_VOMIT_COMMAND='bspc node $pwid --flag hidden=off'
 export PIDSWALLOW_PREGLUE_HOOK='bspc query -N -n $pwid.floating >/dev/null && bspc node $cwid --state floating'
-export PIDSWALLOW_BLACKLIST="$PIDSWALLOW_BLACKLIST gimp"
+export PIDSWALLOW_BLACKLIST="$PIDSWALLOW_BLACKLIST gimp Eterm8 eterm8"
 pgrep -fl 'pidswallow -gl' || pidswallow -gl &
