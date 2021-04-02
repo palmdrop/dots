@@ -88,7 +88,7 @@
 bar.background: SECONDARY
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
-bar.foreground-alt: FOREGROUND_ALT
+bar.foreground-alt: BLACK1
 
 bar.background-module: SECONDARY
 
@@ -112,7 +112,7 @@ bar.extra: BLUE1
 
 bar.radius: 0
 bar.border: 2
-bar.border-color: SECONDARY
+bar.border-color: BACKGROUND
 
 bar.x: 22%
 bar.y: 5
