@@ -3,6 +3,7 @@ HOME=/home/xan/usr/.dropbox
 
 case $1 in
     start)
+        killall dropbox
         dropbox
         ;;
     stop)

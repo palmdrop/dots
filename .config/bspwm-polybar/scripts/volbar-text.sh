@@ -1,6 +1,6 @@
 #!/bin/bash
-muteText="[ MUTED ]"
-volumeText="~ VOLUME ~"
+volumeText=$1
+muteText=$2
 
 text=$volumeText
 
@@ -11,16 +11,16 @@ v=$(vol print)
 bg=$(xrdbvar bar.background-module)
 
 # Color for empty step
-blank=$(xrdbvar bar.extra)
+blank=$(xrdbvar bar.foreground-alt)
 
 # Mute color
-mute=$(xrdbvar bar.background-alt)
+mute=$(xrdbvar bar.extra)
 
 # Color if volume is above 100%
 high=$(xrdbvar bar.ws-focused)
 
 # Volume step color
-step=$(xrdbvar bar.ramp3)
+step=$(xrdbvar bar.extra)
 
 # If muted, replace step with mute color
 if [ "$(vol muted)" = "true" ]; then

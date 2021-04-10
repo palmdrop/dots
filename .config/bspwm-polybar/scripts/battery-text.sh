@@ -1,5 +1,5 @@
 #!/bin/bash
-text="[BATTERY]"
+text=$1
 
 # Get battery level
 v=$(bat)
@@ -8,7 +8,7 @@ v=$(bat)
 bg=$(xrdbvar bar.background-alt)
 
 # Color for empty step
-blank=$(xrdbvar bar.foreground-alt)
+blank=$(xrdbvar bar.foreground)
 
 # Color if battery somehow is above 100%
 high=$(xrdbvar bar.ws-focused)
@@ -18,9 +18,9 @@ high=$(xrdbvar bar.ws-focused)
 if [ $v -le "20" ]; then
     step=$(xrdbvar bar.alert)
 elif [ $v -le "50" ]; then
-    step=$(xrdbvar bar.ramp2)
-else 
     step=$(xrdbvar bar.extra)
+else 
+    step=$(xrdbvar bar.foreground-alt)
 fi
 
 if [ $v -gt "90" ]; then

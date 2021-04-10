@@ -86,7 +86,7 @@ alias depclean="yay -Yc"
 alias cacheclean="yay -Sc"
 
 # System information
-alias nvidia="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
+alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia-settings/nvidia-settings-rc"
 alias services='systemctl list-units  --type=service  --state=running'
 
 # System

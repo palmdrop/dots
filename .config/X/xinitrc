@@ -46,7 +46,7 @@ setxkbmap -option caps:swapescape &
 xsetroot -cursor_name left_ptr &
 
 # Startup
-nvidia-settings -l &
+nvidia-settings -l --config=$XDG_CONFIG_HOME/nvidia-settings/nvidia-settings-rc &
 picom &
 unclutter --timeout 1 &
 redshift -l 57.7089:11.9746 &

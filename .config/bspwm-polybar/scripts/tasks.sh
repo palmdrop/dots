@@ -1,24 +1,19 @@
 #!/bin/bash
+today=$(tasks today) 
+overdue=$(tasks overdue)
 
-today=$(tasks today)
+if [ $today -eq "1" ]; then 
+    text="task"
+else
+    text="tasks"
+fi
 
-case $today in
-    0) ramp="1" ;;
-    1) ramp="1" ;;
-    2) ramp="1" ;;
-    3) ramp="2" ;;
-    4) ramp="2" ;;
-    5) ramp="3" ;;
-    6) ramp="3" ;;
-    7) ramp="4" ;;
-    *) ramp="4" ;;
-esac
+if [ $overdue -ne "0" ]; then 
+    color=$(xrdbvar bar.ws-focused)
+else 
+    color=$(xrdbvar bar.alert)
+fi
 
-var="bar.ramp-$ramp"
-color=$(xrdbvar $var)
-
-time=$(date +"%H:%M")
-
-msg="%{B$color}  $time  %{B-}"
+msg="%{F$color}$today $text%{F-}"
 
 echo "$msg"

@@ -85,15 +85,15 @@
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
-bar.background: SECONDARY
+bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
 bar.foreground-alt: BLACK1
 
-bar.background-module: SECONDARY
+bar.background-module: BACKGROUND
 
 bar.ws-focused: RED1
-bar.ws-occupied: BLACK1
+bar.ws-occupied: BLUE1
 bar.ws-unoccupied: BLACK1
 
 bar.ramp1: RAMP1
@@ -114,13 +114,17 @@ bar.radius: 0
 bar.border: 2
 bar.border-color: BACKGROUND
 
-bar.x: 22%
+bar.x-extra: 15%
+bar.width-extra: 10%
+
+bar.x: 26%
 bar.y: 5
 bar.width: 23%
 bar.height: 25
 
-bar.x2: 46%
-bar.width2: 33%
+bar.x-secondary: 50%
+bar.width-secondary: 33%
+
 
 !!!!!!!!!!!
 !! herbe !!
