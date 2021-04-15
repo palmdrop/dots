@@ -35,11 +35,11 @@ layout=$(bsp-layout get $(bspc query -D -d --names))
 #esac
 
 if [ "$layout" = "-" ] || [ "$layout" = "tiled" ]; then
-    cl=$(xrdbvar bar.background)
-    layout="tiled"
-    #echo ""
+    #cl=$(xrdbvar bar.background)
+    #layout="tiled"
+    echo ""
 else 
     cl=$(xrdbvar bar.ws-focused)
+    echo "%{u$cl}%{+u} $layout %{u-}"
 fi
 
-echo "%{B$cl} $layout %{B-}"

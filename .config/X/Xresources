@@ -114,16 +114,16 @@ bar.radius: 0
 bar.border: 2
 bar.border-color: BACKGROUND
 
-bar.x-extra: 15%
-bar.width-extra: 10%
+bar.x-extra: 17.5%
+bar.width-extra: 8%
 
 bar.x: 26%
 bar.y: 5
 bar.width: 23%
 bar.height: 25
 
-bar.x-secondary: 50%
-bar.width-secondary: 33%
+bar.x-secondary: 49.5%
+bar.width-secondary: 31%
 
 
 !!!!!!!!!!!

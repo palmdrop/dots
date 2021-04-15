@@ -23,4 +23,4 @@ fi
 first=${text:0:steps}
 last=${text:steps}
 
-echo -e "%{B$bg}%{F$step}  $first%{B-F-}%{B$bg}%{F$blank}$last  %{B-F-}"
+echo -e "%{B$bg}%{F$step}$first%{B-F-}%{B$bg}%{F$blank}$last%{B-F-}"

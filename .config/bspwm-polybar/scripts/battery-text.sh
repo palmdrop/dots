@@ -8,7 +8,7 @@ v=$(bat)
 bg=$(xrdbvar bar.background-alt)
 
 # Color for empty step
-blank=$(xrdbvar bar.foreground)
+blank=$(xrdbvar bar.foreground-alt)
 
 # Color if battery somehow is above 100%
 high=$(xrdbvar bar.ws-focused)
@@ -16,11 +16,11 @@ high=$(xrdbvar bar.ws-focused)
 # Volume step color
 #step=$(xrdbvar bar.ramp3)
 if [ $v -le "20" ]; then
-    step=$(xrdbvar bar.alert)
+    step=$(xrdbvar bar.ws-focused)
 elif [ $v -le "50" ]; then
-    step=$(xrdbvar bar.extra)
+    step=$(xrdbvar bar.alert)
 else 
-    step=$(xrdbvar bar.foreground-alt)
+    step=$(xrdbvar bar.extra)
 fi
 
 if [ $v -gt "90" ]; then

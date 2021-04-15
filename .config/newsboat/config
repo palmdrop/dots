@@ -42,6 +42,8 @@ macro m set browser "mpv %u > /dev/null &"; open-in-browser ; set browser "$BROW
 #bind-key j down article
 #bind-key k up article
 
+bind-key O open-all-unread-in-browser-and-mark-read 
+
 
 # -- bookmarks -----------------------------------------------------------------
 
