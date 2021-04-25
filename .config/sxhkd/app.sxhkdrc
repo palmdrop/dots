@@ -3,8 +3,8 @@ Return
 	$TERMINAL
 
 # Browsnig
-b
-	nf $BROWSER
+{_, shift +} b 
+	nf $BROWSER {_, --private-window}
 
 # Slack and Discord
 {d,s}
