@@ -7,7 +7,11 @@ if [ "$number" -ne 0 ]; then
         info=$(bspc-ordered-hide peek)
         echo " $info $number"
     } || {
-        echo " $number hidden "
+        post="window"
+        if [ "$number" -gt 1 ]; then
+            post="windows"
+        fi
+        echo " $(number-to-letters $number) hidden $post"
     }
 else
     echo ""

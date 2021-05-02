@@ -14,6 +14,6 @@ else
     color=$(xrdbvar bar.alert)
 fi
 
-msg="%{F$color}$today $text%{F-}"
+msg="%{F$color}$(number-to-letters $today) $text%{F-}"
 
 echo "$msg"

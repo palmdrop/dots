@@ -22,7 +22,7 @@
 #define WHITE1          #6a7f82
 #define WHITE2          #8abbc1
 
-#define TRANSPARENT     #00000000
+#define TRANSPARENT     #11ffffff
 #define PRIMARY         #2f556e
 #define SECONDARY       #678d92
 #define ACCENT          #c35254
@@ -80,7 +80,7 @@
 #define BORDERPX 2
 #define FLOATBORDERPX 0
 #define GAPS 23
-#define OUTERGAPS 43
+#define OUTERGAPS 30
 
 !!!!!!!!!
 !! bar !!
@@ -89,6 +89,7 @@ bar.background: BACKGROUND
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
 bar.foreground-alt: BLACK1
+bar.transparent: TRANSPARENT
 
 bar.background-module: BACKGROUND
 
@@ -111,19 +112,23 @@ bar.secondary: SECONDARY
 bar.extra: BLUE1
 
 bar.radius: 0
-bar.border: 2
+bar.border: 5
 bar.border-color: BACKGROUND
 
 bar.x-extra: 17.5%
 bar.width-extra: 8%
 
-bar.x: 26%
-bar.y: 5
-bar.width: 23%
+bar.x: 24%
+bar.y: 0
+bar.width: 22%
 bar.height: 25
 
-bar.x-secondary: 49.5%
-bar.width-secondary: 31%
+bar.x-secondary: 46.5%
+bar.width-secondary: 27.5%
+
+bar.x-notify: 30%
+bar.width-notify: 40%
+bar.height-notify: 35
 
 
 !!!!!!!!!!!

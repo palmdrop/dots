@@ -14,11 +14,15 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 gaps=$(xrdbvar bspwm.gaps)
-outergaps=$(xrdbvar bspwm.outergaps)
+padding=$(( $(xrdbvar bspwm.outergaps) - $gaps ))
+bargaps=$(( $(xrdbvar bar.height) + $(xrdbvar bar.y) + 2 * $(xrdbvar bar.border) - ($gaps / 2) ))
 
-_ border_width          $(xrdbvar bspwm.borderpx)
-_ window_gap            $gaps
-  bspc-padding          reset
+_ border_width   $(xrdbvar bspwm.borderpx)
+_ window_gap     $gaps
+_ top_padding    $bargaps
+_ left_padding   $padding
+_ right_padding  $padding
+_ bottom_padding $bargaps
 
 _ ignore_ewmh_focus     true
 _ focus_follows_pointer true
