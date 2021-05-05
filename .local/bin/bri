@@ -9,5 +9,5 @@ esac
 
 id=121212
 
-dunstify -a "changeBrightness" -u low -i brightness-change -r "$id" "Bri: $(bribar)"
+dunstify -a "changeBrightness" -u low -i brightness-change -r "$id" " LIGHT $(bribar) "
 #notify-send --urgency=low "$(bribar)"

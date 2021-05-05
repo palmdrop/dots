@@ -11,5 +11,5 @@ case $1 in
 esac
 
 id=212121
-dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" "Volume: $(volbar)"
+dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" " SOUND $(volbar) "
 #notify-send --urgency=low "$(volbar)"

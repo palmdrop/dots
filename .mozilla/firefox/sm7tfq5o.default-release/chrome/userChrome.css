@@ -1,26 +1,26 @@
  :root {
 
    /* Minimal Functional Fox variables*/
-  --mff-bg: #131d28;
-  --mff-icon-color: #678d92;
+  --mff-bg: #151212;
+  --mff-icon-color: #b1a583;
   --mff-nav-toolbar-padding: 2px;
   --mff-sidebar-bg: var(--mff-bg);
-  --mff-sidebar-color: #678d92;
+  --mff-sidebar-color: #b1a583;
   --mff-tab-border-radius: 0px;
-  --mff-tab-color: #678d92;
+  --mff-tab-color: #b1a583;
   --mff-tab-font-family: "Cantarell", sans;
   --mff-tab-font-size: 11pt;
   --mff-tab-font-weight: 400;
   --mff-tab-height: 25px;
-  --mff-tab-pinned-bg: #604c6e;
-  --mff-tab-selected-bg: #2f556e;
-  --mff-tab-soundplaying-bg: #c35254;
-  --mff-urlbar-color: #6a7f82;
-  --mff-urlbar-focused-color: #678d92;
+  --mff-tab-pinned-bg: #454150;
+  --mff-tab-selected-bg: #4b5d52;
+  --mff-tab-soundplaying-bg: #68333b;
+  --mff-urlbar-color: #b1a583;
+  --mff-urlbar-focused-color: #b1a583;
   --mff-urlbar-font-family: "Cantarell", serif;
   --mff-urlbar-font-size: 11pt;
   --mff-urlbar-font-weight: 700;
-  --mff-urlbar-results-color: #6a7f82;
+  --mff-urlbar-results-color: #b1a583;
   --mff-urlbar-results-font-family: "mononoki Nerd Font", serif;
   --mff-urlbar-results-font-size: 11pt;
   --mff-urlbar-results-font-weight: 700;

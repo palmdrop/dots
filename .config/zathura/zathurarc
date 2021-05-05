@@ -1,42 +1,42 @@
 set selection-clipboard clipboard
 
-set completion-bg "#131d28"
-set completion-fg "#678d92"
+set completion-bg "#151212"
+set completion-fg "#b1a583"
 
-set completion-group-bg "#131d28"
-set completion-group-fg "#2f556e"
+set completion-group-bg "#151212"
+set completion-group-fg "#4b5d52"
 
-set completion-highlight-bg "#678d92"
-set completion-highlight-fg "#131d28"
+set completion-highlight-bg "#b1a583"
+set completion-highlight-fg "#151212"
 
-set recolor-lightcolor "#131d28"
-set recolor-darkcolor "#678d92"
+set recolor-lightcolor "#151212"
+set recolor-darkcolor "#b1a583"
 
-set default-bg "#131d28"
+set default-bg "#151212"
 
-set inputbar-bg "#131d28"
-set inputbar-fg "#2f556e"
+set inputbar-bg "#151212"
+set inputbar-fg "#4b5d52"
 
-set notification-bg "#131d28"
-set notification-fg "#678d92"
+set notification-bg "#151212"
+set notification-fg "#b1a583"
 
-set notification-error-bg "#176f7d"
-set notification-error-fg "#678d92"
+set notification-error-bg "#593737"
+set notification-error-fg "#b1a583"
 
-set notification-warning-bg "#176f7d"
-set notification-warning-fg "#678d92"
+set notification-warning-bg "#593737"
+set notification-warning-fg "#b1a583"
 
-set statusbar-bg "#131d28"
-set statusbar-fg "#3c4a5c"
+set statusbar-bg "#151212"
+set statusbar-fg "#493536"
 
-set index-bg "#131d28"
-set index-fg "#678d92"
+set index-bg "#151212"
+set index-fg "#b1a583"
 
-set index-active-bg "#678d92"
-set index-active-fg "#131d28"
+set index-active-bg "#b1a583"
+set index-active-fg "#151212"
 
-set render-loading-bg "#131d28"
-set render-loading-fg "#678d92"
+set render-loading-bg "#151212"
+set render-loading-fg "#b1a583"
 
 set window-title-home-tilde true
 set statusbar-basename true

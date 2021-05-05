@@ -1,31 +1,31 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #678d92
-#define FOREGROUND_ALT  #666666
-#define BACKGROUND      #131d28
-#define CURSORCOLOR     #798e91
-#define BLACK1          #233347
-#define BLACK2          #3c4a5c
-#define RED1            #c35254
-#define RED2            #c35254
-#define GREEN1          #0e5c5d
-#define GREEN2          #0e5c5d
-#define YELLOW1         #3e487b
-#define YELLOW2         #3e487b
-#define BLUE1           #2f556e
-#define BLUE2           #2f566e
-#define MAGENTA1        #604c6e
-#define MAGENTA2        #604c6e
-#define CYAN1           #176f7d
-#define CYAN2           #176f7d
-#define WHITE1          #6a7f82
-#define WHITE2          #8abbc1
+#define FOREGROUND      #b1a583
+#define FOREGROUND_ALT  #463c3b
+#define BACKGROUND      #151212
+#define CURSORCOLOR     #b1a583
+#define BLACK1          #342826
+#define BLACK2          #493536
+#define RED1            #68333b
+#define RED2            #68333b
+#define GREEN1          #59513c
+#define GREEN2          #59513c
+#define YELLOW1         #806733
+#define YELLOW2         #806733
+#define BLUE1           #4b5d52
+#define BLUE2           #4b5d52
+#define MAGENTA1        #454150
+#define MAGENTA2        #454150
+#define CYAN1           #593737
+#define CYAN2           #593737
+#define WHITE1          #b1a583
+#define WHITE2          #d4c7a4
 
 #define TRANSPARENT     #11ffffff
-#define PRIMARY         #2f556e
-#define SECONDARY       #678d92
-#define ACCENT          #c35254
+#define PRIMARY         #433132
+#define SECONDARY       #433132
+#define ACCENT          #592c32
 
 #define RAMP1           #151f2a
 #define RAMP2           #678d92
@@ -126,8 +126,8 @@ bar.height: 25
 bar.x-secondary: 46.5%
 bar.width-secondary: 27.5%
 
-bar.x-notify: 30%
-bar.width-notify: 40%
+bar.x-notify: 0%
+bar.width-notify: 100%
 bar.height-notify: 35
 
 
@@ -240,11 +240,11 @@ URxvt.url-launcher: /usr/bin/xdg-open
 bspwm.presel_color: YELLOW1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
-bspwm.borderpx:     2
+bspwm.borderpx:     3
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: SECONDARY
+bspwm.innerborderfocused: CYAN1
 bspwm.innerbordernormal:  BACKGROUND
 
 !!!!!!!!!!!!!
