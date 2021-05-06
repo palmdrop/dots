@@ -3,12 +3,12 @@
 * {
     al:      #00000000;
     bg:      #151212;
-    se:      #151f2a;
+    se:      #45433132;
     fg:      #b1a583;
     ac:      #4b5d52;
     red:     #68333b;
-    green:   #59513c;
-    yellow:  #806733;
+    green:   #685c3b;
+    yellow:  #91703f;
     blue:    #4b5d52;
     purple:  #454150;
     cyan:    #593737;

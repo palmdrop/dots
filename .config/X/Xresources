@@ -9,10 +9,10 @@
 #define BLACK2          #493536
 #define RED1            #68333b
 #define RED2            #68333b
-#define GREEN1          #59513c
-#define GREEN2          #59513c
-#define YELLOW1         #806733
-#define YELLOW2         #806733
+#define GREEN1          #685c3b
+#define GREEN2          #685c3b
+#define YELLOW1         #91703f
+#define YELLOW2         #91703f
 #define BLUE1           #4b5d52
 #define BLUE2           #4b5d52
 #define MAGENTA1        #454150
@@ -22,16 +22,16 @@
 #define WHITE1          #b1a583
 #define WHITE2          #d4c7a4
 
-#define TRANSPARENT     #11ffffff
+#define TRANSPARENT     #15ffffff
 #define PRIMARY         #433132
 #define SECONDARY       #433132
 #define ACCENT          #592c32
 
-#define RAMP1           #151f2a
-#define RAMP2           #678d92
-#define RAMP3           #8abbc1
-#define RAMP4           #9febf1
-#define RAMP5           #bffbff
+#define RAMP1           #45433132
+#define RAMP2           #45593737
+#define RAMP3           #4568493c
+#define RAMP4           #45827652
+#define RAMP5           #45b1a583
 
 
 !!!!!!!!!!!!

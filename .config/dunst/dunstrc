@@ -428,7 +428,7 @@
     category = reminder
     background = "#151212"
     foreground = "#b1a583"
-    frame_color = "#59513c"
+    frame_color = "#685c3b"
     timeout = 0
 
 [ignore]
