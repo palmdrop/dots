@@ -44,8 +44,8 @@ window {
     border: 						2px;
     border-color: 					@ac;
     border-radius: 					0px;
-    padding: 						35;
-    width: 							20%;
+    padding: 						45;
+    width: 							40%;
 }
 
 prompt {
@@ -108,11 +108,11 @@ element normal.urgent {
 }
 element normal.active {
     background-color: 				@green;
-    text-color:       				@bg;
+    text-color:       				@ts;
 }
 element selected.normal {
     background-color: 				@fg;
-    text-color:       				@bg;
+    text-color:       				@ts;
 }
 element selected.urgent {
     background-color: 				@bg;
@@ -120,7 +120,7 @@ element selected.urgent {
 }
 element selected.active {
     background-color: 				@fg;
-    text-color:       				@bg;
+    text-color:       				@ts;
 }
 element alternate.normal {
     background-color: 				@bg;
@@ -145,7 +145,7 @@ button {
     background-color:             	@fg;
     margin: 						5px;
     padding: 						5px;
-    text-color: 					@bg;
+    text-color: 					@ts;
     border: 						0px;
     border-radius: 					0px;
     border-color: 					@fg;

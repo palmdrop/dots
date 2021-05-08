@@ -4,6 +4,7 @@
     al:      #00000000;
     bg:      %rofi.background%;
     se:      %rofi.select%;
+    ts:      %rofi.text-select%;
     fg:      %rofi.foreground%;
     ac:      %rofi.accent%;
     red:     %rofi.color1%;

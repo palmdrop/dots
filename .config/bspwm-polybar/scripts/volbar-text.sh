@@ -8,7 +8,7 @@ text=$volumeText
 v=$(vol print)
 
 # background
-bg=$(xrdbvar bar.background-module)
+bg=$(xrdbvar bar.background-alt)
 
 # Color for empty step
 blank=$(xrdbvar bar.foreground-alt)

@@ -22,17 +22,18 @@
 #define WHITE1          #b1a583
 #define WHITE2          #d4c7a4
 
-#define TRANSPARENT     #15ffffff
+#define TRANSPARENT     #35000000
 #define PRIMARY         #433132
 #define SECONDARY       #433132
 #define ACCENT          #592c32
 
-#define RAMP1           #45433132
-#define RAMP2           #45593737
-#define RAMP3           #4568493c
-#define RAMP4           #45827652
-#define RAMP5           #45b1a583
+#define RAMP1           #55433132
+#define RAMP2           #55593737
+#define RAMP3           #5568493c
+#define RAMP4           #55827652
+#define RAMP5           #55b1a583
 
+#define DUNSTBG #00000058
 
 !!!!!!!!!!!!
 !! Colors !!
@@ -85,7 +86,7 @@
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
-bar.background: BACKGROUND
+bar.background: TRANSPARENT
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
 bar.foreground-alt: BLACK1
@@ -103,7 +104,7 @@ bar.ramp3: RAMP3
 bar.ramp4: RAMP4
 bar.ramp5: RAMP5
 
-bar.line-size: 2
+bar.line-size: 3
 bar.line-color: SECONDARY
 
 bar.alert: MAGENTA1
@@ -112,8 +113,8 @@ bar.secondary: SECONDARY
 bar.extra: BLUE1
 
 bar.radius: 0
-bar.border: 5
-bar.border-color: BACKGROUND
+bar.border: 0
+bar.border-color: TRANSPARENT
 
 bar.x-extra: 17.5%
 bar.width-extra: 8%
@@ -121,7 +122,7 @@ bar.width-extra: 8%
 bar.x: 24%
 bar.y: 0
 bar.width: 22%
-bar.height: 25
+bar.height: 38
 
 bar.x-secondary: 46.5%
 bar.width-secondary: 27.5%
@@ -149,25 +150,25 @@ herbe.duration: 3
 !!!!!!!!!!!
 !! dunst !!
 !!!!!!!!!!!
-dunst.borderpx: 2
 
-dunst.border-color: CYAN1
+dunst.borderpx: 10
+dunst.border-color: BLUE1
 
-dunst.background-low: BACKGROUND
-dunst.foreground-low: BLACK2
-dunst.border-color-low: BACKGROUND
+dunst.background-low: DUNSTBG
+dunst.foreground-low: BLUE1
+dunst.border-color-low: DUNSTBG 
 
-dunst.background-normal: BACKGROUND
-dunst.foreground-normal: BLACK2
-dunst.border-color-normal: CYAN1
+dunst.background-normal: DUNSTBG
+dunst.foreground-normal: FOREGROUND
+dunst.border-color-normal: DUNSTBG
 
 dunst.background-critical: RED1
-dunst.foreground-critical: BACKGROUND
+dunst.foreground-critical: FOREGROUND
 dunst.border-color-critical: RED1
 
-dunst.background-reminder: BACKGROUND
+dunst.background-reminder: BLUE1
 dunst.foreground-reminder: FOREGROUND
-dunst.border-color-reminder: GREEN1
+dunst.border-color-reminder: BLUE1
 
 !!!!!!!!!!!
 !! dmenu !!
@@ -194,14 +195,15 @@ dmenu.selhighlightbgcolor:  SECONDARY
 
 dmenu.font: scientifica:size=10
 
-
 !!!!!!!!!!
 !! Rofi !!
 !!!!!!!!!!
 rofi.background: BACKGROUND
 rofi.foreground: FOREGROUND
-rofi.select: RAMP1
+rofi.select: BACKGROUND
 rofi.accent: BLUE1
+
+rofi.text-select: BACKGROUND
 
 !!!!!!!!!!!
 !! URxvt !!

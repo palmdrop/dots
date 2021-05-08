@@ -11,7 +11,7 @@ fi
 if [ $overdue -ne "0" ]; then 
     color=$(xrdbvar bar.ws-focused)
 else 
-    color=$(xrdbvar bar.alert)
+    color=$(xrdbvar bar.extra)
 fi
 
 msg="%{F$color}$(number-to-letters $today) $text%{F-}"

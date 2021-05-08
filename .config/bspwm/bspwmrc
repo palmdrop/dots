@@ -22,7 +22,7 @@ _ window_gap     $gaps
 _ top_padding    $bargaps
 _ left_padding   $padding
 _ right_padding  $padding
-_ bottom_padding $bargaps
+_ bottom_padding $padding
 
 _ ignore_ewmh_focus     true
 _ focus_follows_pointer true

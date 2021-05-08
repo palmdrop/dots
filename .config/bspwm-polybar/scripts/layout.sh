@@ -40,6 +40,6 @@ if [ "$layout" = "-" ] || [ "$layout" = "tiled" ]; then
     echo ""
 else 
     cl=$(xrdbvar bar.ws-focused)
-    echo "%{u$cl}%{+u} $layout %{u-}"
+    echo "%{u$cl} %{+u} $layout %{u-}"
 fi
 

@@ -16,7 +16,7 @@ bat="$(bat)%"
 space="$(space print)"
 
 # Get current date
-date="$(date +'%A, %d %h, %H:%M')"
+date="$(date +'%A, %eth of %h, %H:%M')"
 
 # Get tasks and things to remember
 todo="$(tasks)"
