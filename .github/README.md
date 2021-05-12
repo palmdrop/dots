@@ -1,5 +1,5 @@
-# [bspwm] Bluu
-![bluu](https://github.com/palmdrop/dots/blob/master/.github/bspwm4.png)
+# [bspwm] Foliage
+![foliage](https://github.com/palmdrop/dots/blob/master/.github/foliage.png)
 
 Repository for personal config files, scripts, and wallpapers. Configs can be found under `.config`, scripts under `.local/bin` and wallpapers under `.config/wall`. Additional scripts might be found under `.local/scripts`. The `.github` directory is simply there to prevent this readme and any pictures from cluttering my `~`.
 
