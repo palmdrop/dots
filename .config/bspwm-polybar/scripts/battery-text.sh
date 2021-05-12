@@ -5,7 +5,7 @@ text=$1
 v=$(bat)
 
 # background
-bg=$(xrdbvar bar.background-alt)
+bg=$(xrdbvar bar.background)
 
 # Color for empty step
 blank=$(xrdbvar bar.foreground-alt)
@@ -20,7 +20,7 @@ if [ $v -le "20" ]; then
 elif [ $v -le "50" ]; then
     step=$(xrdbvar bar.alert)
 else 
-    step=$(xrdbvar bar.extra)
+    step=$(xrdbvar bar.background)
 fi
 
 if [ $v -gt "90" ]; then

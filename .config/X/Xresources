@@ -119,13 +119,13 @@ bar.border-color: TRANSPARENT
 bar.x-extra: 17.5%
 bar.width-extra: 8%
 
-bar.x: 24%
+bar.x: 23%
 bar.y: 0
-bar.width: 22%
+bar.width: 23%
 bar.height: 38
 
 bar.x-secondary: 46.5%
-bar.width-secondary: 27.5%
+bar.width-secondary: 30.5%
 
 bar.x-notify: 0%
 bar.width-notify: 100%
@@ -155,12 +155,12 @@ dunst.borderpx: 10
 dunst.border-color: BLUE1
 
 dunst.background-low: DUNSTBG
-dunst.foreground-low: BLUE1
+dunst.foreground-low: FOREGROUND
 dunst.border-color-low: DUNSTBG 
 
-dunst.background-normal: DUNSTBG
+dunst.background-normal: BLUE1 
 dunst.foreground-normal: FOREGROUND
-dunst.border-color-normal: DUNSTBG
+dunst.border-color-normal: BLUE1
 
 dunst.background-critical: RED1
 dunst.foreground-critical: FOREGROUND

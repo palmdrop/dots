@@ -71,10 +71,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 20
+    padding = 25
 
     # Horizontal padding.
-    horizontal_padding = 20
+    horizontal_padding = 25
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -326,16 +326,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#00000058"
-    foreground = "#4b5d52"
+    foreground = "#b1a583"
     frame_color = "#00000058"
     timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background =  "#00000058"
+    background =  "#4b5d52"
     foreground =  "#b1a583"
-    frame_color = "#00000058"
+    frame_color = "#4b5d52"
     timeout = 4
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon

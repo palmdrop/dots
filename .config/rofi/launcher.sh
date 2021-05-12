@@ -14,4 +14,3 @@ rofi -no-lazy-grab \
 -modi drun,run $@
 #-matching fuzzy $@
 #-theme $dir/"$theme" $@
-
