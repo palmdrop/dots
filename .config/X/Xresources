@@ -151,7 +151,7 @@ herbe.duration: 3
 !! dunst !!
 !!!!!!!!!!!
 
-dunst.borderpx: 10
+dunst.borderpx: 3
 dunst.border-color: BLUE1
 
 dunst.background-low: DUNSTBG
@@ -213,7 +213,7 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-URxvt.font:xft:scientifica:pixelsize=17
+URxvt.font:xft:scientifica:pixelsize=17:antialias=true:hinting=true
 !URxvt.font:xft:cursed:pixelsize=15
 
 URxvt.internalBorder: 30

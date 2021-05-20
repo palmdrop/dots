@@ -25,6 +25,7 @@ Plug 'plasticboy/vim-markdown'
 
 " sxhkd highlighting
 Plug 'kovetskiy/sxhkd-vim'
+Plug 'tikhomirov/vim-glsl'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
