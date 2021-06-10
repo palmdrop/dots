@@ -38,6 +38,10 @@
   --urlbar-separator-color: transparent !important;
 }
 
+#statuspanel[type="status"] {
+     display: none !important;
+}
+
 /*
   _____ _   ___ ___
  |_   _/_\ | _ ) __|

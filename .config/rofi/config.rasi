@@ -10,7 +10,7 @@
 configuration {
     lines:							15;
     columns:						1;
-    font: 							"scientifica 12";
+    font: 							"Fantasque Sans Mono 10";
     bw: 							0;
     location: 						0;
     padding: 						0;

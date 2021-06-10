@@ -213,13 +213,14 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintfull
 
-URxvt.font:xft:scientifica:pixelsize=17:antialias=true:hinting=true
+!URxvt.font:xft:scientifica:pixelsize=17:antialias=true:hinting=true
+URxvt.font:xft:Fantasque Sans Mono:pixelsize=15:antialias=true:hinting=true
 !URxvt.font:xft:cursed:pixelsize=15
 
 URxvt.internalBorder: 30
 URxvt.scrollBar: false
-!URxvt.letterSpace: -0
-URxvt.letterSpace: -8
+URxvt.letterSpace: -0
+!URxvt.letterSpace: -8
 URxvt.iso14755: false
 URxvt.geometry: 85x40
 
