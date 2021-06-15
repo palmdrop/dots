@@ -1,0 +1,229 @@
+##################
+# APPS/LAUNCHING #
+##################
+
+# terminal emulator
+alt + Return
+	$TERMINAL
+
+# program launcher
+alt + d
+	launcher
+
+# make sxhkd reload its configuration files:
+alt + shift + Escape
+	pkill -USR1 -x sxhkd
+
+#################
+# MEDIA CONTROL #
+#################
+
+# audio control
+XF86Audio{Raise,Lower}Volume
+	vol {up, down}
+
+XF86AudioMute
+	vol mute
+
+XF86Audio{Play,Stop}
+	play {pause, stop}
+
+XF86Audio{Prev,Next}
+	play {prev, next}
+
+# Brightness control
+XF86MonBrightness{Up,Down}
+	bri {up, down}
+
+# Print screen control
+Print
+	flameshot full -p /home/xan/usr/pictures/screenshot
+
+alt + Print
+	flameshot gui
+
+##########
+# SYSTEM #
+##########
+
+# Mount/unmount menu
+alt + s; {m, u}
+	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount} 
+
+# xkill
+alt + s; x
+	xkill
+
+# shutdownmenu
+alt + s; e
+	shutdownmenu
+
+#############
+# UTILITIES #
+#############
+
+alt + o
+	sysinfo-notify
+
+alt + shift + d
+	dots-edit-menu
+
+alt + c
+	shortcut-menu
+
+alt + shift + p
+	passmenu
+
+alt + {_,ctrl +} b
+	bookmark {-o,_}
+
+alt + {_,shift +, ctrl +} r
+	remember {append, open, menu} --dmenu
+
+alt + {_, ctrl +} Tab
+	dswitcher {_,-R}
+
+alt + w
+	networkmanager_dmenu -i -F
+
+######
+# WM #
+######
+
+# quit/restart bspwm
+alt + shift + control + {q,r}
+	bspc {quit,wm -r}; notify-send "bspwm reloaded"
+
+##########
+# LAYOUT #
+##########
+
+# close and kill
+alt + shift + q
+	bspc node -c
+
+# set note state
+alt + {t, shift + t, f}
+	bspc node -t \~{tiled,pseudo_tiled,fullscreen}
+
+# toggle floating
+alt + space
+	bspc rule -a '*' --one-shot state=floating
+
+{alt, super} + control + space
+	bspc node -t \~floating
+
+# hide/unhide
+alt + m
+	bspc-ordered-hide hide
+
+alt + shift + m
+	bspc-ordered-hide unhide --focus
+
+alt + control {_, + shift} + m
+	bspc-unhide-menu {_, --all}
+
+# Toggle main window
+alt + shift + Return
+	bspc-main-toggle
+
+# Focus the next/previous window in current desktop
+alt + {_, shift +} {j,k}
+	bspc node -{f,s} {next,prev}.local.!hidden.window
+
+# focus next/previous workspace or send a node to next/previous desktop
+alt + {_, shift +} {h,l}
+	bspc {desktop -f, node -d} {prev,next}.local
+
+# send a node to next/previous desktop
+alt + control + {h,l}
+	bspc node -d {prev,next} --follow
+
+# focus the last node/desktop
+alt + shift + Tab
+	bspc desktop -f last
+
+# focus or send to give desktop
+alt + {_,shift +}{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# send to to given desktop and follow
+alt + ctrl + {1-9,0}
+	bspc node -d '^{1-9,10}' --follow
+
+# send to first empty desktop
+alt + shift + n
+	bspc node -d 'next.!occupied'
+
+# send to first empty desktop and follow
+alt + ctrl + n
+	bspc node -d 'next.!occupied' --follow
+
+# preselect in specified direction
+alt + shift + ctrl + {h,j,k,l}
+	bspc-presel {west,south,north,east} 0.1
+
+# cancel the preselection for all nodes on desktop
+{_, alt +} ctrl + {_,shift +} Escape
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# move current window to pre-selected space
+alt + shift + space
+	bspc node -t tiled & \
+	bspc node -n last.!automatic
+
+###########
+# BALANCE #
+###########
+
+# balance or equalize parent node
+super + b; {_, shift+} b
+	bspc node @parent -{B,E}
+
+# Balance all windows in vertical or horizontal direction
+super + b ; {h,j,k,l}
+	bspc-balance {west, south, north, east}
+
+#########
+# FLOAT #
+#########
+
+# toggle floating
+super + space
+	bspc node -t \~floating
+
+# resize floating windows
+super + {h,j,k,l}
+	bspc-resize {x -, y -, y +, x +} 20
+
+# move a floating window
+super + control + {h,j,k,l}
+	PADDING=$(xrdbvar bspwm.outergaps); \
+	AMOUNT=20; \
+	window-ctrl $PADDING move {-$AMOUNT +0, +0 +$AMOUNT, +0 -$AMOUNT, +$AMOUNT +0}
+
+super + control + shift + {h,j,k,l}
+	PADDING=$(xrdbvar bspwm.outergaps); \
+	window-ctrl $PADDING {multwidth 0.5, multheight 0.5, multheight 2.0, multwidth 2.0} center
+
+# teleport windows
+super + {q,w,e,a,s,d,z,x,c}
+	PADDING=$(xrdbvar bspwm.outergaps); \
+	window-ctrl $PADDING {topleft,top,topright,left,center,right,bottomleft,bottom,bottomright} 
+
+##############
+# SCRATCHPAD #
+##############
+
+# "Drop down" terminal
+alt + comma 
+	bspc-toggle-visibility scratch1 "$TERMINAL -g 100x30 -name scratch1" 
+
+# RSS reader
+alt + period 
+	bspc-toggle-visibility scratch2 "$TERMINAL -g 80x50 -name scratch2 -e newsboat"
+
+# Task manager
+alt + minus 
+	bspc-toggle-visibility scratch3 "$TERMINAL -g 100x30 -name scratch3 -e vit"
+

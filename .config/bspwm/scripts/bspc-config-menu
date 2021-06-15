@@ -1,0 +1,51 @@
+#!/bin/bash
+
+constrain () {
+    if [ "$1" -lt "$2" ]; then 
+        echo "$2"
+    elif [ "$1" -gt "$3" ]; then 
+        echo "$3"
+    else
+        echo "$1"
+    fi
+}
+
+choices=( gaps outer_gaps restart quit)
+
+choice=$(printf "%s\n" "${choices[@]}" | dmenu -i -F -p "Settings")
+
+[[ -z "$choice" ]] && exit 0
+
+case $choice in
+    gaps)
+        current=$(bspc config window_gap)
+        new_gaps=$(echo "Reset" | dmenu -i -F -p "Set_gaps_($current)")
+        if [ "$new_gaps" = "Reset" ]; then
+            new_gaps=$(xrdbvar bspwm.gaps)
+        else
+            new_gaps=$(constrain $new_gaps 0 300)
+        fi
+        bspc config window_gap $new_gaps
+    ;;
+    outer_gaps)
+        current=$(bspc-padding print)
+        new_gaps=$(echo "Reset" | dmenu -i -F -p "Set_outer_gaps_($current)")
+        if [ "$new_gaps" = "Reset" ]; then
+            new_gaps=$(xrdbvar bspwm.outergaps)
+        else
+            new_gaps=$(constrain $new_gaps 0 300)
+        fi
+        bspc-padding set $new_gaps
+    ;;
+    restart)
+        bspc wm -r 
+        notify-send "Bspwm reloaded"
+    ;;
+    quit)
+        bspc quit
+    ;;
+    *) 
+        notify-send "Config menu: invalid option."
+    ;;
+esac
+

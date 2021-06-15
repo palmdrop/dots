@@ -1,0 +1,104 @@
+##################
+# APPS/LAUNCHING #
+##################
+
+# terminal emulator
+alt + Return
+	$TERMINAL
+
+# program launcher
+alt + d
+	launcher
+
+# make sxhkd reload its configuration files:
+alt + shift + Escape
+	pkill -USR1 -x sxhkd
+
+#################
+# MEDIA CONTROL #
+#################
+
+# audio control
+XF86Audio{Raise,Lower}Volume
+	vol {up, down}
+
+XF86AudioMute
+	vol mute
+
+XF86Audio{Play,Stop}
+	play {pause, stop}
+
+XF86Audio{Prev,Next}
+	play {prev, next}
+
+# Brightness control
+XF86MonBrightness{Up,Down}
+	bri {up, down}
+
+# Print screen control
+Print
+	flameshot full -p /home/xan/usr/pictures/screenshot
+
+alt + Print
+	flameshot gui
+
+##########
+# SYSTEM #
+##########
+
+# Mount/unmount menu
+alt + s; {m, u}
+	$TERMINAL -name floating -g 50x10 -e sudo {dmount, dumount} 
+
+# xkill
+alt + s; x
+	xkill
+
+# shutdownmenu
+alt + s; e
+	shutdownmenu
+
+#############
+# UTILITIES #
+#############
+
+alt + o
+	sysinfo-notify
+
+alt + shift + d
+	dots-edit-menu
+
+alt + c
+	shortcut-menu
+
+alt + shift + p
+	passmenu
+
+alt + {_,ctrl +} b
+	bookmark {-o,_}
+
+alt + {_,shift +, ctrl +} r
+	remember {append, open, menu} --dmenu
+
+#alt + {_, ctrl +} Tab
+#	dswitcher {_,-R}
+alt + ctrl + Tab
+    dswitcher -R
+
+alt + w
+	networkmanager_dmenu -i -F
+
+# move a floating window
+super + control + {h,j,k,l}
+	PADDING=20; \
+	AMOUNT=20; \
+	window-ctrl $PADDING move {-$AMOUNT +0, +0 +$AMOUNT, +0 -$AMOUNT, +$AMOUNT +0}
+
+super + control + shift + {h,j,k,l}
+	PADDING=20; \
+	window-ctrl $PADDING {multwidth 0.5, multheight 0.5, multheight 2.0, multwidth 2.0} center
+
+# teleport windows
+super + {q,w,e,a,s,d,z,x,c}
+	PADDING=20; \
+	window-ctrl $PADDING {topleft,top,topright,left,center,right,bottomleft,bottom,bottomright} 

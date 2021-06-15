@@ -1,0 +1,245 @@
+!!!!!!!!!!!!!
+!! Defines !!
+!!!!!!!!!!!!!
+#define FOREGROUND      #678d92
+#define FOREGROUND_ALT  #666666
+#define BACKGROUND      #131d28
+#define CURSORCOLOR     #798e91
+#define BLACK1          #233347
+#define BLACK2          #3c4a5c
+#define RED1            #c35254
+#define RED2            #c35254
+#define GREEN1          #0e5c5d
+#define GREEN2          #0e5c5d
+#define YELLOW1         #3e487b
+#define YELLOW2         #3e487b
+#define BLUE1           #2f556e
+#define BLUE2           #2f566e
+#define MAGENTA1        #604c6e
+#define MAGENTA2        #604c6e
+#define CYAN1           #176f7d
+#define CYAN2           #176f7d
+#define WHITE1          #6a7f82
+#define WHITE2          #8abbc1
+
+#define TRANSPARENT     #00000000
+#define PRIMARY         #2f556e
+#define SECONDARY       #678d92
+#define ACCENT          #c35254
+
+#define RAMP1           #151f2a
+#define RAMP2           #678d92
+#define RAMP3           #8abbc1
+#define RAMP4           #9febf1
+#define RAMP5           #bffbff
+
+
+!!!!!!!!!!!!
+!! Colors !!
+!!!!!!!!!!!!
+! special
+*.foreground:   FOREGROUND
+*.background:   BACKGROUND
+*.cursorColor:  CURSORCOLOR
+
+! black
+*.color0:       BLACK1
+*.color8:       BLACK2
+
+! red
+*.color1:       RED1
+*.color9:       RED2
+
+! green
+*.color2:       GREEN1
+*.color10:      GREEN2
+
+! yellow
+*.color3:       YELLOW1
+*.color11:      YELLOW2
+
+! blue
+*.color4:       BLUE1
+*.color12:      BLUE2
+
+! magenta
+*.color5:       MAGENTA1
+*.color13:      MAGENTA2
+
+! cyan
+*.color6:       CYAN1
+*.color14:      CYAN2
+
+! white
+*.color7:       WHITE1
+*.color15:      WHITE2
+
+!!!!!!!!!!!!!!!!!!!!!!
+!! General settings !!
+!!!!!!!!!!!!!!!!!!!!!!
+#define BORDERPX 2
+#define FLOATBORDERPX 0
+#define GAPS 23
+#define OUTERGAPS 43
+
+!!!!!!!!!
+!! bar !!
+!!!!!!!!!
+bar.background: SECONDARY
+bar.background-alt: BACKGROUND
+bar.foreground: BLACK2
+bar.foreground-alt: FOREGROUND_ALT
+
+bar.background-module: SECONDARY
+
+bar.ws-focused: RED1
+bar.ws-occupied: BLACK1
+bar.ws-unoccupied: BLACK1
+
+bar.ramp1: RAMP1
+bar.ramp2: RAMP2
+bar.ramp3: RAMP3
+bar.ramp4: RAMP4
+bar.ramp5: RAMP5
+
+bar.line-size: 2
+bar.line-color: SECONDARY
+
+bar.alert: MAGENTA1
+bar.primary: PRIMARY
+bar.secondary: SECONDARY
+bar.extra: BLUE1
+
+bar.radius: 0
+bar.border: 2
+bar.border-color: SECONDARY
+
+bar.x: 22%
+bar.y: 5
+bar.width: 23%
+bar.height: 25
+
+bar.x2: 46%
+bar.width2: 33%
+
+!!!!!!!!!!!
+!! herbe !!
+!!!!!!!!!!!
+herbe.background_color: BACKGROUND
+herbe.border_color: CYAN1
+herbe.font_color: FOREGROUND
+herbe.line_spacing: 5
+herbe.padding: 30
+herbe.width: 250
+herbe.border_size: 2
+herbe.pos_x: 20
+herbe.pos_y: 10
+herbe.corner: 1
+herbe.duration: 3 
+
+!!!!!!!!!!!
+!! dunst !!
+!!!!!!!!!!!
+dunst.borderpx: 2
+
+dunst.border-color: CYAN1
+
+dunst.background-low: BACKGROUND
+dunst.foreground-low: BLACK2
+dunst.border-color-low: BACKGROUND
+
+dunst.background-normal: BACKGROUND
+dunst.foreground-normal: BLACK2
+dunst.border-color-normal: CYAN1
+
+dunst.background-critical: RED1
+dunst.foreground-critical: BACKGROUND
+dunst.border-color-critical: RED1
+
+dunst.background-reminder: BACKGROUND
+dunst.foreground-reminder: FOREGROUND
+dunst.border-color-reminder: GREEN1
+
+!!!!!!!!!!!
+!! dmenu !!
+!!!!!!!!!!!
+dmenu.topbar: 1
+
+dmenu.x: 660
+dmenu.y: 325
+dmenu.w: 500
+dmenu.h: 30
+dmenu.borderpx: 50
+
+dmenu.lines: 10
+
+dmenu.normfgcolor: RAMP1
+dmenu.normbgcolor: SECONDARY
+dmenu.selfgcolor:  RAMP1
+dmenu.selbgcolor:  SECONDARY
+
+dmenu.normhighlightfgcolor: RAMP5
+dmenu.normhighlightbgcolor: SECONDARY
+dmenu.selhighlightfgcolor:  RAMP5
+dmenu.selhighlightbgcolor:  SECONDARY
+
+dmenu.font: scientifica:size=10
+
+
+!!!!!!!!!!
+!! Rofi !!
+!!!!!!!!!!
+rofi.background: BACKGROUND
+rofi.foreground: FOREGROUND
+rofi.select: RAMP1
+rofi.accent: BLUE1
+
+!!!!!!!!!!!
+!! URxvt !!
+!!!!!!!!!!!
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+
+URxvt.font:xft:scientifica:pixelsize=17
+URxvt.internalBorder: 30
+URxvt.scrollBar: false
+URxvt.letterSpace: -8
+URxvt.iso14755: false
+URxvt.geometry: 85x40
+
+! Change copy-paste keybindds
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
+! Create keybind for scrolling up and down using j and k
+URxvt.keysym.Shift-Control-K: command:\033]720;1\007
+URxvt.keysym.Shift-Control-J: command:\033]721;1\007
+
+URxvt.perl-ext-common: default,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+
+!!!!!!!!!!!
+!! bspwm !!
+!!!!!!!!!!!
+bspwm.presel_color: YELLOW1
+bspwm.gaps:         GAPS
+bspwm.outergaps:    OUTERGAPS
+bspwm.borderpx:     2
+
+bspwm.outerborderfocused: BACKGROUND
+bspwm.outerbordernormal:  BACKGROUND
+bspwm.innerborderfocused: SECONDARY
+bspwm.innerbordernormal:  BACKGROUND
+
+!!!!!!!!!!!!!
+!! zathura !!
+!!!!!!!!!!!!!
+zathura.background: BACKGROUND
+zathura.foreground: FOREGROUND
+zathura.foreground-alt: BLACK2
+zathura.accent: BLUE1
+zathura.alert: CYAN1

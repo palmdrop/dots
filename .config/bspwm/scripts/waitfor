@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# derived from this post: http://thedarnedestthing.com/bspwm%20gym
+
+start=$SECONDS
+[[ $1 ]] && cutoff=$1 || cutoff=10
+
+shift
+[ "$1" = "--presel" ] && {
+    presel="true"; 
+    dir="$2"
+    shift; shift
+}
+
+pid=""
+while [ ! $pid ]; do
+    echo $@
+    pid=$(pgrep -f $@)
+    sleep 0.2s
+    [[ $(( $SECONDS - $start )) -gt $cutoff ]] && exit 1
+done
+
+if [ "$presel" = "true" ]; then
+    bspc node -f $pid        
+    bspc node -p $dir
+fi

@@ -1,0 +1,166 @@
+#
+# ~/.bashrc
+#
+
+HISTSIZE= HISTFILESIZE=1000
+
+# SHOPT
+shopt -s autocd # change to named directory
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+
+#ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
+
+# ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;      
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# ALIASES
+alias startx="startx $XDG_CONFIG_HOME/X/xinitrc"
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../.."
+
+alias r="ranger"
+
+alias ls='ls -1 --color=auto --group-directories-first'
+alias ll='ls -alh'
+alias l='ls -CF'
+
+alias ls='exa -1 --group-directories-first'
+alias la='exa -1a --group-directories-first'
+alias ll='exa -alhg --group-directories-first'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Files and dirs
+alias mkdir="mkdir -pv"
+alias df='df -h'                          # human-readable sizes
+alias free='free -h'                      # show sizes in human-readable format
+
+# Editing
+alias v="nvim"
+alias sv="sudoedit"
+
+# Term
+alias u="(urxvt &)"
+
+# Updates
+alias update="yay -Syu --noconfirm && notify-send 'Update complete'"              # update standard pkgs and AUR pkgs
+alias mirror="sudo reflector --verbose --latest 30 --sort rate --save /etc/pacman.d/mirrorlist"
+alias orpclean="sudo pacman -Rns $(pacman -Qtdq)"
+alias depclean="yay -Yc"
+alias cacheclean="yay -Sc"
+
+# System information
+alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia-settings/nvidia-settings-rc"
+alias services='systemctl list-units  --type=service  --state=running'
+
+# System
+alias shutdown="sudo shutdown now"
+alias reboot="sudo reboot"
+
+# Make
+alias install="sudo make clean install"
+
+# Misc
+alias sxiv="sxiv -a"
+alias tty-clock="tty-clock -cD"
+
+# Config management
+alias cgit='/usr/bin/git --git-dir=$XDG_CONFIG_HOME/dots.git.d --work-tree=$HOME'
+alias cacommit="cgit add -u; cgit commit -m"
+
+# Settings
+set -o vi
+#stty erase '^H'
+
+# Completion 
+if [ -d /etc/bash_completion ]; then
+    for file in /etc/bash_completion.d/* ; do
+        source "$file"
+    done
+fi
+
+# PROMPT
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT_DIRTRIM=1
+PS1="\[\e[30m\]\w\[\e[00m\] \[\e[31m\]\$(parse_git_branch)\[\e[00m\] "
+
+#trap 'printf "\033]0;%s\007" "${PWD//[^[:print:]]/} | $TERM"' DEBUG
+
+# Pidswallow stuff
+#[ -n "$DISPLAY" ]  && command -v xdo >/dev/null 2>&1 && xdo id > /tmp/term-wid-"$$"
+#trap "( rm -f /tmp/term-wid-"$$" )" EXIT HUP
+
+# FUNCTIONS
+bak() { cp -r "$1" "$1.bak"; }
+copycode() { echo -e "\u$1" | xclip -selection clipboard; }
+ftext () { grep -iIHrn --color=always "$1" . | less -R -r; }
+generateqr () { printf "$@" | curl -F-=\<- qrenco.de; }
+
+# SHORTCUTS
+alias z="zathura"
+alias x="sxiv -a"
+
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias killtmux="tmux kill-server"
+alias wp="xwallpaper --zoom"
+alias rc="killall picom; sleep 0.1; picom -b"
+alias copy="xclip -r -selection clipboard"
+alias paste="xclip -selection clipboard -o"
+alias cc="grabc 2> /dev/null | copy"
+alias bin="cd /home/xan/.local/bin/"
+alias config="cd $XDG_CONFIG_HOME"
+alias png-compress="pngquant --force --quality=40-100 --strip --skip-if-larger --verbose"
+alias ka="killall"
+alias push="git push"
+alias branches="git branch -a"
+alias delbranch="git branch -d"
+alias makebranch="git checkout -b"
+alias stat="git status"
+alias acommit="git add .; git commit -m"
+alias quote="nvim /home/xan/usr/notes/quotes.txt"
+alias cleancache="yay -Sc"
+alias bin="cd /home/xan/.local/bin/"
+alias pull="git pull"
+alias graphics="cd /home/xan/studies/computer-graphics-DIT224/"
+alias software="cd /home/xan/studies/software-development-methodologies-DIT347/"
+alias passpush="pass git add . && pass git commit -m 'new password' && pass git push"
+alias chx="chmod +x"

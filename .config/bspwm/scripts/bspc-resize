@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Partly stolen from unknow source on reddit....
+direction="$1"
+sense="$2"
+amount="$3"
+
+if [ "$sense" = "+" ]; then
+    countersense="-"
+else
+    countersense="+"
+fi
+
+# If floating, resize around center
+if [ $(bspc query -T -n | jq -r '.client.state') = "floating" ]; then
+    amount=$(( $amount / 2 ))
+    case $direction in
+        x)
+            bspc node -z left   $countersense$amount 0
+            bspc node -z right  $sense$amount        0
+        ;;
+        y)
+            bspc node -z top     0 $countersense$amount
+            bspc node -z bottom  0 $sense$amount
+    esac
+# Otherwise, do it the tiled way
+else
+    # fetch screen dimension to calculate relationship between "amount" and change in layout ratio
+    # TODO actually check for the biggest window and calculate full ratio using screen dimensions instead
+    w=$(xwininfo -root|sed '/Width/!d;s/.* //')
+    h=$(xwininfo -root|sed '/Height/!d;s/.* //')
+
+    layout=$(bsp-layout get $(bspc query -D -d --names))
+
+    # If change in X direction
+    if [ "$direction" = "x" ]; then
+        # Resize node
+        bspc node --resize "right"  "${sense}$amount"        "0" ||
+        bspc node --resize "left"   "${countersense}$amount" "0"
+
+        # If applicable layout is set, change ratio
+        if [[ "( tall rtall )" =~ "$layout" ]]; then
+            # calculate new ratio based on amount and screen width
+            dr=$(echo "$amount / $w" | bc -l) 
+            bsp-layout-ratio "${countersense}$dr"
+        fi
+    else
+        # Resize node
+        bspc node --resize "bottom" "0" "${sense}$amount"        ||
+        bspc node --resize "top"    "0" "${countersense}$amount"
+
+        # If applicable layout is set, change ratio
+        if [[ "( wide rwide )" =~ "$layout" ]]; then
+            # calculate new ratio based on amount and screen height
+            dr=$(echo "$amount / $h" | bc -l) 
+            bsp-layout-ratio "${countersense}$dr"
+        fi
+    fi
+fi

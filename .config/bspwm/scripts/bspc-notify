@@ -1,0 +1,14 @@
+#!/bin/bash
+
+bspc subscribe node_flag | while read event mid did nid flag state; do
+    if [ "$flag" = "urgent" -a "$state" = "on" ]; then
+        notify-send "urgent window!"
+    fi
+done &
+
+bspc subscribe node_add | while read event m_id d_id ip_id n_id; do
+    focused_desktop=$(bspc query -D -d focused)
+    if [ "$d_id" != "$focused_desktop" ]; then
+        notify-send "!!!"
+    fi
+done &

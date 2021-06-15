@@ -1,0 +1,44 @@
+#
+# ~/.bash_profile
+#
+
+# DEFAULT PROGRAMS
+export TERMINAL=urxvt
+export PAGER=less
+export EDITOR=nvim
+export VISUAL=nvim
+export BROWSER=firefox
+export SUDO_EDITOR=nvim
+export READER=zathura
+
+#export TERM=xterm-256color
+
+# Environment variables
+export LESSHISTFILE="-"
+export HISTFILE=$XDG_CONFIG_HOME/bash/history
+
+export NOTES_DIR=$HOME/usr/notes
+export TASKRC=$XDG_CONFIG_HOME/task/config
+export VIT_DIR=$XDG_CONFIG_HOME/vit
+export BACKUP_DIR=$HOME/.local/backup
+export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
+
+export WALLPAPERS=$XDG_CONFIG_HOME/wall
+export BOOKMARKS_DIR=$HOME/usr/bookmarks
+
+# Java fix 
+export _JAVA_AWT_WM_NONREPARENTING=1 
+export AWT_TOOLKIT=MToolkit
+
+# Path
+[[ -d $HOME/.local/bin ]] && export PATH=$HOME/.local/bin:$PATH
+
+[[ -d $XDG_CONFIG_HOME/bspwm/scripts ]] && export PATH=$XDG_CONFIG_HOME/bspwm/scripts:$PATH
+
+[[ -d $XDG_CONFIG_HOME/sxhkd/scripts ]] && export PATH=$XDG_CONFIG_HOME/sxhkd/scripts:$PATH
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f $XDG_CONFIG_HOME/bash/bashrc ]] && . $XDG_CONFIG_HOME/bash/bashrc
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
