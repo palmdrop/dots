@@ -1,0 +1,25 @@
+#!/bin/bash
+# Purpose: get the RSS feed for a YouTube page
+# Inspired By: https://eggfreckles.net/2020/01/03/youtube-rss/
+#
+# From:	Timothy J. Luoma
+# Mail:	luomat at gmail dot com
+# Date:	2020-01-17
+
+# NOTE: modded slightly by me
+
+NAME="$0:t:r"
+
+for i in "$@"
+do
+#	CHANNEL_ID=$(curl -sfLS "$i" | fgrep -i '<meta itemprop="channelId" ' | awk -F'"' '//{print $4}')
+    CHANNEL_ID=$(curl -sfLS "$1" | grep -oP '"externalId":"\K.*?(?=",)')
+	if [[ "$CHANNEL_ID" == "" ]]
+	then
+		echo "$NAME: no channel ID found for '$i'."
+	else
+		echo "https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}"
+			# copy URL to clipboard
+		echo -n "https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}" | xclip -r -selection clipboard
+	fi
+done

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+options=( battery volume disk date playing brightness)
+
+choice=$(printf "%s\n" "${options[@]}" | dmenu -i -F -p "Options")
+
+[[ -z $choice ]] && exit 0
+
+case $choice in 
+    battery)
+        notify-send "Charge: $(bat)%"
+        ;;
+    volume|playing)
+        muted=$(vol muted)
+        vol=$(vol print)
+        if [ "$(vol muted)" = "true" ]; then
+            msg="Volume: muted ($vol%)"
+        else
+            msg="Volume: $vol%"
+        fi
+        notify-send "$msg" "Playing: $(play print)"
+        ;;
+    disk)
+        notify-send "$(space print)"
+        ;;
+    date)
+        notify-send "$(date +'%A, %d %h, %H:%M')"
+        ;;
+    brightness)
+        notify-send "Brightness: $(bri print)%"
+        ;;
+    *)
+        notify-send "Invalid option"
+    ;;
+esac
+

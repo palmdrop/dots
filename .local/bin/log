@@ -1,0 +1,58 @@
+#!/bin/bash
+
+LOGDIR="$HOME/.local/log/personal/"
+EXTENSION=".log"
+FILE=""
+
+# Parse arguments
+edit=0
+create=0
+name="NULL"
+
+while getopts ":ec:" opt; do
+  case ${opt} in
+    e )
+      edit=1
+      ;;
+    c )
+      create=1
+      name=$OPTARG
+      ;;
+    \? )
+      echo "Invalid option: $OPTARG" 1>&2
+      ;;
+    : )
+      echo "Invalid option: $OPTARG requires an argument" 1>&2
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+# Create file if it does not already exist
+if [ $create -eq 1 ] ;
+then
+    FILE=$LOGDIR$name$EXTENSION
+    if [ ! -f "$FILE" ] ; 
+    then
+        touch $FILE
+    else
+        echo "File $FILE already exists." 
+    fi
+else
+    # Exit if no file name is supplied
+    [[ "$#" -ne 1 ]] && echo "Please input name of log file." && exit
+
+    # Set file name
+    FILE=$LOGDIR$1$EXTENSION
+fi
+
+# Add newline and date if edit flag is not set
+if [ $edit -eq 0 ] ;
+then
+    echo "" >> $FILE
+    date +'[%Y-%m-%d %H:%M]' >> $FILE
+fi
+
+# Open file for editing
+nvim $FILE +$
+

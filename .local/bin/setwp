@@ -1,0 +1,19 @@
+#!/bin/bash
+
+config_path=$WALLPAPERS/wall.config
+
+if [ $# -eq 1 ]; 
+then
+    path=$(abspath $1)
+    echo "$path" > "$config_path"
+fi
+
+if [ ! -f "$config_path" ];
+then
+    echo "No background is set."
+    exit 1
+fi
+
+wp_path="$(cat $config_path)"
+
+xwallpaper --zoom "$wp_path"

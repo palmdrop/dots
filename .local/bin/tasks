@@ -1,0 +1,24 @@
+#!/bin/bash
+
+d=$(date --date='tomorrow' +'%Y-%m-%d')
+d="$dT00:00:59"
+
+overdue=$(task due.before:now and status:pending count)
+today=$(task due.after:now and due.before:$d and status:pending count)
+total=$(task status:pending count)
+
+case $1 in
+    today)   msg="$today" ;;
+    total)   msg="$total" ;;
+    overdue) msg="$overdue" ;;
+    *)       
+        if (( $overdue == 0 )); then 
+            o=""
+        else
+            o="$overdue! "
+        fi
+        msg="$o$today ($total)" 
+    ;;
+esac
+
+echo "$msg"

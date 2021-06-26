@@ -1,0 +1,11 @@
+#!/bin/bash
+
+v=$(vol print)
+mode="norm"
+
+if [ "$(pamixer --get-mute)" = "true" ]
+then
+    mode="off"
+fi
+
+indicator_bar $v 0 100 $mode

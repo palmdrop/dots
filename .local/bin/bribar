@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Get brightness
+b=$(bri print)
+
+# Remove decimals
+int=${b%.*}
+
+# Print bar
+indicator_bar $int 0 100 "norm"
+

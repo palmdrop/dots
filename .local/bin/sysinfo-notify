@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Get volume as 0-100 percentage
+vol="$(vol print)%"
+
+# Prepend (Muted) if the sound is indeed muted
+if [ "$(pamixer --get-mute)" = "true" ]
+then
+    vol="(Muted) $vol"
+fi
+
+# Get battery charge as 0-100 percentage
+bat="$(bat)%"
+
+# Get free disk space
+space="$(space print)"
+
+# Get current date
+date="$(date +'%A, %eth of %h, %H:%M')"
+
+# Get tasks and things to remember
+todo="$(tasks)"
+
+remember=$(remember count)
+[ "$remember" -gt "0" ] && {
+    todo="$todo\nRemember: $remember thing(s)"
+}
+
+
+
+# Create separator 
+#l=${#date}
+#separator=$(printf "%${l}s" | sed 's/ /./g')
+separator=".............................."
+
+# Send notification
+notify-send -u normal "$date" \
+"$separator\n\
+Volume: $vol\n\
+Charge: $bat\n\
+Disk:   $space\n\
+$separator\n\
+Tasks:  $todo\n\
+$separator\n\
+$(play print)\n"

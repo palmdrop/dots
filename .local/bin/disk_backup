@@ -1,0 +1,16 @@
+#!/bin/bash
+
+backup_name=$(date +'%F')/
+backup_location=/mnt/disk/backup/
+
+[ ! -d $backup_location ] && echo "Disk not mounted." && exit
+
+dir=$backup_location$backup_name
+
+[ -d $dir ] && echo "Already backed up today." && exit
+
+# Create list of packages
+pacman -Q > /tmp/list.pkgs
+
+sudo mkdir $dir
+sudo cp -rv /tmp/list.pkgs /etc/profile ~/src/ ~/.config/ ~/usr/.dropbox ~/usr/pictures ~/usr/studies ~/.local/bin/ ~/.local/log ~/.local/scripts $dir && notify-send "Disk backup done."

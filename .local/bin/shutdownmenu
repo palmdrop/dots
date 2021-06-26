@@ -1,0 +1,24 @@
+#!/bin/bash
+
+option=$(echo -e "Reboot\nShutdown\nSuspend\nLogout\nLock" | dmenu -i -n -p "Option:")
+
+case "$option" in
+    "Reboot")
+        reboot
+        ;;
+    "Shutdown")
+        shutdown now
+        ;;
+    "Suspend")
+        systemctl suspend
+        ;;
+    "Logout")
+        pkill bspwm
+        ;;
+    "Lock")
+        lock
+        ;;
+    *)
+        echo "Invalid option."
+        ;;
+esac

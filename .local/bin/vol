@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+case $1 in
+    up)   pactl set-sink-volume 0 +10% ;;
+    down) pactl set-sink-volume 0 -10% ;;
+    set)  pactl set-sink-volume 0 "$2"% ;;
+    mute) pactl set-sink-mute 0 toggle ;;
+    muted) pamixer --get-mute; exit 1 ;;
+    print) echo "$(pamixer --get-volume)"; exit 1 ;;
+esac
+
+id=212121
+dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" " SOUND $(volbar) "
+#notify-send --urgency=low "$(volbar)"

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Get battery charge
+v=$(bat)
+
+# Print bar
+indicator_bar $v 0 100 "norm"
+
