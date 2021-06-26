@@ -32,8 +32,8 @@ XF86Audio{Prev,Next}
 	play {prev, next}
 
 # Brightness control
-XF86MonBrightness{Up,Down}
-	bri {up, down}
+#XF86MonBrightness{Up,Down}
+#	bri {up, down}
 
 # Print screen control
 Print
@@ -72,7 +72,7 @@ alt + c
 	shortcut-menu
 
 alt + shift + p
-	passmenu
+	$TERMINAL -name floating -g 100x20 -e passmenu
 
 alt + {_,ctrl +} b
 	bookmark {-o,_}

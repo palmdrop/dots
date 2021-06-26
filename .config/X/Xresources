@@ -1,31 +1,31 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #b1a583
-#define FOREGROUND_ALT  #463c3b
-#define BACKGROUND      #151212
-#define CURSORCOLOR     #b1a583
-#define BLACK1          #342826
-#define BLACK2          #493536
-#define RED1            #68333b
-#define RED2            #68333b
-#define GREEN1          #685c3b
-#define GREEN2          #685c3b
-#define YELLOW1         #91703f
-#define YELLOW2         #91703f
-#define BLUE1           #4b5d52
-#define BLUE2           #4b5d52
-#define MAGENTA1        #454150
-#define MAGENTA2        #454150
-#define CYAN1           #593737
-#define CYAN2           #593737
-#define WHITE1          #b1a583
-#define WHITE2          #d4c7a4
+#define FOREGROUND      #7d7a56
+#define FOREGROUND_ALT  #805b49
+#define BACKGROUND      #f0e9d7
+#define CURSORCOLOR     #c0ae81
+#define BLACK1          #ccc487
+#define BLACK2          #a39d76
+#define RED1            #b8002f
+#define RED2            #b8002f
+#define GREEN1          #737849
+#define GREEN2          #737849
+#define YELLOW1         #b5ab4a
+#define YELLOW2         #b5ab4a
+#define BLUE1           #4d6e5f
+#define BLUE2           #4d6e5f
+#define MAGENTA1        #7b4c50
+#define MAGENTA2        #7b4c50
+#define CYAN1           #c0ae81
+#define CYAN2           #c0ae81
+#define WHITE1          #a89971
+#define WHITE2          #978965
 
 #define TRANSPARENT     #35000000
-#define PRIMARY         #433132
-#define SECONDARY       #433132
-#define ACCENT          #592c32
+#define PRIMARY         #b8002f
+#define SECONDARY       #b8002f
+#define ACCENT          #b8002f
 
 #define RAMP1           #55433132
 #define RAMP2           #55593737
@@ -155,16 +155,16 @@ herbe.duration: 3
 dunst.borderpx: 3
 dunst.border-color: BLUE1
 
-dunst.background-low: DUNSTBG
+dunst.background-low: CYAN1
 dunst.foreground-low: FOREGROUND
-dunst.border-color-low: DUNSTBG 
+dunst.border-color-low: CYAN1 
 
-dunst.background-normal: BLUE1 
-dunst.foreground-normal: FOREGROUND
-dunst.border-color-normal: BLUE1
+dunst.background-normal: GREEN1 
+dunst.foreground-normal: BACKGROUND
+dunst.border-color-normal: GREEN1
 
 dunst.background-critical: RED1
-dunst.foreground-critical: FOREGROUND
+dunst.foreground-critical: BACKGROUND
 dunst.border-color-critical: RED1
 
 dunst.background-reminder: BLUE1
@@ -248,7 +248,7 @@ bspwm.borderpx:     3
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: CYAN1
+bspwm.innerborderfocused: BLUE1
 bspwm.innerbordernormal:  BACKGROUND
 
 !!!!!!!!!!!!!
