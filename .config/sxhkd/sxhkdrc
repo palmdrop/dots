@@ -37,7 +37,7 @@ XF86Audio{Prev,Next}
 
 # Print screen control
 Print
-	flameshot full -p /home/xan/usr/pictures/screenshot
+	flameshot full -p /home/xan/usr/pictures/screenshots
 
 alt + Print
 	flameshot gui
@@ -143,13 +143,17 @@ alt + control + {h,l}
 alt + shift + Tab
 	bspc desktop -f last
 
-# focus or send to give desktop
+# focus or send to given desktop
 alt + {_,shift +}{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # send to to given desktop and follow
 alt + ctrl + {1-9,0}
 	bspc node -d '^{1-9,10}' --follow
+
+# focus next empty desktop
+alt + n
+	bspc desktop -f 'next.!occupied'
 
 # send to first empty desktop
 alt + shift + n
