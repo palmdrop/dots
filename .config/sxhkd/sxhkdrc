@@ -14,6 +14,10 @@ alt + d
 alt + shift + Escape
 	pkill -USR1 -x sxhkd
 
+# toggle bar
+alt + shift + b
+	togglebarbspwm
+
 #################
 # MEDIA CONTROL #
 #################

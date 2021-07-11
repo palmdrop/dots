@@ -1,39 +1,28 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #7d7a56
-#define FOREGROUND_ALT  #805b49
-#define BACKGROUND      #f0e9d7
-#define CURSORCOLOR     #c0ae81
-#define BLACK1          #ccc487
-#define BLACK2          #a39d76
-#define RED1            #b8002f
-#define RED2            #b8002f
-#define GREEN1          #737849
-#define GREEN2          #737849
-#define YELLOW1         #b5ab4a
-#define YELLOW2         #b5ab4a
-#define BLUE1           #4d6e5f
-#define BLUE2           #4d6e5f
-#define MAGENTA1        #7b4c50
-#define MAGENTA2        #7b4c50
-#define CYAN1           #c0ae81
-#define CYAN2           #c0ae81
-#define WHITE1          #a89971
-#define WHITE2          #978965
+#define FOREGROUND      #afa492
+#define FOREGROUND_ALT  #afa492
+#define BACKGROUND      #191215
+#define CURSORCOLOR     #afa492
+#define BLACK1          #211e27
+#define BLACK2          #2c2e39
+#define RED1            #651f36
+#define RED2            #651f36
+#define GREEN1          #414b3d
+#define GREEN2          #414b3d
+#define YELLOW1         #6f6638
+#define YELLOW2         #6f6638
+#define BLUE1           #3e4158
+#define BLUE2           #3e4158
+#define MAGENTA1        #553b4d
+#define MAGENTA2        #553b4d
+#define CYAN1           #385258
+#define CYAN2           #385258
+#define WHITE1          #e9e7e5
+#define WHITE2          #afa492
 
-#define TRANSPARENT     #35000000
-#define PRIMARY         #b8002f
-#define SECONDARY       #b8002f
-#define ACCENT          #b8002f
-
-#define RAMP1           #55433132
-#define RAMP2           #55593737
-#define RAMP3           #5568493c
-#define RAMP4           #55827652
-#define RAMP5           #55b1a583
-
-#define DUNSTBG #00000058
+#define TRANSPARENT     #77e9e7e5
 
 !!!!!!!!!!!!
 !! Colors !!
@@ -80,12 +69,15 @@
 !!!!!!!!!!!!!!!!!!!!!!
 #define BORDERPX 2
 #define FLOATBORDERPX 0
-#define GAPS 23
-#define OUTERGAPS 30
+#define GAPS 20
+#define OUTERGAPS 28
 
 !!!!!!!!!
 !! bar !!
 !!!!!!!!!
+
+bar.bottom: false
+
 bar.background: TRANSPARENT
 bar.background-alt: BACKGROUND
 bar.foreground: BLACK2
@@ -96,57 +88,24 @@ bar.background-module: BACKGROUND
 
 bar.ws-focused: RED1
 bar.ws-occupied: BLUE1
-bar.ws-unoccupied: BLACK1
-
-bar.ramp1: RAMP1
-bar.ramp2: RAMP2
-bar.ramp3: RAMP3
-bar.ramp4: RAMP4
-bar.ramp5: RAMP5
+bar.ws-unoccupied: BLACK2
 
 bar.line-size: 3
-bar.line-color: SECONDARY
+bar.line-color: WHITE1
 
 bar.alert: MAGENTA1
-bar.primary: PRIMARY
-bar.secondary: SECONDARY
-bar.extra: BLUE1
+bar.primary: RED1
+bar.secondary: GREEN1
+bar.extra: CYAN1
 
 bar.radius: 0
-bar.border: 0
+bar.border: 2
 bar.border-color: TRANSPARENT
 
-bar.x-extra: 17.5%
-bar.width-extra: 8%
-
-bar.x: 23%
-bar.y: 0
-bar.width: 23%
-!bar.height: 38
-bar.height: 0
-
-bar.x-secondary: 46.5%
-bar.width-secondary: 30.5%
-
-bar.x-notify: 0%
-bar.width-notify: 100%
-bar.height-notify: 35
-
-
-!!!!!!!!!!!
-!! herbe !!
-!!!!!!!!!!!
-herbe.background_color: BACKGROUND
-herbe.border_color: CYAN1
-herbe.font_color: FOREGROUND
-herbe.line_spacing: 5
-herbe.padding: 30
-herbe.width: 250
-herbe.border_size: 2
-herbe.pos_x: 20
-herbe.pos_y: 10
-herbe.corner: 1
-herbe.duration: 3 
+bar.x: 30%
+bar.y: 6 
+bar.width: 40%
+bar.height: 30
 
 !!!!!!!!!!!
 !! dunst !!
@@ -160,41 +119,16 @@ dunst.foreground-low: FOREGROUND
 dunst.border-color-low: CYAN1 
 
 dunst.background-normal: GREEN1 
-dunst.foreground-normal: BACKGROUND
+dunst.foreground-normal: FOREGROUND
 dunst.border-color-normal: GREEN1
 
 dunst.background-critical: RED1
-dunst.foreground-critical: BACKGROUND
+dunst.foreground-critical: FOREGROUND
 dunst.border-color-critical: RED1
 
 dunst.background-reminder: BLUE1
 dunst.foreground-reminder: FOREGROUND
 dunst.border-color-reminder: BLUE1
-
-!!!!!!!!!!!
-!! dmenu !!
-!!!!!!!!!!!
-dmenu.topbar: 1
-
-dmenu.x: 660
-dmenu.y: 325
-dmenu.w: 500
-dmenu.h: 30
-dmenu.borderpx: 50
-
-dmenu.lines: 10
-
-dmenu.normfgcolor: RAMP1
-dmenu.normbgcolor: SECONDARY
-dmenu.selfgcolor:  RAMP1
-dmenu.selbgcolor:  SECONDARY
-
-dmenu.normhighlightfgcolor: RAMP5
-dmenu.normhighlightbgcolor: SECONDARY
-dmenu.selhighlightfgcolor:  RAMP5
-dmenu.selhighlightbgcolor:  SECONDARY
-
-dmenu.font: scientifica:size=10
 
 !!!!!!!!!!
 !! Rofi !!
@@ -202,7 +136,7 @@ dmenu.font: scientifica:size=10
 rofi.background: BACKGROUND
 rofi.foreground: FOREGROUND
 rofi.select: BACKGROUND
-rofi.accent: BLUE1
+rofi.accent: CYAN1
 
 rofi.text-select: BACKGROUND
 
@@ -244,11 +178,11 @@ URxvt.url-launcher: /usr/bin/xdg-open
 bspwm.presel_color: YELLOW1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
-bspwm.borderpx:     3
+bspwm.borderpx:     5
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: BLUE1
+bspwm.innerborderfocused: RED1
 bspwm.innerbordernormal:  BACKGROUND
 
 !!!!!!!!!!!!!

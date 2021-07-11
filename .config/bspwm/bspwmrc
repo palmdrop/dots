@@ -16,13 +16,20 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 gaps=$(xrdbvar bspwm.gaps)
 padding=$(( $(xrdbvar bspwm.outergaps) - $gaps ))
 bargaps=$(( $(xrdbvar bar.height) + $(xrdbvar bar.y) + 2 * $(xrdbvar bar.border) - ($gaps / 2) ))
+bottombar=$(xrdbvar bar.bottom)
 
 _ border_width   $(xrdbvar bspwm.borderpx)
 _ window_gap     $gaps
-_ top_padding    $padding
 _ left_padding   $padding
 _ right_padding  $padding
-_ bottom_padding $padding
+
+if [ "$bottombar" = "true" ]; then 
+    _ top_padding    $padding
+    _ bottom_padding $bargaps
+else 
+    _ top_padding    $bargaps
+    _ bottom_padding $padding
+fi
 
 _ ignore_ewmh_focus     true
 _ focus_follows_pointer true
@@ -59,4 +66,4 @@ R Zathura           state=tiled
 #############
 
 bspc-auto-unhide &
-
+startbarbspwm &

@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "350x10-0+0"
+    geometry = "350x10-10+10"
 	
     # Turn on the progess bar
     progress_bar = true
@@ -81,7 +81,7 @@
     frame_width = "3"
 
     # Defines color of the frame around the notification window.
-    frame_color = "#4d6e5f"
+    frame_color = "#3e4158"
 
     # Define a color for the separator.
     # possible values are:
@@ -326,25 +326,25 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#c0ae81"
-    foreground = "#7d7a56"
-    frame_color = "#c0ae81"
+    background = "#385258"
+    foreground = "#afa492"
+    frame_color = "#385258"
     timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background =  "#737849"
-    foreground =  "#f0e9d7"
-    frame_color = "#737849"
+    background =  "#414b3d"
+    foreground =  "#afa492"
+    frame_color = "#414b3d"
     timeout = 4
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#b8002f"
-    foreground = "#f0e9d7"
-    frame_color = "#b8002f"
+    background = "#651f36"
+    foreground = "#afa492"
+    frame_color = "#651f36"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
@@ -427,9 +427,9 @@
 
 [remindme]
     category = reminder
-    background = "#4d6e5f"
-    foreground = "#7d7a56"
-    frame_color = "#4d6e5f"
+    background = "#3e4158"
+    foreground = "#afa492"
+    frame_color = "#3e4158"
     timeout = 0
 
 [ignore]
