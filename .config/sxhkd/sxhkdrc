@@ -185,11 +185,15 @@ alt + shift + space
 ###########
 
 # balance or equalize parent node
-super + b; {_, shift+} b
-	bspc node @parent -{B,E}
+#super + b; {_, shift+} b
+#   bspc node @parent -{B,E}
+super + {shift, ctrl + shift} + b
+   bspc node @parent -{E,B}
 
 # Balance all windows in vertical or horizontal direction
-super + b ; {h,j,k,l}
+# super + b ; {h,j,k,l}
+#	bspc-balance {west, south, north, east}
+super + shift + {h,j,k,l}
 	bspc-balance {west, south, north, east}
 
 #########

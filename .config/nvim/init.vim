@@ -30,11 +30,28 @@ Plug 'tikhomirov/vim-glsl'
 " Nerdtree
 Plug 'preservim/nerdtree'
 
+" Bookmarks
+Plug 'MattesGroeger/vim-bookmarks'
+
 call plug#end()
 
+" Customize nerdtree
 let g:vim_markdown_folding_disabled = 1
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
+
+" Customize vim-bookmarks
+" let g:bookmark_no_default_key_mappings = 1
+nmap <S-m>m  <Plug>BookmarkToggle
+nmap <S-m>i  <Plug>BookmarkAnnotate
+nmap <S-m>a  <Plug>BookmarkShowAll
+nmap <S-m>j  <Plug>BookmarkNext
+nmap <S-m>k  <Plug>BookmarkPrev
+nmap <S-m>c  <Plug>BookmarkClear
+nmap <S-m>x  <Plug>BookmarkClearAll
+nmap <S-m>kk <Plug>BookmarkMoveUp
+nmap <S-m>jj <Plug>BookmarkMoveDown
+nmap <S-m>g  <Plug>BookmarkMoveToLine
 
 " BASIC
 set directory^=$XDG_CACHE_HOME/vim//
