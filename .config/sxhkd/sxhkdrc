@@ -18,6 +18,9 @@ alt + shift + Escape
 alt + shift + b
 	togglebarbspwm
 
+ctrl + shift + space
+	dunstctl close-all
+
 #################
 # MEDIA CONTROL #
 #################
