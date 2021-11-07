@@ -46,6 +46,7 @@ window {
     border-radius: 					0px;
     padding: 						45;
     width: 							40%;
+    background-color:               @bg;
 }
 
 prompt {
