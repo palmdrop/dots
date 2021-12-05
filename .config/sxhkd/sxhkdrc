@@ -84,6 +84,9 @@ alt + shift + p
 alt + {_,ctrl +} b
 	bookmark {-o,_}
 
+alt + ctrl + shift + b
+	. $HOME/src/site/webspace/scripts/add-link.sh
+
 alt + {_,shift +, ctrl +} r
 	remember {append, open, menu} --dmenu
 
