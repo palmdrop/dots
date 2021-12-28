@@ -39,8 +39,8 @@ XF86Audio{Prev,Next}
 	play {prev, next}
 
 # Brightness control
-#XF86MonBrightness{Up,Down}
-#	bri {up, down}
+XF86MonBrightness{Up,Down}
+	bri {up, down} 5
 
 # Print screen control
 Print

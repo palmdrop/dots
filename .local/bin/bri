@@ -1,13 +1,16 @@
 #!/bin/bash
 
 case $1 in
-    up)   light -A 10;;
-    down) light -U 10;;
-    set)  light -S $2;;
-    print) echo "$(light -G)"; exit 1;;
+    # up)   light -A 10;;
+    # down) light -U 10;;
+    # set)  light -S $2;;
+    up)   xbacklight -inc 10;;
+    down) xbacklight -dec 10;;
+    set)  xbacklight -set $2;;
+    # print) echo "$(light -G)"; exit 1;;
 esac
 
-id=121212
+# id=121212
 
-dunstify -a "changeBrightness" -u low -i brightness-change -r "$id" " LIGHT $(bribar) "
+# dunstify -a "changeBrightness" -u low -i brightness-change -r "$id" " LIGHT $(bribar) "
 #notify-send --urgency=low "$(bribar)"
