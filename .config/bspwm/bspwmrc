@@ -81,5 +81,9 @@ R Zathura           state=tiled
 # Autostart #
 #############
 
+# has to run this here since setxbmap overrides modmap 
+# if put in xinitrc
+xmodmap $XDG_CONFIG_HOME/X/Xmodmap
+
 bspc-auto-unhide &
 startbarbspwm &

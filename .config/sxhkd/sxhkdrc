@@ -120,7 +120,7 @@ alt + {t, shift + t, f}
 alt + space
 	bspc rule -a '*' --one-shot state=floating
 
-{alt, super} + control + space
+alt + control + space
 	bspc node -t \~floating
 
 # hide/unhide
@@ -191,15 +191,13 @@ alt + shift + space
 ###########
 
 # balance or equalize parent node
-#super + b; {_, shift+} b
 #   bspc node @parent -{B,E}
-super + {shift, ctrl + shift} + b
+alt + x; {shift, ctrl + shift} + b
    bspc node @parent -{E,B}
 
 # Balance all windows in vertical or horizontal direction
-# super + b ; {h,j,k,l}
 #	bspc-balance {west, south, north, east}
-super + shift + {h,j,k,l}
+alt + x; shift + {h,j,k,l}
 	bspc-balance {west, south, north, east}
 
 #########
@@ -207,25 +205,25 @@ super + shift + {h,j,k,l}
 #########
 
 # toggle floating
-super + space
+alt + x; space
 	bspc node -t \~floating
 
 # resize floating windows
-super + {h,j,k,l}
+alt + x: {h,j,k,l}
 	bspc-resize {x -, y -, y +, x +} 20
 
 # move a floating window
-super + control + {h,j,k,l}
+alt + x: control + {h,j,k,l}
 	PADDING=$(xrdbvar bspwm.outergaps); \
 	AMOUNT=20; \
 	window-ctrl $PADDING move {-$AMOUNT +0, +0 +$AMOUNT, +0 -$AMOUNT, +$AMOUNT +0}
 
-super + control + shift + {h,j,k,l}
+alt + x: control + shift + {h,j,k,l}
 	PADDING=$(xrdbvar bspwm.outergaps); \
 	window-ctrl $PADDING {multwidth 0.5, multheight 0.5, multheight 2.0, multwidth 2.0} center
 
 # teleport windows
-super + {q,w,e,a,s,d,z,x,c}
+alt + x; {q,w,e,a,s,d,z,x,c}
 	PADDING=$(xrdbvar bspwm.outergaps); \
 	window-ctrl $PADDING {topleft,top,topright,left,center,right,bottomleft,bottom,bottomright} 
 
