@@ -135,6 +135,12 @@ copycode() { echo -e "\u$1" | xclip -selection clipboard; }
 ftext () { grep -iIHrn --color=always "$1" . | less -R -r; }
 generateqr () { printf "$@" | curl -F-=\<- qrenco.de; }
 
+cbase () { 
+    git add .;
+    git commit -m "temp";
+    git rebase -i HEAD~$1
+}
+
 # SHORTCUTS
 alias z="zathura"
 alias x="sxiv -a"
