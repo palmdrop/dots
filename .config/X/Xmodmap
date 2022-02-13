@@ -1,5 +1,11 @@
+! Bind super (windows key) to mode switch (ctrl)
 keycode 133 = Mode_switch
 keysym h = h H Left
 keysym l = l L Right
 keysym k = k K Up
 keysym j = j J Down
+
+! Bind caps to escape (for external keyboards)
+clear Lock
+keycode 66 = Escape Escape Escape
+! keycode 56 = b B
