@@ -142,6 +142,10 @@ cbase () {
 }
 
 # SHORTCUTS
+if [ -f $XDG_CONFIG_HOME/bash/aliases_private ]; then
+    source $XDG_CONFIG_HOME/bash/aliases_private
+fi
+
 alias z="zathura"
 alias x="sxiv -a"
 
