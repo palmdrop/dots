@@ -4,7 +4,7 @@ https://github.com/baskerville/bspwm/releases.atom github
 
 # YOUTUBE
 ## David Bruce Composer
-https://www.youtube.com/feeds/videos.xml?channel_id=UCh-PyMficPzVAihCJkFJVAA youtube
+# https://www.youtube.com/feeds/videos.xml?channel_id=UCh-PyMficPzVAihCJkFJVAA youtube
 ## Adam Neely
 https://www.youtube.com/feeds/videos.xml?user=havic5 youtube 
 ## Contrapoints
@@ -27,10 +27,9 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UClt01z1wHHT7c5lKcU8pxRQ you
 https://www.youtube.com/feeds/videos.xml?channel_id=UCIA__6IQs_QBaYTaV82XVuw youtube
 ## What I've Learned
 https://www.youtube.com/feeds/videos.xml?channel_id=UCqYPhGiB9tkShZorfgcL2lA youtube
-## exurb1a
-https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg youtube
+## exurb1a https://www.youtube.com/feeds/videos.xml?channel_id=UCimiUgDLbi6P17BdaCZpVbg youtube
 ## Lessons From the Screenplay
-https://www.youtube.com/feeds/videos.xml?channel_id=UCErSSa3CaP_GJxmFpdjG9Jw youtube
+# https://www.youtube.com/feeds/videos.xml?channel_id=UCErSSa3CaP_GJxmFpdjG9Jw youtube
 ## Just Write
 https://www.youtube.com/feeds/videos.xml?channel_id=UCx0L2ZdYfiq-tsAXb8IXpQg youtube
 ## Shaun
@@ -43,20 +42,25 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCH0VeQ9x2cUI4FDUT8xhaKw you
 https://www.youtube.com/feeds/videos.xml?channel_id=UCehv4ldLFbci4CQJZ__KVlg youtube
 ## Second Thought
 https://www.youtube.com/feeds/videos.xml?channel_id=UCJm2TgUqtK1_NLBrjNQ1P-w youtube
+## Kane Pixels (backrooms)
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8X4WT5_lUXqMjeN8bGFk9w youtube
+
 
 # LINUX
 https://www.archlinux.org/feeds/news/ linux
 https://www.linuxjournal.com/node/feed linux
 
 # REDDIT
-https://www.reddit.com/r/unixporn.rss reddit
-https://www.reddit.com/r/generative.rss reddit
-https://www.reddit.com/r/bspwm.rss reddit
+# https://www.reddit.com/r/unixporn.rss reddit
+# https://www.reddit.com/r/generative.rss reddit
+# https://www.reddit.com/r/bspwm.rss reddit
 
 # BLOGS
 https://ericaavey.com/feed/ blogs
 https://tylerxhobbs.com/essays?format=rss blogs
 https://tylerxhobbs.com/work?format=rss blogs
+http://booktwo.org/feed/ blogs
+https://palmdrop.site/rss.xml blogs
 
 # VIDEO
 https://www.svtplay.se/unge-kommissarie-morse/atom.xml video

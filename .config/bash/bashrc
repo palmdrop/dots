@@ -108,7 +108,11 @@ alias cacommit="cgit add -u; cgit commit -m"
 set -o vi
 #stty erase '^H'
 
+# nvm
+# source /usr/share/nvm/init-nvm.sh
+
 # Completion 
+
 if [ -d /etc/bash_completion ]; then
     for file in /etc/bash_completion.d/* ; do
         source "$file"
@@ -149,6 +153,7 @@ fi
 alias z="zathura"
 alias x="sxiv -a"
 
+alias vim="nvim"
 alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 alias killtmux="tmux kill-server"
 alias wp="xwallpaper --zoom"
