@@ -145,6 +145,21 @@ cbase () {
     git rebase -i HEAD~$1
 }
 
+minimize() {
+    jq -c . < "$1" > "$1.bak";
+    rm "$1";
+    mv "$1.bak" "$1";
+}
+
+minimizeAll() {
+    IFS="$(printf '\n\t')"
+    for file in ./* ; do
+        if [ -e "$file" ]; then
+            minimize "$file"
+        fi
+    done
+}
+
 # SHORTCUTS
 if [ -f $XDG_CONFIG_HOME/bash/aliases_private ]; then
     source $XDG_CONFIG_HOME/bash/aliases_private

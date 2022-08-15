@@ -1,0 +1,544 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+
+[colors]
+background = ${xrdb:bar.background:#222}
+background-alt = ${xrdb:bar.background-alt:#222}
+foreground = ${xrdb:bar.foreground:#222}
+foreground-alt = ${xrdb:bar.foreground-alt:#FFF}
+
+background-module = ${xrdb:bar.background-module:#FFF}
+
+ws-focused = ${xrdb:bar.ws-focused:#FFF}
+ws-occupied = ${xrdb:bar.ws-occupied:#FFF}
+ws-unoccupied = ${xrdb:bar.ws-unoccupied:#FFF}
+
+ramp1 = ${xrdb:bar.ramp1:#FFF}
+ramp2 = ${xrdb:bar.ramp2:#FFF}
+ramp3 = ${xrdb:bar.ramp3:#FFF}
+ramp4 = ${xrdb:bar.ramp4:#FFF}
+ramp5 = ${xrdb:bar.ramp5:#FFF}
+
+line = ${xrdb:bar.line-color:FFF}
+
+primary = ${xrdb:bar.primary:#ffb52a}
+secondary = ${xrdb:bar.secondary:#ffffff}
+alert = ${xrdb:bar.alert:#bd2c40}
+extra = ${xrdb:bar.extra:#ffffff}
+
+border = ${xrdb:bar.border-color:#FF0000}
+
+[bar/notify]
+width = ${xrdb:bar.width-notify:100%}
+height = ${xrdb:bar.height:30}
+background = #00FFFFFF
+foreground = ${colors.foreground}
+
+bottom = false
+offset-x = ${xrdb:bar.x-notify:0}
+offset-y = ${xrdb:bar.y:0}
+radius   = ${xrdb:bar.radius:0}
+fixed-center = true
+
+overline-size = ${xrdb:bar.line-size:0}
+underline-size = ${xrdb:bar.line-size:0}
+;border-size = ${xrdb:bar.border:0}
+border-size = 0
+;${xrdb:bar.border:0}
+border-color = ${colors.border}
+
+font-0 = "wuncon siji:size=15;2"
+font-1 = "scientifica:size=13;3"
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = 
+modules-center = sxhkd-mode2 hidden
+modules-right = 
+
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+tray-position = none
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/extra]
+width = ${xrdb:bar.width-extra:100%}
+height = ${xrdb:bar.height:30}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+bottom = true
+offset-x = ${xrdb:bar.x-extra:0}
+offset-y = ${xrdb:bar.y:0}
+radius   = ${xrdb:bar.radius:0}
+fixed-center = true
+
+overline-size = ${xrdb:bar.line-size:0}
+underline-size = ${xrdb:bar.line-size:0}
+;border-size = ${xrdb:bar.border:0}
+border-size = ${xrdb:bar.border:0}
+border-color = ${colors.border}
+
+font-0 = "wuncon siji:size=15;2"
+font-1 = "scientifica:size=13;3"
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = 
+modules-center = date time
+modules-right = 
+
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+tray-position = none
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/main]
+width = ${xrdb:bar.width:100%}
+height = ${xrdb:bar.height:30}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+bottom = true
+offset-x = ${xrdb:bar.x:0}
+offset-y = ${xrdb:bar.y:0}
+radius   = ${xrdb:bar.radius:0}
+fixed-center = false
+
+overline-size = ${xrdb:bar.line-size:0}
+underline-size = ${xrdb:bar.line-size:0}
+#underline = ${colors.secondary}
+border-size = ${xrdb:bar.border:0}
+border-color = ${colors.border}
+
+;border-bottom-size = 2
+;border-bottom-color = ${colors.foreground-alt}
+
+font-0 = "wuncon siji:size=15;2"
+font-1 = "scientifica:size=13;3"
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = line line bspwm layout line hidden
+modules-center = 
+modules-right = sxhkd-mode 
+
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+tray-position = none
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/secondary]
+width = ${xrdb:bar.width-secondary:100%}
+height = ${xrdb:bar.height:30}
+background = ${colors.background-alt}
+foreground = ${colors.foreground-alt}
+
+bottom = true
+offset-x = ${xrdb:bar.x-secondary:0}
+offset-y = ${xrdb:bar.y:0}
+radius   = ${xrdb:bar.radius:0}
+fixed-center = true
+
+overline-size = ${xrdb:bar.line-size:0}
+underline-size = ${xrdb:bar.line-size:0}
+border-size = ${xrdb:bar.border:0}
+border-color = ${colors.background-alt}
+
+font-0 = "wuncon siji:size=15;2"
+font-1 = "scientifica:size=13;3"
+
+padding-left = 1
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = battery2 tasks 
+modules-center = 
+modules-right = playinglabel playing volume 
+
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+tray-position = none
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/minimal]
+width = 100%
+height = 30
+background = #00000000
+foreground = ${colors.foreground-alt}
+
+bottom = true
+offset-x = 0
+offset-y = 0
+radius   = ${xrdb:bar.radius:0}
+fixed-center = true
+
+overline-size = 0
+underline-size = 0
+border-size = 0
+border-color = ${colors.background-alt}
+
+font-0 = "wuncon siji:size=15;2"
+font-1 = "scientifica:size=13;3"
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = 
+modules-center = workspaces
+modules-right = 
+
+wm-restack = bspwm
+override-redirect = true
+enable-ipc = true
+tray-position = none
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/line]
+type = custom/text
+content = " "
+content-padding = 0
+content-foreground = ${colors.background-alt}
+content-background = ${colors.background-alt}
+#content-overline = ${colors.line}
+#content-underline = ${colors.line}
+
+[module/line2]
+type = custom/text
+content = " "
+content-padding = 0
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+content-overline = ${colors.line}
+content-underline = ${colors.line}
+
+[module/line3]
+type = custom/text
+content = "|"
+content-padding = 0
+content-foreground = ${colors.foreground}
+content-background = ${colors.background-alt}
+#content-overline = ${colors.line}
+#content-underline = ${colors.line}
+
+[module/sxhkd-mode]
+type = custom/ipc
+format = <output>
+
+; Normal mode
+hook-0 = fg=$(xrdbvar bar.foreground-alt); bg=$(xrdbvar bar.background); echo "%{B$bg}%{F$fg} normal %{B-F-}"
+; Layout mode
+hook-1 = fg=$(xrdbvar color0); bg=$(xrdbvar bar.ws-focused);             echo "%{u$bg}%{+u}%{F$fg} layout %{F-}"
+; App mode
+hook-2 = fg=$(xrdbvar color0); bg=$(xrdbvar color2);                     echo "%{u$bg}%{+u}%{F$fg}  apps  %{F-}"
+; System mode
+hook-3 = fg=$(xrdbvar color0); bg=$(xrdbvar color5);                     echo "%{u$bg}%{+u}%{F$fg} system %{F-}"
+
+initial = 1
+click-left = sh -c $XDG_CONFIG_HOME/sxhkd/normal.mode 
+
+[module/title]
+type = internal/xwindow
+
+label = "  %title%  "
+label-maxlen = 50
+
+format = <label>
+format-background = ${colors.background-alt}
+format-foreground = ${colors.foreground-alt}
+
+[module/layout]
+type = custom/script
+exec = . $XDG_CONFIG_HOME/bspwm-polybar/scripts/layout.sh
+;exec = echo "$(bsp-layout get $(bspc query -D -d --names))"
+interval = 1
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-module}
+#format-overline = ${colors.line}
+#format-underline = ${colors.line}
+
+[module/date]
+type = custom/script
+
+exec = date +'%d %h'
+tail = true
+interval = 60
+
+label= "%output%"
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-alt}
+;format-underline = ${colors.foreground-alt}
+
+[module/tasklabel]
+type = custom/text
+content = ""
+content-padding = 0
+content-foreground = ${colors.foreground}
+content-background = ${colors.background-alt}
+
+[module/tasks]
+type = custom/script
+
+;exec = tasks
+exec = . $XDG_CONFIG_HOME/bspwm-polybar/scripts/tasks.sh
+tail = true
+interval = 5
+
+format = <label>
+format-foreground = ${colors.alert}
+format-background = ${colors.background-alt}
+#format-underline = ${colors.ramp1}
+#format-overline = ${colors.ramp1}
+
+label = " %output% "
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> 
+
+label-separator = ""
+label-separator-background = ${colors.background-alt}
+label-separator-underline = ${colors.foreground-alt}
+
+ws-icon-0 = 1;W
+ws-icon-1 = 2;O
+ws-icon-2 = 3;R
+ws-icon-3 = 4;K   
+ws-icon-4 = 5;S 
+ws-icon-5 = 6;P
+ws-icon-6 = 7;A
+ws-icon-7 = 8;C
+ws-icon-8 = 9;E
+ws-icon-9 = 10;S
+ws-icon-default = s
+
+label-focused = %icon% 
+label-focused-foreground = ${colors.ws-occupied}
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 0
+#label-focused-overline = ${colors.line}
+label-focused-underline = ${colors.ws-focused}
+
+label-occupied = %icon% 
+label-occupied-foreground = ${colors.ws-occupied}
+label-occupied-background = ${colors.background-alt}
+label-occupied-padding = ${self.label-focused-padding}
+#label-occupied-overline = ${colors.line}
+label-occupied-underline = ${colors.foreground-alt}
+
+label-urgent = %icon% 
+label-urgent-foreground = ${colors.alert}
+label-urgent-background = ${colors.background-alt}
+label-urgent-padding = ${self.label-focused-padding}
+#label-urgent-overline = ${colors.line}
+label-urgent-underline = ${colors.ws-occupied}
+
+label-empty = %icon% 
+label-empty-foreground = ${colors.ws-unoccupied}
+label-empty-background = ${colors.background-alt}
+label-empty-padding = ${self.label-focused-padding}
+#label-empty-overline = ${colors.line}
+label-empty-underline = ${colors.foreground-alt}
+
+[module/hidden]
+type = custom/script
+
+exec = $XDG_CONFIG_HOME/bspwm-polybar/scripts/hidden.sh 
+;exec = $XDG_CONFIG_HOME/bspwm-polybar/scripts/hidden.sh -i
+
+tail = true
+interval = 1
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background}
+;format-underline = ${colors.extra}
+
+label = "%output%"
+
+click-left = bspc-unhide-menu
+
+[module/time]
+type = custom/script
+
+exec = date +" %H:%M"
+tail = true
+interval = 5
+
+format = <label>
+format-foreground = ${colors.extra}
+format-background = ${colors.background-alt}
+;format-overline = ${colors.background-alt}
+;format-underline = ${colors.foreground-alt}
+
+#label = " %output%"
+label = "%output%"
+
+[module/battery2]
+type = custom/script
+exec = $XDG_CONFIG_HOME/bspwm-polybar/scripts/battery-text.sh "~ BATTERY ~"
+tail = true
+interval = 0.5
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-module}
+
+label = "%output%"
+label-padding = 1
+
+[module/volume]
+type = custom/script
+exec = $XDG_CONFIG_HOME/bspwm-polybar/scripts/volbar-text.sh "~ VOLUME ~" "[ MUTED ]"
+tail = true
+interval = 0.5
+
+format = <label>
+format-foreground = ${colors.foreground-alt}
+format-background = ${colors.background-module}
+
+label = %output%
+label-padding = 2
+
+
+[module/playinglabel]
+type = custom/script
+exec = [ $(play playing) == "true" ] && echo "playing" || echo ""
+content-padding = 0
+content-foreground = ${colors.foreground-alt}
+content-background = ${colors.background}
+
+[module/playing]
+type = custom/script
+exec = play print song
+exec-if = [ $(play playing) == "true" ] && exit 0 || exit 1
+
+tail = true
+interval = 1
+
+format = <label>
+format-foreground = ${colors.extra}
+format-background = ${colors.background-module}
+;format-overline = ${colors.line}
+;format-underline = ${colors.line}
+
+label = " %output%"
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+battery = BAT0
+adapter = ADP0
+
+format-charging = 
+format-discharging = <ramp-capacity>
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = 
+
+ramp-capacity-0 = "  "
+ramp-capacity-0-foreground = ${colors.ramp1}
+ramp-capacity-0-background = ${colors.alert}
+#ramp-capacity-0-overline = ${colors.background-alt}
+#ramp-capacity-0-underline = ${colors.background-alt}
+ramp-capacity-1 = "  "
+ramp-capacity-1-foreground = ${colors.ramp1}
+ramp-capacity-1-background = ${colors.alert}
+#ramp-capacity-1-overline = ${colors.background-alt}
+#ramp-capacity-1-underline = ${colors.background-alt}
+ramp-capacity-2 = "  "
+ramp-capacity-2-foreground = ${colors.ramp1}
+ramp-capacity-2-background = ${colors.extra}
+#ramp-capacity-2-overline = ${colors.background-alt}
+#ramp-capacity-2-underline = ${colors.background-alt}
+ramp-capacity-3 = "  "
+ramp-capacity-3-foreground = ${colors.ramp1}
+ramp-capacity-3-background = ${colors.extra}
+#ramp-capacity-3-overline = ${colors.background-alt}
+#ramp-capacity-3-underline = ${colors.background-alt}
+ramp-capacity-4 = "  "
+ramp-capacity-4-foreground = ${colors.ramp1}
+ramp-capacity-4-background = ${colors.extra}
+#ramp-capacity-4-overline = ${colors.background-alt}
+#ramp-capacity-4-underline = ${colors.background-alt}
+[module/workspaces]
+type = internal/bspwm
+format = <label-state> 
+
+label-separator = " "
+
+ws-icon-0 = 
+ws-icon-1 = 
+ws-icon-2 = 
+ws-icon-3 = 
+ws-icon-4 = 
+ws-icon-5 = 
+ws-icon-6 = 
+ws-icon-7 = 
+ws-icon-8 = 
+ws-icon-9 = 
+ws-icon-default = 
+
+label-focused = 
+label-focused-foreground = ${colors.ws-focused}
+label-focused-padding = 0
+
+label-occupied = 
+label-occupied-padding = ${self.label-focused-padding}
+
+label-urgent = 
+label-urgent-padding = ${self.label-focused-padding}
+
+label-empty = 
+label-empty-padding = ${self.label-focused-padding}
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
