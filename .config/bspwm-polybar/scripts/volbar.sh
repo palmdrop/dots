@@ -4,16 +4,16 @@
 v=$(vol print)
 
 # background
-bg=$(xrdbvar bar.background-alt)
+bg=$(xrdbvar bar.background)
 
 # Color for empty step
-blank=$(xrdbvar bar.extra)
+blank=$(xrdbvar bar.secondary)
 # Mute color
 mute=$(xrdbvar bar.background-alt)
 # Color if volume is above 100%
 high=$(xrdbvar bar.ws-focused)
 # Volume step color
-step=$(xrdbvar bar.ramp3)
+step=$(xrdbvar bar.primary)
 
 # If muted, replace step with mute color
 if [ "$(vol muted)" = "true" ]; then
@@ -33,4 +33,4 @@ es=$(( 10 - fs ))
 filled_steps=$(printf "%${fs}s" | sed 's/ /|/g')
 empty_steps=$(printf "%${es}s" | sed 's/ /|/g')
 
-echo -e "%{B$bg}%{F$step}  $filled_steps%{B-F-}%{B$bg}%{F$blank}$empty_steps  %{B-F-}"
+echo -e "%{B$bg}%{F$step}  $filled_steps%{B-}%{F-}%{B$bg}%{F$blank}$empty_steps  %{B-}%{F-}"
