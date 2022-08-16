@@ -5,7 +5,7 @@
 #define FOREGROUND_ALT  #afa492
 #define BACKGROUND      #191215
 #define CURSORCOLOR     #afa492
-#define BLACK1          #211e27
+#define BLACK1          #3e4158
 #define BLACK2          #2c2e39
 #define RED1            #651f36
 #define RED2            #651f36
@@ -102,9 +102,9 @@ bar.radius: 0
 bar.border: 2
 bar.border-color: TRANSPARENT
 
-bar.x: 30%
-bar.y: 6 
-bar.width: 40%
+bar.x: 0%
+bar.y: 0 
+bar.width: 100%
 bar.height: 30
 
 !!!!!!!!!!!
@@ -114,9 +114,9 @@ bar.height: 30
 dunst.borderpx: 3
 dunst.border-color: BLUE1
 
-dunst.background-low: CYAN1
-dunst.foreground-low: FOREGROUND
-dunst.border-color-low: CYAN1 
+dunst.background-low: FOREGROUND
+dunst.foreground-low: CYAN1
+dunst.border-color-low: FOREGROUND 
 
 dunst.background-normal: GREEN1 
 dunst.foreground-normal: FOREGROUND

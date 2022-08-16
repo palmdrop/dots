@@ -19,7 +19,7 @@
 
     origin = top-right
 
-    offset = 20x20
+    offset = 0x30
 	
     # Turn on the progess bar
     progress_bar = true

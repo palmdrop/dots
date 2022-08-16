@@ -19,7 +19,7 @@
 
     origin = top-right
 
-    offset = 20x20
+    offset = 0x30
 	
     # Turn on the progess bar
     progress_bar = true
@@ -316,9 +316,9 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#385258"
-    foreground = "#afa492"
-    frame_color = "#385258"
+    background = "#afa492"
+    foreground = "#385258"
+    frame_color = "#afa492"
     timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
