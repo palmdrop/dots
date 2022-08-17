@@ -1,26 +1,26 @@
 !!!!!!!!!!!!!
 !! Defines !!
 !!!!!!!!!!!!!
-#define FOREGROUND      #afa492
-#define FOREGROUND_ALT  #afa492
-#define BACKGROUND      #191215
-#define CURSORCOLOR     #afa492
-#define BLACK1          #3e4158
-#define BLACK2          #2c2e39
-#define RED1            #651f36
-#define RED2            #651f36
-#define GREEN1          #414b3d
-#define GREEN2          #414b3d
-#define YELLOW1         #6f6638
-#define YELLOW2         #6f6638
-#define BLUE1           #3e4158
-#define BLUE2           #3e4158
-#define MAGENTA1        #553b4d
-#define MAGENTA2        #553b4d
-#define CYAN1           #385258
-#define CYAN2           #385258
-#define WHITE1          #e9e7e5
-#define WHITE2          #afa492
+
+#define FOREGROUND      #c3d2af
+#define BACKGROUND      #030707
+#define CURSORCOLOR     #c3d2af
+#define BLACK1          #2e3b32
+#define BLACK2          #2e3b32
+#define RED1            #7e1500
+#define RED2            #7e1500
+#define GREEN1          #455f3b
+#define GREEN2          #455f3b
+#define YELLOW1         #7e9133
+#define YELLOW2         #7e9133
+#define BLUE1           #456b56
+#define BLUE2           #456b56
+#define MAGENTA1        #796b2f
+#define MAGENTA2        #796b2f
+#define CYAN1           #6c833b
+#define CYAN2           #6c833b
+#define WHITE1          #dfdbc0
+#define WHITE2          #bbcdad
 
 #define TRANSPARENT     #77e9e7e5
 
@@ -178,11 +178,11 @@ URxvt.url-launcher: /usr/bin/xdg-open
 bspwm.presel_color: YELLOW1
 bspwm.gaps:         GAPS
 bspwm.outergaps:    OUTERGAPS
-bspwm.borderpx:     5
+bspwm.borderpx:     2
 
 bspwm.outerborderfocused: BACKGROUND
 bspwm.outerbordernormal:  BACKGROUND
-bspwm.innerborderfocused: RED1
+bspwm.innerborderfocused: YELLOW1
 bspwm.innerbordernormal:  BACKGROUND
 
 !!!!!!!!!!!!!

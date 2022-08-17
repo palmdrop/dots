@@ -2,15 +2,15 @@
 
 * {
     al:      #00000000;
-    bg:      #191215;
-    se:      #191215;
-    ts:      #191215;
-    fg:      #afa492;
-    ac:      #385258;
-    red:     #651f36;
-    green:   #414b3d;
-    yellow:  #6f6638;
-    blue:    #3e4158;
-    purple:  #553b4d;
-    cyan:    #385258;
+    bg:      #030707;
+    se:      #030707;
+    ts:      #030707;
+    fg:      #c3d2af;
+    ac:      #6c833b;
+    red:     #7e1500;
+    green:   #455f3b;
+    yellow:  #7e9133;
+    blue:    #456b56;
+    purple:  #796b2f;
+    cyan:    #6c833b;
 }
