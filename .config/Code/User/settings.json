@@ -1,0 +1,12 @@
+{
+    "keyboard.dispatch": "keyCode",
+    "telemetry.enableCrashReporter": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.tabSize": 2,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "svelte.enable-ts-plugin": true,
+    "markdown-preview-enhanced.previewTheme": "newsprint.css",
+    "svelte.language-server.runtime": "/usr/bin/node",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "window.zoomLevel": 1
+}

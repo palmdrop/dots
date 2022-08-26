@@ -1,0 +1,6 @@
+[
+    {
+        "key": "ctrl+l",
+        "command": "-extension.vim_navigateCtrlL"
+    }
+]

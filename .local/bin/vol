@@ -10,6 +10,6 @@ case $1 in
     print) echo "$(pamixer --get-volume)"; exit 1 ;;
 esac
 
-# id=212121
-# dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" " SOUND $(volbar) "
+id=212121
+dunstify -a "changeVolume" -u low -i audio-volume-change -r "$id" " SOUND $(volbar) "
 #notify-send --urgency=low "$(volbar)"
