@@ -22,7 +22,7 @@
 #define WHITE1          #dfdbc0
 #define WHITE2          #bbcdad
 
-#define TRANSPARENT     #77e9e7e5
+#define TRANSPARENT     #77dfdbc0
 
 !!!!!!!!!!!!
 !! Colors !!
