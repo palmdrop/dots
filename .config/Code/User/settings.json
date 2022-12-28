@@ -8,5 +8,7 @@
     "markdown-preview-enhanced.previewTheme": "newsprint.css",
     "svelte.language-server.runtime": "/usr/bin/node",
     "typescript.preferences.importModuleSpecifier": "relative",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "svelte.plugin.svelte.note-new-transformation": false,
+    "editor.minimap.enabled": false
 }
