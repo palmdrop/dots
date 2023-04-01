@@ -10,5 +10,6 @@
     "typescript.preferences.importModuleSpecifier": "relative",
     "window.zoomLevel": 1,
     "svelte.plugin.svelte.note-new-transformation": false,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false
 }
